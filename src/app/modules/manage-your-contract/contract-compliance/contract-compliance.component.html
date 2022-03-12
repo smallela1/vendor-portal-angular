@@ -1,0 +1,1050 @@
+<!--  SEARCH BAR --> 
+<app-search-bar></app-search-bar>
+
+
+<!-- SEARCH HEADER TOOLBOX -->
+<section class="bg-gsa-medium-blue toolbox2-img" >
+  <div class="container-fluid px-5 pb-5 pt-3">
+    <!--
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent px-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Get a Contract</li>
+          <li class="breadcrumb-item active" aria-current="page">Understanding Contracts</li>
+        </ol>
+      </nav>
+	   -->
+    <div class="row">
+
+
+      <div class="col-lg-12 col-xl-3 ">
+        <div class="mb-3 pt-3 ">  
+          
+          <h2 class="white">
+            <small class=" font-weight-light  gsa-xlight-blue"><div class="fal fa-file-signature"></div> Manage your Contract</small>
+            <br />
+            <span class="font-weight-bold">Contract Compliance</span>
+          </h2>
+          <!--<p class="gsa-xlight-blue mb-4"><span class="font-weight-bold">9</span> Topics</p>-->
+          <div class="">
+	        <h5 class="gsa-xlight-blue"><div class="fal fa-list" style="width: 2.4rem;"></div> Topics Covered:</h5>
+            <ul class="list-unstyled">
+  	          <li><a href="/app-understanding-contracts#procurement" class="white">Supply Chain Risk Management</a></li>
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Scope Compliance</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Open Market Items</a></li> 
+                  <div id="topicsList" [collapse]="isCollapsed">
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Invoicing Requirements</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Prompt Payment Discounts</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Trade Agreement Act (TAA) Compliance</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Labor Qualification Compliance</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Federal Acquisition Regulations</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">FAR Subpart 8.4 - Federal Supply Schedules</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Strategic Partner Delivery (SPD)</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Most Favored Customer / Basis of Award</a></li> 
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Contractor Assessment</a></li> 
+          	 </div>
+              <a class="btn btn-outline-light pill btn-sm mt-4" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="relatedList">
+                    View All 
+               </a>
+            </ul>
+	       </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-12 col-xl-9 h-100">
+
+        
+        <div class="row justify-content-lg-center pt-3">
+          <div class="col pt-xl-5 pl-xl-5 ">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum porta eros. Ut et ultricies erat, eget cursus arcu. Proin vel lacus ligula. Fusce ut velit imperdiet, sagittis nulla et, interdum ligula. Integer finibus sapien sit amet est commodo venenatis. Sed rhoncus, nisi et suscipit bibendum, erat ante pretium lectus, ut mollis lorem lacus sed magna. 
+              </p>
+            </div>
+            <div class="col-sm-12 col-lg-4 pt-3  pl-4 pt-5 border-left ">
+              <div class="mb-3 h-100">  
+                <h5 class="gsa-xlight-blue"> Related Topics:</h5>
+                <ul class="list-unstyled ">
+                  
+
+                  <li><a class="white" routerLink="/app-where-to-begin">Understanding My GSA Contract</a></li>
+              <li><a class="white" routerLink="/app-education">Registering My Contract </a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">FSS Terms and Conditions Price List</a></li>
+              <div id="relatedList" [collapse]="isCollapsed">
+              <li><a class="white" routerLink="/app-education">Electronic Catalog</a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">GSA Advantage</a></li>
+              <li><a class="white" routerLink="/app-education">Contractor Start-up Kit</a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">Schedule Input Program (SIP)</a></li>
+              <li><a class="white" routerLink="/app-education">EDI & cMXL</a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">Check Your File Status</a></li>
+              <li><a class="white" routerLink="/app-education">Lookup Tables</a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">GSA Advantage Purchase Order Portal</a></li>
+              <li><a class="white" routerLink="/app-education">Mandatory Order Status</a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">GSA Ebuy</a></li>
+              <li><a class="white" routerLink="/app-education">Contract Management</a></li>
+              <li><a class="white" routerLink="/app-where-to-begin">Modifying My Contract</a></li>
+              <li><a class="white" routerLink="/app-education">Market Research</a></li>
+              </div>
+                  <a class="btn btn-outline-light pill btn-sm mt-4" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="topicsList">
+                    View All 
+               </a>
+                </ul>
+              </div>
+            </div>
+
+
+
+            <!--
+            <div class="col-sm-12 col-lg pt-3 pl-4 border-right">
+              <div class="mb-3 h-100">  
+                <h4 class="white"><span class="fal fa-link" style="width: 2.4rem;"></span> Additional Links</h4>
+                <ul class="list-unstyled ml-5">
+                  <li>
+                    <a href="https://www.gsa.gov/buying-selling/purchasing-programs" target="_blankhttps" target="_blankhttps" class="white">Purchasing Programs
+                    </a> 
+                  
+                  </li>
+                  <li>
+                    <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                    GSA Schedules
+                    </a> 
+                  </li>
+                  <li>
+                    <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                    GSA Schedules
+                    </a> 
+                  </li>
+                  <div id="linkList" [collapse]="isCollapsed" [isAnimated]="true">
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                  </div>
+                  
+                  <button type="button" class="btn btn-outline-light pill btn-sm mt-4" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="linkList">
+                    	View All
+  				        </button>
+                </ul>
+
+                
+               
+
+
+
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg pt-3  pl-4">
+              <div class="mb-3 h-100">  
+                <h4 class="white"><div class="fal fa-file" style="width: 2.4rem;"></div> Related Documents</h4>
+                <ul class="list-unstyled ml-5">
+                  <li>No Documents</li>
+                </ul>
+              </div>
+            </div>
+            -->
+        </div> 
+
+
+
+      </div>
+    </div> 
+  </div>  
+</section>
+
+<section class="" style="min-height: 400px;">
+
+  
+  <div class="container-fluid px-5 py-4">
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Supply Chain Risk Management</h3>
+          	<!--
+
+	          <h6 class="mt-4 text-muted text-uppercase">Additional Topics</h6>
+	          <ul class="list-group list-group-flush">
+	             <li class="list-group-item"><a href="/app-understanding-contracts#mas" class="font-weight-bold">Supply Chain Risk Mitigation Initiatives</a></li>
+	             <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">Scope Compliance</a>
+	             </li>
+	               
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#gwac">Open Market Items</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#global-supply">Invoicing Requirements</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#fssi">Prompt Payment Discounts</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#tnv">Trade Agreement Act (TAA) Compliance</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#oasis">Labor Qualification Compliance</a></li>
+
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#oasis">Federal Acquisition Regulations</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#oasis">FAR Subpart 8.4 - Federal Supply Schedules</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#oasis">Strategic Partner Delivery (SPD)</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#oasis">Most Favored Customer / Basis of Award</a></li>
+	             <li class="list-group-item"><a class="font-weight-bold" href="/app-understanding-contracts#oasis">Contractor Assessment</a></li>
+  	          </ul>
+  	      	-->
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+            	<h4 id="mas" class="font-weight-bold gsa-light-blue section-title">Supply Chain Risk Mitigation Initiatives</h4>	
+          		<p>The Federal Acquisition Service (FAS) possesses unrivaled capability to deliver secure and compliant products and services across government at the best value possible. FAS contractors play a crucial role in this value proposition by actively managing their product catalogs to ensure only compliant products are offered to customer agencies.</p>
+          		<p>FAS regularly analyzes Schedule contracts to ensure awarded products are not a threat to the federal supply chain and comply with statutory and regulatory requirements.</p>
+          		<p>During the life of your contract, FAS may email your company’s point of contact for contract administration and/or authorized negotiators regarding potentially non-compliant products. If you are contacted, please respond to GSA in accordance with the instructions in the email you receive. In some cases, the product(s) may be compliant, but a response from you will be required in order to avoid removal of the product(s) from the contract.</p>
+          		<p>You may be contacted regarding one of the following supply chain risks on your Schedule contract:</p>
+          		<ul>
+          		<li class="font-weight-bold">Country of Origin (COO) and other catalog issues (read more here)
+          			<ul class="font-weight-light">
+          				<li>Products that are not compliant with the Trade Agreements Act (see FAR clause 52.225-5)</li>
+          				<li>Products that inaccurately list the country of origin as “US” in GSA Advantage</li>
+          				<li>Identical products awarded on the same contract to the same Special Item Number (SIN) at different price points</li>
+          			</ul>
+          		</li>
+          		<li class="font-weight-bold">Products with national security risks (read more here)
+          			<ul class="font-weight-light">
+          				<li>Hardware, software and services developed or provided by Kaspersky Lab (see FAR clause 52.204-23)</li>
+          				<li>Certain telecommunication and video surveillance services (see FAR clause 52.204-25)</li>
+          			</ul>
+          		</li>
+          		<li class="font-weight-bold">Essentially the Same (ETS) (read more here)
+          			<ul class="font-weight-light">
+          				<li>Products that are "essentially the same" as AbilityOne products (see FAR clause 52.208-9)</li>
+          			</ul>
+          		</li>
+          		</ul>
+          		<p>If you have any questions about these initiatives, please reach out to the GSA acquisition personnel designated on your contract, which can be found on the FAS Sales Reporting Portal (SRP) once you log into the site.</p>
+	              		
+	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Scope Compliance</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+            	<h4 id="mas" class="font-weight-bold gsa-light-blue section-title">What is "Scope"?</h4>
+          		<p>You must ask yourself, "Do the services or products that I’m providing fall within the descriptions of the Special Item Numbers (SINs) that I was awarded, and is the service or product authorized under my contract?."</p>
+          		<p>An agency may add open market items onto an order if necessary. However, as a contractor, you must ensure that the customer is made aware of which items are contract items and which are open market items prior to the sale. This is extremely important due to differing Federal Acquisition Regulations for Federal Supply Schedule procurements versus open market procurements. For a contractor, it is important to document that you provided this information to the customer prior to the sale in a written quote or email correspondence, as well as upon the actual invoice.</p>
+          		<p>It is imperative that all non contract or open market items are communicated and clearly identified to the customer so they can make the appropriate buying decisions. </p>
+          		<p>If items you are selling to your customer are not on your Schedule contract, they can be procured by the agency through: </p>
+          		<ul>
+              		<li>OLM SIN or ANCILLARY SIN, if applicable 
+              		</li>
+              		<li>Open market procedures
+              		</li>
+          		</ul>
+          		<p>You should identify them as "non-contract" or "open market" items. There are several avenues to expand your marketability and stay within the scope of your contract, including modifying your contract to add additional products, services, or SINs; and understanding and using Contractor Team Arrangements (CTAs).</p>
+          		<p>Remaining within the scope of your contract is a critical contractor performance factor and will be evaluated on your contractor assessment report. Major efforts are being made governmentwide to educate both Schedule customers and contractors to ensure quotes and orders fall within the scope of the contract being utilized.</p>
+	              		
+	            
+	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Open Market Items</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+          		<p>Open Market items are also known as:</p>
+          		
+          		<ul>
+              		<li>OIncidental Items</li>
+              		<li>Open market procedures</li>
+              		<li>Non-Schedule Items</li>
+              		<li>Other Direct Costs (ODCs)</li>
+              		<li>Reimbursable Travel Costs</li>
+          		</ul>
+          		<p>Schedule contractors should not include the value of open market sales when entering sales in the FAS Sales Reporting Portal, only the total sales of contract items.</p>
+          		
+	              		
+	            
+	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Invoicing Requirements</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+          		<p>Each GSA Schedule contract has invoicing requirements included in the contract. The invoicing requirements for most GSA Schedule contracts can be found under contract clause GSAR 552.212-4 (Contract Terms and Conditions - Commercial Items). Contractors should clearly identify open market items to their customers if such items are procured in combination with GSA contract items. </p>	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Prompt Payment Discounts</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+          		<ul>
+          			<li>If you have negotiated prompt payment discounts into your contract, you are required to provide this information on invoices for orders under this contract.</li>
+          			<li>It should be noted that any negotiated prompt payment discounts do not apply to purchases made with the SmartPay 2 credit card (government purchase card).</li>
+          		</ul>	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Trade Agreement Act (TAA) Compliance</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+				<p>The Trade Agreements Act (TAA) is the enabling statute that implements numerous multilateral and bilateral international trade agreements and other trade initiatives. The TAA applies to all GSA Schedule contracts unless otherwise stated in the solicitation or contract. The TAA limits the country of origin for products sold through your Schedule contract, in general, this means the following may be sold:</p>
+				<ol>
+          			<li>Articles that are wholly the growth, product, or manufacture of the U.S. or a designated country, or</li>
+          			<li>Articles that are "substantially transformed" in the U.S. or a designated country into a new and different article of commerce with a name, character, or use distinct from that of the article or articles from which it was transformed.</li>
+          		</ol>
+          		<p>Remember that it is the responsibility of each Schedule contractor to ensure that product information is accurately incorporated into the contract and displayed on GSA Advantage throughout the life of the contract. It is a good practice to periodically review the country of origin of products offered on your GSA contract, as manufacturers sometimes change their manufacturing points. If you determine that a product country of origin has changed, the following directions can assist you in updating GSA Advantage.</p>	
+          		<p>For more information about the TAA, refer to clause 52.225-5 Trade Agreements.</p>            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Labor Qualification Compliance</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	<p>MAS contractors providing professional labor categories must demonstrate the personnel they are providing under each GSA task order to meet the minimum qualifications as specified in their contract.</p>
+            	<p>Professional services labor employees are:</p>
+          		<ul>
+          			<li>Considered exempt from the Service Contract Act (SCA) such as those who qualify as executive, administrative, or professionals under the definitions provided in 29 C.F.R. Part 541. </li>
+          			<li>Generally salaried employees not paid on an hourly basis</li>
+          			<li>Either supervise others, make decisions of importance and significance using independent judgment, and/or perform work primarily requiring advanced education and experience. </li>
+          		</ul>	
+          		<p>If providing professional services, your MAS contract will typically be awarded with labor categories, which will describe the minimum qualifications required of the person serving in that particular capacity. The minimum qualifications are established by your company during the pre-award phase or at the time labor categories are added to your MAS contract. Therefore, the labor categories will be unique to each contractor’s particular MAS contract.</p>
+          		<p>For example, Company X has a labor category titled “Network Engineer”, which requires a bachelor’s degree and ten years of experience. Therefore, if Company X is bidding on a task order project, offers their “Network Engineer”, and is awarded the project, Company X must ensure the employee serving in this capacity has a bachelor’s degree and ten years of experience. Otherwise, Company X will be found to have provided unqualified labor for that particular project and is noncompliant with the terms and conditions of their MAS contract. </p> 
+          		<p>This requirement cannot be waived by the ordering CO. If you find that you need to adjust your labor category qualification requirements or add additional labor categories, it may be possible. Contact your GSA PCO for additional information. </p>
+          		<p>Industrial Operations Analysts (IOAs) review your labor as part of your compliance assessment. They may ask you to demonstrate the personnel provided on MAS task orders meet the qualifications and experience as provided in their respective MAS contract. Your IOA may ask to look at resumés, timesheets, and other personnel documentation to ensure you are indeed providing qualified labor on MAS task orders. The IOA will refer any issues found regarding the qualified labor provided to the Procurement Contracting Officer (PCO) for appropriate follow-on action.</p>
+          		<p>If you have any questions regarding the specific labor you are providing and/or are not sure if the additional review is applicable to you, please contact your PCO. If you have questions related to the Contractor Assessment and the additional review of professional labor qualifications, please contact your IOA.</p>           
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Federal Acquisition Regulations</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+          		<p>The FAR provides uniform policies and procedures for the acquisition of supplies and services by Executive Agencies. It may be helpful to understand how your customers utilize the GSA Schedule contracting vehicle when working with your future GSA Schedule customers. Please review the FAR website for more information. The Multiple Award Schedule program is authorized by FAR 38 and the ordering procedures are prescribed at FAR 8.4. </p>	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> FAR Subpart 8.4 - Federal Supply Schedules</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+          		<p>Federal Supply Schedule is simply another term for Multiple Award Schedule (MAS). FAR Section 8.4 of the FAR describes the procedures that must be followed when a federal customer is purchasing goods or services from a MAS contract. Contractors should be familiar with these requirements so that they are better prepared to generate quotes and accept orders from federal customers.</p>
+          		<p>The MAS program simplifies the buying process while complying with federal procurement rules and regulations for vendors and government contracting officers alike. For example, when placing orders under MAS contracts, ordering activities do not need to seek competition outside of the Federal Supply Schedules or synopsize the requirement. This gives you an advantage over anyone who has not been awarded a MAS contract.</p>
+          		<p>The FAR also states that before placing an order, an ordering activity shall consider all reasonably available information by surveying at least three Schedule contractors through GSA Advantage, or by reviewing the catalogs or price lists of at least three Schedule contractors. This is why it is paramount that each contractor’s price list and GSA Advantage file remains current at all times.</p>	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row pb-3 border-bottom"  id="contract-types">
+      	<div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Strategic Partner Delivery (SPD) </h3>
+	          <h6 class="mt-4 text-muted text-uppercase">Additional Topics</h6>
+	          <ul class="list-group list-group-flush">
+	            
+	            <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">DoD Order Shipping Requirements</a>	               
+                </li>
+                <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">Civilian Agency Order Shipping Requirements </a>	               
+                </li>
+                <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">HAZMAT materials requirements for Marking, Labeling, and Shipping </a>	               
+                </li>
+                <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">Vendor Electronic Data Interchange (EDI) Shipping Instructions</a>	               
+                </li>
+                <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">Delivery/Shipping FAQs </a>	               
+                </li>
+                <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">Additional Resources</a>	               
+                </li>
+  	          </ul>
+  	       </div>
+        </div>
+
+  	    <div class="col-lg-9">
+          <div class="row">
+            <div class="col-lg">
+    	        <div class="article-container">        
+    	          <p>In 2011, GSA’s Office of General Supplies and Services (GSS) began implementing a Supply Transformation (ST) initiative designed to modernize the business line’s wholesale and retail programs. ST resulted in a transition from the GSA stock based fulfillment model to a direct vendor-to-customer delivery model, which GSA refers to as Strategic Partner Delivery (SPD). The transition to the SPD model requires stringent vendor compliance with marking, labeling, and packaging requirements to ensure customers are able to receive and efficiently process incoming shipments. In order for shipments to be delivered to customers in a timely and efficient manner, vendors must mark, label, and package each shipment to the specific requirements, which are outlined on the following pages:
+    	          </p>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="mas" class="font-weight-bold gsa-light-blue section-title">DoD Order Shipping Requirements </h4>
+    	            <p>All shipments, including parcel delivery, to DoD customers in the Contiguous United States (CONUS) and to customers Outside the Contiguous United States (OCONUS) that are shipped via the DLA transportation network, must adhere to DoD standards on marking, labeling, and packaging shipments, which are published in Military Standard 129R (MIL-STD-129R): Military Marking for Shipment and Storage Standards.</p>
+    	            <p>Sections of note in this document include:</p>
+    	            <ul>
+    	              <li>Identification text marking</li>
+    	              <li>Address marking</li>
+    	              <li>Identification bar code marking</li>
+    	              <li>Special marks and labels</li>
+    	            </ul>
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">Military Shipping Labels (MSLs)</h5>
+    	                <p>
+    	                  MSLs and address markings are required on all shipments (including parcel delivery) destined for DoD customers or transported via the DLA transportation network at every packaging level. The following information is required on every MSL:
+    	                </p>
+    	                <ul>
+    	                	<li>Transportation Control Number (TCN) – Including a linear barcode</li>
+    	                	<li>Transportation Account Code (TAC)</li>
+    	                	<li>Consignor Address - Including vendor Commercial and Government Entity (CAGE) code</li>
+    	                	<li>Type of Service (Priority)/Postage</li>
+    	                	<li>Ship to Address/Point of Entry (POE)</li>
+    	                	<li>Port of Embarkation</li>
+    	                	<li>Project Code</li>
+    	                	<li>Ultimate Consignee/Mark for Address - Including customer DoDAAC and linear barcode</li>
+    	                	<li>Weight (lbs.)</li>
+    	                	<li>Required Delivery Date (RDD)</li>
+    	                	<li>Cube (ft.)</li>
+    	                	<li>Piece Number</li>
+    	                	<li>MSL 2D (PDF417) Bar code</li>
+    	                </ul>
+    	                <p>Please note that different variations of the MSL are required if it is applied at unit and intermediate level, or at the exterior transit pack level, and the different variations require different pieces of information.</p>
+    	                <p>This MIL-STD-129R Marking Guide can help you better understand how to label your package in accordance with MIL-STD-129R.</p>
+    	              </div>
+    	              <div class="article" id="global-supply">
+    	                <h5 id="special-programs" class="font-weight-bold">Identification Marking Requirements</h5>
+    	                <p>
+    	                  In addition to the MSLs, identification marking is required at the unit pack, intermediate pack, and exterior container levels to enable receipt process information and storage process information for accurate stock accounting of vendor sourced material. Unless specifically exempted in the contract or solicitation, the identification marking shall be applied to all DoD and contractor-originated, or vendor-originated , shipments.
+    	                </p>
+    	                <p>Here is the guidance for the identification marking requirements on:</p>
+    	                <ol>
+    	                	<li>Packing List and Documentation Supply Operational Notice</li>
+    	                	<li>Required Data Elements and Helpful Resources</li>
+    	                </ol>
+    	                <p>In addition, in cooperation with the Defense Logistics Agency (DLA), GSA is exploring a way to make the Vendor Shipment Module (VSM) available to vendors who wish to automatically create and print a compliant commercial bill of lading, military shipping labels, packing slips address labels and small parcel carrier labels. The VSM system is a web based, front-end application interfaced to the Defense Security Service (DSS) mainframe. It is also capable of full Electronic Data Interface (EDI) integration at the vendor location. Although the EDI version is more complex and may require more programming in order to integrate it into production systems, the payoff includes higher volume shipping capacity and eliminates human intervention in the process.</p>
+    	                <p>DLA has posted an informative video that explains the benefits of VSM and how to implement the VSM within your organization. For a "hands-on" experience while watching the video, you are encouraged to attain a DLA VSM account in order to log into DLA VSM. More information regarding the availability of GSA’s rollout of VSM will be forthcoming.</p>
+    	              </div>
+    	              <div class="article" id="fssi">
+    	                <h5 id="special-programs" class="font-weight-bold">OCONUS Bound Freight – DLA Consolidation and Containerization Points (CCP) Criteria</h5>
+    	                <p>
+    	                  OCONUS bound freight that is destined for a DoD customer or is being processed via the DLA transportation network may pass through a DLA Consolidation and Containerization Point (CCP). Certain products and shipments, however, are not eligible to go to the DLA CCP. See the CCP’s eligibility criteria (5-2010) for more information, particularly regarding marking and labeling requirements. Also see the CCP Eligibility Criteria Document (6-2008) which covers a much broader range of topics such as commodity codes, HazMat Codes, classified material. etc.
+    	                </p>
+    	                <p>GSA has developed an agreement with DLA to process GSA shipments outside of the CCP eligible shipments through their facilities. Therefore, all GSA shipments for export through the DLA transportation network, will be processed through DLA CCPs for preparation to next nodes of transportation (Ocean Terminals, Aerial Ports, and Intermodal Hubs). The Military Surface Deployment and Distribution Command Customer / Carrier Advisory (January 15, 2015) CA-15-01/15-0006 provides the latest guidance on shipping through DLA CCPs. In addition, the GSA Freight Routing Guide covers much of the same information from the GSA perspective.</p>
+    	              </div>
+    	              <div class="article" id="tnv">
+    	                <h5 id="special-programs" class="font-weight-bold">Financial and Air Clearance Transportation System (FACTS) Criteria</h5>
+    	                <p>
+    	                  All DoD cargo that is offered for air movement through the GSA streamlined high priority process, must be submitted through the FACTS for air clearance. The following links provide additional guidance on FACTS compliance requirements:
+    	                </p>
+    	                <ul>
+    	                	<li>FACTS Instructions</li>
+    	                	<li>FACTS Order Form</li>
+    	                	<li>FACTS Sample</li>
+    	                </ul>
+    	              </div>
+    	              <div class="article" id="oasis">
+    	                <h5 id="special-programs" class="font-weight-bold">Vendor Non-Compliance</h5>
+    	                <p>
+    	                  All GSA vendors must adhere to General Services Administration Acquisition Manual (GSAM) clause 552.211-73, Marking, which stipulates all deliveries to military activities, including shipments and parcel deliveries that go via the DLA or any DTS Consolidation or forwarding nodes , must be compliant with MIL-STD-129R regulations. Vendor non-compliance with MIL-STD-129R may result in frustrated freight that cannot move to the next transportation node. If GSA is required to resolve frustrated freight or resolve any other discrepancy created by a vendor and/or if GSA incurs any costs or fees because of vendor freight problems, then the vendor may be assessed financial penalties and/or other contractual remedies may be levied.
+    	                </p>
+    	              </div>
+    	            </div>
+    	          </div>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="special-programs" class="font-weight-bold gsa-light-blue section-title">Civilian Agency Order Shipping Requirements 
+    	            </h4>
+    	            <p>
+    	              All GSA vendors must follow General Services Administration Acquisition Manual (GSAM) clause 552.211-73 stipulates that all deliveries going directly to Civilian Agencies (and do not use the DLA transportation network) must be marked, labeled, and packaged in accordance with Federal Standard 123-H (FED-STD-123H). 
+    	            </p>
+    	            <p><span class="font-weight-bold">Unit and intermediate package labels:</span> Must include the data elements listed in FED-STD-123-H.
+    	            </p>
+    	            <p><span class="font-weight-bold">Transport packages labels:</span> Must include the data elements listed in FED-STD-123-H.
+    	            </p>
+    	          
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">FED-STD-123-H Marking Requirements</h5>
+    	                <p>
+    	                  In accordance with FED-STD-123-H, marking shall be clear, legible, permanent, and in English. All required markings must be located on at least one side of the package, preferably the end panel. Required marking shall be oriented in a palletized load so that it is visible to the handler. Transport packages and unit loads shall not be marked on the top or bottom of the carton. Labels and tags must be securely attached to the item or package.
+    	                </p>
+    	                <p>Material regulated by Federal laws or regulations shall be marked in accordance with those requirements.</p>
+    	                <p>All individual transport packages (including those in unit loads) shall be marked with characters at least 9mm (3/8 inch) high. If space does not permit this, smaller characters may be used. Bar code information must be readable by scanning devices through stretch wrap like material.</p>
+    	                <p>Each palletized or unitized load must have two labels affixed to adjacent sides of the load.</p>
+    	                <p>Transport packages containing one NSN and are consolidated into Unit Loads moving in a full truckload or carload shipments do not require the consignor and consignee information on the transport packages or all unit loads. The shipping label with the consignor and consignee information shall be located on the two unit loads closest to the door of the truck or carload shipment.</p>
+    	                <h5 id="special-programs" class="font-weight-bold">FED-STD-123-H Special Marking</h5>
+    	                <p>Special marking may be required by the contract or purchase order. This may include the following data: requisition number (REQN), priority code (PRI), project code (PRO J), required delivery date (RDD), and transportation control number (TCN).</p>
+    	              </div>
+    	            </div>
+    	          </div>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="special-programs" class="font-weight-bold gsa-light-blue section-title">HAZMAT materials requirements for Marking, Labeling, and Shipping  
+    	            </h4>
+    	            <p>
+    	              Preservation, packaging, packing, marking and labeling of domestic and overseas HAZMAT surface shipments shall comply with all of the requirements in: 
+    	            </p>
+    	            <uL>
+    	            	<li>International Maritime Dangerous Goods (IMDG) code</li>
+    	            	<li>GSA Hazardous Requirements</li>
+    	            	<li>U.S. DoT Hazardous Material Regulations (HMR) 49 CFR: Parts 171 through 180</li>
+    	            	<li>Occupational Safety and Health Administration (OSHA) Regulation 29 CFR Part 1910.1200</li>
+    	            </uL>
+    	            <p>Any preservation, packaging, packing, and marking and labeling requirements contained elsewhere in the solicitation</p>
+
+    	            
+    	          
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">If your contract contains the clause:</h5>
+    	                <p>
+    	                  D-FSS-440 - Test reports showing compliance with packing requirements shall be made available to GSA contract administration/management upon request.
+    	                </p>
+    	                <p>D-FSS-471 - All items ordered must be marked with indelible, ink, paint or fluid, and should include the following information:</p>
+    	                <ul>
+    	                	<li>Traffic Management or Transportation Officer at FINAL destination.</li>
+    	                	<li>Ordering Supply Account Number.</li>
+    	                	<li>Account number.</li>
+    	                	<li>Delivery Order or Purchase Order Number.</li>
+    	                	<li>National Stock Number, if applicable; or Contractor's item number.</li>
+    	                	<li>Box ________ of ________ Boxes.</li>
+    	                	<li>Nomenclature (brief description of items).</li>
+    	                </ul>
+    	                <p>D-FSS-477 - Separate Charge for Performance Oriented Packaging (POP) - Quotes for a separate charge for providing preservation, packaging, packing, marking, and labeling of domestic and overseas hazmat surface shipments in compliance with all requirements are requested. Additionally:</p>
+    	                <ul>
+    	                	<li>
+    	                	2 copies of the DD Form 1387 must be attached to each shipping container delivered to the port transportation officer for subsequent transshipment by the government as otherwise provided for under the terms of this contract. These forms should be attached to one end and one side (not the top or bottom) of the container.</li>
+    	                	<li>
+    	                	If the cargo consists of chemicals, or is dangerous, one copy of the DD Form 1387 must be attached to the container, and 3 copies must be furnished to the transportation officer with the bill of lading.</li>
+    	                	<li>
+    	                		Dangerous cargo must not be intermingled with non-dangerous cargo in the same container.
+    	                	</li>
+    	                </ul>
+    	                
+    	              </div>
+    	            </div>
+    	          </div>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="special-programs" class="font-weight-bold gsa-light-blue section-title">Vendor Electronic Data Interchange (EDI) Shipping Instructions
+    	            </h4>
+    	            <p>
+    	              GSA is transitioning to Electronic Data Interchange (EDI) as the preferred method of sending orders to vendors as part of the vendor direct delivery program, which supports the Federal Acquisition Service’s performance goals of operating efficiently and effectively. EDI is the electronic interchange of business information using a standardized format. EDI transaction sets are utilized by GSA Global Supply to identify, process, and track all vendor direct orders. Vendor direct orders are orders that customers place through GSA and are processed and shipped directly by the vendor. The types of vendor direct orders that can be processed via EDI are:
+    	            </p>
+    	            <uL>
+    	            	<li>Call center orders</li>
+    	            	<li>Internet (GSA Global Supply online store or GSA Advantage!)</li>
+    	            	<li>Fax</li>
+    	            	<li>E-Mail</li>
+    	            	<li>FEDSTRIP (as part number requisition)</li>
+    	            </uL>
+    	            
+
+    	            
+    	          
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">Types of EDI Transactions</h5>
+    	                <p>
+    	                  The most common types of EDI transactions are:
+    	                </p>
+    	                
+    	                <ul>
+    	                	<li>The 850 Purchase Order Transaction Set - Created for each order transmitted to the vendor. 850 transaction sets are transmitted every hour, seven days a week, providing the data for the vendor to properly identify and ship the product(s) to the customer.
+    	                	</li>
+    	                	<li>The 856 Ship Notice/ Manifest Transaction Set – Used to list the contents of a shipment of goods as well as additional information relating to the shipment. This information includes: order information, product description, physical characteristics, type of packaging, marking, carrier information, and configuration of goods within the transportation equipment. The vendor is required to send this transaction within 24 hours after an order has been shipped to a customer.
+    	                	</li>
+    	                	<li>The 997 Functional Acknowledgement Transaction Set - The vendor’s acknowledgement of the receipt of an 850 transaction set. It needs to be sent within 24 hours of receiving the 850 transaction set.
+    	                	</li>
+    	                </ul>
+    	                <p>Learn more about EDI, electronic communications through GSA’s EDI gateway, vendor on-boarding to EDI, government to business transactions using EDI, Business to government transactions via EDI, and EDI testing. </p>
+    	                
+    	                
+    	              </div>
+    	            </div>
+    	          </div>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="special-programs" class="font-weight-bold gsa-light-blue section-title">Delivery/Shipping FAQs
+    	            </h4>
+    	            <p>
+    	              <button type="button" class="btn btn-primary" (click)="staticModal.show()">View all Delivery/Shipping FAQs</button>
+    	            </p>
+    	            <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+					     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+					  <div class="modal-dialog modal-xl">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h4 id="dialog-static-name" class="modal-title pull-left">Delivery/Shipping FAQs </h4>
+					        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        <accordion [closeOthers]="oneAtATime">
+							  <accordion-group heading="What happens when shipments are not marked, labeled, or packaged in accordance with the required regulations?">
+							    <p>What happens when shipments are not marked, labeled, or packaged in accordance with the required regulations?</p>
+							    <p>If shipments are not marked, labeled, or packaged properly, there is the possibility that it will be impeded or stopped in transit, creating frustrated freight, or it will not meet the customer’s requirements, reducing customer satisfaction and the chance of repeat business. Frustrated freight is particularly important as it directly costs GSA money to resolve the problems, can result in duplicative orders, and impedes agencies’ missions if they are not able to receive the necessary supplies.</p>
+							  </accordion-group>
+							  <accordion-group heading="What is frustrated freight and how can I prevent it?">
+							    <p>Content 1</p>
+							  </accordion-group>
+							  <accordion-group heading="What two pieces of information, when missing, routinely cause frustrated freight?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Are there consequences if my shipments become frustrated?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Where can I find easy to follow instructions and examples of compliant shipping labels?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Where can I find more information about how to select the correct packaging?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What is a TCN and where do I find it?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What do I put for the NSN if my commercial off-the-shelf (COTS) product does not have an NSN assigned and my shipment is subject to FED-STD-123H?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What is a DoDAAC?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="How can I obtain a customer's DoDAAC?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What should I do if I have any questions about compliance with MIL-STD-129R pricing?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Are there commercially available software packages that can create compliant labels?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Is there a guide for converting box dimensions?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="How do I know if my package will be transported through DLA’s transportation network?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What is a Military Shipping Label (MSL) 2D bar code?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Where are the DLA Consolidation and Containerization (CCPs) located and who are the POCs?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What are the 5 most common marking and labeling errors for OCONUS shipments?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Where can I find more information about DoD Palletized Unit Load standards, MIL-STD-147?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What does an acronym in this document mean?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What is the correct procedure for sending Purchase Orders to Navy ships?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What address should be used for APO / FPO shipments?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="What are the requirements for Foreign Military Sales (FMS) shipments?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							  <accordion-group heading="Can I commingle orders or combine orders for multiple customers into one shipping container and just assign one TCN?">
+							    <p>Content 2</p>
+							  </accordion-group>
+							</accordion>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+    	            
+    	          </div>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="special-programs" class="font-weight-bold gsa-light-blue section-title">Additional Resources
+    	            </h4>
+    	            
+    	            
+
+    	            
+    	          
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">Foundational Information - Introductory Level Explanations, Definitions, and Examples</h5>
+    	                
+    	                
+    	                <ul>
+    	                	<li>
+    	                		Marking Compliance Overview: A presentation that provides easy-to-understand explanations of the terms, regulations, and key components that must be addressed when preparing compliant labels and packages for shipments.
+    	                	</li>
+    	                	<li>
+    	                		Packaging, Packing, and Marking—Oh My!: A presentation that explains what is expected at each phase of the supply chain, definitions of commonly used terms, and how to prevent frustrated freight by creating compliant labels and adhering to the correct packaging and packing guidelines.
+    	                	</li>
+    	                	<li>
+    	                		Shipping Products: A presentation that explains the importance of marking, the impact frustrated freight can have on various stakeholders, and the level of effort required by all parties to resolve frustrated shipments and keep products moving.
+    	                	</li>
+    	                </ul>
+
+    	                <h5 id="special-programs" class="font-weight-bold">Standards- Links to key Federal Marking Standards</h5>
+    	                
+    	                
+    	                <ul>
+    	                	<li>
+    	                		Fed-STD-123H: Federal Standard: Marking for Shipment (Civil Agencies)
+    	                	</li>
+    	                	<li>
+    	                		MIL-STD-129R: Department of Defense Standard Practice: Military Marking for Shipment and Storage
+    	                	</li>
+    	                	
+    	                </ul>
+
+    	                <h5 id="special-programs" class="font-weight-bold">Conversion Calculation Tools</h5>
+    	                
+    	                
+    	                <ul>
+    	                	<li>
+    	                		Converting Box Dimensions: A chart for converting the weight and cube of shipments.
+    	                	</li>
+    	                	<li>
+    	                		Converting Metrics Measurements: Department of Defense Standard Practice: Military Marking for Shipment and Storage
+    	                	</li>
+    	                	
+    	                </ul>
+    	                
+    	                
+    	                
+    	              </div>
+    	            </div>
+    	          </div>
+    	        </div>
+
+
+
+            </div>
+            <div class="col-xl-4 col-lg-12 pt-5 pl-5">
+              <div class="sticky-top">
+                <h5 class="font-weight-bold gsa-medium-blue">Resources</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item px-0"><span class="fal fa-file-pdf"></span> &nbsp; <a href="#">Documant Name</a></li>
+                  <li class="list-group-item px-0"><span class="fal fa-file-word"></span> &nbsp; <a href="#">Documant Name</a></li>
+                  <li class="list-group-item px-0"><span class="fal fa-file-powerpoint"></span> &nbsp; <a href="#">Documant Name</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+  	    </div>
+    </div>
+    <div class="row content-row border-bottom pb-3"  id="supply-chain">
+      <div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Most Favored Customer / Basis of Award</h3>
+  	       </div>
+        </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+            	
+          		<p>All MAS contractors report their sales into the FAS SRP. Those contractors under TDR do not have to maintain the Basis of Award relationship on their contract. All other traditional MAS contractors (not under TDR) have to maintain the Basis of Award relationship.  Check to see which version of clause 552.238-75 is included in your contract to better understand what’s required.</p>
+          		<p>If you have clause 552.238-75 (as opposed to 552.238 Alternate 1), you must maintain the relationship between your GSA pricing and basis of award (BOA) customer pricing. </p>
+          		<p>If you have any questions about Basis of Award, please contact your PCO. </p>	            
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row pb-3 border-bottom"  id="contract-types">
+      	<div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Contractor Assessment </h3>
+	          
+  	       </div>
+        </div>
+
+  	    <div class="col-lg-9">
+          <div class="row">
+            <div class="col-lg">
+    	        <div class="article-container">        
+    	          <p>As a MAS contract holder, an IOA may contact you to complete a Contractor Assessment, which is a review of your records to verify contractual compliance. The frequency of assessments depends on several factors, including sales volume. Your IOA will contact you to schedule an assessment when necessary.
+    	          </p>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">Purpose of an Assessment</h5>
+    	                <p>
+    	                  The purpose of the assessment is to help you succeed as a contractor. During the assessment, the IOA will verify that you are in compliance with some of the critical clauses of your contract as well as ensure you have an understanding of your responsibilities and opportunities. The IOA can be a valuable educational resource, helping answer any questions you have about your contract and can direct you to appropriate resources.
+    	                </p>
+    	                
+    	              </div>
+    	              <div class="article" id="global-supply">
+    	                <h5 id="special-programs" class="font-weight-bold">Guidance</h5>
+    	                <p>
+    	                  The MAS Program Management Office created the Contractor Assessment Reference Guide to help you learn more about and participate in this process. The guide includes important information like the differences between an Office of Inspector General (OIG) audit and a MAS Contractor Assessment, how to prepare for your assessment, and what to expect. 
+    	                </p>
+    	                
+    	              </div>
+    	              <div class="article" id="fssi">
+    	                <h5 id="special-programs" class="font-weight-bold">Contractor Assessment Report (CAR)</h5>
+    	                <p>
+    	                  After the Contractor Assessment is complete,  the IOA documents their analysis and findings in the CAR. Once finalized, the CAR  is made available simultaneously to the contractor and the MAS Contracting Officer. The CAR provides valuable feedback regarding your firm's ability to satisfy important terms and conditions of your MAS contract. 
+    	                </p>
+    	                
+    	                <p>See a sample CAR here.</p>
+    	              </div>
+    	              <div class="article" id="tnv">
+    	                <h5 id="special-programs" class="font-weight-bold">Helpful Links</h5>
+    	               
+    	                <ul>
+    	                	<li>MAS Contractor Assessment Reference Guide (External Link)</li>
+    	                	<li>Who is my Administrative Contracting Officer (ACO)? (New Feature)</li>
+    	                	<li>Who is my Industrial Operations Analyst (IOA)? (New Feature)</li>
+    	                </ul>
+    	              </div>
+    	             
+    	            </div>
+    	          </div>
+    	        </div>
+    	       
+
+
+
+            </div>
+            <div class="col-xl-4 col-lg-12 pt-5 pl-5">
+              <div class="sticky-top">
+                <h5 class="font-weight-bold gsa-medium-blue">Resources</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item px-0"><span class="fal fa-file-pdf"></span> &nbsp; <a href="#">Documant Name</a></li>
+                  <li class="list-group-item px-0"><span class="fal fa-file-word"></span> &nbsp; <a href="#">Documant Name</a></li>
+                  <li class="list-group-item px-0"><span class="fal fa-file-powerpoint"></span> &nbsp; <a href="#">Documant Name</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+  	    </div>
+    </div>
+
+
+
+
+
+    <div class="row content-row pb-3"  id="federal-procurement">
+      <div class="col-sm-12 col-lg-3 border-right">
+        <div class="header-container sticky-top">  
+          
+          <h3 class="gsa-medium-blue" id="procurement"> Next Topic</h3>
+        </div>
+      </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <h4 _ngcontent-qrb-c25="" id="special-programs" class="font-weight-bold gsa-light-blue section-title pt-0 pb-4">Where to Begin</h4>
+          <button class="btn btn-outline-primary pill" routerLink="/app-where-to-begin">Proceed to next topic <span class="fa fa-chevron-right"></span></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+	 
+</section>
+
+
+
+
+<!-- SUCCESS FACTORS -->
+<section class="section bg-gsa-light-grey d-none   ">
+    <div class="container-fluid view-control py-5">
+        <div class="row">
+          <div class="col-sm-5 col-md-3 pt-3">
+            <h2 class="text-left font-weight-bold">GSA Contracting Success Factors<br><small></small></h2>
+          </div>
+          <div class="col-sm-7 col-md py-5">
+            <ul class="list-unstyled">
+          <li>
+            <div class="fal fa-trophy d-inline-block" style="margin-left: -7px;"></div> &nbsp;<strong>Research shows that the following factors will increase your probability of success as a GSA MAS contractor:</strong>
+            <ul class="mb-5">
+              <li>2 years of experience in federal contracting either as a prime or subcontractor;</li>
+              <li>Contacts and relationships within the federal contracting community;</li>
+              <li>Working with a mentor who is a successful GSA MAS contractor;</li>
+              <li>Attending GSA seminars and workshops on contracting; and</li>
+              <li>Investing between $80K-$130K to find and manage your initial government contract.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="fal fa-trophy d-inline-block" style="margin-left: -7px;"></div>  &nbsp;<strong>GSA MAS in Figures:</strong>
+            <ul class="mb-5">
+              <li>More than $30B flows through MAS each year</li>
+              <li>Includes over 17,000 contracts with industry suppliers (FY18)</li>
+              <li>Over 38% of FY18 sales went to small businesses</li>
+              <li>Over 80% of GSA MAS contracts consistently go to small businesses (FY15-FY18)</li>
+            </ul>
+          </li>
+          <li>
+            <div class="fal fa-trophy d-inline-block" style="margin-left: -7px;"></div>  &nbsp;<strong>The Challenges:</strong>
+          <ul class="mb-5">
+              <li>Competing for and winning Government contracts is costly in both time and resources;</li>
+              <li>Not all Government agencies use GSA MAS contracts for their procurement; and</li>
+              <li>Allocating time, money, other resources and a willingness to stay the course is needed to be successful.</li>
+            </ul>
+          </li>
+        </ul>
+          </div>
+
+        </div>
+
+
+ 
+    </div>
+</section>

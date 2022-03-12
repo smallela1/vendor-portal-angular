@@ -1,0 +1,345 @@
+<!--  SEARCH BAR --> 
+<app-search-bar></app-search-bar>
+
+
+<!-- SEARCH HEADER TOOLBOX -->
+<section class="bg-gsa-medium-blue toolbox2-img" >
+  <div class="container-fluid px-5 pb-5 pt-3">
+    <!--
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent px-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Get a Contract</li>
+          <li class="breadcrumb-item active" aria-current="page">Understanding Contracts</li>
+        </ol>
+      </nav>
+	   -->
+    <div class="row">
+
+
+      <div class="col-lg-12 col-xl-3 ">
+        <div class="mb-3 pt-3 ">  
+          
+          <h2 class="white">
+            <small class=" font-weight-light  gsa-xlight-blue"><div class="fal fa-file-signature"></div> Get a Contract</small>
+            <br />
+            <span class="font-weight-bold">Understanding GSA Contracts</span>
+          </h2>
+          <!--<p class="gsa-xlight-blue mb-4"><span class="font-weight-bold">9</span> Topics</p>-->
+          <div class="">
+	          <h5 class="gsa-xlight-blue">Related Topics:</h5>
+            <ul class="list-unstyled">
+  	          <li><a class="white" routerLink="/app-where-to-begin">Where to Begin</a></li>
+              <li><a class="white" routerLink="/app-education">Education</a></li>
+            </ul>
+	       </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-12 col-xl-9 h-100">
+
+        
+        <div class="row justify-content-lg-center pt-3">
+          <div class="col pt-xl-5 pl-xl-5 ">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum porta eros. Ut et ultricies erat, eget cursus arcu. Proin vel lacus ligula. Fusce ut velit imperdiet, sagittis nulla et, interdum ligula. Integer finibus sapien sit amet est commodo venenatis. Sed rhoncus, nisi et suscipit bibendum, erat ante pretium lectus, ut mollis lorem lacus sed magna. 
+              </p>
+            </div>
+            <div class="col-sm-12 col-lg-4 pt-3  pl-4 pt-5 border-left ">
+              <div class="mb-3 h-100">  
+                <h4 class="gsa-xlight-blue"><div class="fal fa-list" style="width: 2.4rem;"></div> Topics Covered</h4>
+                <ul class="list-unstyled ml-5">
+                  <li><a href="/app-understanding-contracts#procurement" class="white">About Federal Procurement</a></li>
+                  <li><a href="/app-understanding-contracts#contract-types" class="white">Types of Contracts</a></li> 
+                </ul>
+              </div>
+            </div>
+
+
+
+            <!--
+            <div class="col-sm-12 col-lg pt-3 pl-4 border-right">
+              <div class="mb-3 h-100">  
+                <h4 class="white"><span class="fal fa-link" style="width: 2.4rem;"></span> Additional Links</h4>
+                <ul class="list-unstyled ml-5">
+                  <li>
+                    <a href="https://www.gsa.gov/buying-selling/purchasing-programs" target="_blankhttps" target="_blankhttps" class="white">Purchasing Programs
+                    </a> 
+                  
+                  </li>
+                  <li>
+                    <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                    GSA Schedules
+                    </a> 
+                  </li>
+                  <li>
+                    <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                    GSA Schedules
+                    </a> 
+                  </li>
+                  <div id="linkList" [collapse]="isCollapsed" [isAnimated]="true">
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="https://www.gsa.gov/buying-selling/purchasing-programs/gsa-schedules" class="white">
+                      GSA Schedules
+                      </a> 
+                    </li>
+                  </div>
+                  
+                  <button type="button" class="btn btn-outline-light pill btn-sm mt-4" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="linkList">
+                    	View All
+  				        </button>
+                </ul>
+
+                
+               
+
+
+
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg pt-3  pl-4">
+              <div class="mb-3 h-100">  
+                <h4 class="white"><div class="fal fa-file" style="width: 2.4rem;"></div> Related Documents</h4>
+                <ul class="list-unstyled ml-5">
+                  <li>No Documents</li>
+                </ul>
+              </div>
+            </div>
+            -->
+        </div> 
+
+
+
+      </div>
+    </div> 
+  </div>  
+</section>
+
+<section class="" style="min-height: 400px;">
+
+  
+  <div class="container-fluid px-5 py-4">
+    <div class="row content-row border-bottom pb-3"  id="federal-procurement">
+      <div class="col-sm-12 col-lg-3 border-right">
+        <div class="header-container sticky-top">  
+          
+          <h3 class="gsa-medium-blue" id="procurement"> About Federal Procurement</h3>
+        </div>
+      </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <div class="row">
+            <div class="col-lg">
+              <p>Purchases made by the Federal Government must comply with Federal Acquisition Regulations (FAR), which governs all Federal acquisitions. There are a variety of different ways that agencies can comply with these regulations and a variety of contract types to match. Agencies are bound by certain regulations based on several factors--the type of item being purchased ("item" refers to both supplies and services), the dollar value of the purchase, the expected duration of the purchase, the types and sizes of contractors expected to compete, etc. Based on the agency's expectations, they may choose to use a certain type of contract that best matches their needs. Thus, a successful contractor must have a basic understanding of the FAR and its critical elements as well as the types of contracts most often used by agencies. Basic FAR and contracting courses are widely available and may be worthwhile. An internet search should provide volumes of information on such basics.</p>
+            </div>
+            <div class="col-xl-4 col-lg-12">
+              
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content-row pb-3 border-bottom"  id="contract-types">
+      	<div class="col-sm-12 col-lg-3 border-right">
+	        <div class="header-container sticky-top">  
+	          <h3 class="gsa-medium-blue" id="contract-types"> Types of Contracts </h3>
+	          <h6 class="mt-4 text-muted text-uppercase">Additional Topics</h6>
+	          <ul class="list-group list-group-flush">
+	            <li class="list-group-item"><a href="/app-understanding-contracts#mas" class="font-weight-bold">Multiple Award Schedule</a></li>
+	            <li class="list-group-item">
+	               <a href="/app-understanding-contracts#special-programs"  class="font-weight-bold">Special Types of Contracting and Other GSA Programs</a>
+	               <ul style="padding-left: 20px; margin-top: 20px;">
+	                 <li><a href="/app-understanding-contracts#gwac">Government-Wide Acquisition Contract (GWAC)</a></li>
+	                 <li><a href="/app-understanding-contracts#global-supply">GSA Global Supply</a></li>
+	                 <li><a href="/app-understanding-contracts#fssi">Federal Strategic Sourcing Initiative (FSSI) BPAs</a></li>
+	                 <li><a href="/app-understanding-contracts#tnv">Transportation & Vehicles</a></li>
+	                 <li><a href="/app-understanding-contracts#oasis">OASIS and OASIS SB</a></li>
+	               </ul>
+                </li>
+  	          </ul>
+  	       </div>
+        </div>
+
+  	    <div class="col-lg-9">
+          <div class="row">
+            <div class="col-lg">
+    	        <div class="article-container">        
+    	          <p>There are many types of contracts used by Government agencies. FAR parts 12 (Acquisition of Commercial Items), 13 (Simplified Acquisition Procedures), 14 (Sealed Bidding), 15 (Contracting by Negotiation), and 16 (Types of Contracts) all contain critical information related to the commonly used contract types.</p>
+    	          <p>GSA has developed a series of contract vehicles for use by government agencies based on the types of contracts authorized by the FAR. These purchasing programs are listed here. Contractors wishing to obtain a contract should review these contract vehicles, their purposes, limitations, and application requirements to determine what the best match is for your organization. Viewing this link will provide more information on getting started with GSA contracts.</p>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="mas" class="font-weight-bold gsa-light-blue section-title">Multiple Award Schedule </h4>
+    	            <p>Schedules, also known as Federal Supply Schedules, and Multiple Award Schedules (MAS), are long-term governmentwide contracts with commercial companies that provide access to millions of commercial products and services at fair and reasonable prices to the government. Schedules make buying easy and efficient with the use of modern technology to connect government buyers and industry.</p>
+    	            <p>Schedule policy and procedures are guided by two major governing regulatory documents:</p>
+    	            <ul>
+    	              <li>
+    	                Federal Acquisition Regulation (FAR) – Pursuant to 41 U.S.C. 152(3), FAR Part 38 prescribes policies and procedures that GSA must follow in managing the Schedules program. FAR Subpart 8.4 prescribes ordering procedures for federal agencies when placing orders for supplies and services under Schedules.
+    	              </li>
+    	              <li>
+    	                General Services Administration Acquisition Manual (GSAM) – GSAM covers GSA acquisition policies and practices.
+    	              </li>
+    	            </ul>
+    	          </div>
+    	        </div>
+    	        <div class="article-container">
+    	          <div class="article-group">
+    	            <h4 id="special-programs" class="font-weight-bold gsa-light-blue section-title">Special Types of Contracting and Other GSA Programs</h4>
+    	            <p>
+    	              As the premier acquisition agency in the Federal Government, GSA offers many purchasing programs to agencies looking to maximize their procurement-related savings. As a potential contractor, you should familiarize yourself with the programs offered to ensure you provide the most appropriate contract vehicle based on the products and services you offer. Some programs may be more relevant or beneficial to your organization than others, so be sure to research the options. Keep in mind GSA occasionally offers new programs, so it's worth spending some time on the GSA.gov webpage, as well as follow our social media pages, to keep in touch with upcoming opportunities. Below are a few (but certainly not all) of the other purchasing programs your company may wish to consider. Links to all solicitations are posted on the beta.SAM.gov website.
+    	            </p>
+    	          
+    	            <div class="article-list">
+    	              <div class="article" id="gwac">
+    	                <h5 id="special-programs" class="font-weight-bold">Government-Wide Acquisition Contract (GWAC)</h5>
+    	                <p>
+    	                  As the premier acquisition agency in the Federal Government, GSA offers many purchasing programs to agencies looking to maximize their procurement-related savings. As a potential contractor, you should familiarize yourself with the programs offered to ensure you provide the most appropriate contract vehicle based on the products and services you offer. Some programs may be more relevant or beneficial to your organization than others, so be sure to research the options. Keep in mind GSA occasionally offers new programs, so it's worth spending some time on the GSA.gov webpage, as well as follow our social media pages, to keep in touch with upcoming opportunities. Below are a few (but certainly not all) of the other purchasing programs your company may wish to consider. Links to all solicitations are posted on the beta.SAM.gov website.
+    	                </p>
+    	              </div>
+    	              <div class="article" id="global-supply">
+    	                <h5 id="special-programs" class="font-weight-bold">GSA Global Supply</h5>
+    	                <p>
+    	                  As the premier acquisition agency in the Federal Government, GSA offers many purchasing programs to agencies looking to maximize their procurement-related savings. As a potential contractor, you should familiarize yourself with the programs offered to ensure you provide the most appropriate contract vehicle based on the products and services you offer. Some programs may be more relevant or beneficial to your organization than others, so be sure to research the options. Keep in mind GSA occasionally offers new programs, so it's worth spending some time on the GSA.gov webpage, as well as follow our social media pages, to keep in touch with upcoming opportunities. Below are a few (but certainly not all) of the other purchasing programs your company may wish to consider. Links to all solicitations are posted on the beta.SAM.gov website.
+    	                </p>
+    	              </div>
+    	              <div class="article" id="fssi">
+    	                <h5 id="special-programs" class="font-weight-bold">Federal Strategic Sourcing Initiative (FSSI) BPAs</h5>
+    	                <p>
+    	                  As the premier acquisition agency in the Federal Government, GSA offers many purchasing programs to agencies looking to maximize their procurement-related savings. As a potential contractor, you should familiarize yourself with the programs offered to ensure you provide the most appropriate contract vehicle based on the products and services you offer. Some programs may be more relevant or beneficial to your organization than others, so be sure to research the options. Keep in mind GSA occasionally offers new programs, so it's worth spending some time on the GSA.gov webpage, as well as follow our social media pages, to keep in touch with upcoming opportunities. Below are a few (but certainly not all) of the other purchasing programs your company may wish to consider. Links to all solicitations are posted on the beta.SAM.gov website.
+    	                </p>
+    	              </div>
+    	              <div class="article" id="tnv">
+    	                <h5 id="special-programs" class="font-weight-bold">Transportation & Vehicles</h5>
+    	                <p>
+    	                  As the premier acquisition agency in the Federal Government, GSA offers many purchasing programs to agencies looking to maximize their procurement-related savings. As a potential contractor, you should familiarize yourself with the programs offered to ensure you provide the most appropriate contract vehicle based on the products and services you offer. Some programs may be more relevant or beneficial to your organization than others, so be sure to research the options. Keep in mind GSA occasionally offers new programs, so it's worth spending some time on the GSA.gov webpage, as well as follow our social media pages, to keep in touch with upcoming opportunities. Below are a few (but certainly not all) of the other purchasing programs your company may wish to consider. Links to all solicitations are posted on the beta.SAM.gov website.
+    	                </p>
+    	              </div>
+    	              <div class="article" id="oasis">
+    	                <h5 id="special-programs" class="font-weight-bold">OASIS and OASIS SB</h5>
+    	                <p>
+    	                  As the premier acquisition agency in the Federal Government, GSA offers many purchasing programs to agencies looking to maximize their procurement-related savings. As a potential contractor, you should familiarize yourself with the programs offered to ensure you provide the most appropriate contract vehicle based on the products and services you offer. Some programs may be more relevant or beneficial to your organization than others, so be sure to research the options. Keep in mind GSA occasionally offers new programs, so it's worth spending some time on the GSA.gov webpage, as well as follow our social media pages, to keep in touch with upcoming opportunities. Below are a few (but certainly not all) of the other purchasing programs your company may wish to consider. Links to all solicitations are posted on the beta.SAM.gov website.
+    	                </p>
+    	              </div>
+    	            </div>
+    	          </div>
+    	        </div>
+            </div>
+            <div class="col-xl-4 col-lg-12 pt-5 pl-5">
+              <div class="sticky-top">
+                <h5 class="font-weight-bold gsa-medium-blue">Resources</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item px-0"><span class="fal fa-file-pdf"></span> &nbsp; <a href="#">Documant Name</a></li>
+                  <li class="list-group-item px-0"><span class="fal fa-file-word"></span> &nbsp; <a href="#">Documant Name</a></li>
+                  <li class="list-group-item px-0"><span class="fal fa-file-powerpoint"></span> &nbsp; <a href="#">Documant Name</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+  	    </div>
+    </div>
+    <div class="row content-row pb-3"  id="federal-procurement">
+      <div class="col-sm-12 col-lg-3 border-right">
+        <div class="header-container sticky-top">  
+          
+          <h3 class="gsa-medium-blue" id="procurement"> Next Topic</h3>
+        </div>
+      </div>
+
+      <div class="col-lg-9 ">
+        <div class="article-container">
+          <h4 _ngcontent-qrb-c25="" id="special-programs" class="font-weight-bold gsa-light-blue section-title pt-0 pb-4">Where to Begin</h4>
+          <button class="btn btn-outline-primary pill" routerLink="/app-where-to-begin">Proceed to next topic <span class="fa fa-chevron-right"></span></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+	 
+</section>
+
+
+
+
+<!-- SUCCESS FACTORS -->
+<section class="section bg-gsa-light-grey d-none   ">
+    <div class="container-fluid view-control py-5">
+        <div class="row">
+          <div class="col-sm-5 col-md-3 pt-3">
+            <h2 class="text-left font-weight-bold">GSA Contracting Success Factors<br><small></small></h2>
+          </div>
+          <div class="col-sm-7 col-md py-5">
+            <ul class="list-unstyled">
+          <li>
+            <div class="fal fa-trophy d-inline-block" style="margin-left: -7px;"></div> &nbsp;<strong>Research shows that the following factors will increase your probability of success as a GSA MAS contractor:</strong>
+            <ul class="mb-5">
+              <li>2 years of experience in federal contracting either as a prime or subcontractor;</li>
+              <li>Contacts and relationships within the federal contracting community;</li>
+              <li>Working with a mentor who is a successful GSA MAS contractor;</li>
+              <li>Attending GSA seminars and workshops on contracting; and</li>
+              <li>Investing between $80K-$130K to find and manage your initial government contract.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="fal fa-trophy d-inline-block" style="margin-left: -7px;"></div>  &nbsp;<strong>GSA MAS in Figures:</strong>
+            <ul class="mb-5">
+              <li>More than $30B flows through MAS each year</li>
+              <li>Includes over 17,000 contracts with industry suppliers (FY18)</li>
+              <li>Over 38% of FY18 sales went to small businesses</li>
+              <li>Over 80% of GSA MAS contracts consistently go to small businesses (FY15-FY18)</li>
+            </ul>
+          </li>
+          <li>
+            <div class="fal fa-trophy d-inline-block" style="margin-left: -7px;"></div>  &nbsp;<strong>The Challenges:</strong>
+          <ul class="mb-5">
+              <li>Competing for and winning Government contracts is costly in both time and resources;</li>
+              <li>Not all Government agencies use GSA MAS contracts for their procurement; and</li>
+              <li>Allocating time, money, other resources and a willingness to stay the course is needed to be successful.</li>
+            </ul>
+          </li>
+        </ul>
+          </div>
+
+        </div>
+
+
+ 
+    </div>
+</section>

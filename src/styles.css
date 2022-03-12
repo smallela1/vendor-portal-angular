@@ -1,0 +1,14 @@
+
+@import "assets/theme/bs4/bootstrap.css" screen;
+
+@import "assets/fonts/sourcesanspro/sourcesanspro.css";
+@import "assets/fonts/fontawesome/css/all.css";
+
+@import "assets/theme/utilities.css" screen;
+@import "assets/theme/gsa.css" screen;
+
+@import "assets/theme/palette.css" screen;
+@import "assets/theme/buttons.css" screen;
+@import "assets/theme/accordions.css" screen;
+
+@import '~swiper/swiper-bundle.css';

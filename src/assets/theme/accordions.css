@@ -1,0 +1,34 @@
+.card-header {
+    padding: 0 .5rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-header .btn:hover {
+    /* transform: translateY(-3px); */
+    box-shadow: none;
+    z-index: 1;
+}
+.card-header .btn-link {
+    box-shadow: none;
+    color: #058;
+}
+.panel-open .card-header {
+    padding: 0 .5rem;
+    margin-bottom: 0;
+    background-color: #058;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.panel-open .card-header .btn-link {
+    box-shadow: none;
+    color: #fff;
+}
+.panel-open .card-body {
+    background-color: aliceblue;
+}
+
+button:focus:not(:focus-visible) {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}

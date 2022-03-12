@@ -1,0 +1,41 @@
+@font-face {
+	font-family:'SSP';	
+	src: url('SourceSansPro-Regular.ttf') format('truetype');
+	unicode-range: U+0020-25CA;	
+}
+@font-face {
+	font-family:'SSP-Black';	
+	src: url('SourceSansPro-Black.ttf') format('truetype');
+	unicode-range: U+0020-25CA;
+}
+@font-face {
+	font-family:'SSP-Bold';	
+	src: url('SourceSansPro-Bold.ttf') format('truetype');
+	unicode-range: U+0020-25CA;
+}
+@font-face {
+	font-family:'SSP-SemiBold';	
+	src: url('SourceSansPro-SemiBold.ttf') format('truetype');
+	unicode-range: U+0020-25CA;
+}
+@font-face {
+	font-family:'SSP-Light';	
+	src: url('SourceSansPro-Light.ttf') format('truetype');
+	unicode-range: U+0020-25CA;	
+}
+/*
+@font-face {
+	font-family:'SSP';	
+	src: 
+		url('SourceSansPro-Regular.ttf') format('truetype'),
+		url('SourceSansPro-Black.ttf') format('truetype'),
+		url('SourceSansPro-Bold.ttf') format('truetype'),
+		url('SourceSansPro-ExtraLight.ttf') format('truetype'),
+		url('SourceSansPro-Light.ttf') format('truetype'),
+		url('SourceSansPro-SemiBold.ttf') format('truetype');
+	
+	unicode-range: U+0020-25CA;
+	
+}
+*/
+
