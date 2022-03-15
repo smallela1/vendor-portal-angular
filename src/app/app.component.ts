@@ -8,11 +8,9 @@ import { setTheme } from 'ngx-bootstrap/utils';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'eoffer-ui';
-  isCollapsed = false; 
-    constructor() {
+
+  constructor() {
     setTheme('bs4');
   }
 
 }
-
