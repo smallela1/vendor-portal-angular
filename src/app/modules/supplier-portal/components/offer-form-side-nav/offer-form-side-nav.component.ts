@@ -20,6 +20,7 @@ export class OfferFormSideNavComponent implements OnInit {
     { path: "exceptions", name: "Exceptions", complete: false },
     { path: "upload-documents", name: "Upload Documents", complete: false },
     { path: "submit-offer", name: "Submit Offer", complete: false },
+    { path: "sandbox-form", name: "Sandbox Form", complete: false },
   ]
 
   ngOnInit(): void {

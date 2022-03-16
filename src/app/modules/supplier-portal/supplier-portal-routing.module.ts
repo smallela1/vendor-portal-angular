@@ -18,6 +18,7 @@ import { SolicitationProvisionsComponent } from './views/offer-form/solicitation
 import { ExceptionsComponent } from './views/offer-form/exceptions/exceptions.component';
 import { UploadDocumentsComponent } from './views/offer-form/upload-documents/upload-documents.component';
 import { SubmitOfferComponent } from './views/offer-form/submit-offer/submit-offer.component';
+import { SandboxFormComponent } from './views/sandbox-form/sandbox-form.component';
 
 const routes: Routes = [
  //{ path: 'supplier-portal', redirectTo: '/supplier-portal/org-selection', pathMatch: 'full'},
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'exceptions', component: ExceptionsComponent },
       { path: 'upload-documents', component: UploadDocumentsComponent },
       { path: 'submit-offer', component: SubmitOfferComponent },
+      { path: 'sandbox-form', component: SandboxFormComponent },
     ]},
   ]}
 ];
@@ -61,5 +63,6 @@ export const routingComponents = [
   SolicitationProvisionsComponent,
   ExceptionsComponent,
   UploadDocumentsComponent,
-  SubmitOfferComponent
+  SubmitOfferComponent,
+  SandboxFormComponent,
 ]
