@@ -1,0 +1,22 @@
+<section class="" style="min-height: 600px;">
+    <div class="container-fluid px-5 py-5">
+        <div class="row content-row pb-3">
+            <div class="col-sm-12 col-lg-3 pt-3">                
+                <ng-container *ngIf="aside">
+                    <ng-container [ngTemplateOutlet]="aside"></ng-container>
+                </ng-container>
+            </div>
+            <div class="col-lg-9">
+                <div class="article-container">
+                    <div class="row">
+                        <div class="col-lg">               
+                            <ng-container *ngIf="body">
+                                <ng-container [ngTemplateOutlet]="body"></ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

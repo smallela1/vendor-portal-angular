@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components
 import { ESellComponent } from './e-sell.component';
-import { UpdatesComponent } from './views/updates/updates.component';
+import { UpdatesComponent } from './views/home/updates/updates.component';
 import { HomeComponent } from './views/home/home.component';
 import { SearchResultsComponent } from './views/search-results/search-results.component';
 import { GetContractComponent } from './views/get-contract/get-contract.component';

@@ -27,44 +27,12 @@
       <ul class="navbar-nav">
         
         <li class="nav-item active">
-          <button [routerLink]="['/home']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-home mr-1"></span> 
-            <span class="nav-link-label">Home</span>
+          <button [routerLink]="['/supplier-portal/home']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+            <span class="fal fa-file-contract mr-1"></span> 
+            <span class="nav-link-label">Offers</span>
           </button>
         </li>
         
-        <li class="nav-item btn-group" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="dropdown-basic">
-            <span class="fal fa-file-signature mr-1"></span> <span class="nav-link-label">Contract Offers</span> <span class="caret"></span>
-          </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/understanding-contracts']" routerLinkActive="active">Understanding GSA Contracts</a></li>
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/where-to-begin']" routerLinkActive="active">Where To Begin</a></li>
-          </ul>
-        </li>
-        <li class="nav-item btn-group" dropdown>
-          <button id="button-manage" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="dropdown-manage"> 
-            <span class="fal fa-file-contract mr-1"></span> <span class="nav-link-label">Contract Modifications</span>
-            <span class="caret"></span>
-          </button>
-          <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/advantage']">GSA Advantage</a></li>
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/contract-compliance']">Contract Compliance</a></li>
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/market-research']">Market Research</a></li> 
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/lookup-tables']" routerLinkActive="active">Lookup Tables</a></li> 
-          </ul>  
-        </li>
-        <li class="nav-item btn-group" dropdown>
-  
-          <button id="button-sales" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="dropdown-sales">
-            <span class="fal fa-file-invoice-dollar mr-1"></span> 
-            <span class="nav-link-label">Contract Sales</span> <span class="caret"></span>
-          </button>
-          <ul id="dropdown-sales" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/report-sales']">Reporting My Sales</a></li>
-            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sales-analysis']">Sales Analysis</a></li>
-          </ul>
-        </li>
         <li class="nav-item active">
           <button [routerLink]="['/project-center']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
             <span class="fal fa-question-circle mr-1"></span> 
@@ -73,8 +41,8 @@
         </li>
         <li class="nav-item active">
           <button [routerLink]="['/home']" routerLinkActive="active" id="button-login"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-sign-in mr-1"></span> 
-            <span class="nav-link-label">Login</span>
+            <span class="fal fa-sign-out mr-1"></span> 
+            <span class="nav-link-label">Logout</span>
           </button>
         </li>
       </ul>

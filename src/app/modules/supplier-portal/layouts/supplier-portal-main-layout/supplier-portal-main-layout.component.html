@@ -1,7 +1,9 @@
 <app-supplier-portal-header></app-supplier-portal-header>
 
-  <ng-container *ngIf="body">
-    <ng-container [ngTemplateOutlet]="body"></ng-container>
-  </ng-container>
+  <app-organization-details-banner></app-organization-details-banner>
+
+    <ng-container *ngIf="body">
+      <ng-container [ngTemplateOutlet]="body"></ng-container>
+    </ng-container>
 
 <app-supplier-portal-footer></app-supplier-portal-footer>

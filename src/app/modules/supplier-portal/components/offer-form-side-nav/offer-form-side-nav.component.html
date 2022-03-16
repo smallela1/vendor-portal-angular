@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let item of menuItems">
+            <a class="card-link" [routerLink]="item.path"
+            routerLinkActive="active">{{item.name}}</a>
+                <ng-container  *ngIf="item.complete; else incompleteIcon">
+                    <span class="fal fa-check-circle mr-1" style="float: right; margin-top: 4px;"></span>
+                </ng-container>
+                <ng-template #incompleteIcon>
+                    <span class="fal fa-circle mr-1" style="float: right; margin-top: 4px;"></span>
+                </ng-template>
+        </li>
+    </ul>
+</div>

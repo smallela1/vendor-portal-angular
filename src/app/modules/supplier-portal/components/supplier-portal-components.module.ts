@@ -1,12 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+// Components
+import { OrganizationDetailsBannerComponent } from './organization-details-banner/organization-details-banner.component';
+import { OfferFormSideNavComponent } from './offer-form-side-nav/offer-form-side-nav.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    OrganizationDetailsBannerComponent,
+    OfferFormSideNavComponent
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule
+  ],
+  exports: [
+    OrganizationDetailsBannerComponent,
+    OfferFormSideNavComponent
+  ],
 })
 export class SupplierPortalComponentsModule { }
