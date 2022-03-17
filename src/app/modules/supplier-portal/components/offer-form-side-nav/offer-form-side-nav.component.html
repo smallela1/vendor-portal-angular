@@ -1,5 +1,6 @@
-<div class="card sticky-top mb-5">
-    <ul class="list-group list-group-flush small">
+<div class=" sticky-top mb-5">
+    <h5 class="mb-3">Form Navigator</h5>
+    <ul class="list-group list-group-flush small card">
         <li class="list-group-item" *ngFor="let item of menuItems">
             <a class="card-link" [routerLink]="item.path"
             routerLinkActive="active">{{item.name}}</a>
