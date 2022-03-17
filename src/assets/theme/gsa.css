@@ -96,6 +96,10 @@ html, body {
   position: fixed;
   bottom: 0;
 }
+.sticky-top.sticky-top-second {
+  top: 1.5rem;
+
+}
 /*
 .navbar-toggleable-lg .navbar-nav {
     -webkit-box-orient: horizontal;

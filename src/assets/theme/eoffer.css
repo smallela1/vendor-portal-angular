@@ -1,0 +1,9 @@
+.ngx-datatable.material {
+	box-shadow: none !important;
+    width: 100%;
+}
+span.datatable-header-cell-label {
+	font-weight: 900 !important;
+	font-size: 18px !important;
+}
+/* - - - - - - - - - - - - - - - - - */

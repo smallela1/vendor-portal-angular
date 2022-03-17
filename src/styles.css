@@ -10,5 +10,7 @@
 @import "assets/theme/palette.css" screen;
 @import "assets/theme/buttons.css" screen;
 @import "assets/theme/accordions.css" screen;
-
+@import "assets/theme/alerts.css" screen;
 @import '~swiper/swiper-bundle.css';
+
+@import "assets/theme/eoffer.css" screen;

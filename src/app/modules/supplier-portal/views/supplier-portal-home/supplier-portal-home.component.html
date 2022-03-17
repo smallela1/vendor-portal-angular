@@ -1,45 +1,49 @@
 <div class="container">
     <div class="row">
-        <ngx-datatable class="material striped" [rows]="rows" [columns]="columns" [headerHeight]="50" [footerHeight]="50" 
-            [rowHeight]="50" [scrollbarV]="true"
-            [columnMode]="ColumnMode">
+        <div class="card shadow col">
+            <div class="card-header py-3">Header title</div>
+            <div class="card-body">
+                <ngx-datatable class="striped" [rows]="rows" [columns]="columns" [headerHeight]="50" [footerHeight]="50" 
+                    [rowHeight]="50" [scrollbarV]="true"
+                    [columnMode]="ColumnMode">
 
-                <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false"
-                    [canAutoResize]="false">
-                    <ng-template let-value="value" ngx-datatable-cell-template>
-                    </ng-template>
-                </ngx-datatable-column>
+                        <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false"
+                            [canAutoResize]="false">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                            </ng-template>
+                        </ngx-datatable-column>
 
-                <ngx-datatable-column name="Offer ID" [flexGrow]="1" [minWidth]="200">
-                    <ng-template let-value="value" ngx-datatable-cell-template>
-                        {{ value }}
-                    </ng-template>
-                </ngx-datatable-column>
+                        <ngx-datatable-column name="Offer ID" [flexGrow]="1" [minWidth]="200">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
 
-                <ngx-datatable-column name="Schedule" [flexGrow]="1">
-                    <ng-template let-value="value" ngx-datatable-cell-template>
-                        {{ value }}
-                    </ng-template>
-                </ngx-datatable-column>
+                        <ngx-datatable-column name="Schedule" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
 
-                <ngx-datatable-column name="Last Update" [flexGrow]="1">
-                    <ng-template let-value="value" ngx-datatable-cell-template>
-                        {{ value }}
-                    </ng-template>
-                </ngx-datatable-column>
+                        <ngx-datatable-column name="Last Update" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
 
-                <ngx-datatable-column name="Status" [flexGrow]="1">
-                    <ng-template let-value="value" ngx-datatable-cell-template>
-                        {{ value }}
-                    </ng-template>
-                </ngx-datatable-column>
+                        <ngx-datatable-column name="Status" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
 
-                <ngx-datatable-column name="Actions" [flexGrow]="1">
-                    <ng-template let-value="value" ngx-datatable-cell-template>                        
-                        <button class="btn btn-primary" [routerLink]="['/supplier-portal/offer/pathway-to-success']">Edit</button>
-                    </ng-template>
-                </ngx-datatable-column>
-
-        </ngx-datatable>
+                        <ngx-datatable-column name="Actions" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>                        
+                                <button class="btn btn-primary" [routerLink]="['/supplier-portal/offer/pathway-to-success']">Edit</button>
+                            </ng-template>
+                        </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </div>
     </div>
 </div>
