@@ -1,10 +1,9 @@
-<div class=" sticky-top mb-5">
+<div class=" sticky-top mb-5" *ngIf="menuItems; else errorMsg">
     <h5 class="mb-3">Form Navigator</h5>
     <ul class="list-group list-group-flush small card">
         <li class="list-group-item" *ngFor="let item of menuItems">
-            <a class="card-link" [routerLink]="item.path"
-            routerLinkActive="active">{{item.name}}</a>
-                <ng-container  *ngIf="item.complete; else incompleteIcon">
+            <a class="card-link" [routerLink]="['./supplier-portal/offer']" (click)="scrollToElement(item.sectionId)" fragment="{{item.sectionId}}" routerLinkActive="active">{{item.name}}</a>
+                <ng-container  *ngIf="item.isComplete; else incompleteIcon">
                     <span class="text-success fa fa-check mr-1" style="float: right; margin-top: 4px;"></span>
                 </ng-container>
                 <ng-template #incompleteIcon>
@@ -13,3 +12,11 @@
         </li>
     </ul>
 </div>
+
+<ng-template #errorMsg>
+    Error: 'menuItems' data missing from component.
+    <br>
+    <br>
+    Example: 
+    <br>&lt;app-offer-form-side-nav [menuItems]="data"&gt;&lt;/app-offer-form-side-nav&gt;
+</ng-template>

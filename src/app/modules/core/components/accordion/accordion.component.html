@@ -1,0 +1,53 @@
+<accordion-group>
+
+    <span class="btn justify-content-between d-flex w-100  shadow-none" accordion-heading>
+        <span class="h4 py-2 my-0">
+            <ng-container *ngIf="accordionHeader; else defaultAccordionHeader">
+                <ng-container [ngTemplateOutlet]="accordionHeader"></ng-container>
+                {{accordionTitle}}
+            </ng-container>
+            <ng-template #defaultAccordionHeader>
+                {{accordionTitle}}
+            </ng-template>
+        </span>
+        <div class=" h4 mt-2 d-inline-block float-right pull-right"><span class="fa fa-chevron-down"></span></div>
+    </span>
+
+    <ng-container *ngIf="accordionBody">
+        <ng-container [ngTemplateOutlet]="accordionBody"></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="accordionFooter">
+        <ng-container [ngTemplateOutlet]="accordionFooter"></ng-container>
+    </ng-container>
+
+</accordion-group>
+<!-- 
+<div class="card">
+    
+    <div class="card-header">
+        <h4 class="py-3 pl-3">                          
+            <ng-container *ngIf="accordionHeader; else defaultAccordionHeader">
+                <ng-container [ngTemplateOutlet]="accordionHeader"></ng-container>
+                {{accordionTitle}}
+            </ng-container>
+            <ng-template #defaultAccordionHeader>
+                {{accordionTitle}}
+            </ng-template>
+            <div class="d-inline-block float-right pr-3"><span class="fa fa-chevron-down"></span></div>
+        </h4>
+    </div>
+
+    <div class="card-body d-none">
+        <ng-container *ngIf="accordionBody">
+            <ng-container [ngTemplateOutlet]="accordionBody"></ng-container>
+        </ng-container>
+    </div>
+
+    <ng-container *ngIf="accordionFooter">
+        <div class="card-footer d-none">
+            <ng-container [ngTemplateOutlet]="accordionFooter"></ng-container>
+        </div>
+    </ng-container>
+
+</div> -->

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exceptions.component.css']
 })
 export class ExceptionsComponent implements OnInit {
+  
+  sectionName = "Exception";
 
   constructor() { }
 

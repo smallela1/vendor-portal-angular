@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pathway-to-success.component.css']
 })
 export class PathwayToSuccessComponent implements OnInit {
+  
+  sectionName = "Pathway to Success";
 
   constructor() { }
 

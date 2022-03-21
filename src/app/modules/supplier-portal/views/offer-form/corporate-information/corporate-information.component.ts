@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./corporate-information.component.css']
 })
 export class CorporateInformationComponent implements OnInit {
+  
+  sectionName = "Corporate Information";
 
   constructor() { }
 

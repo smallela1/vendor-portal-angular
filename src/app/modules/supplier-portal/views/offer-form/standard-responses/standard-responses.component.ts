@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./standard-responses.component.css']
 })
 export class StandardResponsesComponent implements OnInit {
+  
+  sectionName = "Standard Responses";
 
   constructor() { }
 

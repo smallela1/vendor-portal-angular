@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offer-form-side-nav',
@@ -7,23 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfferFormSideNavComponent implements OnInit {
 
-  constructor() { }
+  @Input() menuItems = null;
 
-  menuItems = [
-    { path: "pathway-to-success", name: "Pathway to Success", complete: true },
-    { path: "corporate-information", name: "Corporate Information", complete: false },
-    { path: "negotiators", name: "Negotiators", complete: false },
-    { path: "available-offerings", name: "Available Offerings", complete: false },
-    { path: "standard-responses", name: "Standard Responses", complete: false },
-    { path: "solicitation-clauses", name: "Solicitation Clauses", complete: false },
-    { path: "solicitation-provisions", name: "Solicitation Provisions", complete: false },
-    { path: "exceptions", name: "Exceptions", complete: false },
-    { path: "upload-documents", name: "Upload Documents", complete: false },
-    { path: "submit-offer", name: "Submit Offer", complete: false },
-    { path: "sandbox-form", name: "Sandbox Form", complete: false },
-  ]
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  
+  scrollToElement(targetElement: string): void {
+    this.router.navigate(['./supplier-portal/offer'], { fragment: targetElement });
+    console.log("Ive been clicked! " + targetElement);
+  }
+
 
 }

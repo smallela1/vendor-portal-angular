@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./available-offerings.component.css']
 })
 export class AvailableOfferingsComponent implements OnInit {
+  
+  sectionName = "Available Offerings";
 
   constructor() { }
 

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solicitation-provisions.component.css']
 })
 export class SolicitationProvisionsComponent implements OnInit {
+  
+  sectionName = "Solicitation Provisions";
 
   constructor() { }
 

@@ -1,0 +1,20 @@
+<app-accordion [accordionTitle]="formAccordionTitle">
+    <ng-template #accordionHeader>
+            <ng-container *ngIf="sectionIsComplete; else incompleteIcon">
+                <span class="text-success fa fa-check pr-3"></span>
+            </ng-container>
+            <ng-template #incompleteIcon>
+                <span class="text-warning fa fa-exclamation-triangle pr-3"></span>
+            </ng-template>
+    </ng-template>
+    <ng-template #accordionBody>
+        <ng-container *ngIf="formAccordionBody">
+            <ng-container [ngTemplateOutlet]="formAccordionBody"></ng-container>
+        </ng-container>
+    </ng-template>
+    <ng-template #accordionFooter>
+        <ng-container *ngIf="formAccordionFooter">
+            <ng-container [ngTemplateOutlet]="formAccordionFooter"></ng-container>
+        </ng-container>
+    </ng-template>
+</app-accordion>

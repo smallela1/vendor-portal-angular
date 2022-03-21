@@ -14,7 +14,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // Modules
-import { CoreModule } from './modules/core/core.module';
 import { ESellModule } from './modules/e-sell/e-sell.module';
 import { SupplierPortalModule } from './modules/supplier-portal/supplier-portal.module';
 
@@ -29,7 +28,6 @@ import { SupplierPortalModule } from './modules/supplier-portal/supplier-portal.
     SwiperModule,
     ESellModule,
     SupplierPortalModule,
-    CoreModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     AccordionModule.forRoot(),

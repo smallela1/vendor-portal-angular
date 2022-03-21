@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./negotiators.component.css']
 })
 export class NegotiatorsComponent implements OnInit {
+  
+  sectionName = "Negotiators";
 
   constructor() { }
 

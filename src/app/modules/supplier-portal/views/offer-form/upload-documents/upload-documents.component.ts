@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-documents.component.css']
 })
 export class UploadDocumentsComponent implements OnInit {
+  
+  sectionName = "Upload Documents";
 
   constructor() { }
 

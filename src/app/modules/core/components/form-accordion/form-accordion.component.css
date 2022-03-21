@@ -1,0 +1,11 @@
+/deep/ .panel-open .card-header {
+        background-color: white;
+}
+
+/deep/ .card-header:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+/deep/ .panel-open .card-body {
+    background-color: white;
+}
