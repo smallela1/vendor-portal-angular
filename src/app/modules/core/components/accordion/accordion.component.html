@@ -1,7 +1,7 @@
 <accordion-group>
 
-    <span class="btn justify-content-between d-flex w-100  shadow-none" accordion-heading>
-        <span class="h4 py-2 my-0">
+    <div class="btn justify-content-between d-flex w-100  shadow-none" accordion-heading>
+        <span class="accordion-label gsa-light-blue">
             <ng-container *ngIf="accordionHeader; else defaultAccordionHeader">
                 <ng-container [ngTemplateOutlet]="accordionHeader"></ng-container>
                 {{accordionTitle}}
@@ -10,8 +10,8 @@
                 {{accordionTitle}}
             </ng-template>
         </span>
-        <div class=" h4 mt-2 d-inline-block float-right pull-right"><span class="fa fa-chevron-down"></span></div>
-    </span>
+        <div class=" accordion-label gsa-light-blue d-inline-block float-right pull-right"><span class="fa fa-chevron-down"></span></div>
+    </div>
 
     <ng-container *ngIf="accordionBody">
         <ng-container [ngTemplateOutlet]="accordionBody"></ng-container>

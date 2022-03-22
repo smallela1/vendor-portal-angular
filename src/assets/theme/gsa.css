@@ -91,6 +91,10 @@ html, body {
 .sticky-top {
   top: 1.5rem;
 }
+.sticky-top-content {
+  top: 0 !important;
+  position: sticky !important;
+}
 
 .sticky-bottom {
   position: fixed;
@@ -393,6 +397,11 @@ html, body {
 }
 
 /* FORMS */
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding-right: 0.5em;
+}
 
 .input-group {
   position: relative;
@@ -570,8 +579,15 @@ $container-max-widths: (
 
 
 @media (min-width: 551px) {}
-@media (min-width: 768px) {}
-@media (min-width: 992px) {}
+@media (min-width: 768px) {
+  .table-responsive {
+    display: table;
+    width: 100% !important;
+  }
+}
+@media (min-width: 992px) {
+
+}
 @media (min-width: 1200px) {} 
 
 
@@ -580,5 +596,8 @@ $container-max-widths: (
 @media (max-width: 960px) {} 
 
 
+/*  - - - - - - - - - - - - - */
+.table2 {
 
+}
 

@@ -1,5 +1,7 @@
 <div class=" sticky-top mb-5" *ngIf="menuItems; else errorMsg">
-    <h5 class="mb-3">Form Navigator</h5>
+
+    <div class="btn btn-outline-primary d-xs-block d-sm-block d-md-none mb-4">Form Navigator</div>
+    <h4 class="mb-3">Offer Navigator</h4>
     <ul class="list-group list-group-flush small card">
         <li class="list-group-item" *ngFor="let item of menuItems">
             <a class="card-link" [routerLink]="['./supplier-portal/offer']" (click)="scrollToElement(item.sectionId)" fragment="{{item.sectionId}}" routerLinkActive="active">{{item.name}}</a>
@@ -11,6 +13,7 @@
                 </ng-template>
         </li>
     </ul>
+     <a class="btn btn-primary my-3 btn-lg btn-block">Submit</a>
 </div>
 
 <ng-template #errorMsg>

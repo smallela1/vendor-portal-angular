@@ -1,2 +1,13 @@
 .gitignore
 node_modules/*
+src/.DS_Store
+src/app/.DS_Store
+src/app/modules/.DS_Store
+src/app/modules/core/.DS_Store
+src/app/modules/core/components/.DS_Store
+src/assets/.DS_Store
+src/assets/fonts/.DS_Store
+src/assets/images/.DS_Store
+.DS_Store
+*.xml
+package-lock.json

@@ -1,17 +1,20 @@
 <form id="availableOfferings">
-    <div class="card border-warning p-4 mb-4">
+
+    <div class="usa-alert usa-alert-info mb-4">
+        <div class="usa-alert-body">
         <p>
             <b class="black">What goods and services do you provide?</b>
             <br>
             GSA assigns all available offerings to large categories, subcategories, and Special Item Numbers (SINs).
         </p>
     </div>
-    <hr><span id="addsins" class="visually-hidden">Add SINs</span>
+    </div>
+    <h4 id="addsins" class="visually-hidden">Add SINs</h4>
     <p>You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a full
         list of available offerings, please visit the <a target="_blank" title="MAS Roadmap"
             href="https://www.gsa.gov/masroadmap">MAS Roadmap</a>.</p>
     <div class="table2">
-        <table role="presentation" class="table table-bordered table-striped" width="100%" aria-labelledby="addsins"
+        <table role="presentation" class="table table-responsive table-bordered table-striped" width="100%" aria-labelledby="addsins"
             id="addSIN">
             <tbody>
                 <tr>
@@ -38,7 +41,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><label for="subCategoryId">Subcategory: </label><select style="max-width:400px"
+                    <td><label for="subCategoryId">Subcategory: </label> <select style="max-width:400px"
                             aria-required="true" class="d-control samesize" name="subCategory" id="subCategoryId">
                             <option value="">Select a Subcategory</option>
                         </select></td>
@@ -56,8 +59,8 @@
         </table>
     </div>
     <div class="table2">
-        <h2 id="yoursin" class="type1">Your SIN(s)</h2>
-        <table aria-labelledby="yoursin" class="table table-bordered table-striped buttonsTable" id="yourSINs">
+        <h4 id="yoursin" class="type1">Your SIN(s)</h4>
+        <table aria-labelledby="yoursin" class="table table-responsive table-bordered table-striped buttonsTable" id="yourSINs">
             <thead>
                 <tr class="columnTitleFill">
                     <th width="10%">Number</th>
@@ -87,14 +90,14 @@
         </table>
     </div>
     <div class="table2">
-        <h2 style="border-top: 5px solid grey;"></h2>
+        <h4 style="border-top: 5px solid grey;"></h4>
     </div>
     <div class="table2">
-        <h2 id="prework" class="type1">Preponderance Of Work</h2>
+        <h4 id="prework" class="type1">Preponderance Of Work</h4>
         <p>Please complete the 'Preponderance of Work' section only after you have completed adding all offerings to
             your offer. The information below will populate based on the offerings you selected above. Offerors must
             choose one preponderance of work large category, subcategory, SIN and NAICS for the offer as a whole.</p>
-        <table role="presentation" aria-labelledby="prework" class="table table-bordered table-striped" id="prepWork">
+        <table role="presentation" aria-labelledby="prework" class="table table-responsive table-bordered table-striped" id="prepWork">
             <tbody>
                 <tr>
                     <td colspan="2" aria-hidden="true" class="fakeTh" width="100%">
@@ -146,9 +149,8 @@
             </tbody>
         </table>
     </div>
-
-
     <div class="button-row">
         <input type="submit" value="Save and Continue" class="btn btn-primary" name="saveAndContinue">
     </div>
+
 </form>
