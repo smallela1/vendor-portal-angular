@@ -20,5 +20,4 @@ export class OfferFormSideNavComponent implements OnInit {
     console.log("Ive been clicked! " + targetElement);
   }
 
-
 }

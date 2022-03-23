@@ -13,7 +13,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes,  {
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
-      scrollOffset: [0, 0] // [x, y] // For Offesetting if for example, there is a fixed header with a height of 60px, y could then be set to 65 to preven cut off.
+      scrollOffset: [0, 80] // [x, y] // For Offesetting if for example, there is a fixed header with a height of 60px, y could then be set to 65 to preven cut off.
     }),
     BrowserModule
   ],

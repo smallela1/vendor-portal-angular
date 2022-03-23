@@ -24,3 +24,6 @@ span.datatable-header-cell-label {
 a[aria-expanded="true"]{
   background-color: #42DCA3;
 }
+html {
+	scroll-behavior: smooth;
+  }

@@ -4,7 +4,7 @@
     <h4 class="mb-3">Offer Navigator</h4>
     <ul class="list-group list-group-flush small card">
         <li class="list-group-item" *ngFor="let item of menuItems">
-            <a class="card-link" [routerLink]="['./supplier-portal/offer']" (click)="scrollToElement(item.sectionId)" fragment="{{item.sectionId}}" routerLinkActive="active">{{item.name}}</a>
+            <a class="card-link" (click)="scrollToElement(item.sectionId)">{{item.name}}</a>
                 <ng-container  *ngIf="item.isComplete; else incompleteIcon">
                     <span class="text-success fa fa-check mr-1" style="float: right; margin-top: 4px;"></span>
                 </ng-container>

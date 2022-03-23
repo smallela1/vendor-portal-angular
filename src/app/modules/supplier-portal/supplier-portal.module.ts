@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgWizardModule } from 'ng-wizard';
 
 // Modules
 import { CoreModule } from '../core/core.module';
@@ -23,11 +25,13 @@ import { SupplierPortalHomeComponent } from './views/supplier-portal-home/suppli
     CommonModule,
     RouterModule,
     AccordionModule,
+    ModalModule,
     NgxDatatableModule,
     SupplierPortalRoutingModule,
     SupplierPortalLayoutsModule,
     SupplierPortalComponentsModule,
-    CoreModule,
+    CoreModule,    
+    NgWizardModule,
   ], 
   exports: [
     routingComponents

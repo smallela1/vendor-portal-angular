@@ -3,6 +3,7 @@
 
 @import "assets/fonts/sourcesanspro/sourcesanspro.css";
 @import "assets/fonts/fontawesome/css/all.css";
+@import '~ng-wizard/themes/ng_wizard.min.css';
 
 @import "assets/theme/utilities.css" screen;
 @import "assets/theme/gsa.css" screen;

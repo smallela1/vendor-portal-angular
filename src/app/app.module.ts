@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgWizardModule, NgWizardConfig, THEME } from 'ng-wizard';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,11 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ESellModule } from './modules/e-sell/e-sell.module';
 import { SupplierPortalModule } from './modules/supplier-portal/supplier-portal.module';
 
+
+const ngWizardConfig: NgWizardConfig = {
+  theme: THEME.default
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -32,6 +38,7 @@ import { SupplierPortalModule } from './modules/supplier-portal/supplier-portal.
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
     CollapseModule.forRoot(),
+    NgWizardModule.forRoot(ngWizardConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
