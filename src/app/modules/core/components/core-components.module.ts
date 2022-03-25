@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 // Modules
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { SupplierPortalComponentsModule } from '../../supplier-portal/components/supplier-portal-components.module';
 
 // Components
 import { AccordionComponent } from './accordion/accordion.component';
@@ -17,7 +18,8 @@ import { FormAccordionComponent } from './form-accordion/form-accordion.componen
   ],
   imports: [
     CommonModule,
-    AccordionModule
+    AccordionModule,
+    SupplierPortalComponentsModule,
   ],
   exports: [
     AccordionComponent, 

@@ -1,11 +1,7 @@
-<app-accordion [accordionTitle]="formAccordionTitle">
+<app-accordion [accordionTitle]="section.name">
     <ng-template #accordionHeader>
-            <ng-container *ngIf="sectionIsComplete; else incompleteIcon">
-                <span class="text-success fa fa-check pr-3"></span>
-            </ng-container>
-            <ng-template #incompleteIcon>
-                <span class="text-warning fa fa-exclamation-triangle pr-3"></span>
-            </ng-template>
+        <app-section-status-indicator [sectionData]="section"></app-section-status-indicator>
+        <button *ngIf="offerStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
     </ng-template>
     <ng-template #accordionBody>
         <ng-container *ngIf="formAccordionBody">

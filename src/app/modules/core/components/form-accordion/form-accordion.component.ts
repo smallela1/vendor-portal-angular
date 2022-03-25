@@ -10,10 +10,8 @@ export class FormAccordionComponent implements OnInit {
   @ContentChild('formAccordionBody', { static: false }) formAccordionBody: TemplateRef<any>;
   @ContentChild('formAccordionFooter', { static: false }) formAccordionFooter: TemplateRef<any>;
 
-  @Input()
-  formAccordionTitle = "Form Accordion Title is Missing!";
-
-  @Input() sectionIsComplete = false;
+  @Input('sectionData') section = null;
+  @Input('offerStatusData') offerStatus = 'In Progress';
 
   constructor() { }
 

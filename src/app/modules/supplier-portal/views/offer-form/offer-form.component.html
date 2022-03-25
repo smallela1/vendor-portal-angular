@@ -1,7 +1,10 @@
 <app-supplier-portal-workspace-layout>
 
   <ng-template #aside>
-    <app-offer-form-side-nav [menuItems]="formData.sections"></app-offer-form-side-nav>
+
+    <app-offer-form-side-nav [menuItems]="offerData.sections"></app-offer-form-side-nav>
+    <app-submit-offer (submitOfferEvent)="offerSubmitted($event)" [offerStatusData]="offerStatus"></app-submit-offer>
+
   </ng-template>
 
   <ng-template #body>
@@ -34,15 +37,15 @@
       </div>
     </div> -->
 
-    <accordion [isAnimated]="true" [closeOthers]="true" *ngFor="let section of formData.sections">
-      <app-form-accordion [formAccordionTitle]="section.name" [sectionIsComplete]="section.isComplete">
+    <accordion [isAnimated]="true" [closeOthers]="true" *ngFor="let section of offerData.sections">
+      <app-form-accordion [sectionData]="section" [offerStatusData]="offerStatus">
         <ng-template #formAccordionBody>
           <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
         </ng-template>
       </app-form-accordion>
     </accordion>
 
-  
+
 
   </ng-template>
 

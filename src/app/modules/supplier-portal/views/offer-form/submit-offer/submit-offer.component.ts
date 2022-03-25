@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-submit-offer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./submit-offer.component.css']
 })
 export class SubmitOfferComponent implements OnInit {
+
+  @Input('offerStatusData') offerStatus = 'In Progress';
 
   constructor() { }
 

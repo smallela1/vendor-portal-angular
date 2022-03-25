@@ -10,6 +10,9 @@
 .br-0 {
 	border-radius: 0px !important;
 }
+.bw-0 {
+	border-width: 0px !important;
+}
 td.w-15 {
         min-width: 9rem;
 }

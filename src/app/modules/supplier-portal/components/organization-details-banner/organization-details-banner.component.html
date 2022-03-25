@@ -1,24 +1,28 @@
 <section class="shadow bg-gsa-light-blue white d-block">
     <div class="container py-2">
-
-                <div class="row justify-content-center">
-                    <div class="col-md">
-                        <small>Company Name:&nbsp;&nbsp;</small> 
-                        <br class="d-sm-none d-md-block" /> ABC Co.
-                    </div>
-                    <div class="col-md">
-                        <small>Solicitaion Number:&nbsp;&nbsp;</small>
-                        <br class="d-sm-none d-md-block"/> 47QSMD20R001 Refresh #45
-                    </div>
-                    <!--
-                    <div class="col">
-                         <b>Schedule:&nbsp;&nbsp;</b>MAS - Multiple Award Schedule 
-                    </div>
-                    -->
-                    <div class="col-md">
-                        <small>Schedule:&nbsp;&nbsp;</small>
-                        <br class="d-sm-none d-md-block"/> MAS - Multiple Award Schedule
-                    </div>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-md">
+                <small>Company Name:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> ABC Co.
+            </div>
+            <div class="col-md">
+                <small>Solicitaion Number:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> 47QSMD20R001 Refresh #45
+            </div>
+            <div class="col-md">
+                <small>Schedule:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> MAS - Multiple Award Schedule
+            </div>
+            <div class="col-md">
+                <small>Status:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />
+                <select class="bg-transparent bw-0 nav-link white py-1 px-0 line-h-1 text-left" (change)="updateStatus($event.target.value)">
+                    <option value="In Progress" selected>In Progress</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Signed">Signed</option>
+                    <option value="Awarded">Awarded</option>
+                </select>
+            </div>
+        </div>
     </div>
 </section>
