@@ -1,137 +1,210 @@
-<form id="solicitationClauses">
+<app-form-card [sectionState]="sectionData" *ngIf="sectionData.showSection">
+    <ng-template #formCardActions>
+        <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+    </ng-template>
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
 
-    <div class="usa-alert usa-alert-info mb-4">
-        <div class="usa-alert-body">
-            <p class="clearBoth">Please respond to the below terms and conditions that apply to your proposed offerings.
-            </p>
-            <p>You must respond to all clauses to complete this section.</p>
+
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="solicitationClauses">
+
+        <div class="usa-alert usa-alert-info mb-4">
+            <div class="usa-alert-body">
+                <p class="clearBoth">Please respond to the below terms and conditions that apply to your proposed
+                    offerings.
+                </p>
+                <p>You must respond to all clauses to complete this section.</p>
+            </div>
         </div>
-    </div>
 
 
-    <h4 id="clau" class="type1">Clauses</h4>
-    <table aria-labelledby="clau" class="table table-responsive table-bordered table-striped buttonsTable"
-        id="tempTable">
-        <thead>
-            <tr>
-                <th width="40%" scope="col">
-                    Template Name
-                </th>
-                <th width="20%" scope="col">
-                    Status
-                </th>
-                <th width="10%" scope="col">
-                    Edit
-                </th>
-                <th width="10%" scope="col">
-                    Delete
-                </th>
-                <th width="10%" scope="col">
-                    Respond
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Basic Information <span class="required">*</span></td>
-                <td>
-                    Incomplete
-                </td>
-                <td></td>
-                <td></td>
-                <td class="tbl-button">
-                    <button type="button" class="btn btn-primary btn-sm"
-                        (click)="basicInformation.show()">Respond</button>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Commercial Sales Practice<span class="required"> *</span></td>
-                <td>
-                    Incomplete
-                </td>
-                <td class="tbl-button"></td>
-                <td class="tbl-button"></td>
-                <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
-                        href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?type=commercialsalespractice&amp;method=view">
+        <h4 id="clau" class="type1">Clauses</h4>
+        <table aria-labelledby="clau" class="table table-responsive table-bordered table-striped buttonsTable"
+            id="tempTable">
+            <thead>
+                <tr>
+                    <th width="40%" scope="col">
+                        Template Name
+                    </th>
+                    <th width="20%" scope="col">
+                        Status
+                    </th>
+                    <th width="10%" scope="col">
+                        Edit
+                    </th>
+                    <th width="10%" scope="col">
+                        Delete
+                    </th>
+                    <th width="10%" scope="col">
                         Respond
-                    </a></td>
-            </tr>
-            <tr>
-                <td>
-                    Point of Contacts Information<span class="required"> *</span></td>
-                <td>
-                    Incomplete
-                </td>
-                <td></td>
-                <td></td>
-                <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
-                        href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?method=view&amp;type=pocInfo">Respond</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Ordering Information<span class="required"> *</span></td>
-                <td>
-                    Incomplete
-                </td>
-                <td></td>
-                <td></td>
-                <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
-                        href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?method=view&amp;type=orderInfo">Respond</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</form>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Basic Information <span class="required">*</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="tbl-button">
+                        <button type="button" class="btn btn-primary btn-sm"
+                            (click)="basicInformation.show()">Respond</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Commercial Sales Practice<span class="required"> *</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td class="tbl-button"></td>
+                    <td class="tbl-button"></td>
+                    <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
+                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?type=commercialsalespractice&amp;method=view">
+                            Respond
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>
+                        Point of Contacts Information<span class="required"> *</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
+                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?method=view&amp;type=pocInfo">Respond</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ordering Information<span class="required"> *</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
+                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?method=view&amp;type=orderInfo">Respond</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</ng-template>
 
 
-<div bsModal #basicInformation="bs-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title pull-left">Modal</h4>
-                <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-                    <span aria-hidden="true" class="visually-hidden">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="solicitationClauses">
 
-                    <ng-wizard-step [title]="'Step 1'" [description]="'Step 1 description'"
-                        [canEnter]="isValidTypeBoolean" [canExit]="isValidFunctionReturnsBoolean.bind(this)">
-                        <span>Step 1 content</span>
-                    </ng-wizard-step>
-
-                    <ng-wizard-step [title]="'Step 2'" [description]="'Step 2 description'"
-                        [state]="stepStates.disabled">
-                        <span>Step 2 content</span>
-                    </ng-wizard-step>
-
-                    <ng-wizard-step [title]="'Step 3'" [description]="'Step 3 description'"
-                        [canEnter]="isValidFunctionReturnsObservable.bind(this)"
-                        [canExit]="isValidFunctionReturnsBoolean.bind(this)">
-                        <span>Step 3 content</span>
-                    </ng-wizard-step>
-
-                    <ng-wizard-step [title]="'Step 4'" [description]="'Step 4 description'">
-                        <span>Step 4 content</span>
-                    </ng-wizard-step>
-
-                    <ng-wizard-step [title]="'Step 5'" [description]="'Step 5 description'" [state]="stepStates.hidden">
-                        <span>Step 5 content</span>
-                    </ng-wizard-step>
-
-                    <ng-wizard-step [title]="'Step 6'" [description]="'Step 6 description'" [state]="stepStates.error">
-                        <span>Step 6 content</span>
-                    </ng-wizard-step>
-
-                    <ng-wizard-step [title]="'Step 7'" [description]="'Step 7 description'">
-                        <span>Step 7 content</span>
-                    </ng-wizard-step>
-                </ng-wizard>
+        <div class="usa-alert usa-alert-info mb-4">
+            <div class="usa-alert-body">
+                <p class="clearBoth">Please respond to the below terms and conditions that apply to your proposed
+                    offerings.
+                </p>
+                <p>You must respond to all clauses to complete this section.</p>
             </div>
         </div>
-    </div>
-</div>
+
+
+        <h4 id="clau" class="type1">Clauses</h4>
+        <table aria-labelledby="clau" class="table table-responsive table-bordered table-striped buttonsTable"
+            id="tempTable">
+            <thead>
+                <tr>
+                    <th width="40%" scope="col">
+                        Template Name
+                    </th>
+                    <th width="20%" scope="col">
+                        Status
+                    </th>
+                    <th width="10%" scope="col">
+                        Edit
+                    </th>
+                    <th width="10%" scope="col">
+                        Delete
+                    </th>
+                    <th width="10%" scope="col">
+                        Respond
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Basic Information <span class="required">*</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="tbl-button">
+                        <button type="button" class="btn btn-primary btn-sm"
+                            (click)="basicInformation.show()">Respond</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Commercial Sales Practice<span class="required"> *</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td class="tbl-button"></td>
+                    <td class="tbl-button"></td>
+                    <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
+                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?type=commercialsalespractice&amp;method=view">
+                            Respond
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>
+                        Point of Contacts Information<span class="required"> *</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
+                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?method=view&amp;type=pocInfo">Respond</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ordering Information<span class="required"> *</span></td>
+                    <td>
+                        Incomplete
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="tbl-button"><a class="btn btn-primary btn-sm" title="Respond to Input"
+                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerSolClauseAction.do?method=view&amp;type=orderInfo">Respond</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</ng-template>
+
+
+<!-- Actions-->
+<ng-template #sectionActions>
+    <app-modal [modalTitle]="sectionData.name" [showModalBtnLabel]="'Edit'" [modalSize]="'xl'">
+        <ng-template #modalBody>
+            <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+        </ng-template>
+        <ng-template #modalFooter>
+            <input type="submit" value="Save and Continue" id="saveAndContinue" class="btn btn-primary">
+        </ng-template>
+    </app-modal>
+
+    <button *ngIf="sectionData.sectionStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
+
+</ng-template>

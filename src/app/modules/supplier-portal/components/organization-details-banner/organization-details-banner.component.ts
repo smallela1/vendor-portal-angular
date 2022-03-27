@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Services
-import { OfferStatusService } from '../../services/supplier-portal-services.module';
+import { OfferService } from '../../services/supplier-portal-services.module';
 
 @Component({
   selector: 'app-organization-details-banner',
@@ -11,14 +11,14 @@ import { OfferStatusService } from '../../services/supplier-portal-services.modu
 export class OrganizationDetailsBannerComponent implements OnInit {
 
 
-  constructor(private offerStatusService: OfferStatusService ) { 
+  constructor(private OfferService: OfferService ) { 
   }
 
   ngOnInit(): void {
   }
 
   updateStatus(newStatus: string): void {
-    this.offerStatusService.updateOfferStatus(newStatus);
+    this.OfferService.updateOfferStatus(newStatus);
   }
   
 

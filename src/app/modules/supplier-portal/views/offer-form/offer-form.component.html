@@ -2,49 +2,22 @@
 
   <ng-template #aside>
 
-    <app-offer-form-side-nav [menuItems]="offerData.sections"></app-offer-form-side-nav>
-    <app-submit-offer (submitOfferEvent)="offerSubmitted($event)" [offerStatusData]="offerStatus"></app-submit-offer>
+    <app-offer-form-side-nav [menuItems]="menuItems"></app-offer-form-side-nav>
+    <app-submit-offer (submitOfferEvent)="offerSubmitted($event)"></app-submit-offer>
 
   </ng-template>
 
   <ng-template #body>
 
-    <!-- <div class="usa-alert usa-alert-info">
-      <div class="usa-alert-body">
-        text
-      </div>
-    </div>
-
-    <div class="usa-alert usa-alert-warning">
-      <div class="usa-alert-body">
-        text
-      </div>
-    </div>
-
-    <div class="usa-alert usa-alert-error">
-      <div class="usa-alert-body">
-        text
-      </div>
-    </div>
-
-    <div class="usa-alert usa-alert-success">
-      <div class="usa-alert-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </div>
-    </div> -->
-
-    <accordion [isAnimated]="true" [closeOthers]="true" *ngFor="let section of offerData.sections">
-      <app-form-accordion [sectionData]="section" [offerStatusData]="offerStatus">
-        <ng-template #formAccordionBody>
-          <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
-        </ng-template>
-      </app-form-accordion>
-    </accordion>
-
+    <app-pathway-to-success [sectionData]="offerData.sections.pathwayToSuccess"></app-pathway-to-success>
+    <app-corporate-information [sectionData]="offerData.sections.corporateInformation"></app-corporate-information>
+    <app-negotiators [sectionData]="offerData.sections.negotiators"></app-negotiators>
+    <app-available-offerings [sectionData]="offerData.sections.availableOfferings"></app-available-offerings>
+    <app-standard-responses [sectionData]="offerData.sections.standardResponses"></app-standard-responses>
+    <app-solicitaion-clauses [sectionData]="offerData.sections.solicitationClauses"></app-solicitaion-clauses>
+    <app-solicitation-provisions [sectionData]="offerData.sections.solicitationProvisions"></app-solicitation-provisions>
+    <app-exceptions [sectionData]="offerData.sections.exceptions"></app-exceptions>
+    <app-upload-documents [sectionData]="offerData.sections.upload-documents"></app-upload-documents>
 
 
   </ng-template>

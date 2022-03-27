@@ -2,7 +2,7 @@
 
     <div class="btn btn-outline-primary d-xs-block d-sm-block d-md-none mb-4">Form Navigator</div>
     <h4 class="mb-3">Offer Navigator</h4>
-    <ul class="list-group list-group-flush small card">
+    <ul class="list-group list-group-flush small card shadow br-6">
         <li class="list-group-item" *ngFor="let item of menuItems">
             <a class="card-link" (click)="scrollToElement(item.sectionId)">{{item.name}}</a>
             <span class="float-right d-inline-block">

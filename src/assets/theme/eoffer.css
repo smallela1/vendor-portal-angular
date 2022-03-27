@@ -27,3 +27,13 @@ a[aria-expanded="true"]{
 html {
 	scroll-behavior: smooth;
   }
+
+  .blur {
+    filter: blur(24px);
+    -webkit-filter: blur(24px);
+    -moz-filter: blur(24px);
+    -o-filter: blur(24px);
+    -ms-filter: blur(24px);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='24' /></filter></svg>#svgMask");
+    /* TODO: Add IE11 blur support */
+  }

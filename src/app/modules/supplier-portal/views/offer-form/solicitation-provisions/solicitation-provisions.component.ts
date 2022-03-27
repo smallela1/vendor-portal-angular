@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-solicitation-provisions',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitationProvisionsComponent implements OnInit {
   
-  sectionName = "Solicitation Provisions";
+  @Input('sectionData') sectionData: any;
 
   constructor() { }
 

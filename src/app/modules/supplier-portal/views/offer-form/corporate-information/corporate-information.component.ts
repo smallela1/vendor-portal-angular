@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-corporate-information',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./corporate-information.component.css']
 })
 export class CorporateInformationComponent implements OnInit {
+  
+  @Input('sectionData') sectionData: any;
   
   sectionName = "Corporate Information";
 

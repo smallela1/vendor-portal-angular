@@ -19,7 +19,7 @@ import { SupplierPortalHomeComponent } from './views/supplier-portal-home/suppli
 @NgModule({
   declarations: [
     routingComponents,
-    SupplierPortalHomeComponent
+    SupplierPortalHomeComponent,
   ],
   imports: [
     CommonModule,

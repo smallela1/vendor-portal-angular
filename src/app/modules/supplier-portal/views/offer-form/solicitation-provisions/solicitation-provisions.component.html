@@ -1,132 +1,301 @@
-<form id="solicitationProvisions">
+<app-form-card [sectionState]="sectionData" *ngIf="sectionData.showSection">
+    <ng-template #formCardActions>
+        <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+    </ng-template>
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
 
-    <div class="usa-alert usa-alert-info mb-4">
-        <div class="usa-alert-body">
-        <p>The following solicitation provisions are based on SCP-FSS-001 and are automatically included as applicable
-            for this schedule. Each provision contains specific factors, which are laid out in the table below. Please
-            respond completely and thoroughly to each provision as outlined in the provision-specific directions.</p>
-    </div>
-</div>
 
-    <div class="table2">
-        <table aria-labelledby="h1val" class="table table-responsive table-striped table-bordered buttonsTable">
-            <thead>
-                <tr>
-                    <th width="70%" scope="col">Provision</th>
-                    <th width="10%" scope="col">Status</th>
-                    <th width="10%" scope="col">Respond</th>
-                    <th width="10%" scope="col">Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="4">&nbsp;&nbsp;<span style="font-weight:bold">Technical Proposal</span></td>
-                </tr>
-                <tr>
-                    <td style="TEXT-ALIGN: LEFT">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="solicitationProvisions">
 
-                        Corporate Experience<span class="required"> *</span><span
-                            class="visually-hidden">Required</span></td>
-                    <td>
-                        Incomplete
-                    </td>
-                    <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=CorporateExperience">
-
-                            Respond
-                        </a></td>
-                    <td class="tbl-button"></td>
-                </tr>
-                <tr>
-                    <td style="TEXT-ALIGN: LEFT">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        Past Performance<span class="required"> *</span><span class="visually-hidden">Required</span>
-                    </td>
-                    <td>
-                        Incomplete
-                    </td>
-                    <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=PastPerformance">
-
-                            Respond
-                        </a></td>
-                    <td class="tbl-button"></td>
-                </tr>
-                <tr>
-                    <td style="TEXT-ALIGN: LEFT">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        Quality Control<span class="required"> *</span><span class="visually-hidden">Required</span>
-                    </td>
-                    <td>
-                        Incomplete
-                    </td>
-                    <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=QualityControl">
-
-                            Respond
-                        </a></td>
-                    <td class="tbl-button"></td>
-                </tr>
-                <tr>
-                    <td style="TEXT-ALIGN: LEFT">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        Relevant Project Experience<span class="required"> *</span><span
-                            class="visually-hidden">Required</span></td>
-                    <td>
-                        Incomplete
-                    </td>
-                    <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=RelevantProjectExperience">
-
-                            Respond
-                        </a></td>
-                    <td class="tbl-button"></td>
-                </tr>
-                <tr>
-                    <td style="TEXT-ALIGN: LEFT">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        Trade Agreements Act (TAA) Compliance<span class="required"> *</span><span
-                            class="visually-hidden">Required</span></td>
-                    <td>
-                        Incomplete
-                    </td>
-                    <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=TradeAgreementsAct">
-
-                            Respond
-                        </a></td>
-                    <td class="tbl-button"></td>
-                </tr>
-                <tr>
-                    <td colspan="4">&nbsp;&nbsp;<span style="font-weight:bold">Services Contract Act Labor Matrix</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="TEXT-ALIGN: LEFT">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        SCA Matrix<span class="required"> *</span><span class="visually-hidden">Required</span></td>
-                    <td>
-                        Incomplete
-                    </td>
-                    <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=scaMatrix">
-
-                            Respond
-                        </a></td>
-                    <td class="tbl-button"></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="button-row">
-
-            <input type="submit" name="saveAndContinue" value="Save and Continue" class="btn btn-primary">
-            <br>
+        <div class="usa-alert usa-alert-info mb-4">
+            <div class="usa-alert-body">
+                <p>The following solicitation provisions are based on SCP-FSS-001 and are automatically included as
+                    applicable
+                    for this schedule. Each provision contains specific factors, which are laid out in the table below.
+                    Please
+                    respond completely and thoroughly to each provision as outlined in the provision-specific
+                    directions.
+                </p>
+            </div>
         </div>
-    </div>
-</form>
+
+        <div class="table2">
+            <table aria-labelledby="h1val" class="table table-responsive table-striped table-bordered buttonsTable">
+                <thead>
+                    <tr>
+                        <th width="70%" scope="col">Provision</th>
+                        <th width="10%" scope="col">Status</th>
+                        <th width="10%" scope="col">Respond</th>
+                        <th width="10%" scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">&nbsp;&nbsp;<span style="font-weight:bold">Technical Proposal</span></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Corporate Experience<span class="required"> *</span><span
+                                class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=CorporateExperience">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Past Performance<span class="required"> *</span><span
+                                class="visually-hidden">Required</span>
+                        </td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=PastPerformance">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Quality Control<span class="required"> *</span><span class="visually-hidden">Required</span>
+                        </td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=QualityControl">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Relevant Project Experience<span class="required"> *</span><span
+                                class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=RelevantProjectExperience">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Trade Agreements Act (TAA) Compliance<span class="required"> *</span><span
+                                class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=TradeAgreementsAct">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;&nbsp;<span style="font-weight:bold">Services Contract Act Labor
+                                Matrix</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            SCA Matrix<span class="required"> *</span><span class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=scaMatrix">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</ng-template>
+
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="solicitationProvisions">
+
+        <div class="usa-alert usa-alert-info mb-4">
+            <div class="usa-alert-body">
+                <p>The following solicitation provisions are based on SCP-FSS-001 and are automatically included as
+                    applicable
+                    for this schedule. Each provision contains specific factors, which are laid out in the table below.
+                    Please
+                    respond completely and thoroughly to each provision as outlined in the provision-specific
+                    directions.
+                </p>
+            </div>
+        </div>
+
+        <div class="table2">
+            <table aria-labelledby="h1val" class="table table-responsive table-striped table-bordered buttonsTable">
+                <thead>
+                    <tr>
+                        <th width="70%" scope="col">Provision</th>
+                        <th width="10%" scope="col">Status</th>
+                        <th width="10%" scope="col">Respond</th>
+                        <th width="10%" scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">&nbsp;&nbsp;<span style="font-weight:bold">Technical Proposal</span></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Corporate Experience<span class="required"> *</span><span
+                                class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=CorporateExperience">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Past Performance<span class="required"> *</span><span
+                                class="visually-hidden">Required</span>
+                        </td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=PastPerformance">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Quality Control<span class="required"> *</span><span class="visually-hidden">Required</span>
+                        </td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=QualityControl">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Relevant Project Experience<span class="required"> *</span><span
+                                class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=RelevantProjectExperience">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Trade Agreements Act (TAA) Compliance<span class="required"> *</span><span
+                                class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=TradeAgreementsAct">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;&nbsp;<span style="font-weight:bold">Services Contract Act Labor
+                                Matrix</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="TEXT-ALIGN: LEFT">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            SCA Matrix<span class="required"> *</span><span class="visually-hidden">Required</span></td>
+                        <td>
+                            Incomplete
+                        </td>
+                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/provisionResponse.do?method=view&amp;provision=SCP-FSS-001&amp;section=scaMatrix">
+
+                                Respond
+                            </a></td>
+                        <td class="tbl-button"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</ng-template>
+
+
+<!-- Actions-->
+<ng-template #sectionActions>
+    <app-modal [modalTitle]="sectionData.name" [showModalBtnLabel]="'Edit'" [modalSize]="'xl'">
+        <ng-template #modalBody>
+            <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+        </ng-template>
+        <ng-template #modalFooter>
+            <input type="submit" value="Save and Continue" id="saveAndContinue" class="btn btn-primary">
+        </ng-template>
+    </app-modal>
+
+    <button *ngIf="sectionData.sectionStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
+
+</ng-template>

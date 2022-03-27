@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pathway-to-success',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pathway-to-success.component.css']
 })
 export class PathwayToSuccessComponent implements OnInit {
-  
-  sectionName = "Pathway to Success";
 
-  constructor() { }
+  @Input('sectionData') sectionData: any;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

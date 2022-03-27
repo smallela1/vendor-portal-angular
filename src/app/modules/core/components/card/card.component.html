@@ -1,0 +1,37 @@
+<div class="card mb-4 shadow">
+
+    <div class="card-header container">
+        <div class="row py-3 px-2">
+
+            <h1 class="h3 m-0 gsa-light-blue col-md-8">
+                <ng-container *ngIf="cardHeader; else defaultCardHeader">
+                    <ng-container [ngTemplateOutlet]="cardHeader"></ng-container>
+                    {{cardTitle}}
+                </ng-container>
+                <ng-template #defaultCardHeader>
+                    {{cardTitle}}
+                </ng-template>
+            </h1>
+
+            <ng-container *ngIf="cardActions">
+                <div class=" col-md-4 d-flex d-flex-row d-flex-end">
+                    <ng-container [ngTemplateOutlet]="cardActions"></ng-container>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+
+    <ng-container *ngIf="cardBody">
+        <div class="card-body">
+            <ng-container [ngTemplateOutlet]="cardBody"></ng-container>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="cardFooter">
+        <div class="card-footer">
+            <ng-container [ngTemplateOutlet]="cardFooter"></ng-container>
+        </div>
+    </ng-container>
+
+</div>

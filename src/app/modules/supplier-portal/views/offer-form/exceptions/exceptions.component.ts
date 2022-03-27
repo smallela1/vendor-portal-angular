@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-exceptions',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExceptionsComponent implements OnInit {
   
-  sectionName = "Exception";
+  @Input('sectionData') sectionData: any;
 
   constructor() { }
 

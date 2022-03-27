@@ -1,0 +1,18 @@
+<app-card [cardTitle]="section.name">
+    <ng-template #cardHeader>
+        <app-section-status-indicator [sectionData]="section"></app-section-status-indicator>
+    </ng-template>
+    <ng-template #cardActions>
+        <ng-container [ngTemplateOutlet]="formCardActions"></ng-container>
+    </ng-template>
+    <ng-template #cardBody>
+        <ng-container *ngIf="formCardBody">
+            <ng-container [ngTemplateOutlet]="formCardBody"></ng-container>
+        </ng-container>
+    </ng-template>
+    <ng-container *ngIf="formCardFooter">
+        <ng-template #cardFooter>
+            <ng-container [ngTemplateOutlet]="formCardFooter"></ng-container>
+        </ng-template>
+    </ng-container>
+</app-card>

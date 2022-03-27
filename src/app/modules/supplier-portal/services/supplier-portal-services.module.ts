@@ -1,5 +1,5 @@
-import { OfferStatusService } from "./offer-status/offer-status.service";
+import { OfferService } from "./offer/offer.service";
 
 export {
-  OfferStatusService,
+  OfferService,
  }

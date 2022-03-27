@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-primary btn-sm" (click)="openModal(modalTemplate)">
+    <ng-container *ngIf="btnLabel == 'Edit'">
+        <span class="fa fa-edit mr-2"></span>
+    </ng-container>
+    {{btnLabel}}
+</button>
+
+<ng-template #modalTemplate>
+    <div tabindex="-1" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="h4 modal-title pull-left">{{modalTitle}}</span>
+                <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                    <span aria-hidden="true" class="visually-hidden">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ng-container *ngIf="modalBody">
+                    <ng-container [ngTemplateOutlet]="modalBody"></ng-container>
+                </ng-container>
+            </div>
+            <ng-container *ngIf="modalFooter">
+                <div class="modal-footer">
+                    <div class="button-row">
+                        <ng-container [ngTemplateOutlet]="modalFooter"></ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-upload-documents',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadDocumentsComponent implements OnInit {
   
-  sectionName = "Upload Documents";
+  @Input('sectionData') sectionData: any;
 
   constructor() { }
 

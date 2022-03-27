@@ -1,516 +1,1099 @@
-<form id="uploadDocuments">
-
-    <div class="usa-alert usa-alert-info mb-4">
-        <div class="usa-alert-body">
-    <p><b class="black">Attach supporting documents to this eOffer.</b></p>
-    <p>Upload all documents associated with your eOffer.</p>
-    <p>Some of the attachments are required based on the responses provided in other templates.</p>
-    <p>Only files of size less than or equal to <b>100.0 MB</b> can be uploaded.</p>
-    <p>Service and product text file has been named as 'Terms and Conditions Text File'.</p>
-</div></div>
-    <h4 class="type1">Documents</h4>
-    <p>If you have other documents that you want to upload that do not show in the list below, click on 'Other
-        (optional-offeror defined)' and select the document you want to upload. Once you select the document type, you
-        will be able to attach the document to that category. If you do not find what you need in this list you may
-        still use the "Other" category to upload your document.</p>
+<app-form-card [sectionState]="sectionData" *ngIf="sectionData.showSection">
+    <ng-template #formCardActions>
+        <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+    </ng-template>
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
 
 
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="uploadDocuments">
 
-
-
-    <!--upload Information starts here-->
-    <style xmlns:encoder="gov.gsa.eoffer.common.util.Base64"></style>
-    <div xmlns:java="http://xml.apache.org/xslt/java" class="table2">
-        <span id="docs" class="visually-hidden">Documents</span>
-        <table aria-labelledby="docs" id="eOfferDocsTable" class="table table-responsive table-striped table-bordered nested">
-            <thead>
-                <tr>
-                    <th width="10%">Type</th>
-                    <th colspan="3" width="30%" scope="colgroup">Applicable Level</th>
-                    <th width="20%">Name</th>
-                    <th width="15%">Status</th>
-                    <th width="15%">Actions</th>
-                </tr>
-                <tr>
-                    <th width="10%" scope="col"></th>
-                    <th width="11%" scope="col">Large Category</th>
-                    <th width="25%" scope="col">Subcategory</th>
-                    <th width="11%" scope="col">SIN</th>
-                    <th width="20%" scope="col"></th>
-                    <th width="15%" scope="col"></th>
-                    <th width="15%" scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Exceptions to Certs and Reps - 52.212-3<span
-                            class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Exceptions to Certs and Reps - 52.212-3"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=172&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Financial Documents<span
-                            class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">Information Technology</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Financial Documents"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=629&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Price Proposal Template<span
-                            class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Price Proposal Template"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=567&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Agent Authorization Letter</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Agent Authorization Letter"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=636&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Compensation Plan for Professional Employees</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Compensation Plan for Professional Employees"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=19&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">End User License Agreements (EULA)</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for End User License Agreements (EULA)"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=655&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Information on Previous Contract Cancellation for
-                        Low/No Sales</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Information on Previous Contract Cancellation for Low/No Sales"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=632&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Labor Category Descriptions</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Labor Category Descriptions"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=21&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Letters of Commitment (LOCs)<a
-                            title="Letters of Commitment (LOCs)" target="_blank"
-                            href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
-                                class="glyphicon glyphicon-file"></span></a></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Letters of Commitment (LOCs)"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=256&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Letters of Supply<a title="Letters of Supply"
-                            target="_blank"
-                            href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
-                                class="glyphicon glyphicon-file"></span></a></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Letters of Supply"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=78&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Neutral Letter From ORI<a
-                            title="Neutral Letter From ORI" target="_blank"
-                            href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
-                                class="glyphicon glyphicon-file"></span></a></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Neutral Letter From ORI"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=631&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Order Form for Past Performance Eval<a
-                            title="Order Form for Past Performance Eval" target="_blank"
-                            href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
-                                class="glyphicon glyphicon-file"></span></a></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Order Form for Past Performance Eval"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=254&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Other (optional-offeror defined)</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Other (optional-offeror defined)"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=4&amp;group=Other">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Past Performance &amp; Experience<a
-                            title="Past Performance &amp; Experience" target="_blank"
-                            href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
-                                class="glyphicon glyphicon-file"></span></a></td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Past Performance &amp; Experience"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=253&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Pricing Support (Invoices)</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Pricing Support (Invoices)"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=177&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Section 508 Compliance Information</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Section 508 Compliance Information"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=656&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Statement of Work</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Statement of Work"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=634&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Subcontracting Plan</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Subcontracting Plan"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=2&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Supporting Documentation</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Supporting Documentation"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=34&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Trade Agreement Act Sourcing Documents</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Trade Agreement Act Sourcing Documents"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=635&amp;group=">Upload</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nested" nowrap="yes" valign="top">Uncompensated Overtime Policy</td>
-                    <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
-                        <table height="100%" id="eOfferNestedDocsTable" class="table table-responsive table-bordered nextNested">
-                            <tbody>
-                                <tr style="height:auto;">
-                                    <td width="22%">All</td>
-                                    <td width="50%"></td>
-                                    <td width="22%"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="nested">&nbsp;</td>
-                    <td valign="top" nowrap="yes" class="nested red">Not Uploaded
-                    </td>
-                    <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
-                            title="Upload  file for Uncompensated Overtime Policy"
-                            href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=20&amp;group=">Upload</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-
-    <div class="button-row">
-        <input type="submit" value="Save and Continue" class="btn btn-primary" name="saveAndContinue">
+        <div class="usa-alert usa-alert-info mb-4">
+            <div class="usa-alert-body">
+                <p><b class="black">Attach supporting documents to this eOffer.</b></p>
+                <p>Upload all documents associated with your eOffer.</p>
+                <p>Some of the attachments are required based on the responses provided in other templates.</p>
+                <p>Only files of size less than or equal to <b>100.0 MB</b> can be uploaded.</p>
+                <p>Service and product text file has been named as 'Terms and Conditions Text File'.</p>
+            </div>
+        </div>
+        <h4 class="type1">Documents</h4>
+        <p>If you have other documents that you want to upload that do not show in the list below, click on 'Other
+            (optional-offeror defined)' and select the document you want to upload. Once you select the document type,
+            you
+            will be able to attach the document to that category. If you do not find what you need in this list you may
+            still use the "Other" category to upload your document.</p>
 
 
 
-    </div>
-</form>
+
+
+        <!--upload Information starts here-->
+        <style xmlns:encoder="gov.gsa.eoffer.common.util.Base64"></style>
+        <div xmlns:java="http://xml.apache.org/xslt/java" class="table2">
+            <span id="docs" class="visually-hidden">Documents</span>
+            <table aria-labelledby="docs" id="eOfferDocsTable"
+                class="table table-responsive table-striped table-bordered nested">
+                <thead>
+                    <tr>
+                        <th width="10%">Type</th>
+                        <th colspan="3" width="30%" scope="colgroup">Applicable Level</th>
+                        <th width="20%">Name</th>
+                        <th width="15%">Status</th>
+                        <th width="15%">Actions</th>
+                    </tr>
+                    <tr>
+                        <th width="10%" scope="col"></th>
+                        <th width="11%" scope="col">Large Category</th>
+                        <th width="25%" scope="col">Subcategory</th>
+                        <th width="11%" scope="col">SIN</th>
+                        <th width="20%" scope="col"></th>
+                        <th width="15%" scope="col"></th>
+                        <th width="15%" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Exceptions to Certs and Reps - 52.212-3<span
+                                class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Exceptions to Certs and Reps - 52.212-3"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=172&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Financial Documents<span
+                                class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">Information Technology</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Financial Documents"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=629&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Price Proposal Template<span
+                                class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Price Proposal Template"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=567&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Agent Authorization Letter</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Agent Authorization Letter"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=636&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Compensation Plan for Professional Employees</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Compensation Plan for Professional Employees"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=19&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">End User License Agreements (EULA)</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for End User License Agreements (EULA)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=655&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Information on Previous Contract Cancellation for
+                            Low/No Sales</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Information on Previous Contract Cancellation for Low/No Sales"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=632&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Labor Category Descriptions</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Labor Category Descriptions"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=21&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Letters of Commitment (LOCs)<a
+                                title="Letters of Commitment (LOCs)" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Letters of Commitment (LOCs)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=256&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Letters of Supply<a title="Letters of Supply"
+                                target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Letters of Supply"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=78&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Neutral Letter From ORI<a
+                                title="Neutral Letter From ORI" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Neutral Letter From ORI"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=631&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Order Form for Past Performance Eval<a
+                                title="Order Form for Past Performance Eval" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Order Form for Past Performance Eval"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=254&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Other (optional-offeror defined)</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Other (optional-offeror defined)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=4&amp;group=Other">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Past Performance &amp; Experience<a
+                                title="Past Performance &amp; Experience" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Past Performance &amp; Experience"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=253&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Pricing Support (Invoices)</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Pricing Support (Invoices)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=177&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Section 508 Compliance Information</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Section 508 Compliance Information"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=656&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Statement of Work</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Statement of Work"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=634&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Subcontracting Plan</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Subcontracting Plan"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=2&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Supporting Documentation</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Supporting Documentation"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=34&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Trade Agreement Act Sourcing Documents</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Trade Agreement Act Sourcing Documents"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=635&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Uncompensated Overtime Policy</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Uncompensated Overtime Policy"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=20&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</ng-template>
+
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="uploadDocuments">
+
+        <div class="usa-alert usa-alert-info mb-4">
+            <div class="usa-alert-body">
+                <p><b class="black">Attach supporting documents to this eOffer.</b></p>
+                <p>Upload all documents associated with your eOffer.</p>
+                <p>Some of the attachments are required based on the responses provided in other templates.</p>
+                <p>Only files of size less than or equal to <b>100.0 MB</b> can be uploaded.</p>
+                <p>Service and product text file has been named as 'Terms and Conditions Text File'.</p>
+            </div>
+        </div>
+        <h4 class="type1">Documents</h4>
+        <p>If you have other documents that you want to upload that do not show in the list below, click on 'Other
+            (optional-offeror defined)' and select the document you want to upload. Once you select the document type,
+            you
+            will be able to attach the document to that category. If you do not find what you need in this list you may
+            still use the "Other" category to upload your document.</p>
+
+
+
+
+
+        <!--upload Information starts here-->
+        <style xmlns:encoder="gov.gsa.eoffer.common.util.Base64"></style>
+        <div xmlns:java="http://xml.apache.org/xslt/java" class="table2">
+            <span id="docs" class="visually-hidden">Documents</span>
+            <table aria-labelledby="docs" id="eOfferDocsTable"
+                class="table table-responsive table-striped table-bordered nested">
+                <thead>
+                    <tr>
+                        <th width="10%">Type</th>
+                        <th colspan="3" width="30%" scope="colgroup">Applicable Level</th>
+                        <th width="20%">Name</th>
+                        <th width="15%">Status</th>
+                        <th width="15%">Actions</th>
+                    </tr>
+                    <tr>
+                        <th width="10%" scope="col"></th>
+                        <th width="11%" scope="col">Large Category</th>
+                        <th width="25%" scope="col">Subcategory</th>
+                        <th width="11%" scope="col">SIN</th>
+                        <th width="20%" scope="col"></th>
+                        <th width="15%" scope="col"></th>
+                        <th width="15%" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Exceptions to Certs and Reps - 52.212-3<span
+                                class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Exceptions to Certs and Reps - 52.212-3"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=172&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Financial Documents<span
+                                class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">Information Technology</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Financial Documents"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=629&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Price Proposal Template<span
+                                class="required">&nbsp;*&nbsp;</span><span class="visually-hidden">Required</span></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Price Proposal Template"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=567&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Agent Authorization Letter</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Agent Authorization Letter"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=636&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Compensation Plan for Professional Employees</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Compensation Plan for Professional Employees"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=19&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">End User License Agreements (EULA)</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for End User License Agreements (EULA)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=655&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Information on Previous Contract Cancellation for
+                            Low/No Sales</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Information on Previous Contract Cancellation for Low/No Sales"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=632&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Labor Category Descriptions</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Labor Category Descriptions"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=21&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Letters of Commitment (LOCs)<a
+                                title="Letters of Commitment (LOCs)" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Letters of Commitment (LOCs)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=256&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Letters of Supply<a title="Letters of Supply"
+                                target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Letters of Supply"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=78&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Neutral Letter From ORI<a
+                                title="Neutral Letter From ORI" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Neutral Letter From ORI"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=631&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Order Form for Past Performance Eval<a
+                                title="Order Form for Past Performance Eval" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Order Form for Past Performance Eval"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=254&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Other (optional-offeror defined)</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Other (optional-offeror defined)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=4&amp;group=Other">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Past Performance &amp; Experience<a
+                                title="Past Performance &amp; Experience" target="_blank"
+                                href="https://sws-test.fas.gsa.gov/sws-search/generateClauseBodyPdf.do?method=generateClauseBody&amp;solNo=NDdRU01EMjBSMDAwMQ==&amp;clauseNo=SCP-FSS-001&amp;refreshNo=27"><span
+                                    class="glyphicon glyphicon-file"></span></a></td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Past Performance &amp; Experience"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=253&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Pricing Support (Invoices)</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Pricing Support (Invoices)"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=177&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Section 508 Compliance Information</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Section 508 Compliance Information"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=656&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Statement of Work</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Statement of Work"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=634&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Subcontracting Plan</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Subcontracting Plan"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=2&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Supporting Documentation</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Supporting Documentation"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=34&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Trade Agreement Act Sourcing Documents</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Trade Agreement Act Sourcing Documents"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=635&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nested" nowrap="yes" valign="top">Uncompensated Overtime Policy</td>
+                        <td style="padding:0; margin:0; height:100%;" cellpadding="0" cellspacing="0" colspan="3">
+                            <table height="100%" id="eOfferNestedDocsTable"
+                                class="table table-responsive table-bordered nextNested">
+                                <tbody>
+                                    <tr style="height:auto;">
+                                        <td width="22%">All</td>
+                                        <td width="50%"></td>
+                                        <td width="22%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="nested">&nbsp;</td>
+                        <td valign="top" nowrap="yes" class="nested red">Not Uploaded
+                        </td>
+                        <td class="tbl-button nested" valign="top" nowrap="yes"><a class="btn btn-primary btn-xs"
+                                title="Upload  file for Uncompensated Overtime Policy"
+                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerAttachmentAction.do?method=upload&amp;fileId=20&amp;group=">Upload</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</ng-template>
+
+
+<!-- Actions-->
+<ng-template #sectionActions>
+    <app-modal [modalTitle]="sectionData.name" [showModalBtnLabel]="'Edit'" [modalSize]="'xl'">
+        <ng-template #modalBody>
+            <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+        </ng-template>
+        <ng-template #modalFooter>
+            <input type="submit" value="Save and Continue" id="saveAndContinue" class="btn btn-primary">
+        </ng-template>
+    </app-modal>
+
+    <button *ngIf="sectionData.sectionStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
+
+</ng-template>

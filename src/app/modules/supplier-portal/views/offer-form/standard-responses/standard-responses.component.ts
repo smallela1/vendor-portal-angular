@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-standard-responses',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StandardResponsesComponent implements OnInit {
   
-  sectionName = "Standard Responses";
+  @Input('sectionData') sectionData: any;
 
   constructor() { }
 

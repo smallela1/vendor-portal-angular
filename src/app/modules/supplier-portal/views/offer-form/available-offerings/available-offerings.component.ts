@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-available-offerings',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvailableOfferingsComponent implements OnInit {
   
-  sectionName = "Available Offerings";
+  @Input('sectionData') sectionData: any;
 
   constructor() { }
 
