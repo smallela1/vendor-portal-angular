@@ -25,8 +25,33 @@ export class OfferService {
   constructor() { }
 
   updateOfferStatus(status: string): void {
-    this.sectionStatusChanged.next(status);
     console.log('New status is: ' + status);
+    this.offerData.formStatus = status;
+    
+    for (var key in this.offerData.sections) {
+
+      switch (status) {
+        case 'In Progress':
+          this.offerData.sections[key].sectionStatus = 'incomplete';
+          this.offerData.sections[key].isStatusVisible = true;
+          break;
+        case 'Submitted':
+          this.offerData.sections[key].sectionStatus = 'complete';
+          this.offerData.sections[key].isStatusVisible = true;
+          break;
+        case 'Signed':
+          this.offerData.sections[key].sectionStatus = 'incomplete';
+          this.offerData.sections[key].isStatusVisible = false;
+          break;
+        case 'In Progress':
+          this.offerData.sections[key].sectionStatus = 'incomplete';
+          this.offerData.sections[key].isStatusVisible = false;
+          break;
+
+      }
+    }
+
+    this.sectionStatusChanged.next(status);
   }
 
 
@@ -59,5 +84,6 @@ export const testOfferData = {
     solicitationProvisions: { path: "solicitation-provisions", name: "Solicitation Provisions", sectionStatus: 'incomplete', isStatusVisible: true, sectionId: "solicitationProvisions", component: SolicitationProvisionsComponent, showSection: true },
     exceptions: { path: "exceptions", name: "Exceptions", sectionStatus: 'incomplete', isStatusVisible: true, sectionId: "exceptions", component: ExceptionsComponent , showSection: false },
     uploadDocuments: { path: "upload-documents", name: "Upload Documents", sectionStatus: 'incomplete', isStatusVisible: true, sectionId: "uploadDocuments", component: UploadDocumentsComponent, showSection: true },
-  }
+  },
+  formStatus: 'In Progress'
 }

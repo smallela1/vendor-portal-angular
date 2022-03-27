@@ -8,8 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NegotiatorsComponent implements OnInit {
   
   @Input('sectionData') sectionData: any;
-  
-  sectionName = "Negotiators";
+  @Input('offerStatusData') offerStatus: any;
 
   constructor() { }
 

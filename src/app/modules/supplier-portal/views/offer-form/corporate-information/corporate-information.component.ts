@@ -8,8 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CorporateInformationComponent implements OnInit {
   
   @Input('sectionData') sectionData: any;
-  
-  sectionName = "Corporate Information";
+  @Input('offerStatusData') offerStatus: any;
 
   constructor() { }
 

@@ -1,8 +1,8 @@
-<button type="button" class="btn btn-primary btn-sm" (click)="openModal(modalTemplate)">
+<button type="button" class="btn btn-default btn-lg p-1 m-0" (click)="openModal(modalTemplate)">
     <ng-container *ngIf="btnLabel == 'Edit'">
-        <span class="fa fa-edit mr-2"></span>
+        <span class="fa fa-pencil mr-2 gsa-light-blue"></span>
     </ng-container>
-    {{btnLabel}}
+    <span class="gsa-light-blue">{{btnLabel}}</span>
 </button>
 
 <ng-template #modalTemplate>

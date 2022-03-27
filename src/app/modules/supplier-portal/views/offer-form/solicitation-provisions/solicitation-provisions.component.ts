@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SolicitationProvisionsComponent implements OnInit {
   
   @Input('sectionData') sectionData: any;
+  @Input('offerStatusData') offerStatus: any;
 
   constructor() { }
 

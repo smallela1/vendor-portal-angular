@@ -22,7 +22,8 @@ export class OfferFormComponent implements OnInit {
   ngOnInit(): void {
     this.$offerStatusObservable = this.offerSvc.sectionStatusChanged.subscribe({
       next: (status: string) => {
-        console.log("selection changed: " + status);
+        console.log("selection changed: " + status);       
+        this.offerData = this.offerSvc.getOfferData();
       },
       error: (err: any) => {
         console.log(err);

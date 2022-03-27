@@ -194,9 +194,11 @@
 </ng-template>
 
 
+
 <!-- Actions-->
 <ng-template #sectionActions>
-    <app-modal [modalTitle]="sectionData.name" [showModalBtnLabel]="'Edit'" [modalSize]="'xl'">
+    <app-modal *ngIf="offerStatus == 'In Progress'" [modalTitle]="sectionData.name" [showModalBtnLabel]="'Edit'"
+        [modalSize]="'xl'">
         <ng-template #modalBody>
             <ng-container [ngTemplateOutlet]="editSection"></ng-container>
         </ng-template>
@@ -204,7 +206,18 @@
             <input type="submit" value="Save and Continue" id="saveAndContinue" class="btn btn-primary">
         </ng-template>
     </app-modal>
+    
 
-    <button *ngIf="sectionData.sectionStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
-
+    <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+        <button id="button-manage" dropdownToggle type="button" class="btn btn-default btn-lg dropdown-toggle p-1 m-0" aria-controls="dropdown-manage">
+            <span class="gsa-light-blue">Actions</span>
+            <span class="caret"></span>
+        </button>
+        <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item">Create New Modification</a></li>
+            <li role="menuitem"><a class="dropdown-item">View Modification History</a></li>
+            <!-- <li role="menuitem"><a class="dropdown-item">Market Research</a></li> 
+        <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
+        </ul>
+    </span>
 </ng-template>

@@ -3,22 +3,21 @@
   <ng-template #aside>
 
     <app-offer-form-side-nav [menuItems]="menuItems"></app-offer-form-side-nav>
-    <app-submit-offer (submitOfferEvent)="offerSubmitted($event)"></app-submit-offer>
+    <app-submit-offer (submitOfferEvent)="offerSubmitted($event)" [offerStatusData]="offerData.formStatus"></app-submit-offer>
 
   </ng-template>
 
   <ng-template #body>
 
-    <app-pathway-to-success [sectionData]="offerData.sections.pathwayToSuccess"></app-pathway-to-success>
-    <app-corporate-information [sectionData]="offerData.sections.corporateInformation"></app-corporate-information>
-    <app-negotiators [sectionData]="offerData.sections.negotiators"></app-negotiators>
-    <app-available-offerings [sectionData]="offerData.sections.availableOfferings"></app-available-offerings>
-    <app-standard-responses [sectionData]="offerData.sections.standardResponses"></app-standard-responses>
-    <app-solicitaion-clauses [sectionData]="offerData.sections.solicitationClauses"></app-solicitaion-clauses>
-    <app-solicitation-provisions [sectionData]="offerData.sections.solicitationProvisions"></app-solicitation-provisions>
-    <app-exceptions [sectionData]="offerData.sections.exceptions"></app-exceptions>
-    <app-upload-documents [sectionData]="offerData.sections.upload-documents"></app-upload-documents>
-
+    <app-pathway-to-success [sectionData]="offerData.sections.pathwayToSuccess" [offerStatusData]="offerData.formStatus"></app-pathway-to-success>
+    <app-corporate-information [sectionData]="offerData.sections.corporateInformation" [offerStatusData]="offerData.formStatus"></app-corporate-information>
+    <app-negotiators [sectionData]="offerData.sections.negotiators" [offerStatusData]="offerData.formStatus"></app-negotiators>
+    <app-available-offerings [sectionData]="offerData.sections.availableOfferings" [offerStatusData]="offerData.formStatus"></app-available-offerings>
+    <app-standard-responses [sectionData]="offerData.sections.standardResponses" [offerStatusData]="offerData.formStatus"></app-standard-responses>
+    <app-solicitaion-clauses [sectionData]="offerData.sections.solicitationClauses" [offerStatusData]="offerData.formStatus"></app-solicitaion-clauses>
+    <app-solicitation-provisions [sectionData]="offerData.sections.solicitationProvisions" [offerStatusData]="offerData.formStatus"></app-solicitation-provisions>
+    <app-exceptions [sectionData]="offerData.sections.exceptions" [offerStatusData]="offerData.formStatus"></app-exceptions>
+    <app-upload-documents [sectionData]="offerData.sections.uploadDocuments" [offerStatusData]="offerData.formStatus"></app-upload-documents>
 
   </ng-template>
 
