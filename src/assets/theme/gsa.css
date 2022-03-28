@@ -94,6 +94,7 @@ html, body {
 .sticky-top-content {
   top: 0 !important;
   position: sticky !important;
+  z-index: 5;
 }
 
 .sticky-bottom {

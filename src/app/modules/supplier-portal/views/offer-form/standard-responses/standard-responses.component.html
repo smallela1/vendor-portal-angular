@@ -10,7 +10,7 @@
 
 <!-- Readonly Section -->
 <ng-template #readonlySection>
-    <form id="standardResponses">
+    <form id="standardResponses" class="px-5">
 
         <table cellspacing="0" cellpadding="3" width="100%">
             <tbody>
@@ -209,7 +209,7 @@
                     <td style="border:none;" colspan="2">
                         $
                         <input onchange="javascript:formatNumber(this.value,this.id,&#39;Y&#39;);" size="35"
-                            class="d-control" id="MinOrderLimit" type="text" value="5,000" maxlength="22"
+                            class="form-control col-2 d-inline" id="MinOrderLimit" type="text" value="5,000" maxlength="22"
                             aria-required="true"><input size="35" id="MinOrderLimit.val" name="MinOrderLimit"
                             type="hidden" value="5000" maxlength="22">
                     </td>

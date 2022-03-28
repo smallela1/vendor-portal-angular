@@ -10,7 +10,7 @@
 
 <!-- Readonly Section -->
 <ng-template #readonlySection>
-    <form id="availableOfferings">
+    <form id="availableOfferings" class="pb-5">
 
         <div class="usa-alert usa-alert-info mb-4">
             <div class="usa-alert-body">
@@ -22,151 +22,139 @@
                 </p>
             </div>
         </div>
-        <h4 id="addsins" class="visually-hidden">Add SINs</h4>
-        <p>You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a full
-            list of available offerings, please visit the <a target="_blank" title="MAS Roadmap"
-                href="https://www.gsa.gov/masroadmap">MAS Roadmap</a>.</p>
-        <div class="table2">
-            <table role="presentation" class="table table-responsive table-bordered table-striped" width="100%"
-                aria-labelledby="addsins" id="addSIN">
-                <tbody>
-                    <tr>
-                        <td aria-hidden="true" class="fakeTh" width="70%">Add SIN(s)<span class="required"> *</span>
-                        </td>
-                        <td aria-hidden="true" class="fakeTh" width="30%">Action</td>
-                    </tr>
-                    <tr>
-                        <td><label for="largeCategoryId">Large Category: </label><select style="max-width:400px"
-                                aria-required="true" class="d-control samesize" name="largeCategory"
-                                id="largeCategoryId">
-                                <option value="">Select a Large Category</option>
-                                <option value="B">Facilities</option>
-                                <option value="C">Furniture and Furnishings</option>
-                                <option value="D">Human Capital</option>
-                                <option value="E">Industrial Products and Services</option>
-                                <option value="F">Information Technology</option>
-                                <option value="G">Miscellaneous</option>
-                                <option value="A">Office Management</option>
-                                <option value="H">Professional Services</option>
-                                <option value="I">Scientific Management and Solutions</option>
-                                <option value="J">Security and Protection</option>
-                                <option value="K">Transportation and Logistics Services</option>
-                                <option value="L">Travel</option>
-                            </select></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><label for="subCategoryId">Subcategory: </label> <select style="max-width:400px"
-                                aria-required="true" class="d-control samesize" name="subCategory" id="subCategoryId">
-                                <option value="">Select a Subcategory</option>
-                            </select></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><label for="sintypeId">SIN :</label><select style="max-width:400px" aria-required="true"
-                                class="d-control samesize" aria-label="Select SINs" name="sintype" id="sintypeId">
-                                <option value="">Select a SIN</option>
-                            </select></td>
-                        <td><input id="idAddSin" class="btn btn-primary btn-sm" value="Add SIN Details" name="sinType"
-                                type="Submit"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table2">
-            <h4 id="yoursin" class="type1">Your SIN(s)</h4>
-            <table aria-labelledby="yoursin" class="table table-responsive table-bordered table-striped buttonsTable"
-                id="yourSINs">
-                <thead>
-                    <tr class="columnTitleFill">
-                        <th width="10%">Number</th>
-                        <th width="25%" scope="col">Title</th>
-                        <th width="25%" scope="col">Large Category</th>
-                        <th width="20%" scope="col">Subcategory</th>
-                        <th width="10%" scope="col">Edit</th>
-                        <th width="10%" scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>54151HEAL</td>
-                        <td>Health Information Technology Services</td>
-                        <td>Information Technology</td>
-                        <td>IT Services</td>
-                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                                title="Edit 54151HEAL Health Information Technology Services SINs"
-                                href="https://eoffer-test.fas.gsa.gov/eOffer/offerSinTypeAction.do?method=edit&amp;sintype=54151HEAL">Edit</a>
-                        </td>
-                        <td class="tbl-button"><a class="btn btn-primary btn-sm"
-                                title="Delete 54151HEAL Health Information Technology Services SINs"
-                                href="https://eoffer-test.fas.gsa.gov/eOffer/deleteAction.do?method=delete&amp;source=deleteSin&amp;deleteSinType=54151HEAL">Delete</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table2">
-            <h4 style="border-top: 5px solid grey;"></h4>
-        </div>
-        <div class="table2">
-            <h4 id="prework" class="type1">Preponderance Of Work</h4>
-            <p>Please complete the 'Preponderance of Work' section only after you have completed adding all offerings to
-                your offer. The information below will populate based on the offerings you selected above. Offerors must
-                choose one preponderance of work large category, subcategory, SIN and NAICS for the offer as a whole.
+        <div class="px-5">
+
+            <!--
+            <h4 id="addsins" class="visually-hidden">Add SINs</h4>
+            <p>You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a full
+                list of available offerings, please visit the <a target="_blank" title="MAS Roadmap"
+                    href="https://www.gsa.gov/masroadmap">MAS Roadmap</a>.
             </p>
-            <table role="presentation" aria-labelledby="prework"
-                class="table table-responsive table-bordered table-striped" id="prepWork">
-                <tbody>
-                    <tr>
-                        <td colspan="2" aria-hidden="true" class="fakeTh" width="100%">
-                            Select Preponderance of Work
-                        </td>
-                    </tr>
-                    <tr border="0">
-                        <td width="70%"><label for="selectedLargeCategoryId">Large Category:</label><select size="1"
-                                id="selectedLargeCategoryId" class="d-control" aria-required="true"
-                                name="selectedLargeCategory">
-                                <option value="">Select a Large Category</option>
-                                <option value="F">Information Technology</option>
-                            </select></td>
-                        <td width="30%"></td>
-                    </tr>
-                    <tr border="0">
-                        <td><label for="selectedSubcategoryId">Subcategory:</label><select size="1"
-                                id="selectedSubcategoryId" class="d-control" aria-required="true"
-                                name="selectedSubcategory">
-                                <option value="">Select a Subcategory</option>
-                                <option value="F03">IT Services</option>
-                            </select></td>
-                        <td></td>
-                    </tr>
-                    <tr border="0">
-                        <td><label for="selectedSinId">SIN:</label><select style="max-width:400px" size="1"
-                                id="selectedSinId" class="d-control" aria-required="true" name="selectedSin">
-                                <option value="">Select a SIN</option>
-                                <option value="54151HEAL">54151HEAL Health Information Technology Services</option>
-                            </select></td>
-                        <td></td>
-                    </tr>
-                    <tr border="0">
-                        <td><label for="preponderanceOfWorkId">Vendor proposed preponderance of work:<span
-                                    class="required">&nbsp;*&nbsp;</span></label><select size="1"
-                                id="preponderanceOfWorkId" class="d-control" aria-required="true"
-                                name="PreponderanceOfWork">
-                                <option value="">Select NAICS</option>
-                                <option value="541511">541511</option>
-                                <option value="541512">541512</option>
-                                <option value="541513">541513</option>
-                                <option value="541519">541519</option>
-                            </select></td>
-                        <td width="30%"><input id="idPreponEdit" class="btn btn-primary btn-sm"
-                                value="Edit Preponderance of Work" name="sinTypeAction" type="Submit"></td>
-                    </tr>
-                    <tr>
-                        <td nowrap="yes" colspan="2">Selected Preponderance Of Work is:&nbsp;541511</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-md-3 col-form-label">Large Category: </label>
+                    <div class="col-md">
+                      <select
+                        aria-required="true" class="form-control" name="largeCategory"
+                        id="largeCategoryId">
+                        <option value="">Select a Large Category</option>
+                        <option value="B">Facilities</option>
+                        <option value="C">Furniture and Furnishings</option>
+                        <option value="D">Human Capital</option>
+                        <option value="E">Industrial Products and Services</option>
+                        <option value="F">Information Technology</option>
+                        <option value="G">Miscellaneous</option>
+                        <option value="A">Office Management</option>
+                        <option value="H">Professional Services</option>
+                        <option value="I">Scientific Management and Solutions</option>
+                        <option value="J">Security and Protection</option>
+                        <option value="K">Transportation and Logistics Services</option>
+                        <option value="L">Travel</option>
+                    </select>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="table2">
+                <table role="presentation" class="table table-responsive table-bordered table-striped" width="100%"
+                    aria-labelledby="addsins" id="addSIN">
+                    <tbody>
+                        <tr>
+                            <td aria-hidden="true" class="fakeTh" width="70%">Add SIN(s)<span class="required"> *</span>
+                            </td>
+                            <td aria-hidden="true" class="fakeTh" width="30%">Action</td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-md-3 col-form-label">Large Category: </label>
+                                    <div class="col-md">
+                                      <select
+                                        aria-required="true" class="form-control" name="largeCategory"
+                                        id="largeCategoryId">
+                                        <option value="">Select a Large Category</option>
+                                        <option value="B">Facilities</option>
+                                        <option value="C">Furniture and Furnishings</option>
+                                        <option value="D">Human Capital</option>
+                                        <option value="E">Industrial Products and Services</option>
+                                        <option value="F">Information Technology</option>
+                                        <option value="G">Miscellaneous</option>
+                                        <option value="A">Office Management</option>
+                                        <option value="H">Professional Services</option>
+                                        <option value="I">Scientific Management and Solutions</option>
+                                        <option value="J">Security and Protection</option>
+                                        <option value="K">Transportation and Logistics Services</option>
+                                        <option value="L">Travel</option>
+                                    </select>
+                                    </div>
+                                </div>
+
+                                </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><label for="subCategoryId">Subcategory: </label> <select style="max-width:400px"
+                                    aria-required="true" class="d-control samesize" name="subCategory" id="subCategoryId">
+                                    <option value="">Select a Subcategory</option>
+                                </select></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><label for="sintypeId">SIN :</label><select style="max-width:400px" aria-required="true"
+                                    class="d-control samesize" aria-label="Select SINs" name="sintype" id="sintypeId">
+                                    <option value="">Select a SIN</option>
+                                </select></td>
+                            <td><input id="idAddSin" class="btn btn-primary btn-sm" value="Add SIN Details" name="sinType"
+                                    type="Submit"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            -->
+            <div class="table2">
+                <h4 id="yoursin" class="type1 mb-4">Your SIN(s) </h4>
+                <table aria-labelledby="yoursin" class="table table-responsive table-bordered table-striped buttonsTable"
+                    id="yourSINs">
+                    <thead>
+                        <tr class="columnTitleFill">
+                            <th width="10%">Number</th>
+                            <th width="25%" scope="col">Title</th>
+                            <th width="25%" scope="col">Large Category</th>
+                            <th width="20%" scope="col">Subcategory</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>54151HEAL</td>
+                            <td>Health Information Technology Services</td>
+                            <td>Information Technology</td>
+                            <td>IT Services</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
+            <div class="table2">
+                <h4 id="prework" class="type1">Preponderance Of Work</h4>
+               
+                <div class="">
+                    <h5 class="black"><small>Selected Preponderance Of Work is:</small> 541511
+                    
+                                    </h5>
+                </div>
+
+
+            </div>
         </div>
 
     </form>
