@@ -1,45 +1,54 @@
-import { Component, ContentChild, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { of } from 'rxjs';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalService, BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
+  
 })
 export class ModalComponent implements OnInit {
+
+  @ViewChild('modalTemplate') public modalTemplate: TemplateRef<any>;
   
-  modalRef?: BsModalRef;
 
   @ContentChild('modalBody', { static: false }) modalBody: TemplateRef<any>;
   @ContentChild('modalFooter', { static: false }) modalFooter: TemplateRef<any>;
 
-  @Input('modalTitle') modalTitle: string = 'Modal Title is Missing!';
-  @Input('showModalBtnLabel') btnLabel: string = 'Open Modal';
-  @Input('modalSize') modalSize: string;
+  @Input('config') config: any = {
+    modalTitle: 'Modal Title is Missing!',
+    showDefaultOpenButton: false,
+    defaultOpenButtonLabel: 'Open Modal',
+    showDefaultCloseButton: true,
+    modalSize: ''
+  };
+    
+  modalRef?: BsModalRef;
 
-  @Output('modalRef') 
-
-  
   appLayout = document.getElementsByClassName('supplier-portal-layout');
   classSize = '';
 
-  constructor(private modalService: BsModalService,) { 
-  }
+  constructor(
+    private modalService: BsModalService) { 
+    }
 
   ngOnInit(): void {
   }
+  
+  ngAfterViewInit(): void {
+  }
 
 
-  openModal(template: TemplateRef<any>): void {
+  openModal(): void {
 
-    if( this.modalSize == 'xl') {
+    if( this.config.modalSize == 'xl') {
       this.classSize = 'modal-xl';
-    } else if (this.modalSize == 'lg') {
+    } else if (this.config.modalSize == 'lg') {
       this.classSize = 'modal-lg';
     }
 
-    this.modalRef = this.modalService.show(template, {
+    this.modalRef = this.modalService.show(this.modalTemplate, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -56,7 +65,24 @@ export class ModalComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  blurBackground(modalRef): void {
+
+  // openModal(): void {
+
+  //   if( this.modalSize == 'xl') {
+  //     this.classSize = 'modal-xl';
+  //   } else if (this.modalSize == 'lg') {
+  //     this.classSize = 'modal-lg';
+  //   }
+
+
+  //   this.modalTemplate.show();
+  // }
+
+  // closeModal(): void {
+  //   this.modalTemplate.hide();
+  // }
+
+  blurBackground(modalRef: BsModalRef): void {
 
     for (let i = 0; i < this.appLayout.length; i++) {
       this.appLayout.item(i).classList.add('blur');
@@ -70,6 +96,5 @@ export class ModalComponent implements OnInit {
       }
     })
   }
-
 
 }

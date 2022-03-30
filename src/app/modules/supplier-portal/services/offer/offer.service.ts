@@ -27,7 +27,7 @@ export class OfferService {
   updateOfferStatus(status: string): void {
     console.log('New status is: ' + status);
     this.offerData.formStatus = status;
-    
+
     for (var key in this.offerData.sections) {
 
       switch (status) {
@@ -43,7 +43,7 @@ export class OfferService {
           this.offerData.sections[key].sectionStatus = 'incomplete';
           this.offerData.sections[key].isStatusVisible = false;
           break;
-        case 'In Progress':
+        case 'Awarded':
           this.offerData.sections[key].sectionStatus = 'incomplete';
           this.offerData.sections[key].isStatusVisible = false;
           break;

@@ -26,7 +26,7 @@ import { ModalComponent } from './modal/modal.component';
   imports: [
     CommonModule,
     AccordionModule,
-    ModalModule,
+    ModalModule.forRoot(),
     SupplierPortalComponentsModule,
   ],
   exports: [

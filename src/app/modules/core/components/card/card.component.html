@@ -1,6 +1,6 @@
-<div class="card mb-4 shadow">
+<div class="card mb-4 pb-5 shadow">
 
-    <div class="card-header sticky-top-content">
+    <div class="card-header sticky-top-content" style="top: 70px !important;">
         <div class="row py-3 px-2">
 
             <h1 class="h3 m-0 gsa-light-blue col-md-8">
@@ -23,13 +23,13 @@
     </div>
 
     <ng-container *ngIf="cardBody">
-        <div class="card-body">
+        <div class="card-body px-5">
             <ng-container [ngTemplateOutlet]="cardBody"></ng-container>
         </div>
     </ng-container>
 
     <ng-container *ngIf="cardFooter">
-        <div class="card-footer">
+        <div class="card-footer px-5">
             <ng-container [ngTemplateOutlet]="cardFooter"></ng-container>
         </div>
     </ng-container>

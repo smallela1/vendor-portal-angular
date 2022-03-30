@@ -37,3 +37,8 @@ html {
     filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='24' /></filter></svg>#svgMask");
     /* TODO: Add IE11 blur support */
   }
+
+
+.custom-control-input[disabled] ~ .custom-control-label, .custom-control-input:disabled ~ .custom-control-label {
+    color: inherit;
+}
