@@ -10,151 +10,59 @@
 
 <!-- Readonly Section -->
 <ng-template #readonlySection>
-    <form id="availableOfferings" class="pb-5">
+    <form id="availableOfferings">
 
-        <div class="usa-alert usa-alert-info mb-4">
-            <div class="usa-alert-body">
-                <p>
-                    <b class="black">What goods and services do you provide?</b>
-                    <br>
-                    GSA assigns all available offerings to large categories, subcategories, and Special Item Numbers
-                    (SINs).
-                </p>
+
+        <div class="col">
+            <h2 class="h4 border-bottom mb-3" id="yournegs">Your SIN(s)</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Number:</dt>
+                <dd class="col mb-0">54151HEAL</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Title:</dt>
+                <dd class="col mb-0">Health Information Technology Services</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Large Category:</dt>
+                <dd class="col mb-0">Information Technology</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Subcategory:</dt>
+                <dd class="col mb-0">IT Services</dd>
             </div>
         </div>
-        <div class="px-5">
-
-            <!--
-            <h4 id="addsins" class="visually-hidden">Add SINs</h4>
-            <p>You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a full
-                list of available offerings, please visit the <a target="_blank" title="MAS Roadmap"
-                    href="https://www.gsa.gov/masroadmap">MAS Roadmap</a>.
-            </p>
-            <div>
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-md-3 col-form-label">Large Category: </label>
-                    <div class="col-md">
-                      <select
-                        aria-required="true" class="form-control" name="largeCategory"
-                        id="largeCategoryId">
-                        <option value="">Select a Large Category</option>
-                        <option value="B">Facilities</option>
-                        <option value="C">Furniture and Furnishings</option>
-                        <option value="D">Human Capital</option>
-                        <option value="E">Industrial Products and Services</option>
-                        <option value="F">Information Technology</option>
-                        <option value="G">Miscellaneous</option>
-                        <option value="A">Office Management</option>
-                        <option value="H">Professional Services</option>
-                        <option value="I">Scientific Management and Solutions</option>
-                        <option value="J">Security and Protection</option>
-                        <option value="K">Transportation and Logistics Services</option>
-                        <option value="L">Travel</option>
-                    </select>
-                    </div>
-                </div>
-
-
-
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Number:</dt>
+                <dd class="col mb-0">54151HEAL</dd>
             </div>
-
-
-
-
-
-            <div class="table2">
-                <table role="presentation" class="table table-responsive table-bordered table-striped" width="100%"
-                    aria-labelledby="addsins" id="addSIN">
-                    <tbody>
-                        <tr>
-                            <td aria-hidden="true" class="fakeTh" width="70%">Add SIN(s)<span class="required"> *</span>
-                            </td>
-                            <td aria-hidden="true" class="fakeTh" width="30%">Action</td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-md-3 col-form-label">Large Category: </label>
-                                    <div class="col-md">
-                                      <select
-                                        aria-required="true" class="form-control" name="largeCategory"
-                                        id="largeCategoryId">
-                                        <option value="">Select a Large Category</option>
-                                        <option value="B">Facilities</option>
-                                        <option value="C">Furniture and Furnishings</option>
-                                        <option value="D">Human Capital</option>
-                                        <option value="E">Industrial Products and Services</option>
-                                        <option value="F">Information Technology</option>
-                                        <option value="G">Miscellaneous</option>
-                                        <option value="A">Office Management</option>
-                                        <option value="H">Professional Services</option>
-                                        <option value="I">Scientific Management and Solutions</option>
-                                        <option value="J">Security and Protection</option>
-                                        <option value="K">Transportation and Logistics Services</option>
-                                        <option value="L">Travel</option>
-                                    </select>
-                                    </div>
-                                </div>
-
-                                </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><label for="subCategoryId">Subcategory: </label> <select style="max-width:400px"
-                                    aria-required="true" class="d-control samesize" name="subCategory" id="subCategoryId">
-                                    <option value="">Select a Subcategory</option>
-                                </select></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><label for="sintypeId">SIN :</label><select style="max-width:400px" aria-required="true"
-                                    class="d-control samesize" aria-label="Select SINs" name="sintype" id="sintypeId">
-                                    <option value="">Select a SIN</option>
-                                </select></td>
-                            <td><input id="idAddSin" class="btn btn-primary btn-sm" value="Add SIN Details" name="sinType"
-                                    type="Submit"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-md-3">
+                <dt class="col">Title:</dt>
+                <dd class="col mb-0">Health Information Technology Services</dd>
             </div>
-            -->
-            <div class="table2">
-                <h4 id="yoursin" class="type1 mb-4">Your SIN(s) </h4>
-                <table aria-labelledby="yoursin" class="table table-responsive table-bordered table-striped buttonsTable"
-                    id="yourSINs">
-                    <thead>
-                        <tr class="columnTitleFill">
-                            <th width="10%">Number</th>
-                            <th width="25%" scope="col">Title</th>
-                            <th width="25%" scope="col">Large Category</th>
-                            <th width="20%" scope="col">Subcategory</th>
-                           
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>54151HEAL</td>
-                            <td>Health Information Technology Services</td>
-                            <td>Information Technology</td>
-                            <td>IT Services</td>
-                           
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-md-3">
+                <dt class="col">Large Category:</dt>
+                <dd class="col mb-0">Information Technology</dd>
             </div>
-           
-            <div class="table2">
-                <h4 id="prework" class="type1">Preponderance Of Work</h4>
-               
-                <div class="">
-                    <h5 class="black"><small>Selected Preponderance Of Work is:</small> 541511
-                    
-                                    </h5>
-                </div>
+            <div class="col-md-3">
+                <dt class="col">Subcategory:</dt>
+                <dd class="col mb-0">IT Services</dd>
+            </div>
+        </div>
 
 
-            </div>
+        <div class="col mt-5">
+            <h2 class="h4 border-bottom mb-3" id="yournegs">Preponderance of Work</h2>
+        </div>
+
+        <div class="col-xs-12">
+            <dt class="col">Selected Preponderance Of Work is:</dt>
+            <dd class="col">541511</dd>
         </div>
 
     </form>
@@ -330,13 +238,14 @@
 <!-- Actions-->
 <ng-template #sectionActions>
 
-    <app-modal *ngIf="offerStatus == 'In Progress'" 
-    [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: true, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <app-modal *ngIf="offerStatus == 'In Progress'"
+        [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: true, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
         <ng-template #modalBody>
             <ng-container [ngTemplateOutlet]="editSection"></ng-container>
         </ng-template>
         <ng-template #modalFooter>
-            <input type="button" value="Save and Continue" id="saveAndContinue" class="btn btn-primary" (click)="saveForm()">
+            <input type="button" value="Save and Continue" id="saveAndContinue" class="btn btn-primary"
+                (click)="saveForm()">
             <input type="button" value="Cancel" id="cancel" class="btn btn-default" (click)="closeModal()">
         </ng-template>
     </app-modal>
@@ -351,8 +260,8 @@
             aria-labelledby="button-basic">
             <li role="menuitem"><a class="dropdown-item">Create New Modification</a></li>
             <li role="menuitem"><a class="dropdown-item">View Modification History</a></li>
-            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li> 
-        <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
+            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+            <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
         </ul>
     </span>
 

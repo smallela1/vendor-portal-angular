@@ -12,57 +12,50 @@
 <ng-template #readonlySection>
     <form id="negotiators">
 
-        <div class="usa-alert usa-alert-info mb-4">
-            <div class="usa-alert-body">
-                <p><b class="black">Who will negotiate your eOffer?</b></p>
-                <p align="justify">Offerors can add multiple negotiators. A minimum of one negotiator must have
-                    signature
-                    authority, but it is STRONGLY recommended to have at least two valid Negotiators.
-                    Negotiators without signature authority may prepare the eOffer but only negotiators with signature
-                    authority
-                    may submit the eOffer and sign the Contract.
-                </p>
+        <div class="col">
+            <h2 class="h4 border-bottom mb-3" id="yournegs">Your Negotiator(s)</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <dt class="col">Name:</dt>
+                <dd class="col mb-0">Luis Najera</dd>
+                <dt class="col">Title:</dt>
+                <dd class="col mb-0">Contract Manager</dd>
+            </div>
+            <div class="col-md-4">
+                <dt class="col">Role:</dt>
+                <dd class="col mb-0">Aurthorized to sign</dd>
+                <dt class="col">Email:</dt>
+                <dd class="col mb-0">luis.najera@gsa.gov</dd>
+            </div>
+            <div class="col-md-4">
+                <dt class="col">Phone:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+                <dt class="col">Fax:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
             </div>
         </div>
-        <div class="table2 px-5">
-            <h4 class="type1" id="yournegs">Your Negotiator(s)</h4>
-            <table id="negInfo" class="table table-responsive table-striped table-flush buttonsTable"
-                aria-labelledby="yournegs">
-                <thead>
-                    <tr>
-                        <th scope="col" width="40%">Name</th>
-                        <th scope="col" width="40%">Role</th>
-
-
-
-                       
-
-                    </tr>
-                </thead>
-                <tbody>
-
-
-
-                    <script language="JavaScript" type="text/javascript">< !--hide this script from non - javascript - enabled browsers
-                        function preSelect(name, value) {
-                            for (i = 0; i < name.length; i++) {
-                                if (name[i].value == value) {
-                                    name.selectedIndex = i;
-                                    break;
-                                }
-                            }
-                        }
-// stop hiding -->
-
-                    </script>
-                    <tr>
-                        <td>Luis Najera</td>
-                        <td>Authorized to sign</td>
-                        
-                    </tr>
-
-                </tbody>
-            </table>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <dt class="col">Name:</dt>
+                <dd class="col mb-0">Luis Najera</dd>
+                <dt class="col">Title:</dt>
+                <dd class="col mb-0">Contract Manager</dd>
+            </div>
+            <div class="col-md-4">
+                <dt class="col">Role:</dt>
+                <dd class="col mb-0">Aurthorized to sign</dd>
+                <dt class="col">Email:</dt>
+                <dd class="col mb-0">luis.najera@gsa.gov</dd>
+            </div>
+            <div class="col-md-4">
+                <dt class="col">Phone:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+                <dt class="col">Fax:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
         </div>
 
     </form>
@@ -139,13 +132,14 @@
 <!-- Actions-->
 <ng-template #sectionActions>
 
-    <app-modal *ngIf="offerStatus == 'In Progress'" 
-    [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: true, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <app-modal *ngIf="offerStatus == 'In Progress'"
+        [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: true, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
         <ng-template #modalBody>
             <ng-container [ngTemplateOutlet]="editSection"></ng-container>
         </ng-template>
         <ng-template #modalFooter>
-            <input type="button" value="Save and Continue" id="saveAndContinue" class="btn btn-primary" (click)="saveForm()">
+            <input type="button" value="Save and Continue" id="saveAndContinue" class="btn btn-primary"
+                (click)="saveForm()">
             <input type="button" value="Cancel" id="cancel" class="btn btn-default" (click)="closeModal()">
         </ng-template>
     </app-modal>
@@ -160,8 +154,8 @@
             aria-labelledby="button-basic">
             <li role="menuitem"><a class="dropdown-item">Create New Modification</a></li>
             <li role="menuitem"><a class="dropdown-item">View Modification History</a></li>
-            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li> 
-        <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
+            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+            <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
         </ul>
     </span>
 

@@ -11,16 +11,23 @@
 <!-- Readonly Section -->
 <ng-template #readonlySection>
     <form id="solicitationClauses">
+<!-- 
+        <app-form-accordion [sectionState]="sectionData" *ngIf="true">
+            <ng-template #formAccordionActions>
+                <ng-container [ngTemplateOutlet]="basicInformationActions"></ng-container>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-container [ngTemplateOutlet]="basicInformationContent"></ng-container>
+            </ng-template>
+        </app-form-accordion>
 
-        <div class="usa-alert usa-alert-info mb-4">
-            <div class="usa-alert-body">
-                <p class="clearBoth">Please respond to the below terms and conditions that apply to your proposed
-                    offerings.
-                </p>
-                <p>You must respond to all clauses to complete this section.</p>
-            </div>
-        </div>
+        <ng-template #basicInformationActions>
+            <button class="btn btn-default">Test</button>
+        </ng-template>
 
+        <ng-template #basicInformationContent>
+            Basic Information
+        </ng-template> -->
 
         <h4 id="clau" class="type1">Clauses</h4>
         <table aria-labelledby="clau" class="table table-responsive table-bordered table-striped buttonsTable"

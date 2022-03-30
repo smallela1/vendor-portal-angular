@@ -8,15 +8,6 @@ span.datatable-header-cell-label {
 }
 /* - - - - - - - - - - - - - - - - - */
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
-	color: black;
-}
-
-
-.panel-title .h1, .panel-title .h2, .panel-title .h3, .panel-title .h4, .panel-title .h5, .panel-title .h6 {
-	color: #2277aa;
-}
-
 .accordion-label {
 	font-size: 1.3rem;
 }
@@ -41,4 +32,14 @@ html {
 
 .custom-control-input[disabled] ~ .custom-control-label, .custom-control-input:disabled ~ .custom-control-label {
     color: inherit;
+}
+
+/*  eOffer Readonly Form Styles */
+dt {
+  font-weight: initial;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+dd {
+  margin-bottom: 16px;
 }
