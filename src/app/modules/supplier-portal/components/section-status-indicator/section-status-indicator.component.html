@@ -1,8 +1,8 @@
-<ng-container *ngIf="section.isStatusVisible">
-    <ng-container *ngIf="section.sectionStatus == 'complete'">
+<ng-container>
+    <ng-container *ngIf="sectionStatus == 'complete'">
         <span class="text-success fa fa-check mr-1"></span>
     </ng-container>
-    <ng-container *ngIf="section.sectionStatus == 'incomplete'">
+    <ng-container *ngIf="sectionStatus == 'incomplete'">
         <span class="text-warning fa fa-exclamation-triangle mr-1"></span>
     </ng-container>
 </ng-container>

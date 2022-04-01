@@ -20,6 +20,14 @@ import { UploadDocumentsComponent } from './views/offer-form/upload-documents/up
 import { SubmitOfferComponent } from './views/offer-form/submit-offer/submit-offer.component';
 import { SandboxFormComponent } from './views/sandbox-form/sandbox-form.component';
 
+// Solicitation Clauses Subsections
+import { BasicInformationComponent } from './views/offer-form/solicitation-clauses/basic-information/basic-information.component';
+import { HazardousMaterialsComponent } from './views/offer-form/solicitation-clauses/hazardous-materials/hazardous-materials.component';
+import { CertificationRegardingResponsibilityMattersComponent } from './views/offer-form/solicitation-clauses/certification-regarding-responsibility-matters/certification-regarding-responsibility-matters.component';
+import { InformationRegardingResponsibilityMattersComponent } from './views/offer-form/solicitation-clauses/information-regarding-responsibility-matters/information-regarding-responsibility-matters.component';
+import { ExemptionFromServiceContractLaborStandardsComponent } from './views/offer-form/solicitation-clauses/exemption-from-service-contract-labor-standards/exemption-from-service-contract-labor-standards.component';
+
+
 const routes: Routes = [
  //{ path: 'supplier-portal', redirectTo: '/supplier-portal/org-selection', pathMatch: 'full'},
 
@@ -65,4 +73,9 @@ export const routingComponents = [
   UploadDocumentsComponent,
   SubmitOfferComponent,
   SandboxFormComponent,
+  BasicInformationComponent,
+  HazardousMaterialsComponent,
+  CertificationRegardingResponsibilityMattersComponent,
+  InformationRegardingResponsibilityMattersComponent,
+  ExemptionFromServiceContractLaborStandardsComponent,
 ]

@@ -11,8 +11,7 @@ export class AccordionComponent implements OnInit {
   @ContentChild('accordionBody', { static: false }) accordionBody: TemplateRef<any>;
   @ContentChild('accordionFooter', { static: false }) accordionFooter: TemplateRef<any>;
 
-  @Input()
-  accordionTitle = "Accordion Title is Missing!";
+  @Input() accordionTitle = "Accordion Title is Missing!";
 
   constructor() { }
 

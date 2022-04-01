@@ -16,7 +16,6 @@ import { SupplierPortalComponentsModule } from './components/supplier-portal-com
 // Components
 import { SupplierPortalHomeComponent } from './views/supplier-portal-home/supplier-portal-home.component';
 
-
 @NgModule({
   declarations: [
     routingComponents,

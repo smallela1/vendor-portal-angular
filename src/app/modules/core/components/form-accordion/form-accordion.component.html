@@ -1,7 +1,7 @@
-<app-accordion [accordionTitle]="section.name">
+<app-accordion [accordionTitle]="config.title">
     <ng-template #accordionHeader>
-        <app-section-status-indicator [sectionData]="section"></app-section-status-indicator>
-        <button *ngIf="offerStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
+        <app-section-status-indicator *ngIf="config.showStatus" [sectionStatus]="config.sectionStatus"></app-section-status-indicator>
+        <button *ngIf="config.parentOfferStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
     </ng-template>
     <ng-template #accordionBody>
         <ng-container *ngIf="formAccordionBody">

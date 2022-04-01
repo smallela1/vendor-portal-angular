@@ -11,24 +11,42 @@
 <!-- Readonly Section -->
 <ng-template #readonlySection>
     <form id="solicitationClauses">
-<!-- 
-        <app-form-accordion [sectionState]="sectionData" *ngIf="true">
-            <ng-template #formAccordionActions>
-                <ng-container [ngTemplateOutlet]="basicInformationActions"></ng-container>
-            </ng-template>
-            <ng-template #formAccordionBody>
-                <ng-container [ngTemplateOutlet]="basicInformationContent"></ng-container>
-            </ng-template>
-        </app-form-accordion>
 
+        <div class="col">
+            <h2 class="h4 border-bottom mb-3">Basic information</h2>
+        </div>
+        <div class="col mb-5">
+
+            <accordion [isAnimated]="true" [closeOthers]="false" *ngFor="let section of subSections">
+                <app-form-accordion [config]="{ title: section.title, sectionStatus: sectionStatus, parentOfferStatus: offerStatus}" *ngIf="true">
+                    <!-- <ng-template #formAccordionHeader>
+                        <ng-container [ngTemplateOutlet]="basicInformationActions"></ng-container>
+                    </ng-template> -->
+                    <ng-template #formAccordionBody>
+                        <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
+                    </ng-template>
+                </app-form-accordion>
+            </accordion>
+            
+        </div>
         <ng-template #basicInformationActions>
             <button class="btn btn-default">Test</button>
         </ng-template>
-
+        
         <ng-template #basicInformationContent>
             Basic Information
-        </ng-template> -->
+        </ng-template>
 
+        <div class="col">
+            <h2 class="h4 border-bottom mb-5">Commercial Sales Practice</h2>
+        </div>
+<!-- 
+            <app-form-accordion [sectionData]="section" [offerStatusData]="offerStatus">
+              <ng-template #formAccordionBody>
+                <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
+              </ng-template>
+            </app-form-accordion> -->
+<!-- 
         <h4 id="clau" class="type1">Clauses</h4>
         <table aria-labelledby="clau" class="table table-responsive table-bordered table-striped buttonsTable"
             id="tempTable">
@@ -103,7 +121,7 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </form>
 </ng-template>
 

@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionStatusIndicatorComponent implements OnInit {
 
-  @Input('sectionData') section = null;
+  @Input('sectionStatus') sectionStatus = 'incomplete';
 
   constructor() { }
 
