@@ -68,7 +68,7 @@ const subSections: any = {
   },
   tradeAgreementActCompliance: {
       sectionId: 'tradeAgreementActCompliance',
-      title: "Trade Agreement Act Compliance",
+      title: "Trade Agreement Act (TAA) Compliance",
       sectionStatus: {
         status: 'incomplete',
         showStatus: true,
