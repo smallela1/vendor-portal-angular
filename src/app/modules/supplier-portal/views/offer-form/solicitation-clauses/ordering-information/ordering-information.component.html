@@ -1,0 +1,193 @@
+<div class="col">
+    <h2 class="h4 border-bottom mb-3">Ordering Information</h2>
+</div>
+<div class="col mb-5">
+    
+    <accordion [isAnimated]="true" [closeOthers]="false">
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: remittanceAddressSection.title, 
+                sectionStatus: remittanceAddressSection.sectionStatus, 
+                parentOfferStatus: remittanceAddressSection.offerStatus, 
+                isStickyTop: true, 
+                showSection: remittanceAddressSection.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <button>Edit</button>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-template [ngTemplateOutlet]="remmittanceAddressInfo"></ng-template>
+            </ng-template>
+        </app-form-accordion>
+        
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: orderingReceiptSection.title, 
+                sectionStatus: orderingReceiptSection.sectionStatus, 
+                parentOfferStatus: orderingReceiptSection.offerStatus, 
+                isStickyTop: true, 
+                showSection: orderingReceiptSection.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <button>Edit</button>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-template [ngTemplateOutlet]="orderingReceiptInfo"></ng-template>
+            </ng-template>
+        </app-form-accordion>
+    </accordion>
+
+</div>
+
+
+<!-- Reaonly Section -->
+<ng-template #remmittanceAddressInfo>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Supplier Name:</dt>
+                <dd class="col mb-0">ABC Supplier</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Attention:</dt>
+                <dd class="col mb-0">Luis Najera</dd>
+                <dt class="col">Email:</dt>
+                <dd class="col mb-0">luis.najera@gsa.gov</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Address:</dt>
+                <dd class="col mb-0">
+                    <address>
+                        10505 Furnace Rd. Ste. 108<br />
+                        Lorton, VA 22079-2635<br />
+                        USA
+                    </address>
+                </dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Phone:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+                <dt class="col">Fax:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Supplier Name:</dt>
+                <dd class="col mb-0">ABC Supplier</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Attention:</dt>
+                <dd class="col mb-0">Luis Najera</dd>
+                <dt class="col">Email:</dt>
+                <dd class="col mb-0">luis.najera@gsa.gov</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Address:</dt>
+                <dd class="col mb-0">
+                    <address>
+                        10505 Furnace Rd. Ste. 108<br />
+                        Lorton, VA 22079-2635<br />
+                        USA
+                    </address>
+                </dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Phone:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+                <dt class="col">Fax:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
+        </div>
+
+</ng-template>
+
+
+<ng-template #orderingReceiptInfo>
+        
+    <div class="container mb-4">
+        <div class="col">
+            <h4 class="h6 border-bottom mb-3" id="yournegs">Computer-to-Computer Electronic Data Interchange (EDI)</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Name:</dt>
+                <dd class="col mb-0">Luis Najera</dd>
+                <dt class="col">Title:</dt>
+                <dd class="col mb-0">Administrator</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Email:</dt>
+                <dd class="col mb-0">luis.najera@gsa.gov</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Address:</dt>
+                <dd class="col mb-0">
+                    <address>
+                        10505 Furnace Rd. Ste. 108<br />
+                        Lorton, VA 22079-2635<br />
+                        USA
+                    </address>
+                </dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Phone:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+                <dt class="col">Fax:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Name:</dt>
+                <dd class="col mb-0">Luis Najera</dd>
+                <dt class="col">Title:</dt>
+                <dd class="col mb-0">Administrator</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Email:</dt>
+                <dd class="col mb-0">luis.najera@gsa.gov</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Address:</dt>
+                <dd class="col mb-0">
+                    <address>
+                        10505 Furnace Rd. Ste. 108<br />
+                        Lorton, VA 22079-2635<br />
+                        USA
+                    </address>
+                </dd>
+            </div>
+            <div class="col-md-3 ">
+                <dt class="col">Phone:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+                <dt class="col">Fax:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <div class="col">
+            <h4 class="h6 border-bottom mb-3" id="yournegs">Facsimile Tranmission</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <dt class="col">Fax #1:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
+            <div class="col-md-3">
+                <dt class="col">Fax #2:</dt>
+                <dd class="col mb-0">(999) 999-9999</dd>
+            </div>
+        </div>
+    </div>
+
+</ng-template>

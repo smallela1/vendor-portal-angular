@@ -1,6 +1,6 @@
 <app-card [cardTitle]="section.name">
     <ng-template #cardHeader>
-        <app-section-status-indicator [sectionData]="section"></app-section-status-indicator>
+        <app-section-status-indicator [sectionStatus]="sectionStatus"></app-section-status-indicator>
     </ng-template>
     <ng-template #cardActions>
         <ng-container [ngTemplateOutlet]="formCardActions"></ng-container>

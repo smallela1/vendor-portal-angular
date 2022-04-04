@@ -1,6 +1,6 @@
 <accordion-group>
 
-    <div class="btn justify-content-between d-flex w-100  shadow-none" accordion-heading>
+    <div class="btn justify-content-between d-flex w-100 shadow-none" accordion-heading [ngClass]="{ 'sticky-top-content': isStickyTop }">
         <span class="accordion-label gsa-light-blue">
             <ng-container *ngIf="accordionHeader; else defaultAccordionHeader">
                 <ng-container [ngTemplateOutlet]="accordionHeader"></ng-container>
@@ -14,7 +14,9 @@
     </div>
 
     <ng-container *ngIf="accordionBody">
-        <ng-container [ngTemplateOutlet]="accordionBody"></ng-container>
+        <div class="pb-5">
+            <ng-container [ngTemplateOutlet]="accordionBody"></ng-container>
+        </div>
     </ng-container>
 
     <ng-container *ngIf="accordionFooter">

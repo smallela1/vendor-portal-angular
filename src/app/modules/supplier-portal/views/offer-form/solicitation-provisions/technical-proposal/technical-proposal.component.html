@@ -1,0 +1,26 @@
+<div class="col">
+    <h2 class="h4 border-bottom mb-3">Technical Proposal</h2>
+</div>
+<div class="col mb-5">
+
+    <accordion [isAnimated]="true" [closeOthers]="false" *ngFor="let section of subSections">
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: section.title, 
+                sectionStatus: section.sectionStatus, 
+                parentOfferStatus: section.offerStatus, 
+                isStickyTop: true, 
+                showSection: section.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <button>Edit</button>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
+            </ng-template>
+        </app-form-accordion>
+    </accordion>
+
+</div>

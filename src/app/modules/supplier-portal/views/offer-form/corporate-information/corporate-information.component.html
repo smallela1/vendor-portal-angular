@@ -1,4 +1,4 @@
-<app-form-card [sectionState]="sectionData" *ngIf="sectionData.showSection">
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
 	<ng-template #formCardActions>
 		<ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
 	</ng-template>
@@ -46,8 +46,8 @@
 				<div class="row">
 					<div class="col-lg">
 						<address>
-							10505 FURNACE RD STE 108<br />
-							LORTON, VA 22079-2635<br />
+							10505 Furnace Rd. Ste. 108<br />
+							Lorton, VA 22079-2635<br />
 							USA
 						</address>
 					</div>
@@ -58,8 +58,8 @@
 				<div class="row">
 					<div class="col-lg">
 						<address>
-							10505 FURNACE RD STE 108<br />
-							LORTON, VA 22079-2635<br />
+							10505 Furnace Rd. Ste. 108<br />
+							Lorton, VA 22079-2635<br />
 							USA
 						</address>
 					</div>

@@ -7,6 +7,7 @@ import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/co
 })
 export class FormAccordionComponent implements OnInit {
   
+  @ContentChild('formAccordionHeader', { static: false }) formAccordionHeader: TemplateRef<any>;
   @ContentChild('formAccordionBody', { static: false }) formAccordionBody: TemplateRef<any>;
   @ContentChild('formAccordionFooter', { static: false }) formAccordionFooter: TemplateRef<any>;
 
@@ -16,7 +17,9 @@ export class FormAccordionComponent implements OnInit {
       status: 'incomplete',
       showStatus: false,
     },
-    parentOfferStatus: 'In Progress'
+    parentOfferStatus: 'In Progress',
+    isStickyTop: false,
+    showSection: true,
   }
 
   constructor() { }

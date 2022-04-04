@@ -7,7 +7,7 @@
             <li class="list-group-item" *ngIf="item.showSection">
                 <a class="card-link" (click)="scrollToElement(item.sectionId)">{{item.name}}</a>
                 <span class="float-right d-inline-block">
-                    <app-section-status-indicator [sectionData]="item"></app-section-status-indicator>
+                    <app-section-status-indicator [sectionStatus]="item.sectionStatus"></app-section-status-indicator>
                 </span>
             </li>
         </ng-container>

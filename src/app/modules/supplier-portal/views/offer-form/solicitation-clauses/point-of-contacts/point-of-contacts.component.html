@@ -1,0 +1,72 @@
+<div class="col">
+    <h2 class="h4 border-bottom mb-3">Point of Contacts Information</h2>
+</div>
+<div class="col mb-5">
+    <accordion [isAnimated]="true" [closeOthers]="false">
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: section.title, 
+                sectionStatus: section.sectionStatus, 
+                parentOfferStatus: section.offerStatus, 
+                isStickyTop: true, 
+                showSection: section.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <button>Edit</button>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+            </ng-template>
+        </app-form-accordion>
+    </accordion>
+</div>
+
+
+<!-- Reaonly Section -->
+<ng-template #readonlySection>
+        
+    <div class="row">
+        <div class="col-md-4">
+            <dt class="col">Name:</dt>
+            <dd class="col mb-0">Luis Najera</dd>
+            <dt class="col">Title:</dt>
+            <dd class="col mb-0">Contract Manager</dd>
+        </div>
+        <div class="col-md-4">
+            <dt class="col">Type:</dt>
+            <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
+            <dt class="col">Email:</dt>
+            <dd class="col mb-0">luis.najera@gsa.gov</dd>
+        </div>
+        <div class="col-md-4">
+            <dt class="col">Phone:</dt>
+            <dd class="col mb-0">(999) 999-9999</dd>
+            <dt class="col">Fax:</dt>
+            <dd class="col mb-0">(999) 999-9999</dd>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <dt class="col">Name:</dt>
+            <dd class="col mb-0">Luis Najera</dd>
+            <dt class="col">Title:</dt>
+            <dd class="col mb-0">Contract Manager</dd>
+        </div>
+        <div class="col-md-4">
+            <dt class="col">Type:</dt>
+            <dd class="col mb-0">Industrial Funding Fee</dd>
+            <dt class="col">Email:</dt>
+            <dd class="col mb-0">luis.najera@gsa.gov</dd>
+        </div>
+        <div class="col-md-4">
+            <dt class="col">Phone:</dt>
+            <dd class="col mb-0">(999) 999-9999</dd>
+            <dt class="col">Fax:</dt>
+            <dd class="col mb-0">(999) 999-9999</dd>
+        </div>
+    </div>
+
+</ng-template>

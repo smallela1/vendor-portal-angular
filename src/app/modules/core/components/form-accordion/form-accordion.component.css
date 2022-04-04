@@ -9,3 +9,9 @@
 /deep/ .panel-open .card-body {
     background-color: white;
 }
+
+/deep/ .card-header.panel-enabled:has([accordion-heading].sticky-top-content)  {
+    top: 120px !important; 
+    z-index: 6;    
+    position: -webkit-sticky !important;
+}

@@ -22,11 +22,23 @@ import { SandboxFormComponent } from './views/sandbox-form/sandbox-form.componen
 
 // Solicitation Clauses Subsections
 import { BasicInformationComponent } from './views/offer-form/solicitation-clauses/basic-information/basic-information.component';
-import { HazardousMaterialsComponent } from './views/offer-form/solicitation-clauses/hazardous-materials/hazardous-materials.component';
-import { CertificationRegardingResponsibilityMattersComponent } from './views/offer-form/solicitation-clauses/certification-regarding-responsibility-matters/certification-regarding-responsibility-matters.component';
-import { InformationRegardingResponsibilityMattersComponent } from './views/offer-form/solicitation-clauses/information-regarding-responsibility-matters/information-regarding-responsibility-matters.component';
-import { ExemptionFromServiceContractLaborStandardsComponent } from './views/offer-form/solicitation-clauses/exemption-from-service-contract-labor-standards/exemption-from-service-contract-labor-standards.component';
+  import { SmallBusinessComponent } from './views/offer-form/solicitation-clauses/basic-information/small-business/small-business.component';
+  import { HazardousMaterialsComponent } from './views/offer-form/solicitation-clauses/basic-information/hazardous-materials/hazardous-materials.component';
+  import { CertificationResponsibilityMattersComponent } from './views/offer-form/solicitation-clauses/basic-information/certification-responsibility-matters/certification-responsibility-matters.component';
+  import { InformationResponsibilityMattersComponent } from './views/offer-form/solicitation-clauses/basic-information/information-responsibility-matters/information-responsibility-matters.component';
+import { CommercialSalesPracticeComponent } from './views/offer-form/solicitation-clauses/commercial-sales-practice/commercial-sales-practice.component';
+import { PointOfContactsComponent } from './views/offer-form/solicitation-clauses/point-of-contacts/point-of-contacts.component';
+import { OrderingInformationComponent } from './views/offer-form/solicitation-clauses/ordering-information/ordering-information.component';
 
+// Solicitaion Provisions Subsections
+
+import { TechnicalProposalComponent } from './views/offer-form/solicitation-provisions/technical-proposal/technical-proposal.component';
+  import { CorporateExperienceComponent } from './views/offer-form/solicitation-provisions/technical-proposal/corporate-experience/corporate-experience.component';
+  import { PastPerformanceComponent } from './views/offer-form/solicitation-provisions/technical-proposal/past-performance/past-performance.component';
+  import { QualityControlComponent } from './views/offer-form/solicitation-provisions/technical-proposal/quality-control/quality-control.component';
+  import { RelevantProjectExperienceComponent } from './views/offer-form/solicitation-provisions/technical-proposal/relevant-project-experience/relevant-project-experience.component';
+  import { TradeAgreementsActComplianceComponent } from './views/offer-form/solicitation-provisions/technical-proposal/trade-agreements-act-compliance/trade-agreements-act-compliance.component';
+import { ServicesContractActLaborMatrixComponent } from './views/offer-form/solicitation-provisions/services-contract-act-labor-matrix/services-contract-act-labor-matrix.component';
 
 const routes: Routes = [
  //{ path: 'supplier-portal', redirectTo: '/supplier-portal/org-selection', pathMatch: 'full'},
@@ -74,8 +86,18 @@ export const routingComponents = [
   SubmitOfferComponent,
   SandboxFormComponent,
   BasicInformationComponent,
+  SmallBusinessComponent,
   HazardousMaterialsComponent,
-  CertificationRegardingResponsibilityMattersComponent,
-  InformationRegardingResponsibilityMattersComponent,
-  ExemptionFromServiceContractLaborStandardsComponent,
+  CertificationResponsibilityMattersComponent,
+  InformationResponsibilityMattersComponent,
+  CommercialSalesPracticeComponent,
+  PointOfContactsComponent,
+  OrderingInformationComponent,
+  TechnicalProposalComponent,
+  CorporateExperienceComponent,
+  PastPerformanceComponent,
+  QualityControlComponent,
+  RelevantProjectExperienceComponent,
+  TradeAgreementsActComplianceComponent,
+  ServicesContractActLaborMatrixComponent,
 ]

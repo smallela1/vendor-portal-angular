@@ -1,0 +1,258 @@
+<div class="col">
+    <h2 class="h4 border-bottom mb-3">Commercial Sales Practice</h2>
+</div>
+<div class="col mb-5">
+    <accordion [isAnimated]="true" [closeOthers]="false">
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: section.title, 
+                sectionStatus: section.sectionStatus, 
+                parentOfferStatus: section.offerStatus, 
+                isStickyTop: true, 
+                showSection: section.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <button>Edit</button>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+            </ng-template>
+        </app-form-accordion>
+    </accordion>
+</div>
+
+
+<ng-template #readonlySection>    
+
+    <div class="d-flex mb-3">
+        <dt class="mr-2">1</dt>
+        <dd class="flex-fill">
+            <div class="d-flex">
+                <dt class="mr-2">(a)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        Provide the dollar value of sales to the general public at or based on an established catalog or market price during the
+                        previous 12-month period or the offerors last fiscal year:
+                    </p>
+                    <div class="d-flex">
+                        <dd class="mr-2">
+                            <strong>
+                                {{ 5000 | currency }}
+                            </strong>
+                        </dd>
+                    </div>
+                </dd>
+            </div>
+            <div class="d-flex">
+                <dt class="mr-2">(b)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        State beginning and ending of the 12 month period. Note: It must be exactly 12 months.
+                    </p>
+                    <div class="d-flex">
+                        <dt class="mr-2">
+                            Beginning Date:
+                        </dt>
+                        <dd class="mr-4">
+                            <strong>
+                                01/01/2022
+                            </strong>
+                        </dd>
+                        <dt class="mr-2">
+                            Ending Date:
+                        </dt>
+                        <dd class="mr-2">
+                            <strong>
+                                12/31/2023
+                            </strong>
+                        </dd>
+                    </div>
+                </dd>
+            </div>
+        </dd>
+    </div>  
+
+
+    <div class="d-flex">
+        <dt class="mr-2">2</dt>
+        <dd class="flex-fill">
+            <div class="d-flex mb-4">
+                <dt class="mr-2">(a)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        Show your total projected annual sales to the Government under this Contract for the Contract term, excluding options,
+                        for each SIN offered.
+                    </p>           
+                    <div class="col">
+                        <h2 class="h5 border-bottom mb-3" id="yournegs">Projected Annual Sales</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <dt class="col">SIN:</dt>
+                            <dd class="col mb-0">123456</dd>
+                        </div>
+                        <div class="col-md-4">
+                            <dt class="col">Description:</dt>
+                            <dd class="col mb-0">Health IT</dd>
+                        </div>
+                        <div class="col-md-4">
+                            <dt class="col">Amount:</dt>
+                            <dd class="col mb-0">{{ 50000 | currency }}</dd>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <dt class="col">SIN:</dt>
+                            <dd class="col mb-0">123456</dd>
+                        </div>
+                        <div class="col-md-4">
+                            <dt class="col">Description:</dt>
+                            <dd class="col mb-0">Health IT</dd>
+                        </div>
+                        <div class="col-md-4">
+                            <dt class="col">Amount:</dt>
+                            <dd class="col mb-0">{{ 50000 | currency }}</dd>
+                        </div>
+                    </div>
+                </dd>
+            </div>
+            <div class="d-flex">
+                <dt class="mr-2">(b)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        If you currently hold a Federal Supply Schedule Contract for the SIN the total projected annual sales should be based on
+                        your most recent 12 months of sales under that Contract.
+                    </p>
+                    <div class="d-flex">
+                        <dd class="mr-4">
+                            <strong>
+                                N/A
+                            </strong>
+                        </dd>
+                    </div>
+                </dd>
+            </div>
+        </dd>
+    </div>  
+    
+    <div class="d-flex mb-5">
+        <dt class="mr-2">3</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                Based on your written discounting policies (standard commercial sales practices in the event you do not have written
+                discounting policies), are the discounts and any concessions which you offer the Government equal to or better than your
+                best price (discount and concessions in any combination) offered to any customer acquiring the same items regardless of
+                quantity or terms and conditions?
+            </p>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="discountsBetterThanBestPriceYes" name="discountsBetterThanBestPrice" class="custom-control-input" disabled>
+                <label class="custom-control-label" for="discountsBetterThanBestPriceYes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="discountsBetterThanBestPriceNo" name="discountsBetterThanBestPrice" class="custom-control-input" checked
+                    disabled>
+                <label class="custom-control-label" for="discountsBetterThanBestPriceNo">No</label>
+            </div>
+            
+            <hr>
+            
+            <div class="d-flex">
+                <dd class="flex-fill m-0">
+                    <p>
+                        All terms must be expressed at the same level. If your Commercial Sales Practice applies for all of the SINs offered,
+                        provide the sales information at the Offer/contract level. If your Commercial Sales Practice is different for one or
+                        more SINs, provide your sales information at the SIN level.
+                    </p>
+                </dd>
+            </div>
+            <div class="d-flex">
+                <dd class="flex-fill m-0">
+                    <p>
+                        Please select the level at which you want to specify the discount/concession policy:
+                    </p>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="discountConcessionPolicyOfferContract" name="discountConcessionPolicy" class="custom-control-input" disabled>
+                        <label class="custom-control-label" for="discountConcessionPolicyOfferContract">Offer/Contract</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="discountConcessionPolicySIN" name="discountConcessionPolicy" class="custom-control-input" checked
+                            disabled>
+                        <label class="custom-control-label" for="discountConcessionPolicySIN">SIN</label>
+                    </div>
+                </dd>
+            </div>
+        </dd>
+    </div>  
+
+    <div class="d-flex">
+        <dt class="mr-2">4</dt>
+        <dd class="flex-fill">
+            <div class="d-flex">
+                <dt class="mr-2">(a)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        This section will be populated after you have saved your CSP data.
+                    </p>
+                </dd>
+            </div>
+            <div class="d-flex">
+                <dt class="mr-2">(b)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        Do any deviations from your written policies or standard commercial sales practices disclosed in the above chart ever
+                        result in better discounts (lower prices) or concessions than indicated?
+                    </p>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="deviationsFromSalesPracticeYes" name="deviationsFromSalesPractice" class="custom-control-input" disabled>
+                        <label class="custom-control-label" for="deviationsFromSalesPracticeYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="deviationsFromSalesPracticeNo" name="deviationsFromSalesPractice" class="custom-control-input" checked
+                            disabled>
+                        <label class="custom-control-label" for="deviationsFromSalesPracticeNo">No</label>
+                    </div>
+                    <div class="d-flex mt-4">
+                        <dd class="flex-fill m-0">
+                            <p>
+                                If "Yes", explain deviations in accordance with the instructions at Figure 515.4-2, which is provided in this
+                                solicitation for your convenience.
+                            </p>
+                            <div class="d-flex">
+                                <dd class="mr-4">
+                                    <strong>
+                                        N/A
+                                    </strong>
+                                </dd>
+                            </div>
+                        </dd>
+                    </div>
+                </dd>
+            </div>
+        </dd>
+    </div>  
+
+
+
+
+
+
+</ng-template>
+
+
+
+<ng-template #editSection>
+    <div class="usa-alert usa-warning-info mb-4">
+        <div class="usa-alert-body">
+            <p>
+                <b>Note: </b>Please refer to clause 552.212-70, PREPARATION OF OFFER (MULTIPLE AWARD SCHEDULE), for
+                additional information concerning your Offer.
+            </p>
+            <p>
+                Enter "N/A" if not applicable
+            </p>
+        </div>
+    </div>
+</ng-template>

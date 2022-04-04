@@ -13,6 +13,11 @@ export class FormCardComponent implements OnInit {
 
   @Input('sectionState') section: any;
 
+  @Input('sectionStatus') sectionStatus: {
+    status: 'incomplete',
+    showStatus: false
+  };
+
   constructor() { }
 
   ngOnInit(): void {

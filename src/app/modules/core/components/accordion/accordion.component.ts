@@ -12,6 +12,7 @@ export class AccordionComponent implements OnInit {
   @ContentChild('accordionFooter', { static: false }) accordionFooter: TemplateRef<any>;
 
   @Input() accordionTitle = "Accordion Title is Missing!";
+  @Input() isStickyTop = false;
 
   constructor() { }
 

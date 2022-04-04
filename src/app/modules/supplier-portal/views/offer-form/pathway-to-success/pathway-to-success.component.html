@@ -1,4 +1,4 @@
-<app-form-card [sectionState]="sectionData" *ngIf="sectionData.showSection">
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
     <ng-template #formCardActions>
         <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
     </ng-template>
