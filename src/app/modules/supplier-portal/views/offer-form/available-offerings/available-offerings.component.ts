@@ -11,23 +11,38 @@ export class AvailableOfferingsComponent implements OnInit {
   @Input('sectionData') sectionData: any;
   @Input('offerStatusData') offerStatus: any;
 
-  @ViewChild(ModalComponent) public modalComponent: ModalComponent;
+  @ViewChild('sinModal') public sinModal: ModalComponent;
+  @ViewChild('preponderanceModal') public preponderanceModal: ModalComponent;
+
   @ViewChild('sectionModal') public sectionModal: any;
+  
   
   constructor() { }
 
   ngOnInit(): void {
   }
-  openModal(): void {
-    this.modalComponent.openModal();    
+  openSinModal(): void {
+    this.sinModal.openModal();    
   }
 
-  closeModal(): void {
-    this.modalComponent.closeModal()
+  closeSinModal(): void {
+    this.sinModal.closeModal()
   }
 
-  saveForm(): void {
-    this.modalComponent.closeModal()
+  saveSinForm(): void {
+    this.sinModal.closeModal()
+  }
+
+  openPreponderanceModal(): void {
+    this.preponderanceModal.openModal();    
+  }
+
+  closePreponderanceModal(): void {
+    this.preponderanceModal.closeModal()
+  }
+
+  savePreponderanceForm(): void {
+    this.preponderanceModal.closeModal()
   }
 
 }

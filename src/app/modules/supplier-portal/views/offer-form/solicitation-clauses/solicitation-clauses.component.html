@@ -116,7 +116,7 @@
 <ng-template #sectionActions>
 
     <app-modal *ngIf="offerStatus == 'In Progress'" 
-    [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: true, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
         <ng-template #modalBody>
             <ng-container [ngTemplateOutlet]="editSection"></ng-container>
         </ng-template>

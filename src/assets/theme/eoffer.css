@@ -62,3 +62,11 @@ dd {
   background-color: #dc3545 !important;
   color: #fff !important;
 }
+
+.bg-primary-hover:hover span {
+  color: #fff !important;
+}
+
+.bg-danger-hover:hover span {
+  color: #fff !important;
+}
