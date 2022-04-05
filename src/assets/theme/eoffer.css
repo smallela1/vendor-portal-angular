@@ -43,3 +43,22 @@ dt {
 dd {
   margin-bottom: 16px;
 }
+
+
+.text-primary-hover:hover {
+  color: #2277aa !important;
+}
+
+.text-danger-hover:hover {
+  color: #dc3545 !important;
+}
+
+.bg-primary-hover:hover {
+  background-color: #2277aa !important;
+  color: #fff !important;
+}
+
+.bg-danger-hover:hover {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}

@@ -11,34 +11,9 @@
 <!-- Readonly Section -->
 <ng-template #readonlySection>
     <form id="uploadDocuments">
-
-        <div class="usa-alert usa-alert-info mb-4">
-            <div class="usa-alert-body">
-                <p><b class="black">Attach supporting documents to this eOffer.</b></p>
-                <p>Upload all documents associated with your eOffer.</p>
-                <p>Some of the attachments are required based on the responses provided in other templates.</p>
-                <p>Only files of size less than or equal to <b>100.0 MB</b> can be uploaded.</p>
-                <p>Service and product text file has been named as 'Terms and Conditions Text File'.</p>
-            </div>
-        </div>
-        <div class="px-5">
-        <h4 class="type1">Documents</h4>
-        <p>If you have other documents that you want to upload that do not show in the list below, click on 'Other
-            (optional-offeror defined)' and select the document you want to upload. Once you select the document type,
-            you
-            will be able to attach the document to that category. If you do not find what you need in this list you may
-            still use the "Other" category to upload your document.</p>
-
-
-
-
-
-        <!--upload Information starts here-->
-        <style xmlns:encoder="gov.gsa.eoffer.common.util.Base64"></style>
-        <div xmlns:java="http://xml.apache.org/xslt/java" class="table2">
-            <span id="docs" class="visually-hidden">Documents</span>
-            <table aria-labelledby="docs" id="eOfferDocsTable"
-                class="table table-responsive table-striped table-bordered nested">
+        <div class="col">
+            <h2 class="h4 border-bottom mb-3">Documents</h2>
+            <table aria-labelledby="docs" id="eOfferDocsTable" class="table table-responsive table-striped nested table-sm">
                 <thead>
                     <tr>
                         <th width="10%">Type</th>
@@ -542,8 +517,6 @@
                 </tbody>
             </table>
         </div>
-</div>
-
     </form>
 </ng-template>
 

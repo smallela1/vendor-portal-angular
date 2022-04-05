@@ -18,7 +18,6 @@ import { SolicitationProvisionsComponent } from './views/offer-form/solicitation
 import { ExceptionsComponent } from './views/offer-form/exceptions/exceptions.component';
 import { UploadDocumentsComponent } from './views/offer-form/upload-documents/upload-documents.component';
 import { SubmitOfferComponent } from './views/offer-form/submit-offer/submit-offer.component';
-import { SandboxFormComponent } from './views/sandbox-form/sandbox-form.component';
 
 // Solicitation Clauses Subsections
 import { BasicInformationComponent } from './views/offer-form/solicitation-clauses/basic-information/basic-information.component';
@@ -47,19 +46,7 @@ const routes: Routes = [
     { path: 'org-selection', component: OrgSelectionComponent },
     { path: 'home', component: SupplierPortalHomeComponent },
 
-    { path: 'offer', component: OfferFormComponent, children: [
-      { path: 'pathway-to-success', component: PathwayToSuccessComponent },
-      { path: 'corporate-information', component: CorporateInformationComponent },
-      { path: 'negotiators', component: NegotiatorsComponent },
-      { path: 'available-offerings', component: AvailableOfferingsComponent },
-      { path: 'standard-responses', component: StandardResponsesComponent },
-      { path: 'solicitation-clauses', component: SolicitationClausesComponent },
-      { path: 'solicitation-provisions', component: SolicitationProvisionsComponent },
-      { path: 'exceptions', component: ExceptionsComponent },
-      { path: 'upload-documents', component: UploadDocumentsComponent },
-      { path: 'submit-offer', component: SubmitOfferComponent },
-      { path: 'sandbox-form', component: SandboxFormComponent },
-    ]},
+    { path: 'offer', component: OfferFormComponent },
   ]}
 ];
 
@@ -84,7 +71,6 @@ export const routingComponents = [
   ExceptionsComponent,
   UploadDocumentsComponent,
   SubmitOfferComponent,
-  SandboxFormComponent,
   BasicInformationComponent,
   SmallBusinessComponent,
   HazardousMaterialsComponent,

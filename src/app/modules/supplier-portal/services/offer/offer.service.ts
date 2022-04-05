@@ -12,7 +12,6 @@ import { SolicitationProvisionsComponent } from '../../views/offer-form/solicita
 import { StandardResponsesComponent } from '../../views/offer-form/standard-responses/standard-responses.component';
 import { SubmitOfferComponent } from '../../views/offer-form/submit-offer/submit-offer.component';
 import { UploadDocumentsComponent } from '../../views/offer-form/upload-documents/upload-documents.component';
-import { SandboxFormComponent } from '../../views/sandbox-form/sandbox-form.component';
 
 @Injectable({
   providedIn: 'root'

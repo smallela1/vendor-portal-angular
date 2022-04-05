@@ -2,7 +2,7 @@
         background-color: white;
 }
 
-/deep/ .card-header:hover {
+/deep/ accordion-group .card-header:hover {
     background-color: rgb(245, 245, 245);
 }
 

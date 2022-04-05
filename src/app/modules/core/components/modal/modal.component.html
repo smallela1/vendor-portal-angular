@@ -1,8 +1,8 @@
-<button *ngIf="config.showDefaultOpenButton" type="button" class="btn btn-default btn-lg p-1 m-0" (click)="openModal()">
+<button *ngIf="config.showDefaultOpenButton" type="button" class="btn btn-light btn-sm py-1 px-3 m-0" (click)="openModal()">
     <ng-container *ngIf="config.defaultOpenButtonLabel == 'Edit'">
         <span class="fa fa-pencil mr-2 gsa-light-blue"></span>
     </ng-container>
-    <span class="gsa-light-blue">{{config.defaultOpenButtonLabel}}</span>
+    <span class="gsa-light-blue h5">{{config.defaultOpenButtonLabel}}</span>
 </button>
 
 <ng-template #modalTemplate tabindex="-1" role="dialog" aria-hidden="true">
@@ -19,7 +19,7 @@
             </ng-container>
         </div>
         <ng-container *ngIf="modalFooter">
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-end">
                 <div class="button-row">
                     <ng-container [ngTemplateOutlet]="modalFooter"></ng-container>
                 </div>
