@@ -119,16 +119,93 @@
 <ng-template #editSection>
     <form id="availableOfferings">
 
-        <div class="usa-alert usa-alert-info mb-4">
+        <div class="usa-alert usa-alert-warning mb-4">
             <div class="usa-alert-body">
-                <p>
+                <p>                    
                     <b class="black">What goods and services do you provide?</b>
-                    <br>
+                </p>
+                <p>
                     GSA assigns all available offerings to large categories, subcategories, and Special Item Numbers
                     (SINs).
                 </p>
+                <p>
+                    You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a full list of
+                    available offerings, please visit the <a target="_blank" title="MAS Roadmap" href="https://www.gsa.gov/masroadmap">MAS Roadmap</a>.
+                </p>
             </div>
         </div>
+
+        <div class="container">             
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="largeCategory">Large Categrory:</label>
+                </div>
+                <div class="col-md-10">
+                    <select aria-required="true" class="form-control col-md-8" name="largeCategory" id="largeCategory">
+                        <option value="">Select a Large Category</option>
+                        <option value="B">Facilities</option>
+                        <option value="C">Furniture and Furnishings</option>
+                        <option value="D">Human Capital</option>
+                        <option value="E">Industrial Products and Services</option>
+                        <option value="F">Information Technology</option>
+                        <option value="G">Miscellaneous</option>
+                        <option value="A">Office Management</option>
+                        <option value="H">Professional Services</option>
+                        <option value="I">Scientific Management and Solutions</option>
+                        <option value="J">Security and Protection</option>
+                        <option value="K">Transportation and Logistics Services</option>
+                        <option value="L">Travel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="subCategory">Subcategory:</label>
+                </div>
+                <div class="col-md-10">
+                    <select aria-required="true" class="form-control col-md-8" name="subCategory" id="subCategory">
+                        <option value="">Select a Subcategory</option>
+                        <option value="B">Facilities</option>
+                        <option value="C">Furniture and Furnishings</option>
+                        <option value="D">Human Capital</option>
+                        <option value="E">Industrial Products and Services</option>
+                        <option value="F">Information Technology</option>
+                        <option value="G">Miscellaneous</option>
+                        <option value="A">Office Management</option>
+                        <option value="H">Professional Services</option>
+                        <option value="I">Scientific Management and Solutions</option>
+                        <option value="J">Security and Protection</option>
+                        <option value="K">Transportation and Logistics Services</option>
+                        <option value="L">Travel</option>
+                    </select>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="sin">SIN:</label>
+                </div>
+                <div class="col-md-10">
+                    <select aria-required="true" class="form-control col-md-8" name="sin" id="sin">
+                        <option value="">Select a SIN</option>
+                        <option value="B">Facilities</option>
+                        <option value="C">Furniture and Furnishings</option>
+                        <option value="D">Human Capital</option>
+                        <option value="E">Industrial Products and Services</option>
+                        <option value="F">Information Technology</option>
+                        <option value="G">Miscellaneous</option>
+                        <option value="A">Office Management</option>
+                        <option value="H">Professional Services</option>
+                        <option value="I">Scientific Management and Solutions</option>
+                        <option value="J">Security and Protection</option>
+                        <option value="K">Transportation and Logistics Services</option>
+                        <option value="L">Travel</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+<!-- 
+
         <h4 id="addsins" class="visually-hidden">Add SINs</h4>
         <p>You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a
             full
@@ -144,7 +221,8 @@
                         <td aria-hidden="true" class="fakeTh" width="30%">Action</td>
                     </tr>
                     <tr>
-                        <td><label for="largeCategoryId">Large Category: </label><select style="max-width:400px"
+                        <td><label for="largeCategoryId">Large Category: </label>
+                            <select style="max-width:400px"
                                 aria-required="true" class="d-control samesize" name="largeCategory"
                                 id="largeCategoryId">
                                 <option value="">Select a Large Category</option>
@@ -160,7 +238,8 @@
                                 <option value="J">Security and Protection</option>
                                 <option value="K">Transportation and Logistics Services</option>
                                 <option value="L">Travel</option>
-                            </select></td>
+                            </select>
+                        </td>
                         <td></td>
                     </tr>
                     <tr>
@@ -277,7 +356,8 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
+        
     </form>
 </ng-template>
 
