@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ModalComponent } from 'src/app/modules/core/components/modal/modal.component';
 
 @Component({
   selector: 'app-ordering-information',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ordering-information.component.css']
 })
 export class OrderingInformationComponent implements OnInit {
+  
+  @Input('offerStatus') offerStatus: any;
+
+  @ViewChild('remittanceAddressModal') remittanceAddressModal: ModalComponent;
+  @ViewChild('orderingReceiptModal') orderingReceiptModal: ModalComponent;
 
   remittanceAddressSection = {
     title: 'Remittance Address Information',
@@ -32,6 +38,31 @@ export class OrderingInformationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  openRemittanceAddressModal(): void {
+    this.remittanceAddressModal.openModal();    
+  }
+
+  closeRemittanceAddressModal(): void {
+    this.remittanceAddressModal.closeModal()
+  }
+
+  saveRemittanceAddressForm(): void {
+    this.remittanceAddressModal.closeModal()
+  }
+
+  openOrderingReceiptModal(): void {
+    this.orderingReceiptModal.openModal();    
+  }
+
+  closeOrderingReceiptModal(): void {
+    this.orderingReceiptModal.closeModal()
+  }
+
+  saveOrderingReceiptForm(): void {
+    this.orderingReceiptModal.closeModal()
+  }
+
 
 }
 

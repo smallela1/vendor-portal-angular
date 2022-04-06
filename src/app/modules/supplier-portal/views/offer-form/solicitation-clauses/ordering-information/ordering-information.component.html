@@ -1,7 +1,7 @@
 <div class="col">
     <h2 class="h4 border-bottom mb-3">Ordering Information</h2>
 </div>
-<div class="col mb-5">
+<div class="col">
     
     <accordion [isAnimated]="true" [closeOthers]="false">
         <app-form-accordion
@@ -15,7 +15,9 @@
             }"  
         >
             <ng-template #formAccordionHeader>
-                <button>Edit</button>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ remittanceAddressSection.title }}</h3>
+                </div>
             </ng-template>
             <ng-template #formAccordionBody>
                 <ng-template [ngTemplateOutlet]="remmittanceAddressInfo"></ng-template>
@@ -33,7 +35,9 @@
             }"  
         >
             <ng-template #formAccordionHeader>
-                <button>Edit</button>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ orderingReceiptSection.title }}</h3>
+                </div>
             </ng-template>
             <ng-template #formAccordionBody>
                 <ng-template [ngTemplateOutlet]="orderingReceiptInfo"></ng-template>
@@ -46,148 +50,417 @@
 
 <!-- Reaonly Section -->
 <ng-template #remmittanceAddressInfo>
+    
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Supplier Name:</dt>
+                    <dd class="col mb-0">ABC Supplier</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Attention:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openRemittanceAddressModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Supplier Name:</dt>
+                    <dd class="col mb-0">ABC Supplier</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Attention:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openRemittanceAddressModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
         
-        <div class="row">
-            <div class="col-md-3">
-                <dt class="col">Supplier Name:</dt>
-                <dd class="col mb-0">ABC Supplier</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Attention:</dt>
-                <dd class="col mb-0">Luis Najera</dd>
-                <dt class="col">Email:</dt>
-                <dd class="col mb-0">luis.najera@gsa.gov</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Address:</dt>
-                <dd class="col mb-0">
-                    <address>
-                        10505 Furnace Rd. Ste. 108<br />
-                        Lorton, VA 22079-2635<br />
-                        USA
-                    </address>
-                </dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Phone:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-                <dt class="col">Fax:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-3">
-                <dt class="col">Supplier Name:</dt>
-                <dd class="col mb-0">ABC Supplier</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Attention:</dt>
-                <dd class="col mb-0">Luis Najera</dd>
-                <dt class="col">Email:</dt>
-                <dd class="col mb-0">luis.najera@gsa.gov</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Address:</dt>
-                <dd class="col mb-0">
-                    <address>
-                        10505 Furnace Rd. Ste. 108<br />
-                        Lorton, VA 22079-2635<br />
-                        USA
-                    </address>
-                </dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Phone:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-                <dt class="col">Fax:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-            </div>
-        </div>
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openRemittanceAddressModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Remittance Address
+        </button>
+    </div>
 
 </ng-template>
 
 
 <ng-template #orderingReceiptInfo>
         
-    <div class="container mb-4">
-        <div class="col">
-            <h4 class="h6 border-bottom mb-3" id="yournegs">Computer-to-Computer Electronic Data Interchange (EDI)</h4>
+    <div class="col p-0">
+        <h4 class="h6 border-bottom mb-3" id="yournegs">Computer-to-Computer Electronic Data Interchange (EDI)</h4>
+    </div>
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Administrator</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <dt class="col">Name:</dt>
-                <dd class="col mb-0">Luis Najera</dd>
-                <dt class="col">Title:</dt>
-                <dd class="col mb-0">Administrator</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Email:</dt>
-                <dd class="col mb-0">luis.najera@gsa.gov</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Address:</dt>
-                <dd class="col mb-0">
-                    <address>
-                        10505 Furnace Rd. Ste. 108<br />
-                        Lorton, VA 22079-2635<br />
-                        USA
-                    </address>
-                </dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Phone:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-                <dt class="col">Fax:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Administrator</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-3">
-                <dt class="col">Name:</dt>
-                <dd class="col mb-0">Luis Najera</dd>
-                <dt class="col">Title:</dt>
-                <dd class="col mb-0">Administrator</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Email:</dt>
-                <dd class="col mb-0">luis.najera@gsa.gov</dd>
-            </div>
-            <div class="col-md-3">
-                <dt class="col">Address:</dt>
-                <dd class="col mb-0">
-                    <address>
-                        10505 Furnace Rd. Ste. 108<br />
-                        Lorton, VA 22079-2635<br />
-                        USA
-                    </address>
-                </dd>
-            </div>
-            <div class="col-md-3 ">
-                <dt class="col">Phone:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-                <dt class="col">Fax:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-            </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
     </div>
     
+    
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openOrderingReceiptModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add EDI Contact
+        </button>
+    </div>
 
-    <div class="container">
-        <div class="col">
-            <h4 class="h6 border-bottom mb-3" id="yournegs">Facsimile Tranmission</h4>
+    <div class="col p-0 mt-5">
+        <h4 class="h6 border-bottom mb-3" id="yournegs">Facsimile Tranmission</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-md-4 col-lg-4 col-xl-3">
+            <div class="row">
+                <div class="col">
+                    <dt class="col">Fax #1:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>        
+        <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <dt class="col">Fax #1:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
+        <div class="col-sm-8 col-md-4 col-lg-4 col-xl-3">
+            <div class="row">
+                <div class="col">
+                    <dt class="col">Fax #2:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
             </div>
-            <div class="col-md-3">
-                <dt class="col">Fax #2:</dt>
-                <dd class="col mb-0">(999) 999-9999</dd>
-            </div>
+        </div>        
+        <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
     </div>
 
+    
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openOrderingReceiptModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Fax
+        </button>
+    </div>
+
 </ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editRemittanceAddress>
+    <form id="negotiators">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    <b>Who will negotiate your eOffer?</b>
+                </p>
+                <p>
+                    Offerors can add multiple negotiators. A minimum of one negotiator must have signature authority, but it is STRONGLY
+                    recommended to have at least two valid Negotiators. Negotiators without signature authority may prepare the eOffer but
+                    only negotiators with signature authority may submit the eOffer and sign the Contract. 
+                </p>
+            </div>
+        </div>
+        <div class="container">             
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="name" name="name" aria-describedby="nameHelp"/>
+                    <small id="nameHelp" class="form-text text-muted">
+                        Negotiator's name should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="title">Title:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="title" name="title"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="role">Role:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="role" name="role"/>
+                </div>
+            </div>          
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="email" class="form-control col-md-6" id="email" name="email" aria-describedby="emailHelp"/>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Negotiator's email should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>       
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-4" id="phone" name="phone"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+<ng-template #editOrderingReceipt>
+    <form id="negotiators">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    <b>Who will negotiate your eOffer?</b>
+                </p>
+                <p>
+                    Offerors can add multiple negotiators. A minimum of one negotiator must have signature authority, but it is STRONGLY
+                    recommended to have at least two valid Negotiators. Negotiators without signature authority may prepare the eOffer but
+                    only negotiators with signature authority may submit the eOffer and sign the Contract. 
+                </p>
+            </div>
+        </div>
+        <div class="container">             
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="name" name="name" aria-describedby="nameHelp"/>
+                    <small id="nameHelp" class="form-text text-muted">
+                        Negotiator's name should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="title">Title:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="title" name="title"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="role">Role:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="role" name="role"/>
+                </div>
+            </div>          
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="email" class="form-control col-md-6" id="email" name="email" aria-describedby="emailHelp"/>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Negotiator's email should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>       
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-4" id="phone" name="phone"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+<app-modal #remittanceAddressModal *ngIf="offerStatus == 'In Progress'"
+[config]="{ modalTitle: remittanceAddressSection.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editRemittanceAddress"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveRemittanceAddressForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeRemittanceAddressModal()">
+    </ng-template>
+</app-modal>
+
+<app-modal #orderingReceiptModal *ngIf="offerStatus == 'In Progress'"
+[config]="{ modalTitle: orderingReceiptSection.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editOrderingReceipt"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveOrderingReceiptForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeOrderingReceiptModal()">
+    </ng-template>
+</app-modal>

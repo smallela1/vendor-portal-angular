@@ -14,13 +14,16 @@
                 showSection: section.showSection
             }"  
         >
-            <ng-template #formAccordionHeader>
-                <button>Edit</button>
-            </ng-template>
             <ng-template #formAccordionBody>
                 <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
             </ng-template>
         </app-form-accordion>
     </accordion>
+
+    <app-corporate-experience [sectionData]="subSections.corporateExperience" [offerStatus]="offerStatus"></app-corporate-experience>
+    <app-past-performance [sectionData]="subSections.pastPerformance" [offerStatus]="offerStatus"></app-past-performance>
+    <app-quality-control [sectionData]="subSections.qualityControl" [offerStatus]="offerStatus"></app-quality-control>
+    <app-relevant-project-experience [sectionData]="subSections.relevantProjectExperience" [offerStatus]="offerStatus"></app-relevant-project-experience>
+    <app-trade-agreements-act-compliance [sectionData]="subSections.tradeAgreementActCompliance" [offerStatus]="offerStatus"></app-trade-agreements-act-compliance>
 
 </div>

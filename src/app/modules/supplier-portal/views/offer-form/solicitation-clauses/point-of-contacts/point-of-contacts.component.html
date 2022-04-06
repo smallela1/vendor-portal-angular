@@ -14,7 +14,9 @@
             }"  
         >
             <ng-template #formAccordionHeader>
-                <button>Edit</button>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ section.title }}</h3>
+                </div>
             </ng-template>
             <ng-template #formAccordionBody>
                 <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
@@ -28,45 +30,169 @@
 <ng-template #readonlySection>
         
     <div class="row">
-        <div class="col-md-4">
-            <dt class="col">Name:</dt>
-            <dd class="col mb-0">Luis Najera</dd>
-            <dt class="col">Title:</dt>
-            <dd class="col mb-0">Contract Manager</dd>
-        </div>
-        <div class="col-md-4">
-            <dt class="col">Type:</dt>
-            <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
-            <dt class="col">Email:</dt>
-            <dd class="col mb-0">luis.najera@gsa.gov</dd>
-        </div>
-        <div class="col-md-4">
-            <dt class="col">Phone:</dt>
-            <dd class="col mb-0">(999) 999-9999</dd>
-            <dt class="col">Fax:</dt>
-            <dd class="col mb-0">(999) 999-9999</dd>
+        <div class="col-11">
+            <div class="row">                
+                <div class="col-md-4">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Contract Manager</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Type:</dt>
+                    <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+            </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-4">
-            <dt class="col">Name:</dt>
-            <dd class="col mb-0">Luis Najera</dd>
-            <dt class="col">Title:</dt>
-            <dd class="col mb-0">Contract Manager</dd>
+        <div class="col-11">
+            <div class="row">                
+                <div class="col-md-4">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Contract Manager</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Type:</dt>
+                    <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <dt class="col">Type:</dt>
-            <dd class="col mb-0">Industrial Funding Fee</dd>
-            <dt class="col">Email:</dt>
-            <dd class="col mb-0">luis.najera@gsa.gov</dd>
-        </div>
-        <div class="col-md-4">
-            <dt class="col">Phone:</dt>
-            <dd class="col mb-0">(999) 999-9999</dd>
-            <dt class="col">Fax:</dt>
-            <dd class="col mb-0">(999) 999-9999</dd>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
     </div>
 
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Point of Contact
+        </button>
+    </div>
+
 </ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="negotiators">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    <b>Who will negotiate your eOffer?</b>
+                </p>
+                <p>
+                    Offerors can add multiple negotiators. A minimum of one negotiator must have signature authority, but it is STRONGLY
+                    recommended to have at least two valid Negotiators. Negotiators without signature authority may prepare the eOffer but
+                    only negotiators with signature authority may submit the eOffer and sign the Contract. 
+                </p>
+            </div>
+        </div>
+        <div class="container">             
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="name" name="name" aria-describedby="nameHelp"/>
+                    <small id="nameHelp" class="form-text text-muted">
+                        Negotiator's name should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="title">Title:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="title" name="title"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="role">Role:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-8" id="role" name="role"/>
+                </div>
+            </div>          
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="email" class="form-control col-md-6" id="email" name="email" aria-describedby="emailHelp"/>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Negotiator's email should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>       
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-4" id="phone" name="phone"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-2 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+
+
+<!-- Modal Template -->
+<app-modal *ngIf="offerStatus == 'In Progress'"
+    [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+    </ng-template>
+</app-modal>

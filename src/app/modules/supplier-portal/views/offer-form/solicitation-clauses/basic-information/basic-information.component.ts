@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 // Solicitation Clauses Subsections
 import { CertificationResponsibilityMattersComponent } from './certification-responsibility-matters/certification-responsibility-matters.component';
@@ -12,10 +12,13 @@ import { SmallBusinessComponent } from './small-business/small-business.componen
 })
 export class BasicInformationComponent implements OnInit {
 
-  subSections: any[] = subSections;
+  @Input('offerStatus') offerStatus: any;
+
+  subSections: any = subSections;
+  
 
   constructor() {
-    this.subSections = Object.keys(this.subSections).map(section => this.subSections[section]);
+    // this.subSections = Object.keys(this.subSections).map(section => this.subSections[section]);
    }
 
   ngOnInit(): void {
@@ -41,7 +44,7 @@ const subSections: any = {
       },
       component: SmallBusinessComponent
   },
-  inforRegardingResponsibilityMatters: {
+  infoRegardingResponsibilityMatters: {
       sectionId: 'inforRegardingResponsibilityMatters',
       title: "Information Regarding Responsibility Matters (Oct 2018)",
       clauseNumber: '52.209-7',

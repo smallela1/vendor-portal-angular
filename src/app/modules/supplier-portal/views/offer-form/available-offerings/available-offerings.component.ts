@@ -21,6 +21,7 @@ export class AvailableOfferingsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   openSinModal(): void {
     this.sinModal.openModal();    
   }

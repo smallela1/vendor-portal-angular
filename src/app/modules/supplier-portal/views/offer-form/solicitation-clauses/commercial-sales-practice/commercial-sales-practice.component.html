@@ -14,7 +14,13 @@
             }"  
         >
             <ng-template #formAccordionHeader>
-                <button>Edit</button>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ section.title }}</h3>
+                </div>
+                <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()">
+                    <span class="fa fa-pencil mr-2"></span>
+                    Edit
+                </button>
             </ng-template>
             <ng-template #formAccordionBody>
                 <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
@@ -24,8 +30,7 @@
 </div>
 
 
-<ng-template #readonlySection>    
-
+<ng-template #readonlySection>
     <div class="d-flex mb-3">
         <dt class="mr-2">1</dt>
         <dd class="flex-fill">
@@ -72,9 +77,7 @@
                 </dd>
             </div>
         </dd>
-    </div>  
-
-
+    </div>
     <div class="d-flex">
         <dt class="mr-2">2</dt>
         <dd class="flex-fill">
@@ -136,8 +139,7 @@
                 </dd>
             </div>
         </dd>
-    </div>  
-    
+    </div>    
     <div class="d-flex mb-5">
         <dt class="mr-2">3</dt>
         <dd class="flex-fill m-0">
@@ -185,8 +187,7 @@
                 </dd>
             </div>
         </dd>
-    </div>  
-
+    </div>
     <div class="d-flex">
         <dt class="mr-2">4</dt>
         <dd class="flex-fill">
@@ -232,13 +233,7 @@
                 </dd>
             </div>
         </dd>
-    </div>  
-
-
-
-
-
-
+    </div>
 </ng-template>
 
 
@@ -256,3 +251,18 @@
         </div>
     </div>
 </ng-template>
+
+
+
+<!-- Modal Template -->
+<app-modal *ngIf="offerStatus == 'In Progress'"
+[config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+    </ng-template>
+</app-modal>

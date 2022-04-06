@@ -1,16 +1,35 @@
 <app-accordion [accordionTitle]="config.title" [isStickyTop]="config.isStickyTop" *ngIf=config.showSection>
-    <ng-template #accordionHeader>
-        <app-section-status-indicator [sectionStatus]="config.sectionStatus"></app-section-status-indicator>
-        <button *ngIf="config.parentOfferStatus == 'Awarded'" class="btn btn-primary btn-sm float-right">New Mod</button>
+
+    <ng-container *ngIf="formAccordionHeader; else defaultFormAccordionHeader">
+        <ng-template #accordionHeader>
+                <div class="d-flex flex-fill">
+                    <app-section-status-indicator [sectionStatus]="config.sectionStatus"></app-section-status-indicator>
+                    <div class="d-flex flex-fill ml-2">
+                        <ng-container [ngTemplateOutlet]="formAccordionHeader"></ng-container>
+                    </div>
+                </div>
+        </ng-template>
+    </ng-container>  
+
+    <ng-template #defaultFormAccordionHeader>
+        <ng-template #accordionHeader>
+            <app-section-status-indicator [sectionStatus]="config.sectionStatus"></app-section-status-indicator>
+            <span class="h5 accordion-label gsa-light-blue flex-fill">
+                {{config.title}}
+            </span>
+        </ng-template>
     </ng-template>
+
     <ng-template #accordionBody>
         <ng-container *ngIf="formAccordionBody">
             <ng-container [ngTemplateOutlet]="formAccordionBody"></ng-container>
         </ng-container>
     </ng-template>
+
     <ng-template #accordionFooter>
         <ng-container *ngIf="formAccordionFooter">
             <ng-container [ngTemplateOutlet]="formAccordionFooter"></ng-container>
         </ng-container>
     </ng-template>
+
 </app-accordion>

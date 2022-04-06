@@ -11,10 +11,10 @@
 <!-- Readonly Section -->
 <ng-template #readonlySection>
     <form id="solicitationClauses">
-        <app-basic-information></app-basic-information>
-        <app-commercial-sales-practice></app-commercial-sales-practice>
-        <app-point-of-contacts></app-point-of-contacts>
-        <app-ordering-information></app-ordering-information>
+        <app-basic-information [offerStatus]="offerStatus"></app-basic-information>
+        <app-commercial-sales-practice [offerStatus]="offerStatus"></app-commercial-sales-practice>
+        <app-point-of-contacts [offerStatus]="offerStatus"></app-point-of-contacts>
+        <app-ordering-information [offerStatus]="offerStatus"></app-ordering-information>
     </form>
 </ng-template>
 

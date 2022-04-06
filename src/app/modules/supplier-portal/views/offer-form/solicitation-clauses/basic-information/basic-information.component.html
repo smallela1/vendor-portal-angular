@@ -2,25 +2,10 @@
     <h2 class="h4 border-bottom mb-3">Basic information</h2>
 </div>
 <div class="col mb-5">
-
-    <accordion [isAnimated]="true" [closeOthers]="false" *ngFor="let section of subSections">
-        <app-form-accordion
-            *ngIf="true"
-            [config]="{ 
-                title: section.clauseNumber + ' - ' + section.title, 
-                sectionStatus: section.sectionStatus, 
-                parentOfferStatus: section.offerStatus, 
-                isStickyTop: true, 
-                showSection: section.showSection
-            }"  
-        >
-            <ng-template #formAccordionHeader>
-                <button>Edit</button>
-            </ng-template>
-            <ng-template #formAccordionBody>
-                <ng-temlpate [ngComponentOutlet]="section.component"></ng-temlpate>
-            </ng-template>
-        </app-form-accordion>
-    </accordion>
+    
+    <app-small-business [sectionData]="subSections.smallBusiness" [offerStatus]="offerStatus"></app-small-business>
+    <app-information-responsibility-matters [sectionData]="subSections.infoRegardingResponsibilityMatters" [offerStatus]="offerStatus"></app-information-responsibility-matters>
+    <app-hazardous-materials [sectionData]="subSections.hazardousMaterials" [offerStatus]="offerStatus"></app-hazardous-materials>
+    <app-certification-responsibility-matters [sectionData]="subSections.certRegardingResponsibilityMatters" [offerStatus]="offerStatus"></app-certification-responsibility-matters>
 
 </div>

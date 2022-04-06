@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ModalComponent } from 'src/app/modules/core/components/modal/modal.component';
 
 @Component({
   selector: 'app-commercial-sales-practice',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commercial-sales-practice.component.css']
 })
 export class CommercialSalesPracticeComponent implements OnInit {
+  
+  @Input('offerStatus') offerStatus: any;
+  
+  @ViewChild(ModalComponent) modalComponent: ModalComponent;
 
   section = {
     title: 'Commercial Sales Practice (CSP-1)',
@@ -16,9 +21,22 @@ export class CommercialSalesPracticeComponent implements OnInit {
     showSection: true,
   }
 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openModal(): void {
+    this.modalComponent.openModal();    
+  }
+
+  closeModal(): void {
+    this.modalComponent.closeModal()
+  }
+
+  saveForm(): void {
+    this.modalComponent.closeModal()
   }
 
 }

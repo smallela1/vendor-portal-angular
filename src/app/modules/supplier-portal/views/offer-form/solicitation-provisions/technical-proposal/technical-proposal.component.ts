@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CorporateExperienceComponent } from './corporate-experience/corporate-experience.component';
 import { PastPerformanceComponent } from './past-performance/past-performance.component';
 import { QualityControlComponent } from './quality-control/quality-control.component';
@@ -12,11 +12,11 @@ import { TradeAgreementsActComplianceComponent } from './trade-agreements-act-co
 })
 export class TechnicalProposalComponent implements OnInit {
 
-  subSections: any[] = subSections;
+  @Input('offerStatus') offerStatus: any;
 
-  constructor() {
-    this.subSections = Object.keys(this.subSections).map(section => this.subSections[section]);
-   }
+  subSections: any = subSections;
+
+  constructor() {}
 
   ngOnInit(): void {
   }
