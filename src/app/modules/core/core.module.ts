@@ -9,9 +9,13 @@ import { CoreRoutingModule } from './core-routing.module';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { CoreComponentsModule } from './components/core-components.module';
 
+// Directives
+import { StopClickPropagationDirective } from './directives/stop-click-propagation.directive';
+
 @NgModule({
   declarations: [
     PageNotFoundComponent,
+    StopClickPropagationDirective,
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,8 @@ import { CoreComponentsModule } from './components/core-components.module';
     CoreComponentsModule
   ],
   exports: [
-    CoreComponentsModule
+    CoreComponentsModule,
+    StopClickPropagationDirective,
   ]
 })
 export class CoreModule { }

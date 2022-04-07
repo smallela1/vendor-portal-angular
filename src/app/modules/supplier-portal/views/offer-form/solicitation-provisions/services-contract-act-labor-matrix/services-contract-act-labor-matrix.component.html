@@ -30,27 +30,21 @@
 <ng-template #readonlySection>
     <div class="row">
         <div class="col-11">
-            <div class="row">                
+            <div class="row">
                 <div class="col-md-4">
-                    <dt class="col">Name:</dt>
-                    <dd class="col mb-0">Luis Najera</dd>
-                    <dt class="col">Title:</dt>
-                    <dd class="col mb-0">Contract Manager</dd>
+                    <dt class="col">SCA Eligible Contract Labor Category:</dt>
+                    <dd class="col mb-0">Sample Category</dd>
                 </div>
                 <div class="col-md-4">
-                    <dt class="col">Type:</dt>
-                    <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
-                    <dt class="col">Email:</dt>
-                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                    <dt class="col">SCA Equivalent Code Title:</dt>
+                    <dd class="col mb-0">Sample Equivalent Code</dd>
                 </div>
                 <div class="col-md-4">
-                    <dt class="col">Phone:</dt>
-                    <dd class="col mb-0">(999) 999-9999</dd>
-                    <dt class="col">Fax:</dt>
-                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">WD Number:</dt>
+                    <dd class="col mb-0">Sample WD Number</dd>
                 </div>
             </div>
-            </div>
+        </div>
         <div class="col-1">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
                 <span class="fa fa-pencil"></span>
@@ -63,27 +57,21 @@
     <hr>
     <div class="row">
         <div class="col-11">
-            <div class="row">                
+            <div class="row">
                 <div class="col-md-4">
-                    <dt class="col">Name:</dt>
-                    <dd class="col mb-0">Luis Najera</dd>
-                    <dt class="col">Title:</dt>
-                    <dd class="col mb-0">Contract Manager</dd>
+                    <dt class="col">SCA Eligible Contract Labor Category:</dt>
+                    <dd class="col mb-0">Sample Category</dd>
                 </div>
                 <div class="col-md-4">
-                    <dt class="col">Type:</dt>
-                    <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
-                    <dt class="col">Email:</dt>
-                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                    <dt class="col">SCA Equivalent Code Title:</dt>
+                    <dd class="col mb-0">Sample Equivalent Code</dd>
                 </div>
                 <div class="col-md-4">
-                    <dt class="col">Phone:</dt>
-                    <dd class="col mb-0">(999) 999-9999</dd>
-                    <dt class="col">Fax:</dt>
-                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">WD Number:</dt>
+                    <dd class="col mb-0">Sample WD Number</dd>
                 </div>
             </div>
-            </div>
+        </div>
         <div class="col-1">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
                 <span class="fa fa-pencil"></span>
@@ -98,11 +86,46 @@
     <div class="col mt-4 d-flex justify-content-center"> 
         <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openModal()">
             <span class="fa fa-plus mr-2"></span>
-            Add SCA Information
+            Add SCA Labor Information
         </button>
     </div>
 
 </ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="hazardousMaterials">
+        <div class="container">             
+            <div class="row mb-2">
+                <div class="col-md-3 d-flex justify-content-end text-right">   
+                    <label for="laborCategory">SCA Eligible Contract Labor Category:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="laborCategory" name="laborCategory" aria-describedby="materialHelp"/>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3 d-flex justify-content-end text-right">   
+                    <label for="codeTitle">SCA Equivalent Code Title:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-5" id="codeTitle" name="codeTitle"/>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3 d-flex justify-content-end text-right">   
+                    <label for="wdNumber">WD Number:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-5" id="wdNumber" name="wdNumber"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
 
 
 
@@ -110,7 +133,7 @@
 <app-modal *ngIf="offerStatus == 'In Progress'"
 [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
-        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
     </ng-template>
     <ng-template #modalFooter>
         <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"

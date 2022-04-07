@@ -13,7 +13,7 @@
             <div class="flex-fill">
                 <h3 class="h5">{{ section.title }}</h3>
             </div>
-            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()">
+            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
                 <span class="fa fa-pencil mr-2"></span>
                 Edit
             </button>
@@ -27,49 +27,80 @@
 
 <!-- Readonly Section -->
 <ng-template #readonlySection> 
-<div class="d-flex mb-3">
-    <dd class="flex-fill m-0">
-        <p>
-            Does the offeror have three (3) or more assessment reports available in the federal Contractor Performance Assessment
-            Reporting System (CPARS) that represent:
-        </p>
-        <p>
-            (1)  contracts or orders completed within three (3) years of the date of offer submission;<br>
-            (2)  at least three (3) distinct orders and/or contracts; and<br>
-            (3)  work similar in scope to products/services included in this solicitation.
-        </p>
-        <div class="d-flex">
-            <dd class="mr-4">
-                <strong>
-                    N/A
-                </strong>
-            </dd>
-        </div>
-    </dd>
-</div>
-<div class="d-flex mb-3">
-    <dd class="flex-fill m-0">
-        <p>
-            Address any negative feedback for each of the categories to include actions taken to minimize the problems that resulted in negative feedback.
-        </p>
-        <div class="d-flex">
-            <dd class="mr-4">
-                <strong>
-                    N/A
-                </strong>
-            </dd>
-        </div>
-    </dd>
-</div>
+    <div class="d-flex mb-3">
+        <dd class="flex-fill m-0">
+            <p>
+                Does the offeror have three (3) or more assessment reports available in the federal Contractor Performance Assessment
+                Reporting System (CPARS) that represent:
+            </p>
+            <p>
+                (1)  contracts or orders completed within three (3) years of the date of offer submission;<br>
+                (2)  at least three (3) distinct orders and/or contracts; and<br>
+                (3)  work similar in scope to products/services included in this solicitation.
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dd class="flex-fill m-0">
+            <p>
+                Address any negative feedback for each of the categories to include actions taken to minimize the problems that resulted in negative feedback.
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
 </ng-template>
 
+
+
+<!-- Edit Section -->
+<ng-template #editSection> 
+    <div class="d-flex mb-3">
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="assessmentReports">
+                    Does the offeror have three (3) or more assessment reports available in the federal Contractor Performance Assessment
+                    Reporting System (CPARS) that represent:
+                </label>
+                <p>
+                    (1)  contracts or orders completed within three (3) years of the date of offer submission;<br>
+                    (2)  at least three (3) distinct orders and/or contracts; and<br>
+                    (3)  work similar in scope to products/services included in this solicitation.
+                </p>
+                <textarea class="form-control" id="assessmentReports" name="assessmentReports" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="negativeFeedback">
+                    Address any negative feedback for each of the categories to include actions taken to minimize the problems that resulted in negative feedback.
+                </label>
+                <textarea class="form-control" id="negativeFeedback" name="negativeFeedback" rows="3"></textarea>
+            </div>  
+        </dd>
+    </div>
+</ng-template>
 
 
 <!-- Modal Template -->
 <app-modal *ngIf="offerStatus == 'In Progress'"
 [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
-        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
     </ng-template>
     <ng-template #modalFooter>
         <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"

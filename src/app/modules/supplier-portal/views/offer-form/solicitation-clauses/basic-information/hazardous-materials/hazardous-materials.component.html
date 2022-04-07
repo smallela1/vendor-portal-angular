@@ -13,10 +13,6 @@
             <div class="flex-fill">
                 <h3 class="h5">{{ section.clauseNumber + ' - ' + section.title }}</h3>
             </div>
-            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()">
-                <span class="fa fa-pencil mr-2"></span>
-                Edit
-            </button>
         </ng-template>
         <ng-template #formAccordionBody>
             <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
@@ -48,33 +44,66 @@
                 submitted under this contract.
             </p>
 
-            <div class="col mb-5">            
+            <div class="col mb-5 p-0">            
                 <div class="col">
                     <h2 class="h5 border-bottom mb-3" id="yournegs">Hazardous Material Identification</h2>
-                </div>
+                </div>                
+                
                 <div class="row">
-                    <div class="col-md-6">
-                        <dt class="col">Material:</dt>
-                        <dd class="col mb-0">Metal</dd>
+                    <div class="col-11">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dt class="col">Material:</dt>
+                                <dd class="col mb-0">Metal</dd>
+                            </div>
+                            <div class="col-md-6">
+                                <dt class="col">Identification Number:</dt>
+                                <dd class="col mb-0">132456789</dd>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <dt class="col">Identification Number:</dt>
-                        <dd class="col mb-0">132456789</dd>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                            <span class="fa fa-pencil"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                            <span class="fa fa-trash"></span>
+                        </button>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-md-6">
-                        <dt class="col">Material:</dt>
-                        <dd class="col mb-0">Metal</dd>
+                    <div class="col-11">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dt class="col">Material:</dt>
+                                <dd class="col mb-0">Metal</dd>
+                            </div>
+                            <div class="col-md-6">
+                                <dt class="col">Identification Number:</dt>
+                                <dd class="col mb-0">132456789</dd>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <dt class="col">Identification Number:</dt>
-                        <dd class="col mb-0">132456789</dd>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                            <span class="fa fa-pencil"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                            <span class="fa fa-trash"></span>
+                        </button>
                     </div>
                 </div>
-            </div>
+        
+                <hr>           
+                <div class="col mt-4 d-flex justify-content-center"> 
+                    <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openModal()">
+                        <span class="fa fa-plus mr-2"></span>
+                        Add Hazardous Material
+                    </button>
+                </div>
 
+            </div>  
         </dd>
     </div>
     <div class="d-flex">
@@ -224,12 +253,40 @@
 </ng-template>
 
 
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="hazardousMaterials">
+        <div class="container">             
+            <div class="row mb-2">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="material">Material:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="material" name="material" aria-describedby="materialHelp"/>
+                    <small id="materialHelp" class="form-text text-muted">
+                        If none, insert "None"
+                    </small>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-3 d-flex justify-content-end text-right">   
+                    <label for="identificationNumber">Identification Number:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-5" id="identificationNumber" name="identificationNumber"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
 
 <!-- Modal Template -->
 <app-modal *ngIf="offerStatus == 'In Progress'"
 [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
-        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
     </ng-template>
     <ng-template #modalFooter>
         <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"

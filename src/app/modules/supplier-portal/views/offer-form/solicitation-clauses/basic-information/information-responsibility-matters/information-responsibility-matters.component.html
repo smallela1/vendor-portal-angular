@@ -13,7 +13,7 @@
             <div class="flex-fill">
                 <h3 class="h5">{{ section.clauseNumber + ' - ' + section.title }}</h3>
             </div>
-            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()">
+            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
                 <span class="fa fa-pencil mr-2"></span>
                 Edit
             </button>
@@ -72,14 +72,7 @@
         <dd class="flex-fill m-0">
             <div class="mb-3">
                 The offeror
-                <div class="custom-control custom-radio custom-control-inline ml-3">
-                    <input id="hasContractsGrantsGreaterThan10M" type="radio" name="contractsGrantsGreaterThan10M" class="custom-control-input" disabled/>
-                    <label class="custom-control-label" for="hasContractsGrantsGreaterThan10M"><u>has</u></label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input id="doesNotHaveContractsGrantsGreaterThan10M" type="radio" name="contractsGrantsGreaterThan10M" class="custom-control-input" checked disabled/>
-                    <label class="custom-control-label" for="doesNotHaveContractsGrantsGreaterThan10M"><u>does not have</u></label>
-                </div>
+                <strong class="mx-2">does not have</strong>
                 current active Federal contracts and grants with total value greater than $10,000,000.
             </div>
         </dd>
@@ -179,12 +172,161 @@
 </ng-template>
 
 
+<!-- Edit Section -->
+<ng-template #editSection> 
+    <div class="d-flex">
+        <dt class="mr-2">(a)</dt>
+        <dd class="flex-fill">
+            <p>
+                <i>Definitions</i>. As used in this provision —
+            </p>
+            <p>
+                <i>Administrative proceeding</i> means a non-judicial process that is adjudicatory in nature in order 
+                to make a determination of fault or liability (e.g., Securities and Exchange Commission Administrative 
+                Proceedings, Civilian Board of Contract Appeals Proceedings, and Armed Services Board of Contract 
+                Appeals Proceedings). This includes administrative proceedings at the Federal and State level but only 
+                in connection with performance of a Federal contract or grant. It does not include agency actions such 
+                as contract audits, site visits, corrective plans, or inspection of deliverables.
+            </p>
+            <p>
+                <i>Federal contracts and grants with total value greater than $10,000,000</i> means —
+            </p>
+            <div class="d-flex">
+                <dt class="mr-2">(1)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        The total value of all current, active contracts and grants, including all priced options; and
+                    </p>
+                </dd>
+            </div>
+            <div class="d-flex">
+                <dt class="mr-2">(2)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        The total value of all current, active orders including all priced options under indefinite-delivery, 
+                        indefinite-quantity, 8(a), or requirements contracts (including task and delivery and multiple-award Schedules).
+                    </p>
+                </dd>
+            </div>
+            <p>
+                Principal means an officer, director, owner, partner, or a person having primary management or supervisory 
+                responsibilities within a business entity (e.g., general manager; plant manager; head of a division or business segment; and similar positions).
+            </p>
+        </dd>
+    </div>
+    <div class="d-flex">
+        <dt class="mr-2">(b)</dt>
+        <dd class="flex-fill m-0">
+            <div class="mb-3">
+                The offeror
+                <select class="custom-select col-sm-5 col-md-4 col-lg-2 col-xl-2 mx-2" id="contractsGrantsGreaterThan10M" name="contractsGrantsGreaterThan10M" aria-label="">
+                    <option selected>Choose...</option>
+                    <option value="0">has</option>
+                    <option value="1">does not have</option>
+                </select>
+                current active Federal contracts and grants with total value greater than $10,000,000.
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex">
+        <dt class="mr-2">(c)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                If the offeror checked “has” in paragraph (b) of this provision, the offeror represents, by submission of this 
+                offer, that the information it has entered in the Federal Awardee Performance and Integrity Information System 
+                (FAPIIS) is current, accurate, and complete as of the date of submission of this offer with regard to the following information:
+            </p>
+            <div class="d-flex">
+                <dt class="mr-2">(1)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        Whether the offeror, and/or any of its principals, has or has not, within the last five years, 
+                        in connection with the award to or performance by the offeror of a Federal contract or grant, 
+                        been the subject of a proceeding, at the Federal or State level that resulted in any of the following dispositions:
+                    </p>
+                    <div class="d-flex">
+                        <dt class="mr-2">(i)</dt>
+                        <dd class="flex-fill m-0">
+                            <p>
+                                In a criminal proceeding, a conviction.
+                            </p>
+                        </dd>
+                    </div>
+                    <div class="d-flex">
+                        <dt class="mr-2">(ii)</dt>
+                        <dd class="flex-fill m-0">
+                            <p>
+                                In a civil proceeding, a finding of fault and liability that results in the payment of 
+                                a monetary fine, penalty, reimbursement, restitution, or damages of $5,000 or more.
+                            </p>
+                        </dd>
+                    </div>
+                    <div class="d-flex">
+                        <dt class="mr-2">(iii)</dt>
+                        <dd class="flex-fill m-0">
+                            <p>
+                                In an administrative proceeding, a finding of fault and liability that results in —
+                            </p>
+                            <div class="d-flex">
+                                <dt class="mr-2">(A)</dt>
+                                <dd class="flex-fill m-0">
+                                    <p>
+                                        The payment of a monetary fine or penalty of $5,000 or more; or
+                                    </p>
+                                </dd>
+                            </div>
+                            <div class="d-flex">
+                                <dt class="mr-2">(B)</dt>
+                                <dd class="flex-fill m-0">
+                                    <p>
+                                        The payment of a reimbursement, restitution, or damages in excess of $100,000.
+                                    </p>
+                                </dd>
+                            </div>
+                        </dd>
+                    </div>
+                    <div class="d-flex">
+                        <dt class="mr-2">(iv)</dt>
+                        <dd class="flex-fill m-0">
+                            <p>
+                                In a criminal, civil, or administrative proceeding, a disposition of the matter by 
+                                consent or compromise with an acknowledgment of fault by the Contractor if the 
+                                proceeding could have led to any of the outcomes specified in paragraphs (c)(1)(i), 
+                                (c)(1)(ii), or (c)(1)(iii) of this provision.
+                            </p>
+                        </dd>
+                    </div>
+                </dd>
+            </div>
+            <div class="d-flex">
+                <dt class="mr-2">(2)</dt>
+                <dd class="flex-fill m-0">
+                    <p>
+                        If the offeror has been involved in the last five years in any of the occurrences 
+                        listed in (c)(1) of this provision, whether the offeror has provided the requested 
+                        information with regard to each occurrence.
+                    </p>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex">
+        <dt class="mr-2">(d)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                The offeror shall post the information in paragraphs (c)(1)(i) through (c)(1)(iv) of this 
+                provision in FAPIIS as required through maintaining an active registration in System for 
+                Award Management, which can be accessed via <a href="https://www.sam.gov">https://www.sam.gov</a>
+            </p>
+        </dd>
+    </div>
+</ng-template>
 
 <!-- Modal Template -->
 <app-modal *ngIf="offerStatus == 'In Progress'"
 [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
-        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
     </ng-template>
     <ng-template #modalFooter>
         <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"

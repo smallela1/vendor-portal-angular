@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ModalComponent } from 'src/app/modules/core/components/modal/modal.component';
 
 @Component({
@@ -21,10 +22,15 @@ export class CommercialSalesPracticeComponent implements OnInit {
     showSection: true,
   }
 
+  bsConfig?: Partial<BsDatepickerConfig>;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.bsConfig = { 
+      containerClass: 'theme-dark-blue',
+      showWeekNumbers: false
+    };
   }
 
   openModal(): void {

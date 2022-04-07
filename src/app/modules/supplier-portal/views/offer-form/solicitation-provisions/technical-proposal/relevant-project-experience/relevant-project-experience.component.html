@@ -13,10 +13,6 @@
             <div class="flex-fill">
                 <h3 class="h5">{{ section.title }}</h3>
             </div>
-            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()">
-                <span class="fa fa-pencil mr-2"></span>
-                Edit
-            </button>
         </ng-template>
         <ng-template #formAccordionBody>
             <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
@@ -26,37 +22,112 @@
 
 
 <!-- Readonly Section -->
-<ng-template #readonlySection> 
+<ng-template #readonlySection>
+    
+    <div class="usa-alert usa-alert-info mb-4">
+        <div class="usa-alert-body">
+            <p>
+                A description of one (1) relevant project, is required for each SIN on your offer.
+            </p>
+            <p>
+                For the following SINs under the Information Technology Category, a description of two (2) relevant projects are
+                required; 54151HACS, 54151S, 54151HEAL, 561422, 518210C, 541370GEO, 541519ICAM, 541519PIV, 611420, 517312, and 517410.
+            </p>
+        </div> 
+    </div>
     <div class="row">
-        <div class="col-md-8">
-            <dt class="col">Project:</dt>
-            <dd class="col mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-8">
+                    <dt class="col">Project:</dt>
+                    <dd class="col mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Status:</dt>
+                    <dd class="col mb-0">Completed</dd>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <dt class="col">Status:</dt>
-            <dd class="col mb-0">Completed</dd>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-8">
-            <dt class="col">Project:</dt>
-            <dd class="col mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-8">
+                    <dt class="col">Project:</dt>
+                    <dd class="col mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Status:</dt>
+                    <dd class="col mb-0">Completed</dd>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <dt class="col">Status:</dt>
-            <dd class="col mb-0">Completed</dd>
+        <div class="col-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
         </div>
     </div>
+        
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Hazardous Material
+        </button>
+    </div>
+
 </ng-template>
 
+
+<!-- Edit Section -->
+<ng-template #editSection> 
+    <div class="usa-alert usa-alert-warning mb-4">
+        <div class="usa-alert-body">
+            <p>
+                Descriptions are not to exceed four (4) pages per project.
+            </p>
+        </div>
+    </div>
+    <div class="container">             
+        <div class="row mb-2">
+            <div class="col-md-3 d-flex justify-content-end">   
+                <label for="project">Project:</label>
+            </div>
+            <div class="col-md-9">
+                <textarea class="form-control" id="project" name="project" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-3 d-flex justify-content-end text-right">   
+                <label for="status">Status:</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control col-md-5" id="status" name="status"/>
+            </div>
+        </div>
+    </div>
+
+</ng-template>
 
 
 <!-- Modal Template -->
 <app-modal *ngIf="offerStatus == 'In Progress'"
 [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
-        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
     </ng-template>
     <ng-template #modalFooter>
         <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"

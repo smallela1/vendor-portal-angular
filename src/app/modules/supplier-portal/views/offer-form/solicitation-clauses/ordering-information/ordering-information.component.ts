@@ -11,7 +11,8 @@ export class OrderingInformationComponent implements OnInit {
   @Input('offerStatus') offerStatus: any;
 
   @ViewChild('remittanceAddressModal') remittanceAddressModal: ModalComponent;
-  @ViewChild('orderingReceiptModal') orderingReceiptModal: ModalComponent;
+  @ViewChild('orderingReceiptEdiModal') orderingReceiptEdiModal: ModalComponent;
+  @ViewChild('orderingReceiptFaxModal') orderingReceiptFaxModal: ModalComponent;
 
   remittanceAddressSection = {
     title: 'Remittance Address Information',
@@ -51,16 +52,28 @@ export class OrderingInformationComponent implements OnInit {
     this.remittanceAddressModal.closeModal()
   }
 
-  openOrderingReceiptModal(): void {
-    this.orderingReceiptModal.openModal();    
+  openOrderingReceiptEdiModal(): void {
+    this.orderingReceiptEdiModal.openModal();    
   }
 
-  closeOrderingReceiptModal(): void {
-    this.orderingReceiptModal.closeModal()
+  closeOrderingReceiptEdiModal(): void {
+    this.orderingReceiptEdiModal.closeModal()
   }
 
-  saveOrderingReceiptForm(): void {
-    this.orderingReceiptModal.closeModal()
+  saveOrderingReceiptEdiForm(): void {
+    this.orderingReceiptEdiModal.closeModal()
+  }
+
+  openOrderingReceiptFaxModal(): void {
+    this.orderingReceiptFaxModal.openModal();    
+  }
+
+  closeOrderingReceiptFaxModal(): void {
+    this.orderingReceiptFaxModal.closeModal()
+  }
+
+  saveOrderingReceiptFaxForm(): void {
+    this.orderingReceiptFaxModal.closeModal()
   }
 
 

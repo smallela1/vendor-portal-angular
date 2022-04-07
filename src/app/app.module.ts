@@ -13,6 +13,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 // Modules
 import { ESellModule } from './modules/e-sell/e-sell.module';
@@ -25,7 +26,7 @@ const ngWizardConfig: NgWizardConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +39,7 @@ const ngWizardConfig: NgWizardConfig = {
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
     CollapseModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     NgWizardModule.forRoot(ngWizardConfig),
   ],
   providers: [],

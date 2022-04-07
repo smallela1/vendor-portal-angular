@@ -19,7 +19,8 @@ export class InformationResponsibilityMattersComponent implements OnInit {
   }
 
   openModal(): void {
-    this.modalComponent.openModal();    
+    this.modalComponent.openModal();  
+      
   }
 
   closeModal(): void {

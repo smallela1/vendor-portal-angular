@@ -5,6 +5,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgWizardModule } from 'ng-wizard';
 
 // Modules
@@ -26,13 +27,14 @@ import { SupplierPortalHomeComponent } from './views/supplier-portal-home/suppli
     RouterModule,
     AccordionModule,
     ModalModule,
+    BsDropdownModule,
+    BsDatepickerModule,
     NgxDatatableModule,
     SupplierPortalRoutingModule,
     SupplierPortalLayoutsModule,
     SupplierPortalComponentsModule,
     CoreModule,    
     NgWizardModule,
-    BsDropdownModule,
   ], 
   exports: [
     routingComponents

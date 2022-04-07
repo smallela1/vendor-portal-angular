@@ -13,7 +13,7 @@
             <div class="flex-fill">
                 <h3 class="h5">{{ section.clauseNumber + ' - ' + section.title }}</h3>
             </div>
-            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()">
+            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
                 <span class="fa fa-pencil mr-2"></span>
                 Edit
             </button>
