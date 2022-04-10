@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 // import { RouterModule } from '@angular/router';
 
 // Modules
-import { CoreRoutingModule } from './core-routing.module';
+import { CoreRoutingModule, routedComponents } from './core-routing.module';
 
 // Components
-import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { CoreComponentsModule } from './components/core-components.module';
 
 // Directives
@@ -14,16 +14,17 @@ import { StopClickPropagationDirective } from './directives/stop-click-propagati
 
 @NgModule({
   declarations: [
-    PageNotFoundComponent,
+    routedComponents,
     StopClickPropagationDirective,
   ],
   imports: [
     CommonModule,
-    // RouterModule,
     CoreRoutingModule,
-    CoreComponentsModule
+    CoreComponentsModule,
+    ReactiveFormsModule,
   ],
   exports: [
+    routedComponents,
     CoreComponentsModule,
     StopClickPropagationDirective,
   ]

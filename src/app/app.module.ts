@@ -16,13 +16,13 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 // Modules
-import { ESellModule } from './modules/e-sell/e-sell.module';
+import { GsaProvideModule } from './modules/gsa-provide/gsa-provide.module';
 import { SupplierPortalModule } from './modules/supplier-portal/supplier-portal.module';
-
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.default
 };
+
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ const ngWizardConfig: NgWizardConfig = {
     AppRoutingModule,
     BrowserAnimationsModule,
     SwiperModule,
-    ESellModule,
+    GsaProvideModule,
     SupplierPortalModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),

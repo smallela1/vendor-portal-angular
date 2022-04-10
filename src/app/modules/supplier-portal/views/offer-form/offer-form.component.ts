@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { OfferService } from '../../services/supplier-portal-services.module';
 
@@ -7,7 +7,7 @@ import { OfferService } from '../../services/supplier-portal-services.module';
   templateUrl: './offer-form.component.html',
   styleUrls: ['./offer-form.component.css']
 })
-export class OfferFormComponent implements OnInit {
+export class OfferFormComponent implements OnInit, OnDestroy {
 
   $offerStatusObservable: Subscription;
 
@@ -29,11 +29,16 @@ export class OfferFormComponent implements OnInit {
         console.log(err);
       },
       complete: () => {
-        console.log('complete');
       }      
     });
 
   }
 
+  
+  ngOnDestroy(): void {
+    
+    this.$offerStatusObservable.unsubscribe();
+
+  }
 
 }

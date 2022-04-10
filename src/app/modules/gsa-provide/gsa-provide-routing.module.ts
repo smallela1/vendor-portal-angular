@@ -2,9 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
-import { ESellComponent } from './e-sell.component';
-import { UpdatesComponent } from './views/home/updates/updates.component';
+import { GsaProvideComponent } from './gsa-provide.component';
 import { HomeComponent } from './views/home/home.component';
+import { AccessPointComponent } from './access-point/access-point.component';
+
+
+
+
+import { UpdatesComponent } from './views/home/updates/updates.component';
 import { SearchResultsComponent } from './views/search-results/search-results.component';
 import { GetContractComponent } from './views/get-contract/get-contract.component';
 import { ToolboxComponent } from './views/home/toolbox/toolbox.component';
@@ -24,8 +29,9 @@ import { UpdateLandingComponent } from './views/update-landing/update-landing.co
 const routes: Routes = [
 
 
-  { path: '', component: ESellComponent, children : [
+  { path: '', component: GsaProvideComponent, children : [
     { path: 'home', component: HomeComponent },
+    { path: 'access-point', component: AccessPointComponent },
     { path: 'project-center', component: ProjectCenterComponent },
     { path: 'update-landing', component: UpdateLandingComponent },
     { path: 'search-results', component: SearchResultsComponent },
@@ -41,12 +47,12 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ESellRoutingModule { }
+export class GsaProvideRoutingModule { }
 
 export const routedComponents = [
-  ESellComponent,
-  UpdatesComponent,
+  GsaProvideComponent,
   HomeComponent,
+  AccessPointComponent,
   SearchResultsComponent,
   GetContractComponent,
   ToolboxComponent,
@@ -61,6 +67,6 @@ export const routedComponents = [
   MarketResearchComponent,
   ProjectCenterComponent,
   LookupTablesComponent,
-  UpdateLandingComponent,
-  
+  UpdateLandingComponent,  
+  UpdatesComponent,
 ]

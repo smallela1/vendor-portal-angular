@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Routing
-import { ESellRoutingModule, routedComponents } from './e-sell-routing.module';
+import { GsaProvideRoutingModule, routedComponents } from './gsa-provide-routing.module';
 
 // Bootstrap
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -18,11 +18,11 @@ import { ESellComponentsModule } from './components/e-sell-components.module';
 
 @NgModule({
   declarations: [
-    routedComponents
+    routedComponents,
   ],
   imports: [
     CommonModule,
-    ESellRoutingModule,
+    GsaProvideRoutingModule,
     ESellLayoutsModule,
     ESellComponentsModule,
     BsDropdownModule.forRoot(),
@@ -36,4 +36,4 @@ import { ESellComponentsModule } from './components/e-sell-components.module';
   entryComponents: [
   ]
 })
-export class ESellModule { }
+export class GsaProvideModule { }
