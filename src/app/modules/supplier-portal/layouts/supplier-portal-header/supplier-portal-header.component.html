@@ -1,58 +1,213 @@
-
-
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light ">
 
-    <!-- BRANDING -->
-    <div class="navbar-brand mr-5 font-weight-light"><img alt="GSA eOffer/eMod" class="img-responsive d-inline-block" src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;"> 
-      &nbsp; 
-      <div style="
+  <!-- BRANDING -->
+  <div class="navbar-brand mr-5 font-weight-light"><img alt="GSA eOffer/eMod" class="img-responsive d-inline-block"
+      src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;">
+    &nbsp;
+    <div style="
       display: inline-block;
       vertical-align: bottom;">
-      eOffer/eMod
-      </div>
+      <h4 class="gsa-red"><b>Offer Portal</b></h4>
     </div>
-    <!-- eof BRANDING -->  
-    <!-- MOBILE MENU BUTTON -->
-  
-    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="isCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- eof MOBILE MENU BUTTON -->
-    <!-- MENU ITEMS -->
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="!isCollapsed" [isAnimated]="true">
-  
-      <ul class="navbar-nav">
-        
-        <li class="nav-item active">
-          <button [routerLink]="['/home']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-home mr-1"></span> 
-            <span class="nav-link-label">Home</span>
-          </button>
-        </li>
-        
-        <li class="nav-item active">
-          <button [routerLink]="['/supplier-portal/home']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-file-contract mr-1"></span> 
-            <span class="nav-link-label">Offers</span>
-          </button>
-        </li>
-        
-        <li class="nav-item active">
-          <button [routerLink]="['/project-center']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-question-circle mr-1"></span> 
-            <span class="nav-link-label">Help</span>
-          </button>
-        </li>
-        <li class="nav-item active">
-          <button [routerLink]="['/home']" routerLinkActive="active" id="button-login"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-sign-out mr-1"></span> 
-            <span class="nav-link-label">Logout</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
+  </div>
+  <!-- eof BRANDING -->
+  <!-- MOBILE MENU BUTTON -->
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="isCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- eof MOBILE MENU BUTTON -->
+  <!-- MENU ITEMS -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="!isCollapsed" [isAnimated]="true">
+
+    <ul class="navbar-nav">
+
+      <li class="nav-item active">
+        <button [routerLink]="['/home']" routerLinkActive="active" id="button-home" type="button" class="btn nav-link"
+          style="white-space: nowrap;">
+          <span class="fal fa-home mr-1"></span>
+          <span class="nav-link-label">Home</span>
+        </button>
+      </li>
+
+      <li class="nav-item btn-group" dropdown>
+        <button id="access-point" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="access-point-dropdown">
+          <span class="fal fa-chart-network mr-1"></span>
+          <span class="nav-link-label">Access Point</span>
+          <span class="caret"></span>
+        </button>
+        <ul id="access-point-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right p-2 d-flex justify-content-start flex-wrap shadow" role="menu"        
+          aria-labelledby="access-point" style="max-width: 500px; min-width: 500px;">
+
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a [routerLink]="['/access-point']" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <span class="fa fa-chart-network gsa-medium-blue" style="width: 40px; height: 40px; font-size: 36px; margin-left: -8px; text-decoration: none !important;"></span>
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">Access Point</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>          
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">Advantage!</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">eBuy</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">SAM</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">Offer Portal</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">PO Portal</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">FAS SRP</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>          
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                    <div class="p-0 d-flex justify-content-center">
+                        <img src="assets/images/star-mark-80.png" alt="" style="width: 40px; height: 40px;">
+                    </div>
+                    <span class="flex p-0 text-center p-2">
+                        <b class="gsa-red">eLibrary</b>
+                    </span>
+                </div>
+            </div>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+
+      <li class="nav-item active">
+        <button [routerLink]="['/supplier-portal/home']" routerLinkActive="active" id="button-home" type="button"
+          class="btn nav-link" style="white-space: nowrap;">
+          <span class="fal fa-file-contract mr-1"></span>
+          <span class="nav-link-label">Offers</span>
+        </button>
+      </li>
+
+      <li class="nav-item active">
+        <button [routerLink]="['/project-center']" routerLinkActive="active" id="button-home" type="button"
+          class="btn nav-link" style="white-space: nowrap;">
+          <span class="fal fa-bell mr-1"></span>
+          <span class="nav-link-label">Alerts</span>
+          <span class="badge badge-pill badge-danger ml-1">5</span>
+        </button>
+      </li>
+
+      <li class="nav-item active">
+        <button href="#" routerLinkActive="active" id="button-home" type="button"
+          class="btn nav-link" style="white-space: nowrap;">
+          <span class="fal fa-question-circle mr-1"></span>
+          <span class="nav-link-label">Help</span>
+        </button>
+      </li>
+
+
+      <li class="nav-item btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn nav-link dropdown-toggle"
+          aria-controls="dropdown-basic">
+          <span class="fal fa-user mr-1"></span> <span class="nav-link-label">Account</span> <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+          aria-labelledby="button-basic">
+          <li role="menuitem">
+            <a class="dropdown-item" href="#" routerLinkActive="active">
+              <span class="fal fa-user mr-1"></span>
+              Profile
+            </a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" (click)="signOut()" routerLinkActive="active">
+              <span class="fal fa-sign-out mr-1"></span>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      
+    </ul>
+  </div>
+</nav>

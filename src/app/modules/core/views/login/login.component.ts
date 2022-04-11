@@ -33,15 +33,15 @@ export class LoginComponent implements OnInit {
     this.$loginObservable = this.loginSvc.loginSubject.subscribe({
       next: (login: any) => {
         this.login = login;
+        if (this.login.isLoggedIn) {
+          console.log('login was successful, navigating to access point.');
+          this.router.navigate(['/access-point']);
+        }
       },
       error: (err: any) => {
         console.log(err);
       },
       complete: () => {
-        if (this.login.isLoggedIn) {
-          console.log('login was successful, navigating to access point.');
-          this.router.navigate(['/access-point']);
-        }
       }   
     })
 

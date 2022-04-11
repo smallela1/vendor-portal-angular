@@ -26,8 +26,21 @@ export class ESellHeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.$loginObservable = this.loginSvc.loginSubject.subscribe((login: any ) => {
-     console.log("test");
+    this.$loginObservable = this.loginSvc.loginSubject.subscribe({
+      next: (login) => {
+        this.isLoggedIn = login.isLoggedIn;
+        console.log("user is logged in?" + this.isLoggedIn);
+        
+        if (!this.isLoggedIn) {
+          console.log('logout was successful');
+          this.router.navigate(['/home']);
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+      complete: () => {
+      }
     })
     
   }

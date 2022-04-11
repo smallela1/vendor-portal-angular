@@ -14,7 +14,7 @@ export class AccessPointComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //this.loginSvc.signIn("");
+    this.loginSvc.signIn("");
   }
 
 }

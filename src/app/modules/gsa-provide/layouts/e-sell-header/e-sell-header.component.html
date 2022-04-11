@@ -40,9 +40,9 @@
         <span class="fal fa-home mr-1"></span> 
         <span class="nav-link-label">Home</span>
       </button>
-    </li>
+    </li>     
     <li class="nav-item active">
-      <button [routerLink]="['/project-center']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+      <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
         <span class="fal fa-question-circle mr-1"></span> 
         <span class="nav-link-label">Help</span>
       </button>
@@ -62,16 +62,22 @@
         <span class="fal fa-home mr-1"></span> 
         <span class="nav-link-label">Home</span>
       </button>
-    </li>
+    </li>        
     <li class="nav-item active">
-      <button [routerLink]="['/project-center']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+      <button [routerLink]="['/access-point']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+        <span class="fal fa-chart-network mr-1"></span> 
+        <span class="nav-link-label">Access Point</span>
+      </button>
+    </li>   
+    <li class="nav-item active">
+      <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
         <span class="fal fa-bell mr-1"></span> 
         <span class="nav-link-label">Alerts</span>
         <span class="badge badge-pill badge-danger ml-1">5</span>
       </button>
     </li>
     <li class="nav-item active">
-      <button [routerLink]="['/project-center']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+      <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
         <span class="fal fa-question-circle mr-1"></span> 
         <span class="nav-link-label">Help</span>
       </button>
@@ -82,13 +88,13 @@
       </button>
       <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
         <li role="menuitem">
-          <a class="dropdown-item" [routerLink]="['/where-to-begin']" routerLinkActive="active">            
+          <a class="dropdown-item" href="#" routerLinkActive="active">            
             <span class="fal fa-user mr-1"></span> 
             Profile
           </a>
         </li>
         <li role="menuitem">
-          <a class="dropdown-item" [routerLink]="['/where-to-begin']" routerLinkActive="active">            
+          <a class="dropdown-item" (click)="signOut()" routerLinkActive="active">            
             <span class="fal fa-sign-out mr-1"></span> 
             Logout
           </a>

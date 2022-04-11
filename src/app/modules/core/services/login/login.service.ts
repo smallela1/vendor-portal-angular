@@ -8,7 +8,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class LoginService {
 
   
-  loginSubject = new BehaviorSubject<any>({});
+  loginSubject = new Subject<any>();
   
   login: any = {
     user: {
@@ -30,7 +30,6 @@ export class LoginService {
     this.login.isLoggedIn = true;
 
     this.loginSubject.next(this.login);
-    this.loginSubject.complete();
   }
 
   signOut(): any {
@@ -38,8 +37,6 @@ export class LoginService {
     this.login.isLoggedIn = false;
 
     this.loginSubject.next(this.login);
-    this.loginSubject.complete();
-    console.log("hit!");
   }
 
 
