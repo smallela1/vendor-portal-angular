@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-e-sell-main-layout',
   templateUrl: './e-sell-main-layout.component.html',
-  styleUrls: ['./e-sell-main-layout.component.css']
+  styleUrls: ['./e-sell-main-layout.component.scss']
 })
 export class ESellMainLayoutComponent implements OnInit {
 

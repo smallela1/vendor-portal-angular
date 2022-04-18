@@ -5,7 +5,7 @@ import { LoginService } from '../core/services/core-services.module';
 @Component({
   selector: 'app-gsa-provide',
   templateUrl: './gsa-provide.component.html',
-  styleUrls: ['./gsa-provide.component.css']
+  styleUrls: ['./gsa-provide.component.scss']
 })
 export class GsaProvideComponent implements OnInit, OnDestroy {
 

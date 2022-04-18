@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-exceptions',
   templateUrl: './exceptions.component.html',
-  styleUrls: ['./exceptions.component.css']
+  styleUrls: ['./exceptions.component.scss']
 })
 export class ExceptionsComponent implements OnInit {
   

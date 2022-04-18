@@ -4,7 +4,7 @@ import { LoginService } from '../../core/services/core-services.module';
 @Component({
   selector: 'app-access-point',
   templateUrl: './access-point.component.html',
-  styleUrls: ['./access-point.component.css']
+  styleUrls: ['./access-point.component.scss']
 })
 export class AccessPointComponent implements OnInit {
 

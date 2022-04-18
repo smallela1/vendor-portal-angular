@@ -4,7 +4,7 @@ import SwiperCore from 'swiper/core';
 @Component({
   selector: 'app-ad-block',
   templateUrl: './ad-block.component.html',
-  styleUrls: ['./ad-block.component.css']
+  styleUrls: ['./ad-block.component.scss']
 })
 export class AdBlockComponent  {
 

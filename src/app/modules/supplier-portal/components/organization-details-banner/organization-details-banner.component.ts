@@ -6,7 +6,7 @@ import { OfferService } from '../../services/supplier-portal-services.module';
 @Component({
   selector: 'app-organization-details-banner',
   templateUrl: './organization-details-banner.component.html',
-  styleUrls: ['./organization-details-banner.component.css']
+  styleUrls: ['./organization-details-banner.component.scss']
 })
 export class OrganizationDetailsBannerComponent implements OnInit {
 

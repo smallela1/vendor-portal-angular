@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-small-business',
   templateUrl: './small-business.component.html',
-  styleUrls: ['./small-business.component.css']
+  styleUrls: ['./small-business.component.scss']
 })
 export class SmallBusinessComponent implements OnInit {
 

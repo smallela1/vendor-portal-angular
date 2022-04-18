@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-trade-agreements-act-compliance',
   templateUrl: './trade-agreements-act-compliance.component.html',
-  styleUrls: ['./trade-agreements-act-compliance.component.css']
+  styleUrls: ['./trade-agreements-act-compliance.component.scss']
 })
 export class TradeAgreementsActComplianceComponent implements OnInit {
 

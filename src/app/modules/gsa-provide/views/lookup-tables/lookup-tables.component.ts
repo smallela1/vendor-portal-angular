@@ -4,7 +4,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-lookup-tables',
   templateUrl: './lookup-tables.component.html',
-  styleUrls: ['./lookup-tables.component.css']
+  styleUrls: ['./lookup-tables.component.scss']
 })
 export class LookupTablesComponent implements OnInit {
 

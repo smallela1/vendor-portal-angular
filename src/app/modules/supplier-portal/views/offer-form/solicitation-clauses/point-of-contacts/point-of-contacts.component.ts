@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-point-of-contacts',
   templateUrl: './point-of-contacts.component.html',
-  styleUrls: ['./point-of-contacts.component.css']
+  styleUrls: ['./point-of-contacts.component.scss']
 })
 export class PointOfContactsComponent implements OnInit {  
   

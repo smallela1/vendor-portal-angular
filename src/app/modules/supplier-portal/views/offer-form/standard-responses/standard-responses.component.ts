@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-standard-responses',
   templateUrl: './standard-responses.component.html',
-  styleUrls: ['./standard-responses.component.css']
+  styleUrls: ['./standard-responses.component.scss']
 })
 export class StandardResponsesComponent implements OnInit {
   

@@ -5,7 +5,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-commercial-sales-practice',
   templateUrl: './commercial-sales-practice.component.html',
-  styleUrls: ['./commercial-sales-practice.component.css']
+  styleUrls: ['./commercial-sales-practice.component.scss']
 })
 export class CommercialSalesPracticeComponent implements OnInit {
   

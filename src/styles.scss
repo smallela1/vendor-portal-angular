@@ -1,0 +1,17 @@
+// Packages
+@import "assets/theme/bs4/bootstrap.css" screen;
+@import "assets/fonts/sourcesanspro/sourcesanspro.css";
+@import "assets/fonts/fontawesome/css/all.css";
+@import "~ng-wizard/themes/ng_wizard.min.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+@import '~swiper/swiper-bundle.css';
+
+
+// App
+@import "assets/theme/utilities.scss" screen;
+@import "assets/theme/gsa.scss" screen;
+@import "assets/theme/palette.scss" screen;
+@import "assets/theme/buttons.scss" screen;
+@import "assets/theme/accordions.scss" screen;
+@import "assets/theme/alerts.scss" screen;
+@import "assets/theme/eoffer.scss" screen;

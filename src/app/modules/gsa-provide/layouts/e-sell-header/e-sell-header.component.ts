@@ -6,7 +6,7 @@ import { LoginService } from 'src/app/modules/core/services/core-services.module
 @Component({
   selector: 'app-e-sell-header',
   templateUrl: './e-sell-header.component.html',
-  styleUrls: ['./e-sell-header.component.css']
+  styleUrls: ['./e-sell-header.component.scss']
 })
 export class ESellHeaderComponent implements OnInit, OnDestroy {
   

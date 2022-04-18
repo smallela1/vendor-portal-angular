@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-offer-form-side-nav',
   templateUrl: './offer-form-side-nav.component.html',
-  styleUrls: ['./offer-form-side-nav.component.css']
+  styleUrls: ['./offer-form-side-nav.component.scss']
 })
 export class OfferFormSideNavComponent implements OnInit, AfterViewInit {
 

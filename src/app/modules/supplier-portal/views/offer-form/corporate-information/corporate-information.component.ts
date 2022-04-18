@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-corporate-information',
   templateUrl: './corporate-information.component.html',
-  styleUrls: ['./corporate-information.component.css']
+  styleUrls: ['./corporate-information.component.scss']
 })
 export class CorporateInformationComponent implements OnInit {
   

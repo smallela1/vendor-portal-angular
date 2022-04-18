@@ -5,7 +5,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-solicitation-clauses',
   templateUrl: './solicitation-clauses.component.html',
-  styleUrls: ['./solicitation-clauses.component.css']
+  styleUrls: ['./solicitation-clauses.component.scss']
 })
 export class SolicitationClausesComponent implements OnInit {
 

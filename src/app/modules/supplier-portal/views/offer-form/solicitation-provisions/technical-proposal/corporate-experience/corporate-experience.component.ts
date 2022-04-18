@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-corporate-experience',
   templateUrl: './corporate-experience.component.html',
-  styleUrls: ['./corporate-experience.component.css']
+  styleUrls: ['./corporate-experience.component.scss']
 })
 export class CorporateExperienceComponent implements OnInit {
 

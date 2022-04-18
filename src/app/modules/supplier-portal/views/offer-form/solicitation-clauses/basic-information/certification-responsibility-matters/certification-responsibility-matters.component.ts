@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-certification-responsibility-matters',
   templateUrl: './certification-responsibility-matters.component.html',
-  styleUrls: ['./certification-responsibility-matters.component.css']
+  styleUrls: ['./certification-responsibility-matters.component.scss']
 })
 export class CertificationResponsibilityMattersComponent implements OnInit {
 

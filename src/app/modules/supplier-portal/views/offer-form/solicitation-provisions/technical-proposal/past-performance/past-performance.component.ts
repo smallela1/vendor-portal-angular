@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-past-performance',
   templateUrl: './past-performance.component.html',
-  styleUrls: ['./past-performance.component.css']
+  styleUrls: ['./past-performance.component.scss']
 })
 export class PastPerformanceComponent implements OnInit {
 

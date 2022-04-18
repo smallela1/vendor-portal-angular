@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-available-offerings',
   templateUrl: './available-offerings.component.html',
-  styleUrls: ['./available-offerings.component.css']
+  styleUrls: ['./available-offerings.component.scss']
 })
 export class AvailableOfferingsComponent implements OnInit {
   

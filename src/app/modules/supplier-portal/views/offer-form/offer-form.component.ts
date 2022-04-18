@@ -5,7 +5,7 @@ import { OfferService } from '../../services/supplier-portal-services.module';
 @Component({
   selector: 'app-offer-form',
   templateUrl: './offer-form.component.html',
-  styleUrls: ['./offer-form.component.css']
+  styleUrls: ['./offer-form.component.scss']
 })
 export class OfferFormComponent implements OnInit, OnDestroy {
 

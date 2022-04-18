@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-negotiators',
   templateUrl: './negotiators.component.html',
-  styleUrls: ['./negotiators.component.css']
+  styleUrls: ['./negotiators.component.scss']
 })
 export class NegotiatorsComponent implements OnInit {
   

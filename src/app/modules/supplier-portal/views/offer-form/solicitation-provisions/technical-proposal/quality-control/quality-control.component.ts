@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-quality-control',
   templateUrl: './quality-control.component.html',
-  styleUrls: ['./quality-control.component.css']
+  styleUrls: ['./quality-control.component.scss']
 })
 export class QualityControlComponent implements OnInit {
 

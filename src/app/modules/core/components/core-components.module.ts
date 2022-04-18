@@ -12,6 +12,7 @@ import { FormAccordionComponent } from './form-accordion/form-accordion.componen
 import { FormCardComponent } from './form-card/form-card.component';
 import { CardComponent } from './card/card.component';
 import { ModalComponent } from './modal/modal.component';
+import { UswdsHeaderComponent } from './uswds-header/uswds-header.component';
 
 
 
@@ -21,7 +22,8 @@ import { ModalComponent } from './modal/modal.component';
     FormAccordionComponent,
     CardComponent,
     FormCardComponent,
-    ModalComponent, 
+    ModalComponent,
+    UswdsHeaderComponent, 
   ],
   imports: [
     CommonModule,

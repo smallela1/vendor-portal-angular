@@ -8,7 +8,7 @@ import { TradeAgreementsActComplianceComponent } from './trade-agreements-act-co
 @Component({
   selector: 'app-technical-proposal',
   templateUrl: './technical-proposal.component.html',
-  styleUrls: ['./technical-proposal.component.css']
+  styleUrls: ['./technical-proposal.component.scss']
 })
 export class TechnicalProposalComponent implements OnInit {
 

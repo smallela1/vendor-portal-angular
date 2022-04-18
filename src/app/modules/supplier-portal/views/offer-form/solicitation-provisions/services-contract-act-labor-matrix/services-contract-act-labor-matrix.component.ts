@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-services-contract-act-labor-matrix',
   templateUrl: './services-contract-act-labor-matrix.component.html',
-  styleUrls: ['./services-contract-act-labor-matrix.component.css']
+  styleUrls: ['./services-contract-act-labor-matrix.component.scss']
 })
 export class ServicesContractActLaborMatrixComponent implements OnInit {
 

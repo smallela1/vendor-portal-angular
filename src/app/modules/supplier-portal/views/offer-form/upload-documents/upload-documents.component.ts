@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-upload-documents',
   templateUrl: './upload-documents.component.html',
-  styleUrls: ['./upload-documents.component.css']
+  styleUrls: ['./upload-documents.component.scss']
 })
 export class UploadDocumentsComponent implements OnInit {
   

@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-ordering-information',
   templateUrl: './ordering-information.component.html',
-  styleUrls: ['./ordering-information.component.css']
+  styleUrls: ['./ordering-information.component.scss']
 })
 export class OrderingInformationComponent implements OnInit {
   

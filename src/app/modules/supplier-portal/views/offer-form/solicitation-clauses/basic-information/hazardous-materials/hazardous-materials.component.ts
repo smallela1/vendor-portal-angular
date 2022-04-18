@@ -4,7 +4,7 @@ import { ModalComponent } from 'src/app/modules/core/components/modal/modal.comp
 @Component({
   selector: 'app-hazardous-materials',
   templateUrl: './hazardous-materials.component.html',
-  styleUrls: ['./hazardous-materials.component.css']
+  styleUrls: ['./hazardous-materials.component.scss']
 })
 export class HazardousMaterialsComponent implements OnInit {
 
