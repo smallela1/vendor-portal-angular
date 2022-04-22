@@ -70,3 +70,101 @@ dd {
 .bg-danger-hover:hover span {
   color: #fff !important;
 }
+
+
+
+/* USWDS Style Overrides */
+
+
+/* Header Component */
+usa-header {
+  display: block;
+  background-color: #fff;
+}
+
+
+.usa-nav-container {
+    max-width: initial;
+    padding: 0;
+}
+
+.usa-header--extended .usa-logo {
+  margin: 1.25rem 0 0.75rem;
+}
+
+nav.usa-nav {
+    background-color: #e0e6eb;
+    /* top: 0 !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    z-index: 5; */
+}
+
+.usa-nav__primary > .usa-nav__primary-item > a,
+.usa-nav__primary > .usa-nav__primary-item > .usa-nav__link  {
+    font-weight: normal;
+}
+.usa-nav__primary button[aria-expanded=true],
+.usa-nav__submenu,
+.usa-megamenu.usa-nav__submenu::before,
+.usa-megamenu.usa-nav__submenu::after {
+  background-color: #058;
+}
+
+/* Search Component */
+
+.usa-search.usa-search--small .usa-button span {
+  position: initial !important;
+  left: initial;
+  right: initial;
+}
+
+.usa-search.usa-search--small .usa-button span:before {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900;
+  font-size: 0.93rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  color: white;
+  content: "\f002";
+}
+
+b, 
+strong {
+  font-weight: bold;
+}
+
+/* Breadcrumb Comoponent */
+.usa-breadcrumb {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.usa-breadcrumb__list {
+  padding: 0px 0.25rem;
+  overflow: initial !important;
+}
+.usa-breadcrumb__list-item {
+  font-size: .9rem;
+}
+li.usa-breadcrumb__list-item:not(:last-child):after {
+  content: "/";
+  font-size: 1.5rem;
+  bottom: -2px;
+  left: 8px;
+  background: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+
+/* Step Indicator Component */
+
+.usa-step-indicator__segment {
+  max-width: initial;
+}

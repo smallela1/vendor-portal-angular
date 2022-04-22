@@ -21,7 +21,7 @@ import { ModalComponent } from './modal/modal.component';
     FormAccordionComponent,
     CardComponent,
     FormCardComponent,
-    ModalComponent, 
+    ModalComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +34,7 @@ import { ModalComponent } from './modal/modal.component';
     FormAccordionComponent,
     CardComponent,
     FormCardComponent, 
-    ModalComponent, 
+    ModalComponent,
   ],
 })
 export class CoreComponentsModule { }

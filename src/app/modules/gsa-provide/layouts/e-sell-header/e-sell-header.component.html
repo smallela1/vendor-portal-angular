@@ -1,108 +1,156 @@
+<section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img
+            class="usa-banner__header-flag"
+            src="../../../../../assets/images/content-art/us_flag_small.png"
+            alt="U.S. flag"
+          />
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">
+            An official website of the United States government
+          </p>
+          <p class="usa-banner__header-action" aria-hidden="true">
+            Here’s how you know
+          </p>
+        </div>
+        <button
+          class="usa-accordion__button usa-banner__button"
+          aria-expanded="false"
+          aria-controls="gov-banner-default" (click)="toggleBanner();"
+        >
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner-default" *ngIf="showBanner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img
+            class="usa-banner__icon usa-media-block__img"
+            src="../../../../../assets/images/content-art/icon-dot-gov.svg"
+            role="img"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="usa-media-block__body">
+            <p>
+              <strong> Official websites use .gov </strong>
+              <br />
+              A <strong>.gov</strong> website belongs to an official government
+              organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img
+            class="usa-banner__icon usa-media-block__img"
+            src="../../../../../assets/images/content-art/icon-https.svg"
+            role="img"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="usa-media-block__body">
+            <p>
+              <strong> Secure .gov websites use HTTPS </strong>
+              <br />
+              A <strong>lock</strong> (
+              <span class="icon-lock"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="64"
+                  viewBox="0 0 52 64"
+                  class="usa-banner__lock-image"
+                  role="img"
+                  aria-labelledby="banner-lock-title-default banner-lock-description-default"
+                  focusable="false"
+                >
+                  <title id="banner-lock-title-default">Lock</title>
+                  <desc id="banner-lock-description-default">A locked padlock</desc>
+                  <path
+                    fill="#000000"
+                    fill-rule="evenodd"
+                    d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"
+                  /></svg
+              ></span>
+              ) or <strong>https://</strong> means you’ve safely connected to
+              the .gov website. Share sensitive information only on official,
+              secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light ">
-
-    <!-- BRANDING -->
-    <div class="navbar-brand mr-5"><img alt="GSA eOffer/eMod" class="img-responsive d-inline-block" src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;"> 
+<usa-header [title]="headerTitle" [extended]="true" class="sticky-top-content">
+  <ng-template #headerTitle>
+    <img alt="GSA eOffer/eMod" class="img-responsive d-inline-block" src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;"> 
       &nbsp; 
       <div style="
       display: inline-block;
       vertical-align: bottom;">
-      <!-- <span class="gsa-light-blue h2 ml-2"><i>Provide<strong>STAR</strong></i></span> -->
-      <span class="gsa-red h2 ml-1"><i><strong>PRO</strong>vide</i></span>
+      <span class="gsa-red h4">Vendor Services</span>
       </div>
-    </div>
-    
-  
-    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="isCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="!isCollapsed" [isAnimated]="true">
-  
-      <ul class="navbar-nav">
-        <ng-container *ngIf="!isLoggedIn; else loggedInMenu">
-          <ng-container [ngTemplateOutlet]="defaultMenu"></ng-container>
-        </ng-container>
-      </ul>
-    </div>
-  
-  </nav>
-  
-
-
-<!-- Menu Templates -->
-  <ng-template #defaultMenu>
-    <li class="nav-item active">
-      <button [routerLink]="['/home']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-home mr-1"></span> 
-        <span class="nav-link-label">Home</span>
-      </button>
-    </li>     
-    <li class="nav-item active">
-      <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-question-circle mr-1"></span> 
-        <span class="nav-link-label">Help</span>
-      </button>
-    </li>
-    <li class="nav-item active">
-      <button [routerLink]="['/login']" routerLinkActive="active" id="button-login"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-sign-in mr-1"></span> 
-        <span class="nav-link-label">Login</span>
-      </button>
-    </li>
   </ng-template>
 
+  <!-- Define custom template for primary links-->
+ <!-- Primary navigation links can also be passed through template for more control over html -->
+ <ul usaHeaderPrimaryLinks>
+
+  <li class="usa-nav__primary-item">
+    <!-- Define megamenu through isMegamenu input-->
+    <button usaHeaderSubmenu [content]="sellingMenu" [isMegamenu]="true">Selling</button>
+    <ng-template #sellingMenu>
+      <div class="grid-row">
+        <div class="grid-col-4">
+          <ul class="usa-list usa-list--unstyled">
+            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Information and Training</a></li>
+            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Contractor Assistance and Training</a></li>
+            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Contractor Notifications</a></li>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+
+  <!-- Define simple link-->
+  <li class="usa-nav__primary-item"><a href="javascript:void(0)">Buying</a></li>
+
+  <li class="usa-nav__primary-item">
+    <!-- Define megamenu through isMegamenu input-->
+    <button usaHeaderSubmenu [content]="aboutMenu" [isMegamenu]="true">About</button>
+    <ng-template #aboutMenu>
+      <div class="grid-row">
+        <div class="grid-col-4">
+          <ul class="usa-list usa-list--unstyled">
+            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">About Us</a></li>
+            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Contact Us</a></li>
+            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Item 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+</ul>
+
+  <!-- Define custom template for secondary links-->
+  <ul usaHeaderSecondaryLinks>
+    <li class="usa-nav__secondary-item">
+      <a href="https://www.sam.gov">Sign Up</a>
+    </li>
+    <li class="usa-nav__secondary-item">
+      <a [routerLink]="['/login']">Sign In</a>
+    </li>
+  </ul>
+  <!-- Add extra content after the secondary links -->
+  <usa-search usaHeaderSecondaryExtra [size]="'small'" [placeholder]="'I\'m looking for...'" [buttonText]="''">
+  </usa-search>
   
-  <ng-template #loggedInMenu>
-    <li class="nav-item active">
-      <button [routerLink]="['/home']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-home mr-1"></span> 
-        <span class="nav-link-label">Home</span>
-      </button>
-    </li>        
-    <li class="nav-item active">
-      <button [routerLink]="['/access-point']" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-chart-network mr-1"></span> 
-        <span class="nav-link-label">Access Point</span>
-      </button>
-    </li>   
-    <li class="nav-item active">
-      <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-bell mr-1"></span> 
-        <span class="nav-link-label">Alerts</span>
-        <span class="badge badge-pill badge-danger ml-1">5</span>
-      </button>
-    </li>
-    <li class="nav-item active">
-      <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-        <span class="fal fa-question-circle mr-1"></span> 
-        <span class="nav-link-label">Help</span>
-      </button>
-    </li>
-    <li class="nav-item btn-group" dropdown>
-      <button id="button-basic" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="dropdown-basic">
-        <span class="fal fa-user mr-1"></span> <span class="nav-link-label">Account</span> <span class="caret"></span>
-      </button>
-      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
-        <li role="menuitem">
-          <a class="dropdown-item" href="#" routerLinkActive="active">            
-            <span class="fal fa-user mr-1"></span> 
-            Profile
-          </a>
-        </li>
-        <li role="menuitem">
-          <a class="dropdown-item" (click)="signOut()" routerLinkActive="active">            
-            <span class="fal fa-sign-out mr-1"></span> 
-            Logout
-          </a>
-          <!-- <button  (click)="signOut()" id="button-login"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-            <span class="fal fa-sign-out mr-1"></span> 
-            <span class="nav-link-label">Logout</span>
-          </button> -->
-        </li>
-      </ul>
-    </li>
-  </ng-template>
+</usa-header>

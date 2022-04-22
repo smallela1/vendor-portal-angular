@@ -25,6 +25,7 @@ import { MarketResearchComponent } from './views/manage-your-contract/market-res
 import { ProjectCenterComponent } from './views/project-center/project-center.component';
 import { LookupTablesComponent } from './views/lookup-tables/lookup-tables.component';
 import { UpdateLandingComponent } from './views/update-landing/update-landing.component';
+import { VendorResourcesComponent } from './views/vendor-resources/vendor-resources.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: '', component: GsaProvideComponent, children : [
     { path: 'home', component: HomeComponent },
     { path: 'access-point', component: AccessPointComponent },
+    { path: 'vendor-resources', component: VendorResourcesComponent },
     { path: 'project-center', component: ProjectCenterComponent },
     { path: 'update-landing', component: UpdateLandingComponent },
     { path: 'search-results', component: SearchResultsComponent },
@@ -69,4 +71,5 @@ export const routedComponents = [
   LookupTablesComponent,
   UpdateLandingComponent,  
   UpdatesComponent,
+  VendorResourcesComponent,
 ]

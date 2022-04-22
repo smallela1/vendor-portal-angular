@@ -1,5 +1,6 @@
 
 @import "assets/theme/bs4/bootstrap.css" screen;
+@import "assets/theme/uswds-2.13.3/css/uswds.css";
 
 @import "assets/fonts/sourcesanspro/sourcesanspro.css";
 @import "assets/fonts/fontawesome/css/all.css";
@@ -16,3 +17,23 @@
 @import '~swiper/swiper-bundle.css';
 
 @import "assets/theme/eoffer.css" screen;
+
+
+@font-face {
+    font-family: "Source Sans Pro Web";
+    src: local("Source Sans Pro Web"), url(./assets/theme/uswds-2.13.3/fonts/source-sans-pro/sourcesanspro-regular-webfont.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-display: block;
+    src: local("Font Awesome 5 Pro"), 
+    url(./assets/fonts/fontawesome/webfonts/fa-light-300.eot?#iefix) format("embedded-opentype"), 
+    url(./assets/fonts/fontawesome/webfonts/fa-light-300.woff2) format("woff2"), 
+    url(./assets/fonts/fontawesome/webfonts/fa-light-300.woff) format("woff"), 
+    url(./assets/fonts/fontawesome/webfonts/fa-light-300.ttf) format("truetype"), 
+    url(./assets/fonts/fontawesome/webfonts/fa-light-300.svg#fontawesome) format("svg"); 
+}
+  
