@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '**', component: PageNotFoundComponent },
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
