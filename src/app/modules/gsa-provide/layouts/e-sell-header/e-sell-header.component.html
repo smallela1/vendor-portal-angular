@@ -89,20 +89,18 @@
 </section>
 
 
-<usa-header [title]="headerTitle" [extended]="true" class="sticky-top-content">
+<usa-header [title]="headerTitle" [extended]="true" class="sticky-top" [ngClass]="{ 'loggedIn' : isLoggedIn }" style="top: 0px !important">
   <ng-template #headerTitle>
-    <img alt="GSA eOffer/eMod" class="img-responsive d-inline-block" src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;"> 
+    <img alt="GSA eOffer/eMod" [routerLink]="['/home']" class="img-responsive d-inline-block" src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;"> 
       &nbsp; 
-      <div style="
-      display: inline-block;
-      vertical-align: bottom;">
-      <span class="gsa-red h4">Vendor Services</span>
+      <div style=" display: inline-block; vertical-align: bottom;" [routerLink]="['/home']">
+        <span class="gsa-red h4">Vendor Portal</span>
       </div>
   </ng-template>
 
   <!-- Define custom template for primary links-->
  <!-- Primary navigation links can also be passed through template for more control over html -->
- <ul usaHeaderPrimaryLinks>
+ <ul usaHeaderPrimaryLinks *ngIf="!isLoggedIn">
 
   <li class="usa-nav__primary-item">
     <!-- Define megamenu through isMegamenu input-->
@@ -142,15 +140,76 @@
 
   <!-- Define custom template for secondary links-->
   <ul usaHeaderSecondaryLinks>
-    <li class="usa-nav__secondary-item">
-      <a href="https://www.sam.gov">Sign Up</a>
-    </li>
-    <li class="usa-nav__secondary-item">
-      <a [routerLink]="['/login']">Sign In</a>
-    </li>
+    
+    <ng-container *ngIf="!isLoggedIn; else loggedInMenu">
+      <ng-container [ngTemplateOutlet]="defaultMenu"></ng-container>
+    </ng-container>
   </ul>
   <!-- Add extra content after the secondary links -->
-  <usa-search usaHeaderSecondaryExtra [size]="'small'" [placeholder]="'I\'m looking for...'" [buttonText]="''">
+  <usa-search usaHeaderSecondaryExtra [size]="'small'" [placeholder]="'I\'m looking for...'" [buttonText]="''"  *ngIf="!isLoggedIn">
   </usa-search>
   
 </usa-header>
+
+
+
+
+
+<!-- Menu Templates -->
+<ng-template #defaultMenu>
+  <li class="usa-nav__secondary-item">
+    <a href="https://www.sam.gov">Sign Up</a>
+  </li>
+  <li class="usa-nav__secondary-item">
+    <a [routerLink]="['/login']">Sign In</a>
+  </li>
+</ng-template>
+
+
+<ng-template #loggedInMenu>
+  <!-- <li class="usa-nav__secondary-item">
+    <a href="#">My Account</a>
+  </li>
+  <li class="usa-nav__secondary-item">
+    <a [routerLink]="['/home']">Sign Out</a>
+  </li> -->
+
+
+  <li class="nav-item active">
+    <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+      <span class="fal fa-bell mr-1"></span> 
+      <span class="nav-link-label">Alerts</span>
+      <span class="badge badge-pill badge-danger ml-1">5</span>
+    </button>
+  </li>
+  <li class="nav-item active">
+    <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
+      <span class="fal fa-question-circle mr-1"></span> 
+      <span class="nav-link-label">Help</span>
+    </button>
+  </li>
+  <li class="nav-item btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="dropdown-basic">
+      <span class="fas fa-user mr-1"></span> <span class="nav-link-label">Account</span> <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+      <li role="menuitem">
+        <a class="dropdown-item" href="#" routerLinkActive="active">            
+          <span class="fas fa-user mr-1"></span> 
+          Profile
+        </a>
+      </li>
+      <li role="menuitem">
+        <a class="dropdown-item" (click)="signOut()" routerLinkActive="active">            
+          <span class="fal fa-sign-out mr-1"></span> 
+          Logout
+        </a>
+      </li>
+    </ul>
+  </li>
+
+</ng-template>
+
+
+
+      

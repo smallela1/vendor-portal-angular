@@ -1,15 +1,45 @@
+<section class="bg-gsa-medium-blue white d-block sticky-top-content" style="z-index: 8; top: 93px !important">
+    <div class="container py-2">
+        <div class="row justify-content-center">
+            <div class="col-md">
+                <small>Company Name:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />Global Supplier Inc.
+            </div>
+            <div class="col-md">
+                <small>UEI:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> 39487SU383
+            </div>
+            <div class="col-md">
+                <!-- <small>Schedule:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> MAS - Multiple Award Schedule -->
+            </div>
+            <div class="col-md">
+                <!-- <small>Status:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />
+                <select class="bg-transparent bw-0 nav-link white py-1 px-0 line-h-1 text-left" (change)="updateStatus($event.target.value)">
+                    <option value="In Progress" selected>In Progress</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Signed">Signed</option>
+                    <option value="Awarded">Awarded</option>
+                </select> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <div class="row m-0">
-    <div class="col p-0 shadow border-top mb-3 bg-gsa-light-blue">
+    <div class="col p-0 bg-gsa-light-grey">
         <div class="" style=" height: 100%;">
-            <div class="container px-5 py-5 d-flex justify-content-center">
+            <div class="container px-3 py-3 d-flex justify-content-center">
                 <div class="col-2">
-                    <div class="card btn btn-default">
+                    <div class="card btn btn-default" [routerLink]="['/supplier-portal/org-selection']">
                         <div class="card-body p-2 d-flex flex-column">
                             <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
                             </div>
-                            <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">Advantage!</b>
+                            <a class="nav-link p-0 text-center">
+                                <b class="gsa-red">Offers/Mods</b>
                             </a>
                         </div>
                     </div>
@@ -18,10 +48,10 @@
                     <div class="card btn btn-default">
                         <div class="card-body p-2 d-flex flex-column">
                             <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                                <span class="fad fa-file-edit color-orange app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">eBuy</b>
+                                <b class="gsa-red">Mass Mods</b>
                             </a>
                         </div>
                     </div>
@@ -30,10 +60,10 @@
                     <div class="card btn btn-default">
                         <div class="card-body p-2 d-flex flex-column">
                             <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                                <span class="fad fa-file-invoice-dollar color-purple app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">SAM</b>
+                                <b class="gsa-red">P.O.'s</b>
                             </a>
                         </div>
                     </div>
@@ -42,46 +72,10 @@
                     <div class="card btn btn-default">
                         <div class="card-body p-2 d-flex flex-column">
                             <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
-                            </div>
-                            <a [routerLink]="['/supplier-portal/org-selection']" class="nav-link p-0 text-center">
-                                <b class="gsa-red">Offer Portal</b>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="card btn btn-default">
-                        <div class="card-body p-2 d-flex flex-column">
-                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                                <span class="fad fa-file-chart-line color-teal app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">PO Portal</b>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="card btn btn-default">
-                        <div class="card-body p-2 d-flex flex-column">
-                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
-                            </div>
-                            <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">FAS SRP</b>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="card btn btn-default">
-                        <div class="card-body p-2 d-flex flex-column">
-                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
-                            </div>
-                            <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">eLibrary</b>
+                                <b class="gsa-red">Sales Reports</b>
                             </a>
                         </div>
                     </div>
@@ -91,8 +85,8 @@
     </div>
 </div>
 
-<!-- <div class="container-fluid px-5">
-    <div class="row"> -->
+<div class="container-fluid p-0 m-0">
+  <!--   <div class="row"> -->
 
         <div class="container">
             <div class="py-4">
@@ -101,20 +95,20 @@
                     Recent
                 </h1> 
 
-                <div class="card my-3">        
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/supplier-portal/offer']" >        
                     <div class="card-body p-0 d-flex">
-                        <div class="border-right m-2">                
-                            <div class="pl-4 pr-4 pt-4 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                        <div class="border-right m-2" style="width: 140px;">                
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">Offer Portal</b>
+                                <b class="gsa-red">Offers/Mods</b>
                             </a>
                         </div>
                         <div class="flex-fill py-2 px-3">                
                             <div class="row pt-3">
                                 <div class="col-11">
-                                    <div class="row">                               
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <dt class="col">UEI:</dt>
                                             <dd class="col mb-2">39487SU383</dd>
@@ -136,10 +130,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" [routerLink]="['/supplier-portal/offer']" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
-                                        <span class="far fa-external-link"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
                                         <span class="far fa-thumbtack"></span>
                                     </button>
                                 </div>
@@ -148,25 +139,25 @@
                     </div>
                 </div>
 
-                <div class="card my-3">        
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/supplier-portal/offer']">        
                     <div class="card-body p-0 d-flex">
-                        <div class="border-right m-2">                
-                            <div class="pl-4 pr-4 pt-4 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                        <div class="border-right m-2" style="width: 140px;">                  
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">eBuy</b>
+                                <b class="gsa-red">Offers/Mods</b>
                             </a>
                         </div>
                         <div class="flex-fill py-2 px-3">                
                             <div class="row pt-3">
                                 <div class="col-11">
-                                    <div class="row">                               
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <dt class="col">UEI:</dt>
-                                            <dd class="col mb-2">584FGG8EW328</dd>
+                                            <dd class="col mb-2">39487SU383</dd>
                                             <dt class="col">Company:</dt>
-                                            <dd class="col mb-2">Greenscape LLC.</dd>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
                                         </div>
                                         <div class="col-md-4">
                                             <dt class="col">Order ID:</dt>
@@ -183,10 +174,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
-                                        <span class="far fa-external-link"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
                                         <span class="far fa-thumbtack"></span>
                                     </button>
                                 </div>
@@ -194,25 +182,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="card my-3">        
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/supplier-portal/offer']">        
                     <div class="card-body p-0 d-flex">
-                        <div class="border-right m-2">                
-                            <div class="pl-4 pr-4 pt-4 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                        <div class="border-right m-2" style="width: 140px;">              
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">Offer Portal</b>
+                                <b class="gsa-red">Offers/Mods</b>
                             </a>
                         </div>
                         <div class="flex-fill py-2 px-3">                
                             <div class="row pt-3">
                                 <div class="col-11">
-                                    <div class="row">                               
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <dt class="col">UEI:</dt>
-                                            <dd class="col mb-2">5135VE9E81</dd>
+                                            <dd class="col mb-2">39487SU383</dd>
                                             <dt class="col">Company:</dt>
-                                            <dd class="col mb-2">Landmark Co.</dd>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
                                         </div>
                                         <div class="col-md-4">
                                             <dt class="col">Mod ID:</dt>
@@ -229,10 +217,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" [routerLink]="['/supplier-portal/offer']" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
-                                        <span class="far fa-external-link"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
                                         <span class="far fa-thumbtack"></span>
                                     </button>
                                 </div>
@@ -247,20 +232,20 @@
                     <span class="fad fa-thumbtack mr-3"></span>
                     Pinned
                 </h1>   
-                <div class="card my-3">        
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/supplier-portal/offer']">        
                     <div class="card-body p-0 d-flex">
-                        <div class="border-right m-2">                
-                            <div class="pl-4 pr-4 pt-4 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                        <div class="border-right m-2" style="width: 140px;">             
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">Offer Portal</b>
+                                <b class="gsa-red">Offers/Mods</b>
                             </a>
                         </div>
                         <div class="flex-fill py-2 px-3">                
                             <div class="row pt-3">
                                 <div class="col-11">
-                                    <div class="row">                               
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <dt class="col">UEI:</dt>
                                             <dd class="col mb-2">39487SU383</dd>
@@ -282,10 +267,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" [routerLink]="['/supplier-portal/offer']" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
-                                        <span class="far fa-external-link"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
                                         <span class="fas fa-thumbtack"></span>
                                     </button>
                                 </div>
@@ -294,25 +276,25 @@
                     </div>
                 </div>
 
-                <div class="card my-3">        
+                <div class="card my-3 btn btn-default text-left">        
                     <div class="card-body p-0 d-flex">
-                        <div class="border-right m-2">                
-                            <div class="pl-4 pr-4 pt-4 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                        <div class="border-right m-2" style="width: 140px;">                
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-chart-line color-teal app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">eBuy</b>
+                                <b class="gsa-red">Sales Reports</b>
                             </a>
                         </div>
                         <div class="flex-fill py-2 px-3">                
                             <div class="row pt-3">
                                 <div class="col-11">
-                                    <div class="row">                               
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <dt class="col">UEI:</dt>
-                                            <dd class="col mb-2">584FGG8EW328</dd>
+                                            <dd class="col mb-2">39487SU383</dd>
                                             <dt class="col">Company:</dt>
-                                            <dd class="col mb-2">Greenscape LLC.</dd>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
                                         </div>
                                         <div class="col-md-4">
                                             <dt class="col">Order ID:</dt>
@@ -329,10 +311,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
-                                        <span class="far fa-external-link"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
                                         <span class="fas fa-thumbtack"></span>
                                     </button>
                                 </div>
@@ -340,25 +319,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="card my-3">        
+                <div class="card my-3 btn btn-default text-left">        
                     <div class="card-body p-0 d-flex">
-                        <div class="border-right m-2">                
-                            <div class="pl-4 pr-4 pt-4 pb-1 d-flex justify-content-center">
-                                <img src="assets/images/star-mark-80.png" alt="">
+                        <div class="border-right m-2" style="width: 140px;">                
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice-dollar color-purple app-icon" ></span>
                             </div>
                             <a href="" class="nav-link p-0 text-center">
-                                <b class="gsa-red">Offer Portal</b>
+                                <b class="gsa-red">P.O.'s</b>
                             </a>
                         </div>
                         <div class="flex-fill py-2 px-3">                
                             <div class="row pt-3">
                                 <div class="col-11">
-                                    <div class="row">                               
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <dt class="col">UEI:</dt>
-                                            <dd class="col mb-2">5135VE9E81</dd>
+                                            <dd class="col mb-2">39487SU383</dd>
                                             <dt class="col">Company:</dt>
-                                            <dd class="col mb-2">Landmark Co.</dd>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
                                         </div>
                                         <div class="col-md-4">
                                             <dt class="col">Mod ID:</dt>
@@ -375,10 +354,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" [routerLink]="['/supplier-portal/offer']" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
-                                        <span class="far fa-external-link"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 50px; width: 50px; border-radius: 50px;">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
                                         <span class="fas fa-thumbtack"></span>
                                     </button>
                                 </div>
@@ -393,8 +369,8 @@
                 <span class="fad fa-megaphone mr-3"></span>
                 Announcements
             </h1>   
-            <div class="card alert-primary mb-3">
-                <div class="card-body">                
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">                
                     <b style="font-size: larger;">SAM</b>
                     <p>
                         As of <b>April 4, 2022</b>, the government will no longer use the Data Universal Numbering System (DUNS) number as the
@@ -403,8 +379,8 @@
                     </p>
                 </div>
             </div>
-            <div class="card alert-primary mb-3">
-                <div class="card-body">         
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">
                     <b style="font-size: larger;">Vendor Portal</b>
                     <p>
                         Starting March 8, 2021, contractors must use FAS ID multi-factor authentication to access eOffer/eMod. For more
@@ -412,8 +388,8 @@
                     </p>
                 </div>
             </div>
-            <div class="card alert-primary mb-3">
-                <div class="card-body">
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">
                     <b style="font-size: larger;">eBuy</b>
                     <p>
                         Starting in October 2020, contractors will use their GSA FAS ID email address, instead of the contract number to log in
@@ -421,8 +397,8 @@
                     </p>
                 </div>
             </div>
-            <div class="card alert-primary mb-3">
-                <div class="card-body">           
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">
                     <b style="font-size: larger;">Vendor Portal</b>
                     <p>
                         Attention eMod users! We are making improvements to eMod based on your feedback. As of February 25th, you will be able
@@ -433,5 +409,5 @@
             </div>
         </div>
 
-    <!-- </div>
-</div> -->
+    <!-- </div> -->
+</div>

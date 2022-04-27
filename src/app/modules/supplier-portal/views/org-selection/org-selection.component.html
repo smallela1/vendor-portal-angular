@@ -1,11 +1,11 @@
-<section class="bg-gsa-medium-blue toolbox2-img">
+<!-- <section class="bg-gsa-medium-blue toolbox2-img">
     <div class="container-fluid px-5 py-5">
         <div class="row">
             <div class="col-lg-12 col-xl-3">
                 <div class="mb-3 ">
                     <h2>
                         <small class=" font-weight-bold  gsa-xlight-blue">
-                            <div class="fal fa-project-diagram"></div> Offer Portal
+                            <div class="fal fa-project-diagram"></div> Offers/Mods
                         </small>
                     </h2>
                 </div>
@@ -14,7 +14,6 @@
                 <div class="row justify-content-lg-center">
                     <div class="col pt-xl-2 pl-xl-5 ">
                         <p>
-                            <!-- Log into your organization with either the DUNS or UEI number. -->
                         </p>
                     </div>
                     <div class="col-sm-12 col-lg-4 pt-3  pl-4 border-left d-none">
@@ -34,23 +33,23 @@
             </div>
         </div>
     </div>
-</section>
-<section class="" style="min-height: 400px;">
+</section> -->
+<section class="" style="min-height: 600px;">
     <div class="container-fluid px-5 py-5">
-        <div class="row content-row border-bottom pb-3" id="mas-consolidtion">
-            <div class="col-sm-12 col-lg-3 pt-3 border-right">
+        <div class="row content-row pb-3" id="mas-consolidtion">
+            <div class="col-sm-12 col-lg-3 pt-3">
                 <div class="mb-3 sticky-top">
-                    <h3 class="gsa-medium-blue">Organization Sign In</h3>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-6 card pl-0 pr-3 pb-5 pt-0">
                 <div class="article-container">
-                    <div class="row">
+                    <h1 class="gsa-medium-blue border-bottom">Organization Sign In</h1>
+                    <div class="row">                        
                         <div class="col-lg">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">Select a previously entered DUNS/UEI</label>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputState">Select a previously entered UEI</label>
                                         <select id="inputState" class="form-control">
                                             <option selected>Choose...</option>
                                             <option>...</option>
@@ -59,11 +58,11 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">or, enter DUNS/UEI</label>
+                                        <label for="inputEmail4">or, enter UEI</label>
                                         <input type="text" class="form-control" id="inputEmail4">
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" [routerLink]="['/supplier-portal/home']">Submit</button>
+                                <button class="btn btn-success mt-4" [routerLink]="['/supplier-portal/home']">Submit</button>
                             </form>
                         </div>
                     </div>

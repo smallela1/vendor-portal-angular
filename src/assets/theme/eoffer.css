@@ -44,6 +44,26 @@ dd {
   margin-bottom: 16px;
 }
 
+.color-green {
+  color: #028800;
+}
+
+.color-purple {
+  color: #807;
+}
+
+.color-orange {
+  color: #df5d00;
+}
+
+.color-teal {
+  color: #008d8d;
+}
+
+.color-red {
+  color: #880000;
+}
+
 
 .text-primary-hover:hover {
   color: #2277aa !important;
