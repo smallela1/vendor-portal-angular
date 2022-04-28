@@ -17,7 +17,22 @@
             <ng-template #formAccordionHeader>
                 <div class="flex-fill">
                     <h3 class="h5">{{ remittanceAddressSection.title }}</h3>
-                </div>
+                </div>              
+                
+                <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                    <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                        aria-controls="dropdown-manage" appStopClickPropagation>
+                        <span class="gsa-light-blue">Actions</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" (click)="openRemittanceAddressModal()">Create New Modification</a></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                        <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                    </ul>
+                </span>
+
             </ng-template>
             <ng-template #formAccordionBody>
                 <ng-template [ngTemplateOutlet]="remmittanceAddressInfo"></ng-template>
@@ -37,7 +52,21 @@
             <ng-template #formAccordionHeader>
                 <div class="flex-fill">
                     <h3 class="h5">{{ orderingReceiptSection.title }}</h3>
-                </div>
+                </div>              
+                
+                <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                    <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                        aria-controls="dropdown-manage" appStopClickPropagation>
+                        <span class="gsa-light-blue">Actions</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" (click)="openOrderingReceiptEdiModal()">Create New Modification</a></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                        <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                    </ul>
+                </span>
             </ng-template>
             <ng-template #formAccordionBody>
                 <ng-template [ngTemplateOutlet]="orderingReceiptInfo"></ng-template>
@@ -82,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openRemittanceAddressModal()">
                 <span class="fa fa-pencil"></span>
             </button>
@@ -123,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openRemittanceAddressModal()">
                 <span class="fa fa-pencil"></span>
             </button>
@@ -134,7 +163,7 @@
     </div>
         
     <hr>           
-    <div class="col mt-4 d-flex justify-content-center"> 
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
         <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openRemittanceAddressModal()">
             <span class="fa fa-plus mr-2"></span>
             Add Remittance Address
@@ -190,7 +219,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptEdiModal()">
                 <span class="fa fa-pencil"></span>
             </button>
@@ -231,7 +260,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptEdiModal()">
                 <span class="fa fa-pencil"></span>
             </button>
@@ -243,7 +272,7 @@
     
     
     <hr>           
-    <div class="col mt-4 d-flex justify-content-center"> 
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
         <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openOrderingReceiptEdiModal()">
             <span class="fa fa-plus mr-2"></span>
             Add EDI Contact
@@ -278,7 +307,7 @@
                 </div>
             </div>
         </div>        
-        <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1">
+        <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1" *ngIf="offerStatus == 'In Progress'">
             <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptFaxModal()">
                 <span class="fa fa-pencil"></span>
             </button>
@@ -290,7 +319,7 @@
 
     
     <hr>           
-    <div class="col mt-4 d-flex justify-content-center"> 
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
         <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openOrderingReceiptFaxModal()">
             <span class="fa fa-plus mr-2"></span>
             Add Fax
@@ -484,7 +513,7 @@
 
 
 <!-- Modal Templates -->
-<app-modal #remittanceAddressModal *ngIf="offerStatus == 'In Progress'"
+<app-modal #remittanceAddressModal
 [config]="{ modalTitle: remittanceAddressSection.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
         <ng-container [ngTemplateOutlet]="editRemittanceAddress"></ng-container>
@@ -496,7 +525,7 @@
     </ng-template>
 </app-modal>
 
-<app-modal #orderingReceiptEdiModal *ngIf="offerStatus == 'In Progress'"
+<app-modal #orderingReceiptEdiModal
 [config]="{ modalTitle: orderingReceiptSection.title + ' - Computer-to-Computer Electronic Data Interchange', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
         <ng-container [ngTemplateOutlet]="editOrderingReceiptEdi"></ng-container>
@@ -508,7 +537,7 @@
     </ng-template>
 </app-modal>
 
-<app-modal #orderingReceiptFaxModal *ngIf="offerStatus == 'In Progress'"
+<app-modal #orderingReceiptFaxModal
 [config]="{ modalTitle: orderingReceiptSection.title + ' - Fax', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
         <ng-container [ngTemplateOutlet]="editOrderingReceiptFax"></ng-container>
@@ -519,3 +548,18 @@
         <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeOrderingReceiptFaxModal()">
     </ng-template>
 </app-modal>
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

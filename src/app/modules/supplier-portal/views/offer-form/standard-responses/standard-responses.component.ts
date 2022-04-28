@@ -13,6 +13,7 @@ export class StandardResponsesComponent implements OnInit {
 
   @ViewChild(ModalComponent) public modalComponent: ModalComponent;
   @ViewChild('sectionModal') public sectionModal: any;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
   
   standardResponseQuestions: any[] = standardResponseQuestions;
   subkQuestions: any[] = subkQuestions;
@@ -33,6 +34,14 @@ export class StandardResponsesComponent implements OnInit {
 
   saveForm(): void {
     this.modalComponent.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 }

@@ -13,6 +13,7 @@ export class AvailableOfferingsComponent implements OnInit {
 
   @ViewChild('sinModal') public sinModal: ModalComponent;
   @ViewChild('preponderanceModal') public preponderanceModal: ModalComponent;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
 
   @ViewChild('sectionModal') public sectionModal: any;
   
@@ -44,6 +45,14 @@ export class AvailableOfferingsComponent implements OnInit {
 
   savePreponderanceForm(): void {
     this.preponderanceModal.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 }

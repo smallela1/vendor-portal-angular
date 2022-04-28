@@ -12,6 +12,7 @@ export class InformationResponsibilityMattersComponent implements OnInit {
   @Input('offerStatus') offerStatus: any;
   
   @ViewChild(ModalComponent) public modalComponent: ModalComponent;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
 
   constructor() { }
 
@@ -30,5 +31,14 @@ export class InformationResponsibilityMattersComponent implements OnInit {
   saveForm(): void {
     this.modalComponent.closeModal()
   }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
+  }
+
 
 }

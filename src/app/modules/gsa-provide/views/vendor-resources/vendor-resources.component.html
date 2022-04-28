@@ -1,4 +1,4 @@
-<div class="container-fluid sticky-top bg-white" style="top: 138px; border-bottom: 1px solid #e5e5e5;">
+<div class="container-fluid sticky-top bg-white" style="top: 138px; border-bottom: 1px solid #e5e5e5; z-index: 1;">
     <div class="grid-container">
         <usa-breadcrumb #breadcrumbs [items]="items" [wrap]="wrap" [hideSingleCrumb]="hideSingleCrumb" (selected)="onSelection($event)">
         </usa-breadcrumb>
@@ -159,7 +159,7 @@
 <ng-template #howToGetAContract>
     <h1 class="h3 gsa-medium-blue text-uppercase text-center">3: How to Get a Contract</h1>
     <p class="text-center">
-        Register your company in several places before you submit your offer.
+        elow is a summary of the necessary steps to obtain and maintain a MAS Information Technology contract
     </p>
     <ul class="usa-card-group">
         <li class="tablet:grid-col-4 usa-card">
@@ -220,7 +220,7 @@
 <ng-template #howToMarketToTheGov>
     <h1 class="h3 gsa-medium-blue text-uppercase text-center">4: How to Market to the Government</h1>
     <p class="text-center">
-        Register your company in several places before you submit your offer.
+      To succeed with your MAS Information Technology contract, you'll need to actively promote your business to potential government customers.
     </p>
     <ul class="usa-card-group">
         <li class="tablet:grid-col-4 usa-card">
@@ -283,7 +283,7 @@
 <ng-template #howToPrepareAnOffer>
     <h1 class="h3 gsa-medium-blue text-uppercase text-center">5: How to Prepare an Offer</h1>
     <p class="text-center">
-        Register your company in several places before you submit your offer.
+      Learn how to complete the required forms and familarize yourself with the most recent offer templates.
     </p>
     <ul class="usa-card-group">
         <li class="tablet:grid-col-4 usa-card">
@@ -336,5 +336,32 @@
             </div>
           </div>
         </li>
+        <li class="col-12 mb-5">          
+          <div class="card btn btn-default m-0">
+            <div class="card-body p-0 d-flex flex-row">
+                <div class="col-9 d-flex flex-row">                        
+                      <div class="col-3">
+                          <div class="p-0 d-flex justify-content-center">
+                            <span class="fad fa-file-invoice color-green mt-2 mb-1" style="width: 40px; height: 40px; font-size: 36px; text-decoration: none !important;"></span>
+                          </div>
+                          <span class=" flex p-0 text-center pb-1">
+                              <b class="gsa-red">Offers/Mods</b>
+                          </span>
+                      </div>
+                      <div class="col-9 text-left">   
+                        <h1 class="h4">Congratulaions! You have completed the guide. Now, let's get started on your first offer.</h1>
+                      </div>
+                </div>
+                
+                <div class="col-3 py-4">
+                  <button type="button" class="btn btn-success" [routerLink]="['/supplier-portal/org-selection']">
+                    Start an Offer
+                    <span class="fa fa-chevron-right ml-2"></span>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </li>
     </ul>
+
 </ng-template>

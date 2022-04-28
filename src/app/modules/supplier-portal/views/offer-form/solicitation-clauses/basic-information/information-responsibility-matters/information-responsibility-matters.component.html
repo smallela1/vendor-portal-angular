@@ -13,10 +13,24 @@
             <div class="flex-fill">
                 <h3 class="h5">{{ section.clauseNumber + ' - ' + section.title }}</h3>
             </div>
-            <button type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
+            <button *ngIf="offerStatus == 'In Progress'" type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
                 <span class="fa fa-pencil mr-2"></span>
                 Edit
             </button>
+            
+            <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                    aria-controls="dropdown-manage" appStopClickPropagation>
+                    <span class="gsa-light-blue">Actions</span>
+                    <span class="caret"></span>
+                </button>
+                <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                    aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+                    <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                    <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                </ul>
+            </span>
         </ng-template>
         <ng-template #formAccordionBody>
             <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
@@ -323,7 +337,7 @@
 </ng-template>
 
 <!-- Modal Template -->
-<app-modal *ngIf="offerStatus == 'In Progress'"
+<app-modal
 [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
         <ng-container [ngTemplateOutlet]="editSection"></ng-container>
@@ -334,3 +348,18 @@
         <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
     </ng-template>
 </app-modal>
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

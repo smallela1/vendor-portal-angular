@@ -13,6 +13,7 @@ export class OrderingInformationComponent implements OnInit {
   @ViewChild('remittanceAddressModal') remittanceAddressModal: ModalComponent;
   @ViewChild('orderingReceiptEdiModal') orderingReceiptEdiModal: ModalComponent;
   @ViewChild('orderingReceiptFaxModal') orderingReceiptFaxModal: ModalComponent;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
 
   remittanceAddressSection = {
     title: 'Remittance Address Information',
@@ -74,6 +75,14 @@ export class OrderingInformationComponent implements OnInit {
 
   saveOrderingReceiptFaxForm(): void {
     this.orderingReceiptFaxModal.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 

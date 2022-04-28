@@ -12,6 +12,7 @@ export class QualityControlComponent implements OnInit {
   @Input('offerStatus') offerStatus: any;
   
   @ViewChild(ModalComponent) public modalComponent: ModalComponent;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
 
   constructor() { }
 
@@ -28,6 +29,14 @@ export class QualityControlComponent implements OnInit {
 
   saveForm(): void {
     this.modalComponent.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 }

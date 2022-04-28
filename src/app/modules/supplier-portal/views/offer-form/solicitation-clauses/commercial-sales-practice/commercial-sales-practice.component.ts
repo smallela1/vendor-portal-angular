@@ -12,6 +12,7 @@ export class CommercialSalesPracticeComponent implements OnInit {
   @Input('offerStatus') offerStatus: any;
   
   @ViewChild(ModalComponent) modalComponent: ModalComponent;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
 
   section = {
     title: 'Commercial Sales Practice (CSP-1)',
@@ -43,6 +44,14 @@ export class CommercialSalesPracticeComponent implements OnInit {
 
   saveForm(): void {
     this.modalComponent.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 }

@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-1">
+            <div class="col-1" *ngIf="offerStatus == 'In Progress'">
                 <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openSinModal()">
                     <span class="fa fa-pencil"></span>
                 </button>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-1">
+            <div class="col-1" *ngIf="offerStatus == 'In Progress'">
                 <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openSinModal()">
                     <span class="fa fa-pencil"></span>
                 </button>
@@ -80,7 +80,7 @@
         </div>  
 
         <hr>           
-        <div class="col mt-4 d-flex justify-content-center"> 
+        <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
             <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openSinModal()">
                 <span class="fa fa-plus mr-2"></span>
                 Add SIN
@@ -95,7 +95,7 @@
                         <h2 class="h4" id="yournegs">Preponderance of Work</h2>
                     </div>
 
-                    <div class="col-2 d-flex justify-content-end">
+                    <div class="col-2 d-flex justify-content-end" *ngIf="offerStatus == 'In Progress'">
                         <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openPreponderanceModal()">
                             <span class="fa fa-pencil mr-2"></span>
                             Edit
@@ -267,8 +267,8 @@
         </button>
         <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
             aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item">Create New Modification</a></li>
-            <li role="menuitem"><a class="dropdown-item">View Modification History</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="openPreponderanceModal()">Create New Modification</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
             <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
             <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
         </ul>
@@ -278,7 +278,7 @@
 
 
 
-<app-modal #sinModal *ngIf="offerStatus == 'In Progress'"
+<app-modal #sinModal
 [config]="{ modalTitle: 'SIN', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
         <ng-container [ngTemplateOutlet]="editSin"></ng-container>
@@ -290,7 +290,7 @@
     </ng-template>
 </app-modal>
 
-<app-modal #preponderanceModal *ngIf="offerStatus == 'In Progress'"
+<app-modal #preponderanceModal
 [config]="{ modalTitle: 'Preponderance of Work', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
     <ng-template #modalBody>
         <ng-container [ngTemplateOutlet]="editPreponderance"></ng-container>
@@ -301,3 +301,20 @@
         <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closePreponderanceModal()">
     </ng-template>
 </app-modal>
+
+
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

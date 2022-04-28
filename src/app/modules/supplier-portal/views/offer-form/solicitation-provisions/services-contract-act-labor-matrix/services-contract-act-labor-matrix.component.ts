@@ -11,6 +11,8 @@ export class ServicesContractActLaborMatrixComponent implements OnInit {
   @Input('offerStatus') offerStatus: any;
   
   @ViewChild(ModalComponent) public modalComponent: ModalComponent;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
+
 
   section = {
     title: 'SCA Matrix',
@@ -37,6 +39,14 @@ export class ServicesContractActLaborMatrixComponent implements OnInit {
 
   saveForm(): void {
     this.modalComponent.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 }

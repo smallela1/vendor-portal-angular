@@ -13,6 +13,7 @@ export class NegotiatorsComponent implements OnInit {
 
   @ViewChild(ModalComponent) public modalComponent: ModalComponent;
   @ViewChild('sectionModal') public sectionModal: any;
+  @ViewChild('modHistoryModal') public modHistoryModal: ModalComponent;
   
 
   constructor() {
@@ -31,6 +32,14 @@ export class NegotiatorsComponent implements OnInit {
 
   saveForm(): void {
     this.modalComponent.closeModal()
+  }
+
+  openModHistoryModal(): void {
+    this.modHistoryModal.openModal();    
+  }
+
+  closeModHistoryModal(): void {
+    this.modHistoryModal.closeModal()
   }
 
 }
