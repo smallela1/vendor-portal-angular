@@ -31,7 +31,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="card shadow col mb-4">
-            <div class="card-header py-3"><span class="h5 pt-2 d-inline-block">Saved Offers</span><button class="btn btn-primary float-right">New Offer</button></div>
+            <div class="card-header py-3"><span class="h5 pt-2 d-inline-block">Saved Offers</span><button class="btn btn-primary float-right" [routerLink]="['/supplier-portal/offer']">New Offer</button></div>
             <div class="card-body">
                 <ngx-datatable class="striped" [rows]="savedOffers.rows" [columns]="savedOffers.columns" [headerHeight]="50" [footerHeight]="50" 
                     [rowHeight]="50" [scrollbarV]="true"
