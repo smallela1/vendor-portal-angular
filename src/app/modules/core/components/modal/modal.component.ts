@@ -26,7 +26,7 @@ export class ModalComponent implements OnInit {
     
   modalRef?: BsModalRef;
 
-  appLayout = document.getElementsByClassName('supplier-portal-layout');
+  appLayout = document.getElementsByClassName('offer-portal-layout');
   classSize = '';
 
   constructor(

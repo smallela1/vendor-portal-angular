@@ -1,0 +1,353 @@
+<button type="button" class="btn btn-primary" (click)="openModal()" role="button">Start Questionnaire</button>
+
+
+<!-- Modal Component -->
+<app-modal [config]="{ modalTitle: 'Questionnaire', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Start Questionnaire', showDefaultCloseButton: false, modalSize: 'xl' }">
+
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="questionnaireSection"></ng-container>
+    </ng-template>
+
+    <ng-template #modalFooter>
+        <button type="button" id="cancel" class="btn btn-default bg-danger-hover" *ngIf="currentStep != 2" (click)="closeModal()">
+            Cancel
+        </button>
+        <button type="button" class="btn btn-primary" *ngIf="currentStep > 0" (click)="prevSection()">
+            <span class="fa fa-chevron-left mr-2"></span>
+            Previous
+        </button>
+        <button type="button" class="btn btn-success" *ngIf="currentStep < 2" (click)="nextSection()">
+            Next
+            <span class="fa fa-chevron-right ml-2"></span>
+        </button>
+
+        <button type="button" class="btn btn-primary" *ngIf="currentStep == 2" (click)="closeModal()">
+            Done
+        </button>
+    </ng-template>
+
+</app-modal>
+
+
+
+<!-- Questionnaire Stepper Component-->
+<ng-template #questionnaireSection>
+
+    <usa-step-indicator 
+    [steps]="steps"
+    [(currentStep)]="currentStep" 
+    [hideLabels]="hideLabels" 
+    [centerLabels]="centerLabels" 
+    [displayCounters]="displayCounters" 
+    [smallCounters]="smallCounters"
+    [headerPosition]="headerPosition" 
+    [disableStepSelection]="disableStepSelection">
+        <h2 UsaStepHeader>Questionnaire</h2>
+    </usa-step-indicator>    
+    
+    <div class="grid-container">
+        <ng-container *ngIf="currentStep == 0" [ngTemplateOutlet]="section1"></ng-container>
+        <ng-container *ngIf="currentStep == 1" [ngTemplateOutlet]="section2"></ng-container>
+        <ng-container *ngIf="currentStep == 2" [ngTemplateOutlet]="section3"></ng-container>
+    </div>
+
+</ng-template>
+
+
+
+<!--  Do you qualify -->
+<ng-template #section1>
+    
+    <div class="row">
+        <div class="container">
+
+            <div class="col-md-10 offset-md-1">
+                
+                <h1 class="h3 gsa-medium-blue border-bottom mt-0">Do You Qualify?</h1>
+                <p class="mb-5">
+                    Complete the questionnaire below to determine if you qualify to sell to the federal government.
+                </p>
+                
+                <div class="d-flex mb-5">
+                    <dt class="mr-4 h5 black">
+                        <strong>1.</strong>
+                    </dt>
+                    <dd class="flex-fill m-0">
+                        <p class="h5 black">
+                            Have you registered on SAM.gov?
+                        </p>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-1-yes" name="question-1" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-1-yes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-1-no" name="question-1" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-1-no">No</label>
+                        </div>
+                    </dd>
+                </div>
+
+                <div class="d-flex mb-5">
+                    <dt class="mr-4 h5 black">
+                        <strong>2.</strong>
+                    </dt>
+                    <dd class="flex-fill m-0">
+                        <p class="h5 black">
+                            Will orders from your business be - mostly or all - for less than $10,000.00 for each order?
+                        </p>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-2-yes" name="question-2" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-2-yes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-2-no" name="question-2" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-2-no">No</label>
+                        </div>
+                    </dd>
+                </div>
+
+                <div class="d-flex mb-5">
+                    <dt class="mr-4 h5 black">
+                        <strong>3.</strong>
+                    </dt>
+                    <dd class="flex-fill m-0">
+                        <p class="h5 black">
+                            Do you have a UEI number?
+                        </p>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-3-yes" name="question-3" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-3-yes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-3-no" name="question-3" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-3-no">No</label>
+                        </div>
+                    </dd>
+                </div>
+
+                <div class="d-flex mb-5">
+                    <dt class="mr-4 h5 black">
+                        <strong>4.</strong>
+                    </dt>
+                    <dd class="flex-fill m-0">      
+                        <p class="h5 black">
+                            Tell us what you sell.
+                        </p>                  
+                        <label class="sr-only" for="question-4">
+                            Keywords
+                        </label>        
+                        <div class="row mb-4">                     
+                            <div class="col-7">         
+                                <input type="text" class="form-control" id="question-4" name="question-4" placeholder="Keywords"/>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    Type a keyword describing your industry and select from the NAICS codes that appear.
+                                </small>
+                            </div>
+                            <div class="col-5">
+                                <button class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+
+                                       
+                        <label for="question-5">
+                            NAICS Code:
+                        </label>        
+                        <div class="row">                     
+                            <div class="col-5">         
+                                <select type="text" class="form-control" id="question-5" name="question-4">
+                                    <option value="0">Choose...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </dd>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</ng-template>
+
+<!-- Market Demand -->
+<ng-template #section2>
+   
+    <div class="row">
+        <div class="container">
+
+            <div class="col-md-10 offset-md-1">
+                
+                <h1 class="h3 gsa-medium-blue border-bottom mt-0">Do You Qualify for Small Business contracts?</h1>
+                <p class="mb-5">
+                    Complete the questionnaire below to determine if you qualify for Small Business contracts.
+                </p>
+                
+                <div class="d-flex mb-5">
+                    <dt class="mr-4 h5 black">
+                        <strong>1.</strong>
+                    </dt>
+                    <dd class="flex-fill m-0">
+                        <p class="h5 black">
+                            Is you company a small business?
+                        </p>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-1-yes" name="question-1" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-1-yes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-1-no" name="question-1" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-1-no">No</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="question-1-notsure" name="question-1" class="custom-control-input"/>
+                            <label class="custom-control-label" for="question-1-notsure">I'm Not Sure</label>
+                        </div>
+                    </dd>
+                </div>
+
+                <div class="d-flex mb-5">
+                    <dt class="mr-4 h5 black">
+                        <strong>2.</strong>
+                    </dt>
+                    <dd class="flex-fill m-0">
+                        <p class="h5 black mb-4">
+                            The Small Business Admin has several programs ("set-asides")
+                        </p>
+                        
+                        <div class="d-flex mb-5">
+                            <dd class="flex-fill m-0">
+                                <p class="h6 black">
+                                    Is you company 8-A Business Development certified?
+                                </p>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-2-yes" name="question-2" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-2-yes">Yes</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-2-no" name="question-2" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-2-no">No</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-2-notsure" name="question-2" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-2-notsure">I'm Not Sure</label>
+                                </div>
+                            </dd>
+                        </div>                        
+                        
+                        <div class="d-flex mb-5">
+                            <dd class="flex-fill m-0">
+                                <p class="h6 black">
+                                    Is you company a Woman-owned Small Business?
+                                </p>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-3-yes" name="question-3" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-3-yes">Yes</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-3-no" name="question-3" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-3-no">No</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-3-notsure" name="question-3" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-3-notsure">I'm Not Sure</label>
+                                </div>
+                            </dd>
+                        </div>
+                 
+                        
+                        <div class="d-flex mb-5">
+                            <dd class="flex-fill m-0">
+                                <p class="h6 black">
+                                    Is you company HUBZone certified?
+                                </p>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-4-yes" name="question-4" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-4-yes">Yes</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-4-no" name="question-4" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-4-no">No</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="question-4-notsure" name="question-4" class="custom-control-input"/>
+                                    <label class="custom-control-label" for="question-4-notsure">I'm Not Sure</label>
+                                </div>
+                            </dd>
+                        </div>
+
+                    </dd>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</ng-template>
+
+<!-- Results -->
+<ng-template #section3>
+    <h1 class="h3 gsa-medium-blue text-center">Great, you may qualify!</h1>
+    <p class="text-center mb-5">
+        Based on your responses, you may qualify for...
+    </p>
+    <ul class="usa-card-group">
+        <li class="tablet:grid-col-4 usa-card">
+          <div class="usa-card__container">
+            <header class="usa-card__header">
+              <h2 class="usa-card__heading">Open Contract Opportunities</h2>
+            </header>
+            <div class="usa-card__body">
+                <p>
+                    Contract opportunities are procurement notices from federal contracting offices. Opportunities include pre-solicitation notices,
+                    solicitation notices, award notices, and sole source notices.
+                </p>
+            </div>
+            <div class="usa-card__footer">
+                <button class="btn btn-outline-primary btn-small">Learn more<span class="ml-3 small fas fa-chevron-right"></span></button>
+                <br>
+                <button [routerLink]="['/offer-portal/org-selection']" class="btn btn-primary btn-small" (click)="closeModal()">Start an Offer<span class="ml-3 small fas fa-chevron-right"></span></button>
+            </div>
+          </div>
+        </li>
+        <li class="tablet:grid-col-4 usa-card">
+          <div class="usa-card__container">
+            <header class="usa-card__header">
+              <h2 class="usa-card__heading">Schedules</h2>
+            </header>
+            <div class="usa-card__body">
+                <p>
+                    The GSA Schedule, also known as Federal Supply Schedule, and Multiple Award Schedule (MAS), is a long-term
+                    governmentwide contract with commercial companies that provide access to millions of commercial products and services at
+                    fair and reasonable prices to the government.
+                </p>
+            </div>
+            <div class="usa-card__footer">
+                <button class="btn btn-outline-primary btn-small">Learn more<span class="ml-3 small fas fa-chevron-right"></span></button>
+                <br>
+                <button [routerLink]="['/offer-portal/org-selection']" class="btn btn-primary btn-small" (click)="closeModal()">Start an Offer<span class="ml-3 small fas fa-chevron-right"></span></button>
+            </div>
+          </div>
+        </li>
+        <li class="tablet:grid-col-4 usa-card">
+          <div class="usa-card__container">
+            <header class="usa-card__header">
+              <h2 class="usa-card__heading">GWACs</h2>
+            </header>
+            <div class="usa-card__body">
+                <p>
+                    The federal government can buy cost-effective, innovative solutions for information technology (IT) requirements through
+                    Governmentwide Acquisition Contracts (GWAC) under pre-competed, multiple-award, indifinite delivery, indefinite
+                    quantity contacts.
+                </p>
+            </div>
+            <div class="usa-card__footer">
+                <button class="btn btn-outline-primary btn-small">Learn more<span class="ml-3 small fas fa-chevron-right"></span></button>
+                <br>
+                <button [routerLink]="['/offer-portal/org-selection']" class="btn btn-primary btn-small" (click)="closeModal()">Start an Offer<span class="ml-3 small fas fa-chevron-right"></span></button>
+            </div>
+          </div>
+        </li>
+    </ul>
+</ng-template>

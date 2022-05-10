@@ -1,0 +1,413 @@
+<section class="bg-gsa-medium-blue white d-block sticky-top-content" style="z-index: 8; top: 93px !important">
+    <div class="container py-2">
+        <div class="row justify-content-center">
+            <div class="col-md">
+                <small>Company Name:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />Global Supplier Inc.
+            </div>
+            <div class="col-md">
+                <small>UEI:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> 39487SU383
+            </div>
+            <div class="col-md">
+                <!-- <small>Schedule:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> MAS - Multiple Award Schedule -->
+            </div>
+            <div class="col-md">
+                <!-- <small>Status:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />
+                <select class="bg-transparent bw-0 nav-link white py-1 px-0 line-h-1 text-left" (change)="updateStatus($event.target.value)">
+                    <option value="In Progress" selected>In Progress</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Signed">Signed</option>
+                    <option value="Awarded">Awarded</option>
+                </select> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="row m-0">
+    <div class="col p-0 bg-gsa-light-grey">
+        <div class="" style=" height: 100%;">
+            <div class="container px-3 py-3 d-flex justify-content-center">
+                <div class="col-2">
+                    <div class="card btn btn-default" [routerLink]="['/offer-portal/org-selection']">
+                        <div class="card-body p-2 d-flex flex-column">
+                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
+                            </div>
+                            <a class="nav-link p-0 text-center">
+                                <b class="gsa-red">Offers/Mods</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card btn btn-default">
+                        <div class="card-body p-2 d-flex flex-column">
+                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-edit color-orange app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Mass Mods</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card btn btn-default">
+                        <div class="card-body p-2 d-flex flex-column">
+                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice-dollar color-purple app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">P.O.'s</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card btn btn-default">
+                        <div class="card-body p-2 d-flex flex-column">
+                            <div class="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-chart-line color-teal app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Sales Reports</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-0 m-0">
+  <!--   <div class="row"> -->
+
+        <div class="container">
+            <div class="py-4">
+                <h1>
+                    <span class="fad fa-clock mr-3"></span>
+                    Recent
+                </h1> 
+
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/offer-portal/offer']" >        
+                    <div class="card-body p-0 d-flex">
+                        <div class="border-right m-2" style="width: 140px;">                
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Offers/Mods</b>
+                            </a>
+                        </div>
+                        <div class="flex-fill py-2 px-3">                
+                            <div class="row pt-3">
+                                <div class="col-11">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <dt class="col">UEI:</dt>
+                                            <dd class="col mb-2">39487SU383</dd>
+                                            <dt class="col">Company:</dt>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Offer ID:</dt>
+                                            <dd class="col mb-2">D8237FG2</dd>
+                                            <dt class="col">Status:</dt>
+                                            <dd class="col mb-2">In Progress</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Last Modified Date:</dt>
+                                            <dd class="col mb-2">3/24/2020</dd>
+                                            <dt class="col">Modified By:</dt>
+                                            <dd class="col mb-2">Jenn Green</dd>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
+                                        <span class="far fa-thumbtack"></span>
+                                    </button>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/offer-portal/offer']">        
+                    <div class="card-body p-0 d-flex">
+                        <div class="border-right m-2" style="width: 140px;">                  
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Offers/Mods</b>
+                            </a>
+                        </div>
+                        <div class="flex-fill py-2 px-3">                
+                            <div class="row pt-3">
+                                <div class="col-11">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <dt class="col">UEI:</dt>
+                                            <dd class="col mb-2">39487SU383</dd>
+                                            <dt class="col">Company:</dt>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Order ID:</dt>
+                                            <dd class="col mb-2">D8237FG2</dd>
+                                            <dt class="col">Status:</dt>
+                                            <dd class="col mb-2">In Progress</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Last Modified Date:</dt>
+                                            <dd class="col mb-2">3/12/2020</dd>
+                                            <dt class="col">Modified By:</dt>
+                                            <dd class="col mb-2">Steven Wright</dd>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
+                                        <span class="far fa-thumbtack"></span>
+                                    </button>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/offer-portal/offer']">        
+                    <div class="card-body p-0 d-flex">
+                        <div class="border-right m-2" style="width: 140px;">              
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Offers/Mods</b>
+                            </a>
+                        </div>
+                        <div class="flex-fill py-2 px-3">                
+                            <div class="row pt-3">
+                                <div class="col-11">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <dt class="col">UEI:</dt>
+                                            <dd class="col mb-2">39487SU383</dd>
+                                            <dt class="col">Company:</dt>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Mod ID:</dt>
+                                            <dd class="col mb-2">8EGFG8E</dd>
+                                            <dt class="col">Status:</dt>
+                                            <dd class="col mb-2">Signed</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Last Modified Date:</dt>
+                                            <dd class="col mb-2">2/22/2020</dd>
+                                            <dt class="col">Modified By:</dt>
+                                            <dd class="col mb-2">Harold Kess</dd>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
+                                        <span class="far fa-thumbtack"></span>
+                                    </button>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-4">
+                <h1>
+                    <span class="fad fa-thumbtack mr-3"></span>
+                    Pinned
+                </h1>   
+                <div class="card my-3 btn btn-default text-left" [routerLink]="['/offer-portal/offer']">        
+                    <div class="card-body p-0 d-flex">
+                        <div class="border-right m-2" style="width: 140px;">             
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice color-green app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Offers/Mods</b>
+                            </a>
+                        </div>
+                        <div class="flex-fill py-2 px-3">                
+                            <div class="row pt-3">
+                                <div class="col-11">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <dt class="col">UEI:</dt>
+                                            <dd class="col mb-2">39487SU383</dd>
+                                            <dt class="col">Company:</dt>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Offer ID:</dt>
+                                            <dd class="col mb-2">D8237FG2</dd>
+                                            <dt class="col">Status:</dt>
+                                            <dd class="col mb-2">In Progress</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Last Modified Date:</dt>
+                                            <dd class="col mb-2">3/24/2020</dd>
+                                            <dt class="col">Modified By:</dt>
+                                            <dd class="col mb-2">Jenn Green</dd>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
+                                        <span class="fas fa-thumbtack"></span>
+                                    </button>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-3 btn btn-default text-left">        
+                    <div class="card-body p-0 d-flex">
+                        <div class="border-right m-2" style="width: 140px;">                
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-chart-line color-teal app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">Sales Reports</b>
+                            </a>
+                        </div>
+                        <div class="flex-fill py-2 px-3">                
+                            <div class="row pt-3">
+                                <div class="col-11">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <dt class="col">UEI:</dt>
+                                            <dd class="col mb-2">39487SU383</dd>
+                                            <dt class="col">Company:</dt>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Order ID:</dt>
+                                            <dd class="col mb-2">D8237FG2</dd>
+                                            <dt class="col">Status:</dt>
+                                            <dd class="col mb-2">In Progress</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Last Modified Date:</dt>
+                                            <dd class="col mb-2">3/12/2020</dd>
+                                            <dt class="col">Modified By:</dt>
+                                            <dd class="col mb-2">Steven Wright</dd>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
+                                        <span class="fas fa-thumbtack"></span>
+                                    </button>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+                <div class="card my-3 btn btn-default text-left">        
+                    <div class="card-body p-0 d-flex">
+                        <div class="border-right m-2" style="width: 140px;">                
+                            <div class="pt-4 pb-1 d-flex justify-content-center">
+                                <span class="fad fa-file-invoice-dollar color-purple app-icon" ></span>
+                            </div>
+                            <a href="" class="nav-link p-0 text-center">
+                                <b class="gsa-red">P.O.'s</b>
+                            </a>
+                        </div>
+                        <div class="flex-fill py-2 px-3">                
+                            <div class="row pt-3">
+                                <div class="col-11">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <dt class="col">UEI:</dt>
+                                            <dd class="col mb-2">39487SU383</dd>
+                                            <dt class="col">Company:</dt>
+                                            <dd class="col mb-2">Global Supplier Inc.</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Mod ID:</dt>
+                                            <dd class="col mb-2">8EGFG8E</dd>
+                                            <dt class="col">Status:</dt>
+                                            <dd class="col mb-2">Signed</dd>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <dt class="col">Last Modified Date:</dt>
+                                            <dd class="col mb-2">2/22/2020</dd>
+                                            <dt class="col">Modified By:</dt>
+                                            <dd class="col mb-2">Harold Kess</dd>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-default btn-lg text-muted text-primary-hover" style="height: 30px; width: 30px; margin-left: 30px; margin-top: -30px; padding: 2px;">
+                                        <span class="fas fa-thumbtack"></span>
+                                    </button>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4">
+            <h1>
+                <span class="fad fa-megaphone mr-3"></span>
+                Announcements
+            </h1>   
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">                
+                    <b style="font-size: larger;">SAM</b>
+                    <p>
+                        As of <b>April 4, 2022</b>, the government will no longer use the Data Universal Numbering System (DUNS) number as the
+                        authoritative Unique Entity Identifier (UEI) and transition to using the System for Award Management (SAM)-assigned UEI.
+                        Click here for more information on the government transition to UEI (SAM).
+                    </p>
+                </div>
+            </div>
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">
+                    <b style="font-size: larger;">Vendor Portal</b>
+                    <p>
+                        Starting March 8, 2021, contractors must use FAS ID multi-factor authentication to access eOffer/eMod. For more
+                        information about the implementation of FAS ID for eOffer/eMod, please visit GSA Interact.
+                    </p>
+                </div>
+            </div>
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">
+                    <b style="font-size: larger;">eBuy</b>
+                    <p>
+                        Starting in October 2020, contractors will use their GSA FAS ID email address, instead of the contract number to log in
+                        to eBuy. Click here for more details on how you can prepare for this change.
+                    </p>
+                </div>
+            </div>
+            <div class="usa-alert usa-alert--warning usa-alert-warning usa-alert--no-icon mb-3">
+                <div class="usa-alert-body">
+                    <b style="font-size: larger;">Vendor Portal</b>
+                    <p>
+                        Attention eMod users! We are making improvements to eMod based on your feedback. As of February 25th, you will be able
+                        to download your awarded eOffers from eMods. Additionally, your withdrawn and rejected eMods that are more than one (1)
+                        day old are moving to the eMod "Completed/History" section.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <!-- </div> -->
+</div>

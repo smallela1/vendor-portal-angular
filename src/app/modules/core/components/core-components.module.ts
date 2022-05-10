@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 // Modules
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { SupplierPortalComponentsModule } from '../../supplier-portal/components/supplier-portal-components.module';
+import { OfferPortalComponentsModule } from '../../offer-portal/components/offer-portal-components.module';
 
 // Components
 import { AccordionComponent } from './accordion/accordion.component';
@@ -27,7 +27,7 @@ import { ModalComponent } from './modal/modal.component';
     CommonModule,
     AccordionModule,
     ModalModule.forRoot(),
-    SupplierPortalComponentsModule,
+    OfferPortalComponentsModule,
   ],
   exports: [
     AccordionComponent, 
