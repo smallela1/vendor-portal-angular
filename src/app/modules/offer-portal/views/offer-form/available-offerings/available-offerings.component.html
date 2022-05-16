@@ -1,0 +1,320 @@
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
+    <ng-template #formCardActions>
+        <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+    </ng-template>
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
+
+
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="availableOfferings">
+
+
+        <div class="col">
+            <h2 class="h4 border-bottom mb-3" id="yournegs">Your SIN(s)</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-11">
+                <div class="row">
+                    <div class="col-md-3">
+                        <dt class="col">Number:</dt>
+                        <dd class="col mb-0">54151HEAL</dd>
+                    </div>
+                    <div class="col-md-3">
+                        <dt class="col">Title:</dt>
+                        <dd class="col mb-0">Health Information Technology Services</dd>
+                    </div>
+                    <div class="col-md-3">
+                        <dt class="col">Large Category:</dt>
+                        <dd class="col mb-0">Information Technology</dd>
+                    </div>
+                    <div class="col-md-3">
+                        <dt class="col">Subcategory:</dt>
+                        <dd class="col mb-0">IT Services</dd>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+                <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openSinModal()">
+                    <span class="fa fa-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                    <span class="fa fa-trash"></span>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-11">
+                <div class="row">
+                    <div class="col-md-3">
+                        <dt class="col">Number:</dt>
+                        <dd class="col mb-0">54151HEAL</dd>
+                    </div>
+                    <div class="col-md-3">
+                        <dt class="col">Title:</dt>
+                        <dd class="col mb-0">Health Information Technology Services</dd>
+                    </div>
+                    <div class="col-md-3">
+                        <dt class="col">Large Category:</dt>
+                        <dd class="col mb-0">Information Technology</dd>
+                    </div>
+                    <div class="col-md-3">
+                        <dt class="col">Subcategory:</dt>
+                        <dd class="col mb-0">IT Services</dd>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+                <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openSinModal()">
+                    <span class="fa fa-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                    <span class="fa fa-trash"></span>
+                </button>
+            </div>
+        </div>  
+
+        <hr>           
+        <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
+            <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openSinModal()">
+                <span class="fa fa-plus mr-2"></span>
+                Add SIN
+            </button>
+        </div>
+
+        <div class="col mb-3 mt-5">
+            <div class="col border-bottom p-0">                
+                <div class="row">
+
+                    <div class="col-10">
+                        <h2 class="h4" id="yournegs">Preponderance of Work</h2>
+                    </div>
+
+                    <div class="col-2 d-flex justify-content-end" *ngIf="offerStatus == 'In Progress'">
+                        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openPreponderanceModal()">
+                            <span class="fa fa-pencil mr-2"></span>
+                            Edit
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <dt class="col">Selected Preponderance Of Work is:</dt>
+            <dd class="col">541511</dd>
+        </div>
+
+    </form>
+</ng-template>
+
+
+<!-- Edit Sin Section -->
+<ng-template #editSin>
+    <form id="availableOfferings">
+
+        <div class="usa-alert usa-alert-warning mb-5">
+            <div class="usa-alert-body">
+                <p>                    
+                    <b class="black">What goods and services do you provide?</b>
+                </p>
+                <p>
+                    GSA assigns all available offerings to large categories, subcategories, and Special Item Numbers
+                    (SINs).
+                </p>
+                <p>
+                    You must add at least one large category, subcategory, and SIN and you may only add one at a time. For a full list of
+                    available offerings, please visit the <a target="_blank" title="MAS Roadmap" href="https://www.gsa.gov/masroadmap">MAS Roadmap</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">             
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="largeCategory">Large Categrory:</label>
+                </div>
+                <div class="col-md-9">
+                    <select aria-required="true" class="form-control col-md-8" name="largeCategory" id="largeCategory">
+                        <option value="">Select a Large Category</option>
+                        <option value="B">Facilities</option>
+                        <option value="C">Furniture and Furnishings</option>
+                        <option value="D">Human Capital</option>
+                        <option value="E">Industrial Products and Services</option>
+                        <option value="F">Information Technology</option>
+                        <option value="G">Miscellaneous</option>
+                        <option value="A">Office Management</option>
+                        <option value="H">Professional Services</option>
+                        <option value="I">Scientific Management and Solutions</option>
+                        <option value="J">Security and Protection</option>
+                        <option value="K">Transportation and Logistics Services</option>
+                        <option value="L">Travel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="subCategory">Subcategory:</label>
+                </div>
+                <div class="col-md-9">
+                    <select aria-required="true" class="form-control col-md-8" name="subCategory" id="subCategory">
+                        <option value="">Select a Subcategory</option>
+                        <option value="F03">IT Services</option>
+                    </select>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="sin">SIN:</label>
+                </div>
+                <div class="col-md-9">
+                    <select aria-required="true" class="form-control col-md-8" name="sin" id="sin">
+                        <option value="">Select a SIN</option>
+                        <option value="54151HEAL">54151HEAL Health Information Technology Services</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+
+<!-- Edit Preponderance Section -->
+<ng-template #editPreponderance>
+    <form id="preponderanceOfWork">
+
+        <div class="usa-alert usa-alert-warning mb-5">
+            <div class="usa-alert-body">
+                <p>                    
+                    <b class="black">Please complete the 'Preponderance of Work' section only after you have completed adding all offerings to your offer.</b>
+                </p>
+                <p>
+                    The information below will populate based on the offerings you have added in the previous section.</p>
+                <p>
+                    Offerors must choose one preponderance of work large category, subcategory, SIN and NAICS for the offer as a whole.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">             
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="largeCategory">Large Categrory:</label>
+                </div>
+                <div class="col-md-9">
+                    <select aria-required="true" class="form-control col-md-8" name="largeCategory" id="largeCategory">
+                        <option value="">Select a Large Category</option>
+                        <option value="F">Information Technology</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="subCategory">Subcategory:</label>
+                </div>
+                <div class="col-md-9">
+                    <select aria-required="true" class="form-control col-md-8" name="subCategory" id="subCategory">
+                        <option value="">Select a Subcategory</option>
+                        <option value="F03">IT Services</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="sin">SIN:</label>
+                </div>
+                <div class="col-md-9">
+                    <select aria-required="true" class="form-control col-md-8" name="sin" id="sin">
+                        <option value="">Select a SIN</option>
+                        <option value="54151HEAL">54151HEAL Health Information Technology Services</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <div class="col-md-3 d-flex justify-content-end text-right">   
+                    <label for="PreponderanceOfWork">Vendor proposed preponderance of work:</label>
+                </div>
+                <div class="col-md-9">
+                    <!-- <label for="PreponderanceOfWork">Vendor proposed preponderance of work:</label> -->
+                    <select aria-required="true" class="form-control col-md-8" name="PreponderanceOfWork" id="PreponderanceOfWork">
+                        <option value="">Select NAICS</option>
+                        <option value="541511">541511</option>
+                        <option value="541512">541512</option>
+                        <option value="541513">541513</option>
+                        <option value="541519">541519</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form> 
+</ng-template>
+
+<!-- Actions-->
+<ng-template #sectionActions>
+
+    <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+        <button id="button-manage" dropdownToggle type="button" class="btn btn-default btn-lg dropdown-toggle p-1 m-0"
+            aria-controls="dropdown-manage">
+            <span class="gsa-light-blue">Actions</span>
+            <span class="caret"></span>
+        </button>
+        <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+            aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item" (click)="openPreponderanceModal()">Create New Modification</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+            <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
+        </ul>
+    </span>
+
+</ng-template>
+
+
+
+<app-modal #sinModal
+[config]="{ modalTitle: 'SIN', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editSin"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveSinForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeSinModal()">
+    </ng-template>
+</app-modal>
+
+<app-modal #preponderanceModal
+[config]="{ modalTitle: 'Preponderance of Work', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editPreponderance"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="savePreponderanceForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closePreponderanceModal()">
+    </ng-template>
+</app-modal>
+
+
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

@@ -1,0 +1,248 @@
+<div class="col">
+    <h2 class="h4 border-bottom mb-3">Point of Contacts Information</h2>
+</div>
+<div class="col mb-5">
+    <accordion [isAnimated]="true" [closeOthers]="false">
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: section.title, 
+                sectionStatus: section.sectionStatus, 
+                parentOfferStatus: section.offerStatus, 
+                isStickyTop: true, 
+                showSection: section.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ section.title }}</h3>
+                </div>
+                
+                <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                    <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                        aria-controls="dropdown-manage" appStopClickPropagation>
+                        <span class="gsa-light-blue">Actions</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                        <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                    </ul>
+                </span>
+                
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+            </ng-template>
+        </app-form-accordion>
+    </accordion>
+</div>
+
+
+<!-- Reaonly Section -->
+<ng-template #readonlySection>
+        
+    <div class="row">
+        <div class="col-11">
+            <div class="row">                
+                <div class="col-md-4">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Contract Manager</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Type:</dt>
+                    <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+            </div>
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-11">
+            <div class="row">                
+                <div class="col-md-4">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Contract Manager</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Type:</dt>
+                    <dd class="col mb-0">Contact for Contract Adminisation (Domestic)</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-4">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Point of Contact
+        </button>
+    </div>
+
+</ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="negotiators">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    <b>Who is designated to be contacted for prompt Contract administration?</b>
+                </p>
+            </div>
+        </div>
+        <div class="container ">           
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="name">Point of Contact Type:</label>
+                </div>
+                <div class="col-md-9">
+                    <select class="custom-select col-md-5 mb-2" id="smallBusinessConcern" name="smallBusinessConcern" aria-label="State or Province">
+                        <option selected>Choose...</option>
+                        <option value="domesticcontact">Contact for Contract Administration (Domestic)</option>
+                        <option value="overseascontact">Contact for Contract Administration (Overseas)</option>
+                        <option value="ContactforMarketing">Contact for Marketing</option>
+                        <option value="IndustrialFundingFee">Industrial Funding Fee</option>
+                        <option value="orderpoc">Order POC</option>
+                    </select>
+                </div>
+            </div>             
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="name" name="name" aria-describedby="nameHelp"/>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="title">Title:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="title" name="title"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="role">Address:</label>
+                </div>
+                <div class="col-md-9 form-inline">
+                    <input type="text" class="form-control col-md-8 mb-2" id="address1" name="role" placeholder="Street Address 1"/>
+                    <input type="text" class="form-control col-md-8 mb-2" id="address2" name="role" placeholder="Street Address 2"/>
+                    <input type="text" class="form-control col-md-5 mb-2 mr-3" id="city" name="role" placeholder="City"/>
+                    <select class="custom-select col-md-5 mb-2" id="state" name="state" aria-label="State or Province">
+                        <option selected>State or Province</option>
+                        <option value="0">Maryland</option>
+                        <option value="1">Virginia</option>
+                    </select>
+                    <input type="text" class="form-control col-md-3 mb-2 mr-3" id="zip" name="role" placeholder="Zip or Postal Code"/>
+                    <select class="custom-select col-md-5 mb-2 mr-3" id="country" name="country" aria-label="Country">
+                        <option selected>Country</option>
+                        <option value="0">United States of America</option>
+                    </select>
+                </div>
+            </div>          
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="email" class="form-control col-md-6" id="email" name="email" aria-describedby="emailHelp"/>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Negotiator's email should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>       
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="phone" name="phone"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+
+
+<!-- Modal Template -->
+<app-modal
+    [config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+    </ng-template>
+</app-modal>
+
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

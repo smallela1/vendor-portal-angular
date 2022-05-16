@@ -1,0 +1,27 @@
+<app-organization-details-banner></app-organization-details-banner>
+
+<section class="bg-gsa-light-grey">
+    <div class="container-fluid px-5 py-5">
+        <div class="row content-row pb-3">
+
+            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 d-xs-none d-sm-none d-md-block">
+                <div class="sticky-top-content" style="top: 90px !important">
+
+                    <ng-container *ngIf="aside">
+                        <ng-container [ngTemplateOutlet]="aside"></ng-container>
+                    </ng-container>
+
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 ">
+
+                <ng-container *ngIf="body">
+                    <ng-container [ngTemplateOutlet]="body"></ng-container>
+                </ng-container>
+
+            </div>
+
+        </div>
+    </div>
+</section>

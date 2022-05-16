@@ -1,0 +1,565 @@
+<div class="col">
+    <h2 class="h4 border-bottom mb-3">Ordering Information</h2>
+</div>
+<div class="col">
+    
+    <accordion [isAnimated]="true" [closeOthers]="false">
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: remittanceAddressSection.title, 
+                sectionStatus: remittanceAddressSection.sectionStatus, 
+                parentOfferStatus: remittanceAddressSection.offerStatus, 
+                isStickyTop: true, 
+                showSection: remittanceAddressSection.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ remittanceAddressSection.title }}</h3>
+                </div>              
+                
+                <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                    <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                        aria-controls="dropdown-manage" appStopClickPropagation>
+                        <span class="gsa-light-blue">Actions</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" (click)="openRemittanceAddressModal()">Create New Modification</a></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                        <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                    </ul>
+                </span>
+
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-template [ngTemplateOutlet]="remmittanceAddressInfo"></ng-template>
+            </ng-template>
+        </app-form-accordion>
+        
+        <app-form-accordion
+            *ngIf="true"
+            [config]="{ 
+                title: orderingReceiptSection.title, 
+                sectionStatus: orderingReceiptSection.sectionStatus, 
+                parentOfferStatus: orderingReceiptSection.offerStatus, 
+                isStickyTop: true, 
+                showSection: orderingReceiptSection.showSection
+            }"  
+        >
+            <ng-template #formAccordionHeader>
+                <div class="flex-fill">
+                    <h3 class="h5">{{ orderingReceiptSection.title }}</h3>
+                </div>              
+                
+                <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                    <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                        aria-controls="dropdown-manage" appStopClickPropagation>
+                        <span class="gsa-light-blue">Actions</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" (click)="openOrderingReceiptEdiModal()">Create New Modification</a></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                        <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                    </ul>
+                </span>
+            </ng-template>
+            <ng-template #formAccordionBody>
+                <ng-template [ngTemplateOutlet]="orderingReceiptInfo"></ng-template>
+            </ng-template>
+        </app-form-accordion>
+    </accordion>
+
+</div>
+
+
+<!-- Reaonly Section -->
+<ng-template #remmittanceAddressInfo>
+    
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Supplier Name:</dt>
+                    <dd class="col mb-0">ABC Supplier</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Attention:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openRemittanceAddressModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Supplier Name:</dt>
+                    <dd class="col mb-0">ABC Supplier</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Attention:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openRemittanceAddressModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+        
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openRemittanceAddressModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Remittance Address
+        </button>
+    </div>
+
+</ng-template>
+
+<ng-template #orderingReceiptInfo>
+    
+
+    <div class="usa-alert usa-alert-info mb-4">
+        <div class="usa-alert-body">
+            <p>
+                In accordance with the Placement of Orders clause of this solicitation, how would you like to receive orders placed by GSA's Federal Supply Service (FSS)
+            </p>
+        </div>
+    </div>
+        
+    <div class="col p-0">
+        <h4 class="h6 border-bottom mb-3">Computer-to-Computer Electronic Data Interchange (EDI)</h4>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Administrator</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptEdiModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-11">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt class="col">Name:</dt>
+                    <dd class="col mb-0">Luis Najera</dd>
+                    <dt class="col">Title:</dt>
+                    <dd class="col mb-0">Administrator</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Email:</dt>
+                    <dd class="col mb-0">luis.najera@gsa.gov</dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Address:</dt>
+                    <dd class="col mb-0">
+                        <address>
+                            10505 Furnace Rd. Ste. 108<br />
+                            Lorton, VA 22079-2635<br />
+                            USA
+                        </address>
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt class="col">Phone:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                    <dt class="col">Fax:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>
+        <div class="col-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptEdiModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+    
+    
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openOrderingReceiptEdiModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add EDI Contact
+        </button>
+    </div>
+
+    <div class="col p-0 mt-5">
+        <h4 class="h6 border-bottom mb-3" id="yournegs">Facsimile Tranmission</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-md-4 col-lg-4 col-xl-3">
+            <div class="row">
+                <div class="col">
+                    <dt class="col">Fax #1:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>        
+        <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptFaxModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+        <div class="col-sm-8 col-md-4 col-lg-4 col-xl-3">
+            <div class="row">
+                <div class="col">
+                    <dt class="col">Fax #2:</dt>
+                    <dd class="col mb-0">(999) 999-9999</dd>
+                </div>
+            </div>
+        </div>        
+        <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1" *ngIf="offerStatus == 'In Progress'">
+            <button type="button" class="btn btn-default btn-sm text-muted bg-primary-hover" (click)="openOrderingReceiptFaxModal()">
+                <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm text-muted bg-danger-hover">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+
+    
+    <hr>           
+    <div class="col mt-4 d-flex justify-content-center" *ngIf="offerStatus == 'In Progress'"> 
+        <button type="button" class="btn btn-light gsa-light-blue btn bg-primary-hover" (click)="openOrderingReceiptFaxModal()">
+            <span class="fa fa-plus mr-2"></span>
+            Add Fax
+        </button>
+    </div>
+
+</ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editRemittanceAddress>
+    <form id="remittanceAddress">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    The offeror is requested to include the postal mailing address(es) for the Remittance Address where paper form orders should be mailed.
+                </p>
+            </div>
+        </div>
+        <div class="container">         
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="name">Company (Supplier) Name:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="name" name="name" aria-describedby="nameHelp"/>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="title">Attention:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="attention" name="attention"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="role">Address:</label>
+                </div>
+                <div class="col-md-9 form-inline">
+                    <input type="text" class="form-control col-md-8 mb-2" id="address1" name="role" placeholder="Street Address 1"/>
+                    <input type="text" class="form-control col-md-8 mb-2" id="address2" name="role" placeholder="Street Address 2"/>
+                    <input type="text" class="form-control col-md-5 mb-2 mr-3" id="city" name="role" placeholder="City"/>
+                    <select class="custom-select col-md-5 mb-2" id="state" name="state" aria-label="State or Province">
+                        <option selected>State or Province</option>
+                        <option value="0">Maryland</option>
+                        <option value="1">Virginia</option>
+                    </select>
+                    <input type="text" class="form-control col-md-3 mb-2 mr-3" id="zip" name="role" placeholder="Zip or Postal Code"/>
+                    <select class="custom-select col-md-5 mb-2 mr-3" id="country" name="country" aria-label="Country">
+                        <option selected>Country</option>
+                        <option value="0">United States of America</option>
+                    </select>
+                </div>
+            </div>          
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="email" class="form-control col-md-6" id="email" name="email" aria-describedby="emailHelp"/>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Negotiator's email should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>       
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="phone" name="phone"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+<ng-template #editOrderingReceiptEdi>
+    <form id="electronicDataInterchange">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    The offeror is requested to indicate the name, address and telephone number of the representative to be contacted regarding establishment of an EDI interface.
+                </p>
+            </div>
+        </div>
+        <div class="container">            
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="name" name="name" aria-describedby="nameHelp"/>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="title">Title:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-6" id="title" name="title"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="role">Address:</label>
+                </div>
+                <div class="col-md-9 form-inline">
+                    <input type="text" class="form-control col-md-8 mb-2" id="address1" name="role" placeholder="Street Address 1"/>
+                    <input type="text" class="form-control col-md-8 mb-2" id="address2" name="role" placeholder="Street Address 2"/>
+                    <input type="text" class="form-control col-md-5 mb-2 mr-3" id="city" name="role" placeholder="City"/>
+                    <select class="custom-select col-md-5 mb-2" id="state" name="state" aria-label="State or Province">
+                        <option selected>State or Province</option>
+                        <option value="0">Maryland</option>
+                        <option value="1">Virginia</option>
+                    </select>
+                    <input type="text" class="form-control col-md-3 mb-2 mr-3" id="zip" name="role" placeholder="Zip or Postal Code"/>
+                    <select class="custom-select col-md-5 mb-2 mr-3" id="country" name="country" aria-label="Country">
+                        <option selected>Country</option>
+                        <option value="0">United States of America</option>
+                    </select>
+                </div>
+            </div>          
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="email" class="form-control col-md-6" id="email" name="email" aria-describedby="emailHelp"/>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Negotiator's email should be exactly the same as in the FAS ID of that user.
+                    </small>
+                </div>
+            </div>       
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="phone" name="phone"/>
+                </div>
+            </div>              
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</ng-template>
+
+<ng-template #editOrderingReceiptFax>
+    <form id="faxInformation">
+
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    The offeror is requested to indicate the telephone number for the facsimile transimission equipment where orders should be forwarded.
+                </p>
+            </div>
+        </div>
+        <div class="container">         
+            <div class="row mb-3">
+                <div class="col-md-3 d-flex justify-content-end">   
+                    <label for="fax" name="fax">Fax:</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control col-md-4" id="fax" name="fax"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+
+<!-- Modal Templates -->
+<app-modal #remittanceAddressModal
+[config]="{ modalTitle: remittanceAddressSection.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editRemittanceAddress"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveRemittanceAddressForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeRemittanceAddressModal()">
+    </ng-template>
+</app-modal>
+
+<app-modal #orderingReceiptEdiModal
+[config]="{ modalTitle: orderingReceiptSection.title + ' - Computer-to-Computer Electronic Data Interchange', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editOrderingReceiptEdi"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveOrderingReceiptEdiForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeOrderingReceiptEdiModal()">
+    </ng-template>
+</app-modal>
+
+<app-modal #orderingReceiptFaxModal
+[config]="{ modalTitle: orderingReceiptSection.title + ' - Fax', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editOrderingReceiptFax"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveOrderingReceiptFaxForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeOrderingReceiptFaxModal()">
+    </ng-template>
+</app-modal>
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

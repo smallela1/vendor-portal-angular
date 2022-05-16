@@ -1,0 +1,175 @@
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
+    <ng-template #formCardActions>
+        <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+    </ng-template>
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
+
+
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="pathwayToSuccess">
+        <div class="mb-5">
+            <div class="col">
+                <h2 class="h4 border-bottom mb-3">Section 1 (New Offerers Only)</h2>
+            </div>
+            <div class="col-sm-12">
+                <p>
+                    You are required to complete the “Pathway to Success” training and the “Readiness Assessment” located at 
+                    <a href="http://www.gsa.gov/masroadmap">www.gsa.gov/masroadmap</a>. The Pathway to Success training provides an
+                    overview of the GSA Schedule, the offer process and required information, and considerations you need to make as you are
+                    developing your offer. The Readiness Assessment is a series of questions that helps you determine the readiness of your
+                    company to become a successful GSA Schedule contractor.
+                </p>
+                <div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="pathwayToSuccessNewOfferers_readonly" name="pathwayToSuccessNewOfferers_readonly" value="true" checked="checked" disabled/>
+                        <label class="custom-control-label" for="pathwayToSuccessNewOfferers_readonly">
+                            I acknowledge that I have downloaded and completed the <b>“Pathway to Success”</b> training located at&nbsp;
+                            <a href="http://www.gsa.gov/masroadmap:">www.gsa.gov/masroadmap</a>
+                            &nbsp;within the past 12 months.
+                        </label>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="pathwayToSuccessExistingReadinessAssessment_readonly" name="pathwayToSuccessExistingReadinessAssessment_readonly" value="true" checked="checked" disabled/>
+                        <label class="custom-control-label" for="pathwayToSuccessExistingReadinessAssessment_readonly">
+                            I acknowledge that I have downloaded and completed the <b>“Readiness Assessment”</b> located at&nbsp;
+                            <a href="http://www.gsa.gov/masroadmap">www.gsa.gov/masroadmap</a>
+                            &nbsp;within the past 12 months.&nbsp;
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+
+            <h2 class="h4 border-bottom mb-3">Section 2 (Existing FSS Contractors Only)</h2>
+            <p>
+                If you are an existing FSS contract holder and this is a streamlined offer you are not required to
+                complete the Pathway to Success and the Readiness Assessment.
+            </p>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pathwayToSuccessExistingFSSContractors_readonly" name="pathwayToSuccessExistingFSSContractors_readonly" value="true" disabled/>
+                <label class="custom-control-label" for="pathwayToSuccessExistingFSSContractors_readonly">
+                    I acknowledge that I am an existing FSS contractor submitting a streamlined offer.
+                </label>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="pathwayToSuccess">
+        <div class="usa-alert usa-alert-warning mb-4">
+            <div class="usa-alert-body">
+                <p>
+                    Complete Section 1 if you are a new offeror OR complete Section 2 if you are an existing FSS contractor submitting a
+                    streamlined offer.
+                </p>
+            </div>
+        </div>
+        <div class="mb-5">
+            <div class="col">
+                <h2 class="h4 border-bottom mb-3">Section 1 (New Offerers Only)</h2>
+            </div>
+            <div class="col-sm-12">
+                <p>
+                    You are required to complete the “Pathway to Success” training and the “Readiness Assessment” located at 
+                    <a href="http://www.gsa.gov/masroadmap">www.gsa.gov/masroadmap</a>. The Pathway to Success training provides an
+                    overview of the GSA Schedule, the offer process and required information, and considerations you need to make as you are
+                    developing your offer. The Readiness Assessment is a series of questions that helps you determine the readiness of your
+                    company to become a successful GSA Schedule contractor.
+                </p>
+                <div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="pathwayToSuccessNewOfferers" name="pathwayToSuccessNewOfferers" value="true" checked="checked"/>
+                        <label class="custom-control-label" for="pathwayToSuccessNewOfferers">
+                            I acknowledge that I have downloaded and completed the <b>“Pathway to Success”</b> training located at&nbsp;
+                            <a href="http://www.gsa.gov/masroadmap:">www.gsa.gov/masroadmap</a>
+                            &nbsp;within the past 12 months.
+                        </label>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="pathwayToSuccessExistingReadinessAssessment" name="pathwayToSuccessExistingReadinessAssessment" value="true" checked="checked"/>
+                        <label class="custom-control-label" for="pathwayToSuccessExistingReadinessAssessment">
+                            I acknowledge that I have downloaded and completed the <b>“Readiness Assessment”</b> located at&nbsp;
+                            <a href="http://www.gsa.gov/masroadmap">www.gsa.gov/masroadmap</a>
+                            &nbsp;within the past 12 months.&nbsp;
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+
+            <h2 class="h4 border-bottom mb-3">Section 2 (Existing FSS Contractors Only)</h2>
+            <p>
+                If you are an existing FSS contract holder and this is a streamlined offer you are not required to
+                complete the Pathway to Success and the Readiness Assessment.
+            </p>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pathwayToSuccessExistingFSSContractors" name="pathwayToSuccessExistingFSSContractors" value="true"/>
+                <label class="custom-control-label" for="pathwayToSuccessExistingFSSContractors">
+                    I acknowledge that I am an existing FSS contractor submitting a streamlined offer.
+                </label>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+
+<!-- Actions-->
+<ng-template #sectionActions>
+
+    <app-modal
+        [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: offerStatus == 'In Progress', defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+        <ng-template #modalBody>
+            <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+        </ng-template>
+        <ng-template #modalFooter>
+            <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+                (click)="saveForm()">
+            <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+        </ng-template>
+    </app-modal>
+
+    <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+        <button id="button-manage" dropdownToggle type="button" class="btn btn-default btn-lg dropdown-toggle p-1 m-0"
+            aria-controls="dropdown-manage">
+            <span class="gsa-light-blue">Actions</span>
+            <span class="caret"></span>
+        </button>
+        <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+            aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+            <!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
+        </ul>
+    </span>
+
+</ng-template>
+
+
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

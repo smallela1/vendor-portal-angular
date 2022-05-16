@@ -23,6 +23,12 @@
 .gsa-dark-grey {
   color: #636262 !important;
 }
+.gsa-red {
+  color: #af3639 !important;
+}
+
+
+
 .bg-gsa-dark-blue {
   background-color: #112d51 !important;
 }
@@ -31,6 +37,9 @@
 }
 .bg-gsa-light-blue {
   background-color: #2277aa !important;
+}
+.bg-gsa-xlight-blue {
+  background-color: #7ab4d8 !important;
 }
 .bg-gsa-light-grey {
   background-color: #e0e6eb !important;
@@ -47,6 +56,13 @@
 }
 .bg-gsa-warm-grey-2 {
   background-color: rgba(0,0,0,.2) !important;
+}
+.bg-gsa-charcoal {
+  background-color: #3d4551;
+}
+
+.bg-gsa-red {
+  background-color: #af3639 !important;
 }
 
 /* - - - - - - - - - -*/

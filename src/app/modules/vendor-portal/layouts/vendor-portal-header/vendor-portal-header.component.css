@@ -1,0 +1,9 @@
+/deep/ usa-header.loggedIn .usa-nav__secondary {
+    bottom: 1rem;
+}
+
+/deep/ usa-header.loggedIn .usa-nav__secondary ul.usa-nav__secondary-links {
+    display: flex;
+    flex-direction: row;
+}
+

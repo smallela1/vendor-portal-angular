@@ -1,0 +1,152 @@
+<accordion [isAnimated]="true" [closeOthers]="false">
+    <app-form-accordion
+        *ngIf="true"
+        [config]="{ 
+            title: section.title, 
+            sectionStatus: section.sectionStatus, 
+            parentOfferStatus: section.offerStatus, 
+            isStickyTop: true, 
+            showSection: section.showSection
+        }"  
+    >
+        <ng-template #formAccordionHeader>
+            <div class="flex-fill">
+                <h3 class="h5">{{ section.title }}</h3>
+            </div>
+            <button *ngIf="offerStatus == 'In Progress'" type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
+                <span class="fa fa-pencil mr-2"></span>
+                Edit
+            </button>
+            
+            <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                    aria-controls="dropdown-manage" appStopClickPropagation>
+                    <span class="gsa-light-blue">Actions</span>
+                    <span class="caret"></span>
+                </button>
+                <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                    aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+                    <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                    <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                </ul>
+            </span>
+        </ng-template>
+        <ng-template #formAccordionBody>
+            <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        </ng-template>
+    </app-form-accordion>
+</accordion>
+
+
+<!-- Readonly Section -->
+<ng-template #readonlySection> 
+    <div class="d-flex mb-4">
+        <dd class="flex-fill m-0">
+            <p>
+                Are you the manufacturer of the product(s) you are planning to offer under the proposed SIN(s)?
+            </p>
+            <div class="mb-3">
+                <b>No</b>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex">
+        <dd class="flex-fill m-0">
+            <p>
+                All proposed products must comply with the Trade Agreements Act (TAA). It is your responsibility to determine TAA
+                compliance. When an item consists of components from various countries and the components are assembled in an additional
+                country, the test to determine country of origin is "substantial transformation" (reference FAR 25.001(c)(2)). You can
+                go to the Office of Regulations and Rulings within U.S. Customs and Border Protection (CBP), which is the Federal agency
+                responsible for making substantial transformation determinations, reference 19 CFR 177.23. CBP's determinations or
+                opinions are based upon tariff laws. You may also request an opinion from a third-party expert or make the determination
+                itself. The Internet address for CBP is: http://www.cbp.gov/. You should keep this requirement in mind when completing
+                the TAA certification section of its SAM registration. When evaluating offers, the contracting officer will rely solely
+                on the representations and certifications of your organization and will not make substantial transformation
+                determinations.
+            </p>
+            <div class="custom-control custom-checkbox custom-control-inline my-3">
+                <input id="shallEnterNameOfEDWOSB" type="checkbox" name="shallEnterNameOfEDWOSB"
+                    class="custom-control-input" checked disabled />
+                <label class="custom-control-label d-inline" for="shallEnterNameOfEDWOSB">
+                    [The offeror shall enter the name or names of the EDWOSB concern and other small businesses that are
+                    participating in the joint venture.]
+                </label>
+            </div>
+        </dd>
+    </div>
+</ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editSection> 
+    <div class="d-flex mb-4">
+        <dd class="flex-fill m-0">
+            <p>
+                Are you the manufacturer of the product(s) you are planning to offer under the proposed SIN(s)?
+            </p>
+            <div class="mb-3">
+                <div class="custom-control custom-radio custom-control-inline ml-3">
+                    <input id="isManufacturerOfSINSYes" type="radio" name="isManufacturerOfSINS" class="custom-control-input"/>
+                    <label class="custom-control-label" for="isManufacturerOfSINSYes">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input id="isManufacturerOfSINSNo" type="radio" name="isManufacturerOfSINS" class="custom-control-input" checked/>
+                    <label class="custom-control-label" for="isManufacturerOfSINSNo">No</label>
+                </div>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex">
+        <dd class="flex-fill m-0">
+            <p>
+                All proposed products must comply with the Trade Agreements Act (TAA). It is your responsibility to determine TAA
+                compliance. When an item consists of components from various countries and the components are assembled in an additional
+                country, the test to determine country of origin is "substantial transformation" (reference FAR 25.001(c)(2)). You can
+                go to the Office of Regulations and Rulings within U.S. Customs and Border Protection (CBP), which is the Federal agency
+                responsible for making substantial transformation determinations, reference 19 CFR 177.23. CBP's determinations or
+                opinions are based upon tariff laws. You may also request an opinion from a third-party expert or make the determination
+                itself. The Internet address for CBP is: http://www.cbp.gov/. You should keep this requirement in mind when completing
+                the TAA certification section of its SAM registration. When evaluating offers, the contracting officer will rely solely
+                on the representations and certifications of your organization and will not make substantial transformation
+                determinations.
+            </p>
+            <div class="custom-control custom-checkbox custom-control-inline my-3">
+                <input id="shallEnterNameOfEDWOSB_edit" type="checkbox" name="shallEnterNameOfEDWOSB_edit" class="custom-control-input" checked/>
+                <label class="custom-control-label d-inline" for="shallEnterNameOfEDWOSB_edit">
+                    [The offeror shall enter the name or names of the EDWOSB concern and other small businesses that are
+                    participating in the joint venture.]
+                </label>
+            </div>
+        </dd>
+    </div>
+</ng-template>
+
+
+<!-- Modal Template -->
+<app-modal
+[config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+    </ng-template>
+</app-modal>
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

@@ -1,0 +1,54 @@
+.background-image::before {
+    content: " ";
+    background-image: url(/assets/images/content-art/istockphoto-545247618-1024x1024-recreated.svg); 
+    background-position: center center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    opacity: 10%;
+    position: absolute;
+    top: -340px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+/deep/ div.usa-step-indicator {
+    margin-top: -24px;
+    margin-bottom: 0px;
+}
+/deep/ .usa-step-indicator__segment {
+    height: 64px;
+    background-color: #dfe1e2;
+    padding-top: 0px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    border-right: 1px solid gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/deep/ .usa-step-indicator__segment:last-child {
+    border-right: 0px;
+}
+
+/deep/ .usa-step-indicator__segment::after {
+    top: initial;
+    bottom: 0px;
+}
+
+/deep/ .usa-step-indicator__segment--complete::after {
+    background-color: #dfe1e2;
+}
+
+/deep/ .usa-step-indicator__segment-label {
+    color: #058;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/deep/
+.usa-step-indicator__segment:focus {
+    z-index: 1;
+}

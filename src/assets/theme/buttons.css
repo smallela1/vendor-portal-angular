@@ -260,7 +260,9 @@ button[class*='btn-outline-'] {
 .btn-secondary:hover {
   color: #fff !important;
 }
-.btn-outline-secondary {}
+.btn-outline-secondary {
+  border-width: 2px !important;
+}
 .btn-outline-secondary:hover {
   color: #fff !important;
 }
@@ -280,7 +282,7 @@ button[class*='btn-outline-'] {
 /*
 button {
     width: auto !important;
-}
+}*/
 a.fixedbutton {
     position: fixed !important;
     bottom: 10px !important;
@@ -288,16 +290,24 @@ a.fixedbutton {
     display: block !important;
     z-index: 2000;
     text-align: center;
-    background: #005588bf;
+    background: white;
     padding: 12px;
-    color: white !important;
+    color: #005588 !important;
     font-size: 1rem;
-    font-weight: bold;
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
     text-align: center;
+    opacity: 0.8;
 }
+a.fixedbutton .fal {
+  font-weight: bolder !important;
+}
+
+a.fixedbutton:hover {
+  opacity: 1;
+}
+/*
 .btn-primary,
 .gsa-primary-btn,
 input[type=submit] {
@@ -884,7 +894,7 @@ input[type=submit]:hover,
   transform: translateX(40px);
 }
 
-.ck-button label:hover, input:focus + label {
+.ck-button label:hover, .ck-button  input:focus + label {
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 

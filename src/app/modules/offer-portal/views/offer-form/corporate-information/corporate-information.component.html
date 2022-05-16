@@ -1,0 +1,160 @@
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
+	<ng-template #formCardActions>
+		<ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+	</ng-template>
+	<ng-template #formCardBody>
+		<ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+	</ng-template>
+</app-form-card>
+
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+	<form id="corporateInformation">
+
+		<div class="col-12">
+			<h2 class="h4 border-bottom mb-3">Company Details</h2>
+		</div>
+		<div class="row mb-4">
+			<div class="col-md-6">
+				<dt class="col">UEI Number:</dt>
+				<dd class="col">DN1AKEH8VZU7</dd>
+
+				<dt class="col">Common Parent UEI Number:</dt>
+				<dd class="col">-</dd>
+
+				<dt class="col">Company Name:</dt>
+				<dd class="col">NOMADIC DISPLAY CAPITOL INC</dd>
+
+				<dt class="col">Doing Business As (DBA):</dt>
+				<dd class="col">NOMADIC DISPLAY</dd>
+			</div>
+
+			<div class="col-md-6">
+				<dt class="col">Type of Organization:</dt>
+				<dd class="col">Corporate Entity (Not Tax Exempt)</dd>
+
+				<dt class="col">Business Type(s) Registered in SAM:</dt>
+				<dd class="col">For-Profit Organization, Manufacturer of Goods</dd>
+
+				<dt class="col">Business Website:</dt>
+				<dd class="col">www.nomadicdisplay.com</dd>
+			</div>
+		</div>
+		<div class="row m-0 p-0">
+			<div class="col-sm-6">
+				<h2 class="h4 border-bottom mb-3">Company Address</h2>
+				<div class="row">
+					<div class="col-lg">
+						<address>
+							10505 Furnace Rd. Ste. 108<br />
+							Lorton, VA 22079-2635<br />
+							USA
+						</address>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<h2 class="h4 border-bottom mb-3">Mailing Address</h2>
+				<div class="row">
+					<div class="col-lg">
+						<address>
+							10505 Furnace Rd. Ste. 108<br />
+							Lorton, VA 22079-2635<br />
+							USA
+						</address>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<form id="saveAndContinueAction" name="editForm"
+			action="https://eoffer-test.fas.gsa.gov/eOffer/saveAndContinueAction.do" method="post">
+			<input type="hidden" name="token" value="null">
+			<input type="hidden" name="method" value="saveAndContinue" id="saveAndContinueAction_method">
+			<input type="hidden" name="pageName" value="corporateInformation" id="saveAndContinueAction_pageName">
+		</form>
+
+
+
+	</form>
+</ng-template>
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+
+	<div class="usa-alert usa-alert-warning mb-4">
+		<div class="usa-alert-body">
+			<p>
+				<strong>Is the information correct?</strong>
+			</p>
+			<p>
+				This information is taken directly from <a href="http://www.sam.gov/" target="_blank">System for
+					Award Management (SAM)</a>. If any of this information is incorrect, it must be corrected
+				through <a href="http://www.sam.gov/" target="_blank">System for Award Management (SAM)</a>. Any
+				changes will be reflected in eOffer in approximately 24 hours.
+			</p>
+		</div>
+
+	</div>
+
+	<ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+	
+	<div class="col mt-4">		
+		<div class="custom-control custom-checkbox">
+			<input type="checkbox" class="custom-control-input" id="corporateInformationVerified" name="corporateInformationVerified" value="true" checked="checked"/>
+			<label class="custom-control-label" for="corporateInformationVerified">
+				I acknowledge that I have reviewed and verified that the corporate information is correct.
+			</label>
+		</div>
+	</div>
+
+</ng-template>
+
+
+<!-- Actions-->
+<ng-template #sectionActions>
+
+	<app-modal
+		[config]="{ modalTitle: sectionData.name, showDefaultOpenButton: offerStatus == 'In Progress', defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+		<ng-template #modalBody>
+			<ng-container [ngTemplateOutlet]="editSection"></ng-container>
+		</ng-template>
+		<ng-template #modalFooter>
+			<input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+				(click)="saveForm()">
+			<input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+		</ng-template>
+	</app-modal>
+
+	<span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+		<button id="button-manage" dropdownToggle type="button" class="btn btn-default btn-lg dropdown-toggle p-1 m-0"
+			aria-controls="dropdown-manage">
+			<span class="gsa-light-blue">Actions</span>
+			<span class="caret"></span>
+		</button>
+		<ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+			aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+			<li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+			<!-- <li role="menuitem"><a class="dropdown-item">Lookup Tables</a></li>  -->
+		</ul>
+	</span>
+
+</ng-template>
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

@@ -1,0 +1,7 @@
+<ng-container *ngIf="offerStatus == 'In Progress'">
+    <button type="button" class="btn btn-success my-3 btn-lg btn-block" (click)="submitOffer()">Submit</button>
+</ng-container>
+
+<ng-container *ngIf="offerStatus == 'Signed'">
+    <button type="button" class="btn btn-success my-3 btn-lg btn-block" (click)="submitOffer()">Sign</button>
+</ng-container>

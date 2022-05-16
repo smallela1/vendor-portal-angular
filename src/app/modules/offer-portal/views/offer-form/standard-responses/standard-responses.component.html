@@ -1,0 +1,216 @@
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
+    <ng-template #formCardActions>
+        <ng-container [ngTemplateOutlet]="sectionActions"></ng-container>
+    </ng-template>
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
+
+
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="standardResponses">
+
+        <ng-container *ngFor="let question of standardResponseQuestions; let i = index">
+            <div class="col mb-5">
+                <h2 class="h4 border-bottom mb-3">
+                    {{question.header}}
+                </h2>
+                <p>
+                    {{question.text}}
+                </p>
+                <p>
+                    <b>No</b>
+                </p>
+            </div>
+        </ng-container>
+
+        <div class="col mb-5">
+            <h2 class="h4 border-bottom mb-3">
+                Minimum Order Limit
+            </h2>
+            <p>
+                Please enter the minimum order limit allowed on the contract:
+            </p>
+            <p>
+                <b>{{ '50000' | currency }}</b>
+            </p>
+        </div>
+
+        <div class="col mb-5">
+            <h2 class="h4 border-bottom mb-3">
+                Subcontracting Plan (N/A to Small Business Concerns)
+            </h2>
+            <p>
+                Do you wish to create/upload a subcontracting plan at this time? (Note: Please note that "other than small" businesses may be required by the contracting officer to submit a subcontracting plan prior to being awarded a contract. For more information on determining business size, please visit www.sba.gov/size)
+            </p>
+            <h3 class="h5">SubK Decision:</h3>
+            <div *ngFor="let question of subkQuestions; let i = index" class="col mb-5">
+                <p>
+                    {{question.text}}
+                </p>
+                <p>
+                    <b>No</b>
+                </p>
+            </div>
+        </div>
+
+        <div class="col mb-5">
+            <h2 class="h4 border-bottom mb-3">
+                Prohibited Telecommunications Equipment and Services Representations
+            </h2>
+            <p>
+                Below is to validate the repsonses made in the System for Award Management regarding prohibited telecommunications equipment or services.
+            </p>
+            <h3 class="h5">SAM Certification Decision:</h3>
+           <div class="col">
+                <p>
+                    What did you represent in the System for Award Management (SAM) regarding providing covered (i.e., prohibited) telecommunications equipment or services to the Government (FAR 52.212-3(v))? Note - if you have not represented FAR 52.212-3(v) in SAM, please do so now. FAR 52.212-3(v) must be completed in SAM before award of a MAS contract. 
+                </p>
+                <p>
+                    <b>
+                        We DO NOT provide covered (i.e., prohibited) telecommunications equipment or services to the Government (FAR 52.212-3(v)).
+                    </b>
+                </p>
+           </div>
+        </div>
+
+    </form>
+</ng-template>
+
+
+
+<!-- Edit Section -->
+<ng-template #editSection>
+    <form id="standardResponsesEdit">
+
+        <ng-container *ngFor="let question of standardResponseQuestions; let i = index">
+            <div class="col mb-5">
+                <h2 class="h4 border-bottom mb-3">
+                    {{question.header}}
+                </h2>
+                <p>
+                    {{question.text}}
+                </p>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="{{'yes-' + i + '_edit' }}" name="{{ 'question-' + i + '_edit'}}" class="custom-control-input"/>
+                    <label class="custom-control-label" for="{{'yes-' + i + '_edit'}}">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="{{'no-' + i + '_edit'}}" name="{{ 'question-' + i + '_edit'}}" class="custom-control-input" checked/>
+                    <label class="custom-control-label" for="{{'no-' + i + '_edit'}}">No</label>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="col mb-5">
+            <h2 class="h4 border-bottom mb-3">
+                Minimum Order Limit
+            </h2>
+            <div class="form-group">
+                <label for="minimumOrderLimit">Please enter the minimum order limit allowed on the contract:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input id="minimumOrderLimit" class="form-control col-2" name="minimumOrderLimit" type="currency" value="5000">
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-5">
+            <h2 class="h4 border-bottom mb-3">
+                Subcontracting Plan (N/A to Small Business Concerns)
+            </h2>
+            <p>
+                Do you wish to create/upload a subcontracting plan at this time? (Note: Please note that "other than small" businesses may be required by the contracting officer to submit a subcontracting plan prior to being awarded a contract. For more information on determining business size, please visit www.sba.gov/size)
+            </p>
+            <h3 class="h5">SubK Decision:</h3>
+            <div *ngFor="let question of subkQuestions; let i = index" class="col mb-5">
+                <p>
+                    {{question.text}}
+                </p>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="{{'subk-yes-' + i + '_edit'}}" name="{{ 'subk-question-' + i + '_edit'}}" class="custom-control-input"/>
+                    <label class="custom-control-label" for="{{'subk-yes-' + i + '_edit'}}">{{question.yesLabel}}</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="{{'subk-no-' + i + '_edit'}}" name="{{ 'subk-question-' + i + '_edit'}}" class="custom-control-input" checked/>
+                    <label class="custom-control-label" for="{{'subk-no-' + i + '_edit'}}">{{question.noLabel}}</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-5">
+            <h2 class="h4 border-bottom mb-3">
+                Prohibited Telecommunications Equipment and Services Representations
+            </h2>
+            <p>
+                Below is to validate the repsonses made in the System for Award Management regarding prohibited telecommunications equipment or services.
+            </p>
+            <h3 class="h5">SAM Certification Decision:</h3>
+           <div class="col">
+                <p>
+                    What did you represent in the System for Award Management (SAM) regarding providing covered (i.e., prohibited) telecommunications equipment or services to the Government (FAR 52.212-3(v))? Note - if you have not represented FAR 52.212-3(v) in SAM, please do so now. FAR 52.212-3(v) must be completed in SAM before award of a MAS contract. 
+                </p>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="sam-yes_edit" name="sam-question_edit" class="custom-control-input"/>
+                    <label class="custom-control-label" for="sam-yes_edit">We DO provide covered (i.e., prohibited) telecommunications equipment or services to the Government (FAR 52.212-3(v)).</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="subk-no_edit" name="subk-question_edit" class="custom-control-input" checked/>
+                    <label class="custom-control-label" for="subk-no_edit">We DO NOT provide covered (i.e., prohibited) telecommunications equipment or services to the Government (FAR 52.212-3(v)).</label>
+                </div>
+           </div>
+        </div>
+
+    </form>
+</ng-template>
+
+
+<!-- Actions-->
+<ng-template #sectionActions>
+
+    <app-modal 
+    [config]="{ modalTitle: sectionData.name, showDefaultOpenButton: offerStatus == 'In Progress', defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+        <ng-template #modalBody>
+            <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+        </ng-template>
+        <ng-template #modalFooter>
+            <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg" (click)="saveForm()">
+            <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+        </ng-template>
+    </app-modal>
+
+    <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+        <button id="button-manage" dropdownToggle type="button" class="btn btn-default btn-lg dropdown-toggle p-1 m-0"
+            aria-controls="dropdown-manage">
+            <span class="gsa-light-blue">Actions</span>
+            <span class="caret"></span>
+        </button>
+        <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+            aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+            <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+        </ul>
+    </span>
+
+</ng-template>
+
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

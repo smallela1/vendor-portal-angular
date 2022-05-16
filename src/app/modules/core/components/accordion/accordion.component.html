@@ -1,0 +1,29 @@
+<accordion-group>
+
+    <div class="justify-content-between d-flex w-100 shadow-none p-0 pt-2" accordion-heading [ngClass]="{ 'sticky-top-content': isStickyTop }">
+        
+            <ng-container *ngIf="accordionHeader; else defaultAccordionHeader">
+                <ng-container [ngTemplateOutlet]="accordionHeader"></ng-container>
+            </ng-container>
+            <ng-template #defaultAccordionHeader>
+                <span class="accordion-label gsa-light-blue">
+                    {{accordionTitle}}
+                </span>
+            </ng-template>
+
+        <div class=" accordion-label gsa-light-blue d-inline-block float-right pull-right">
+            <span class="fa fa-chevron-down"></span>
+        </div>
+    </div>
+
+    <ng-container *ngIf="accordionBody">
+        <div class="pb-5">
+            <ng-container [ngTemplateOutlet]="accordionBody"></ng-container>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="accordionFooter">
+        <ng-container [ngTemplateOutlet]="accordionFooter"></ng-container>
+    </ng-container>
+
+</accordion-group>

@@ -1,0 +1,245 @@
+<accordion [isAnimated]="true" [closeOthers]="false">
+    <app-form-accordion
+        *ngIf="true"
+        [config]="{ 
+            title: section.title, 
+            sectionStatus: section.sectionStatus, 
+            parentOfferStatus: section.offerStatus, 
+            isStickyTop: true, 
+            showSection: section.showSection
+        }"  
+    >
+        <ng-template #formAccordionHeader>
+            <div class="flex-fill">
+                <h3 class="h5">{{ section.title }}</h3>
+            </div>
+            <button *ngIf="offerStatus == 'In Progress'" type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1" (click)="openModal()" appStopClickPropagation>
+                <span class="fa fa-pencil mr-2"></span>
+                Edit
+            </button>
+            
+            <span *ngIf="offerStatus == 'Awarded'" class="btn-group" dropdown>
+                <button id="button-manage" dropdownToggle type="button" class="btn btn-light gsa-light-blue bg-primary-hover mr-4 py-1 dropdown-toggle"
+                    aria-controls="dropdown-manage" appStopClickPropagation>
+                    <span class="gsa-light-blue">Actions</span>
+                    <span class="caret"></span>
+                </button>
+                <ul id="dropdown-manage" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                    aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" (click)="openModal()">Create New Modification</a></li>
+                    <li role="menuitem"><a class="dropdown-item" (click)="openModHistoryModal()">View Modification History</a></li>
+                    <li role="menuitem"><a class="dropdown-item">Show Clarification History</a></li>
+                </ul>
+            </span>
+        </ng-template>
+        <ng-template #formAccordionBody>
+            <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+        </ng-template>
+    </app-form-accordion>
+</accordion>
+
+
+<!-- Readonly Section -->
+<ng-template #readonlySection> 
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(A)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                Description of internal review procedures that facilitate high-quality standards.
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(B)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                Identification of individuals responsible for ensuring quality control.
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(C)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                Whether or not subcontractors are used and, if so, the quality control measures used to ensure acceptable subcontractor performance.
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(D)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                How potential problem areas and solutions are handled? 
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(E)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                The procedures for ensuring quality performance when meeting urgent requirements. 
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(F)</dt>
+        <dd class="flex-fill m-0">
+            <p>
+                How quality control will be managed when completing multiple projects for multiple agencies simultaneously.  
+            </p>
+            <div class="d-flex">
+                <dd class="mr-4">
+                    <strong>
+                        N/A
+                    </strong>
+                </dd>
+            </div>
+        </dd>
+    </div>
+</ng-template>
+
+
+
+<!-- Edit Section -->
+<ng-template #editSection> 
+    
+    <div class="usa-alert usa-alert-warning mb-4">
+        <div class="usa-alert-body">
+            <p>
+                The Offeror is to submit a single narrative for this factor, regardless of the number of products/services offered.
+            </p>
+            <p>
+                The maximum permissible limit, across all the sections below is 10,000 characters (max 2 pages).
+            </p>
+        </div>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(A)</dt>
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="internalReviewProcedures">
+                    Description of internal review procedures that facilitate high-quality standards.
+                </label>
+                <textarea class="form-control" id="internalReviewProcedures" name="internalReviewProcedures" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(B)</dt>
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="individualsQualityControl">
+                    Identification of individuals responsible for ensuring quality control.
+                </label>
+                <textarea class="form-control" id="individualsQualityControl" name="individualsQualityControl" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(C)</dt>
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="subcontractorsUsedQualityControl">
+                    Whether or not subcontractors are used and, if so, the quality control measures used to ensure acceptable subcontractor performance.
+                </label>
+                <textarea class="form-control" id="subcontractorsUsedQualityControl" name="subcontractorsUsedQualityControl" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(D)</dt>
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="howProblemsAreHandled">
+                    How potential problem areas and solutions are handled? 
+                </label>
+                <textarea class="form-control" id="howProblemsAreHandled" name="howProblemsAreHandled" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(E)</dt>
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="qualityPerformanceForUrgentRequirements">
+                    The procedures for ensuring quality performance when meeting urgent requirements. 
+                </label>
+                <textarea class="form-control" id="qualityPerformanceForUrgentRequirements" name="qualityPerformanceForUrgentRequirements" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+    <div class="d-flex mb-3">
+        <dt class="mr-2">(F)</dt>
+        <dd class="flex-fill m-0">
+            <div class="form-group">
+                <label for="qualityPerformanceForMultipleProjects">
+                    How quality control will be managed when completing multiple projects for multiple agencies simultaneously.  
+                </label>
+                <textarea class="form-control" id="qualityPerformanceForMultipleProjects" name="qualityPerformanceForMultipleProjects" rows="3"></textarea>
+            </div>
+        </dd>
+    </div>
+</ng-template>
+
+<!-- Modal Template -->
+<app-modal
+[config]="{ modalTitle: section.title, showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="editSection"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Save" id="saveAndContinue" class="btn btn-success btn-lg"
+            (click)="saveForm()">
+        <input type="button" value="Cancel" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModal()">
+    </ng-template>
+</app-modal>
+
+
+<app-modal #modHistoryModal
+[config]="{ modalTitle: 'Modifications', showDefaultOpenButton: false, defaultOpenButtonLabel: 'Edit', showDefaultCloseButton: false, modalSize: 'xl' }">
+    <ng-template #modalBody>
+        <ng-container [ngTemplateOutlet]="viewModHistory"></ng-container>
+    </ng-template>
+    <ng-template #modalFooter>
+        <input type="button" value="Close" id="cancel" class="btn btn-default btn-lg bg-danger-hover" (click)="closeModHistoryModal()">
+    </ng-template>
+</app-modal>
+
+<ng-template #viewModHistory>
+    <h1>Mod History</h1>
+</ng-template>

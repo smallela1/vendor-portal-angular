@@ -1,0 +1,16 @@
+<app-form-card [sectionState]="sectionData" [sectionStatus]="sectionData.sectionStatus" *ngIf="sectionData.showSection">
+    <ng-template #formCardBody>
+        <ng-container [ngTemplateOutlet]="readonlySection"></ng-container>
+    </ng-template>
+</app-form-card>
+
+
+<!-- Readonly Section -->
+<ng-template #readonlySection>
+    <form id="solicitationProvisions">
+
+        <app-technical-proposal [offerStatus]="offerStatus"></app-technical-proposal>
+        <app-services-contract-act-labor-matrix [offerStatus]="offerStatus"></app-services-contract-act-labor-matrix>
+        
+    </form>
+</ng-template>

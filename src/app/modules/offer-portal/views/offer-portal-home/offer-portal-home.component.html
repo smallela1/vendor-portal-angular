@@ -1,0 +1,126 @@
+<section class="shadow bg-gsa-medium-blue white d-block sticky-top-content" style="z-index: 8;">
+    <div class="container py-2">
+        <div class="row justify-content-center">
+            <div class="col-md">
+                <small>Company Name:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />Global Supplier Inc.
+            </div>
+            <div class="col-md">
+                <small>UEI:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> 39487SU383
+            </div>
+            <div class="col-md">
+                <!-- <small>Schedule:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" /> MAS - Multiple Award Schedule -->
+            </div>
+            <div class="col-md">
+                <!-- <small>Status:&nbsp;&nbsp;</small>
+                <br class="d-sm-none d-md-block" />
+                <select class="bg-transparent bw-0 nav-link white py-1 px-0 line-h-1 text-left" (change)="updateStatus($event.target.value)">
+                    <option value="In Progress" selected>In Progress</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Signed">Signed</option>
+                    <option value="Awarded">Awarded</option>
+                </select> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="card shadow col mb-4">
+            <div class="card-header py-3"><span class="h5 pt-2 d-inline-block">Saved Offers</span><button class="btn btn-primary float-right" [routerLink]="['/offer-portal/offer']">New Offer</button></div>
+            <div class="card-body">
+                <ngx-datatable class="striped" [rows]="savedOffers.rows" [columns]="savedOffers.columns" [headerHeight]="50" [footerHeight]="50" 
+                    [rowHeight]="50" [scrollbarV]="true"
+                    [columnMode]="ColumnMode">
+
+                        <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false"
+                            [canAutoResize]="false">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Offer ID" [flexGrow]="1" [minWidth]="200">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Schedule" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Last Update" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Status" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Actions" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>                        
+                                <button class="btn btn-primary" [routerLink]="['/offer-portal/offer']">Edit</button>
+                            </ng-template>
+                        </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card shadow col mb-4">
+            <div class="card-header py-3"><span class="h5 pt-2 d-inline-block">Submitted Offers</span></div>
+            <div class="card-body">
+                <ngx-datatable class="striped" [rows]="submittedOffers.rows" [columns]="submittedOffers.columns" [headerHeight]="50" [footerHeight]="50" 
+                    [rowHeight]="50" [scrollbarV]="true"
+                    [columnMode]="ColumnMode">
+
+                        <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false"
+                            [canAutoResize]="false">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Offer ID" [flexGrow]="1" [minWidth]="200">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Schedule" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Last Update" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Status" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{ value }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Actions" [flexGrow]="1">
+                            <ng-template let-value="value" ngx-datatable-cell-template>                        
+                                <button class="btn btn-primary" [routerLink]="['/offer-portal/offer']">View</button>
+                            </ng-template>
+                        </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+a:hover {
+    text-decoration: none !important;
+}
+
+li:not(.open.show) > .d-flex {
+    display: none !important;
+}

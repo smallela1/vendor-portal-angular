@@ -1,0 +1,190 @@
+.ngx-datatable.material {
+	box-shadow: none !important;
+    width: 100%;
+}
+span.datatable-header-cell-label {
+	font-weight: 900 !important;
+	font-size: 18px !important;
+}
+/* - - - - - - - - - - - - - - - - - */
+
+.accordion-label {
+	font-size: 1.3rem;
+}
+
+a[aria-expanded="true"]{
+  background-color: #42DCA3;
+}
+html {
+	scroll-behavior: smooth;
+  }
+
+  .blur {
+    filter: blur(24px);
+    -webkit-filter: blur(24px);
+    -moz-filter: blur(24px);
+    -o-filter: blur(24px);
+    -ms-filter: blur(24px);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='24' /></filter></svg>#svgMask");
+    /* TODO: Add IE11 blur support */
+  }
+
+
+.custom-control-input[disabled] ~ .custom-control-label, .custom-control-input:disabled ~ .custom-control-label {
+    color: inherit;
+}
+
+/*  eOffer Readonly Form Styles */
+dt {
+  font-weight: initial;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+dd {
+  margin-bottom: 16px;
+}
+
+.color-green {
+  color: #028800;
+}
+
+.color-purple {
+  color: #807;
+}
+
+.color-orange {
+  color: #df5d00;
+}
+
+.color-teal {
+  color: #008d8d;
+}
+
+.color-red {
+  color: #880000;
+}
+
+
+.text-primary-hover:hover {
+  color: #2277aa !important;
+}
+
+.text-danger-hover:hover {
+  color: #dc3545 !important;
+}
+
+.bg-primary-hover:hover {
+  background-color: #2277aa !important;
+  color: #fff !important;
+}
+
+.bg-danger-hover:hover {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+.bg-primary-hover:hover span {
+  color: #fff !important;
+}
+
+.bg-danger-hover:hover span {
+  color: #fff !important;
+}
+
+
+
+/* USWDS Style Overrides */
+
+
+/* Header Component */
+usa-header {
+  display: block;
+  background-color: #fff;
+}
+
+
+.usa-nav-container {
+    max-width: initial;
+    padding: 0;
+}
+
+.usa-header--extended .usa-logo {
+  margin: 1.25rem 0 0.75rem;
+}
+
+nav.usa-nav {
+    background-color: #e0e6eb;
+    /* top: 0 !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    z-index: 5; */
+}
+
+.usa-nav__primary > .usa-nav__primary-item > a,
+.usa-nav__primary > .usa-nav__primary-item > .usa-nav__link  {
+    font-weight: normal;
+}
+.usa-nav__primary button[aria-expanded=true],
+.usa-nav__submenu,
+.usa-megamenu.usa-nav__submenu::before,
+.usa-megamenu.usa-nav__submenu::after {
+  background-color: #058;
+}
+
+/* Search Component */
+
+.usa-search.usa-search--small .usa-button span {
+  position: initial !important;
+  left: initial;
+  right: initial;
+}
+
+.usa-search.usa-search--small .usa-button span:before {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900;
+  font-size: 0.93rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  color: white;
+  content: "\f002";
+}
+
+b, 
+strong {
+  font-weight: bold;
+}
+
+/* Breadcrumb Comoponent */
+.usa-breadcrumb {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.usa-breadcrumb__list {
+  padding: 0px 0.25rem;
+  overflow: initial !important;
+}
+.usa-breadcrumb__list-item {
+  font-size: .9rem;
+}
+li.usa-breadcrumb__list-item:not(:last-child):after {
+  content: "/";
+  font-size: 1.5rem;
+  bottom: -2px;
+  left: 8px;
+  background: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+
+/* Step Indicator Component */
+
+.usa-step-indicator__segment {
+  max-width: initial;
+}
