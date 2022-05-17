@@ -80,7 +80,7 @@
   border-color: #058 !important;
 }
 .border-gsa-light-blue {
-  border-color: #2277aa !important;
+  border-color: #6db3f2 !important;
 }
 .border-gsa-xlight-blue {
   border-color: #339bda !important;
@@ -100,6 +100,10 @@
 }
 .border-gsa-warm-grey-2 {
   border-color: rgba(0,0,0,.2) !important;
+}
+.border-gsa-dark {
+  border-color: #212121 !important;
+  border-width: 1px !important;
 }
 
 /* COLOR PALETTE */

@@ -270,7 +270,7 @@ html, body {
 /* BORDERS */
 .border-right {
     border-color: #6db3f2 !important;
-    border-right: 0.5px solid white;
+    border-right: 1px solid white;
 }
 .border-left {
     border-color: #6db3f2 !important;
