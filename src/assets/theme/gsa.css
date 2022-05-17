@@ -170,6 +170,14 @@ html, body {
     background-repeat: no-repeat;
     color: white;
 }
+.toolbox3-img {
+    background-image: url(../images/bg-art/toolbox-8.jpg);
+    box-shadow: 0px 1200px #3d4551de inset;
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
 
 .shadow {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -262,7 +270,7 @@ html, body {
 /* BORDERS */
 .border-right {
     border-color: #6db3f2 !important;
-    border-right: 0.5px solid white;
+    border-right: 1px solid white;
 }
 .border-left {
     border-color: #6db3f2 !important;
