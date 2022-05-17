@@ -1,31 +1,212 @@
 <div class="row m-0">
-    <div class="col-12 p-0">  
-      <div class="bg-gsa-light-blue px-5 py-5"  style="overflow: hidden; background-image: url(assets/images/content-art/istockphoto-545247618-1024x1024-recreated.svg); background-position: center bottom; background-size: cover; background-repeat: no-repeat;">
-        <div class="">
-          <div class="jumbotron bg-white shadow py-4 mb-0 col-lg-7 col-xl-7" style="background-color: rgba(255, 255, 255, 0.9) !important;">
-            <h1 class="display-4 m-0">
-                <strong style="font-weight: bold; color: #005588 !important;">GSA</strong>&nbsp;&nbsp;<span class="gsa-red"><span class="h3" style="color: #af3639 !important;">Vendor Services</span></span>
-            </h1>
-            <p class="lead gsa-medium-blue">
-              <strong>Buy or sell a wide variety of products, supplies, equipment, and services from or to the government.</strong>
-            </p>
-            <hr class="my-4 border-bottom">
-            <p class=" gsa-medium-blue">Learn more about how to become a federal marketplace vendor or complete a questionnaire to find out if you business qualifies.</p>
-            <p class="lead">
-              <a class="btn btn-primary" [routerLink]="['/vendor-resources']" role="button">Learn More</a>
-              <span class="px-3">or</span>
-              <app-questionnaire></app-questionnaire>
-            </p>
-          </div>
+  <div class="col-12 p-0">  
+    <div class=" px-5 py-5"  style="overflow: hidden; background-image: url(assets/images/bg-art/chart.jpg); background-position: bottom right; background-size: cover; background-repeat: no-repeat; ">
+      <div class="row m-0 justify-content-start">
+        <div class="bg-gsa-dark-glass p-5  col-lg-6 col-xl-5 pull-right mr-xl-5" style="border-radius: 10px;" >
+          <h3 class="white">
+              GSA Vendor Services
+          </h3>
+          <p class="lead white">
+            <strong>Buy or sell a wide variety of products, supplies, equipment, and services from or to the government.</strong>
+          </p>
+          <hr class="my-4 border-bottom">
+          <p class=" white">Learn more about how to become a federal marketplace vendor or complete a questionnaire to find out if you business qualifies.</p>
+          <p class="lead">
+            <a class="btn btn-black" [routerLink]="['/vendor-resources']" role="button">Learn More</a>
+            <span class="px-3 white">or</span>
+            <app-questionnaire></app-questionnaire>
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>
   
-  <!-- <section class="px-0 pt-4 m-0">
-      
+<section class="bg-gsa- toolbox3-img" style="min-height: 400px;">
 
-    <div class="container-fluid px-0">    
+  
+  <div class="container-fluid px-5 py-5">
+   
+
+      
+    <h1 class="white font-weight-bold">Offer & Mods Toolbox</h1>
+    
+ 
+   
+    <div class="row">
+
+
+      <div class="col-lg-12 col-xl-3 pt-3 border-right">
+        <div class="mb-3 ">  
+          
+          <h3 class="white">Everything you need to...</h3>
+          <p class="white">
+            Whether you're looking at create anew offer, checking the status of offers, or reporting your contract sales... the Vendor Services is here to provide you with the information necessary to help your business be successful.
+          </p>
+          <div class="col-sm-12 col-xl-12 pt-3 px-0 h-100">
+            <div class="mb-3"> 
+            <hr class="bg-gsa-light-blue mb-4  mt-0 border-bottom" /> 
+              <h3 class="white d-inline-block"><div class="fal fa-file-contract" style="width: 2.4rem;"></div> MAS Modifications</h3>
+              <p class="ml-5 d-inline-block">Review and accept MAS Modifications</p>
+              <a class="btn btn-secondary ml-5">Get started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-xl-9 h-100">
+        
+
+        <div class="row justify-content-lg-center">
+          <div class="col-sm-12 col-xl pt-3 border-right pl-4 h-100">
+            <div class="mb-3 ">  
+              <h3 class="white"><div class="fal fa-file-spreadsheet" style="width: 2.4rem;"></div> Offers</h3>
+              <ul class="list-unstyled ml-5">
+                <li><a routerLink="/app-understanding-contracts" class="white">Start a new Offer</a></li>
+                <li><a routerLink="/app-where-to-begin" class="white">Edit an existing Offer</a></li>
+                <li><a routerLink="/app-education" class="white"> Add an Offer Negotiator</a></li>
+                <li><a routerLink="/app-education" class="white">View the status of a submitted Offer</a></li>
+                <li><a routerLink="/app-education" class="white">Start a new Modification</a></li>
+                <li><a routerLink="/app-education" class="white"> Edit an existing Modification</a></li>
+                <li><a routerLink="/app-education" class="white">Add a new Sin to an existing Contract</a></li>
+                <li><a routerLink="/app-education" class="white">  Add a Negotiator to an existing Contract</a></li>
+                <li><a routerLink="/app-education" class="white">Download Contract</a></li>
+                  
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-sm-12 col-xl pt-3 pl-4 h-100  ">
+            <div class="mb-3">  
+              <h3 class="white"><span class="fal fa-file-invoice-dollar" style="width: 2.4rem;"></span> Order Management</h3>
+              <ul class="list-unstyled ml-5">
+                <li><a href="" class="white">View Active POs</a></li>
+                <li><a href="" class="white">View Completed POs</a></li>
+                <li><a href="" class="white">Update POs</a></li>
+                <li><a href="" class="white">Print & Download POs</a></li>                
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xl pt-3 pl-4 h-100 border-left ">
+            <div class="mb-3">  
+              <h3 class="white"><span class="fal fa-file-invoice-dollar" style="width: 2.4rem;"></span> Sales Reporting</h3>
+              <ul class="list-unstyled ml-5">
+                <li><a href="" class="white">Enter Sales Report</a></li>
+                <li><a href="" class="white">Adjust Sales Report</a></li>
+                <li><a routerLink="/app-education" class="white">  Enter Closeout Sales Report </a></li>
+                <li><a routerLink="/app-education" class="white">Adjust Closeout Sales Reports</a></li>
+                <li><a routerLink="/app-education" class="white">Upload Sales Report</a></li>
+                <li><a routerLink="/app-education" class="white">  Upload Closeout Sales Report</a></li>
+                <li><a routerLink="/app-education" class="white">Upload Adjusted Sales Report</a></li>
+                <li><a routerLink="/app-education" class="white">Upload Adjusted Closeout Sales Report</a></li>
+                
+              </ul>
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+
+
+    </div>
+    
+  </div>  
+</section>
+
+<section class="bg-gsa- toolbox3-img d-none" style="min-height: 400px;">
+
+  
+  <div class="container-fluid px-5 py-5">
+   
+
+      
+    <h1 class="white font-weight-bold">Offer & Mods Toolbox</h1>
+    
+ 
+   
+    <div class="row">
+
+
+      <div class="col-lg-12 col-xl-3 pt-3 border-right">
+        <div class="mb-3 ">  
+          
+          <h3 class="white">Everything you need to...</h3>
+          <p class="white">
+            Whether you're looking at create anew offer, checking the status of offers, or reporting your contract sales... the Vendor Services is here to provide you with the information necessary to help your business be successful.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-12 col-xl-9 h-100">
+        
+
+        <div class="row justify-content-lg-center">
+          <div class="col-sm-12 col-xl pt-3 border-right pl-4 h-100">
+            <div class="mb-3 ">  
+              <h3 class="white"><div class="fal fa-file-spreadsheet" style="width: 2.4rem;"></div> Offers</h3>
+              <ul class="list-unstyled ml-5">
+                <li><a routerLink="/app-understanding-contracts" class="white">Start a new Offer</a></li>
+                  <li><a routerLink="/app-where-to-begin" class="white">Edit an existing Offer</a></li>
+                  <li><a routerLink="/app-education" class="white">Education</a></li>
+                  
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-sm-12 col-xl pt-3 pl-4 h-100 border-right ">
+            <div class="mb-3">  
+              <h3 class="white"><span class="fal fa-file-invoice-dollar" style="width: 2.4rem;"></span> Sales Reporting</h3>
+              <ul class="list-unstyled ml-5">
+                <li><a href="" class="white">Reporting My Sales</a></li>
+                <li><a href="" class="white">Sales Analysis</a></li>
+                
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xl pt-3 pl-4 h-100">
+            <div class="mb-3">  
+              <h3 class="white"><div class="fal fa-file-contract" style="width: 2.4rem;"></div> MAS Modifications</h3>
+              <p class="ml-5">Review and accept MAS Modifications</p>
+              <a class="btn btn-secondary ml-5">Get started</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    
+  </div>  
+</section>
+
+
+  <section class="px-0 m-0">
+
+      <div class="container-fluid py-4 bg-gsa-dark">    
+        <div class="mx-auto">
+          <div class="">
+              <div class="container-fluid px-5">
+              <div class="row">
+                <div class="col-xl-10 col-md-8 col-sm-12 "> 
+                  <h4 class=" m-0 p-0 white mr-3 d-inline-block">
+                    Register, Apply, and Sell to the Federal Government with our Complete Suite of Vendor Tools.
+                  </h4>
+                </div>
+                <div class="col ">
+                <a class="btn btn-outline-light" [routerLink]="['/vendor-resources']">Start Here&nbsp;&nbsp;&#8250;</a> 
+                </div>
+                
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--
+      <div class="container-fluid px-0">    
         <div class="mx-auto">
           <div class="">
               <div class="container px-5">
@@ -40,131 +221,104 @@
           </div>
         </div>
       </div>
+-->
 
-    <div class="container px-5">
+      <div class="container px-5">
+          <div class="d-flex justify-content-around flex-wrap">
 
-          <div class="d-flex justify-content-around flex-wrap py-3">
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-              <div class="p-2 mb-3 h-100 text-center">  
-                <span class="gsa-red h4 ml-1">
-                    <strong>Advantage!</strong>
-                </span>
-                <p class="small">Search and Buy from Thousands of Products</p>
-                <a class="btn btn-outline-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-              <div class="p-2 mb-3 h-100 text-center">  
-                <span class="gsa-red h4 ml-1">
-                    <strong>eBuy</strong>
-                </span>
-                <p class="small">Request Quotes from Thousands of Services</p>
-                <a class="btn btn-outline-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-              <div class="p-2 mb-3 h-100 text-center">  
-                <span class="gsa-red h4 ml-1">
-                    <strong>eLibrary</strong>
-                </span>
-                <p class="small">Get the latest GSA Contract Award Information</p>
-                <a class="btn btn-outline-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-            
-          </div>
-  
-       
-      
-    </div>  
-  </section> -->
-
-
-  <section class="px-0 m-0">
-
-    <div class="container-fluid py-4 bg-gsa-dark-blue">    
-        <div class="mx-auto">
-          <div class="">
-              <div class="container px-5">
-              <div class="row">
-                <div class="col pb-3 pt-4"> 
-                  <h4 class="h2 m-0 white mr-3">
-                    Register, Apply, and Sell to the Federal Government with our Complete Suite of Vendor Tools.
-                  </h4>
-                  <a class="btn btn-outline-light mt-4" [routerLink]="['/vendor-resources']">Start Here&nbsp;&nbsp;&#8250;</a>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 background-arrow d-flex align-items-center">
+                <div class="p-2 text-center">  
+                  <!-- <span class="gsa-red h4 ml-1">
+                      <strong>SAM</strong>
+                  </span> -->
+                  <p class="m-0">Register your Organization and Create an Account using <strong class="gsa-red">SAM</strong></p>
+                  <a href="#" class="small">Learn More</a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    
-    <div class="container px-5">
-
-        <div class="d-flex justify-content-around flex-wrap">
 
             <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 background-arrow d-flex align-items-center">
               <div class="p-2 text-center">  
                 <!-- <span class="gsa-red h4 ml-1">
-                    <strong>SAM</strong>
+                    <strong>Offer Portal</strong>
+
                 </span> -->
-                <p class="m-0">Register your Organization and Create an Account using <strong class="gsa-red">SAM</strong></p>
+                <p class="m-0">Submit your Product or Service Offerings using <strong class="gsa-red">eOffer</strong></p>
                 <a href="#" class="small">Learn More</a>
               </div>
             </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 background-arrow d-flex align-items-center">
-            <div class="p-2 text-center">  
-              <!-- <span class="gsa-red h4 ml-1">
-                  <strong>Offer Portal</strong>
-
-              </span> -->
-              <p class="m-0">Submit your Product or Service Offerings using <strong class="gsa-red">eOffer</strong></p>
-              <a href="#" class="small">Learn More</a>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 background-arrow d-flex align-items-center">
+              <div class="p-2 text-center">  
+                <!-- <span class="gsa-red h4 ml-1">
+                    <strong>PO Portal</strong>
+                </span> -->
+                <p class="m-0">Access Purchase Orders with the <strong class="gsa-red">PO Portal</strong></p>
+                <a href="#" class="small">Learn More</a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 background-arrow d-flex align-items-center">
-            <div class="p-2 text-center">  
-              <!-- <span class="gsa-red h4 ml-1">
-                  <strong>PO Portal</strong>
-              </span> -->
-              <p class="m-0">Access Purchase Orders with the <strong class="gsa-red">PO Portal</strong></p>
-              <a href="#" class="small">Learn More</a>
-            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 d-flex align-items-center">
+              <div class="p-2 text-center">  
+                <!-- <span class="gsa-red h4 ml-1">
+                    <strong>FAS Sales Reporting</strong>
+                </span> -->
+                <p class="m-0">Collect, Generate, and Review Sales Reports using <strong class="gsa-red">FAS SR</strong></p>
+                <a href="#" class="small">Learn More</a>
+              </div>
+            </div> 
           </div>
-
-          <div class="col-6 col-sm-4 col-md-3 col-lg-3 py-4 d-flex align-items-center">
-            <div class="p-2 text-center">  
-              <!-- <span class="gsa-red h4 ml-1">
-                  <strong>FAS Sales Reporting</strong>
-              </span> -->
-              <p class="m-0">Collect, Generate, and Review Sales Reports using <strong class="gsa-red">FAS SR</strong></p>
-              <a href="#" class="small">Learn More</a>
-            </div>
-          </div>
-          
-        </div>
-
-     
-    
-  </div>  
+      </div>  
 
   </section>
   
+<!--
+<section class="px-0 pt-4 m-0">
+  <div class="container px-5">
 
-  
-  <div class="container-fluid py-5 px-5 bg-gsa-dark-blue white "> 
+        <div class="d-flex justify-content-around flex-wrap py-3">
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
+            <div class="p-2 mb-3 h-100 text-center">  
+              <span class="gsa-red h4 ml-1">
+                  <strong>Advantage!</strong>
+              </span>
+              <p class="small">Search and Buy from Thousands of Products</p>
+              <a class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
+            <div class="p-2 mb-3 h-100 text-center">  
+              <span class="gsa-red h4 ml-1">
+                  <strong>eBuy</strong>
+              </span>
+              <p class="small">Request Quotes from Thousands of Services</p>
+              <a class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
+            <div class="p-2 mb-3 h-100 text-center">  
+              <span class="gsa-red h4 ml-1">
+                  <strong>eLibrary</strong>
+              </span>
+              <p class="small">Get the latest GSA Contract Award Information</p>
+              <a class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+          
+        </div> 
+  </div>  
+</section> 
+-->
+
+  <div class="container-fluid py-5 px-5 bg-gsa-dark white "> 
     <div class=" mx-auto">
         <!--<h2 class="pt-5 pb-5 font-weight-bold ">Explore</h2> --> 
         
         <div class="row">
           <div class="col-xl-4">
-            <div class="card shadow h-100 bg-gsa-light-blue">
+            <div class="card shadow h-100 bg-gsa-charcoal">
               <div class="card-body px-5">
                 <h3 class="mb-4 white"><small style="color: #7ab3d6 !important;">Need help?</small><br>Contractor Assistance and Training:</h3>
                 
@@ -180,7 +334,7 @@
             </div>
           </div>
           <div class="col-xl-4">
-            <div class="card shadow h-100 bg-gsa-light-blue">
+            <div class="card shadow h-100 bg-gsa-charcoal">
               <div class="card-body px-5">
                 <h3 class="mb-4 white"><small style="color: #7ab3d6 !important;">Knowledge Base</small><br>Information and Training</h3>
                 
@@ -199,7 +353,7 @@
             </div>
           </div>
           <div class="col-xl-4">
-            <div class="card shadow h-100 bg-gsa-light-blue">
+            <div class="card shadow h-100 bg-gsa-charcoal">
               <div class="card-body px-5">
                 <h3 class="mb-4 white"><small style="color: #7ab3d6 !important;">Stay Informed</small><br>Notifications</h3>
                 

@@ -274,6 +274,12 @@ button[class*='btn-outline-'] {
 }
 .btn-dark:hover {
 }
+.btn-black {
+  background-color: #212121;
+  color: #fff !important;
+}
+.btn-black:hover {
+}
 
 
 

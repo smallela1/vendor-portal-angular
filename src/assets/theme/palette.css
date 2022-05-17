@@ -60,6 +60,13 @@
 .bg-gsa-charcoal {
   background-color: #3d4551;
 }
+.bg-gsa-dark-glass {
+  background-color: #3d4551ef;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 52%) !important;
+}
+.bg-gsa-dark {
+  background-color: #212121;
+}
 
 .bg-gsa-red {
   background-color: #af3639 !important;
