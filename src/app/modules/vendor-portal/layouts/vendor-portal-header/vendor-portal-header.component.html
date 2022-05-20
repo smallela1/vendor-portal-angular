@@ -3,11 +3,8 @@
     <header class="usa-banner__header">
       <div class="usa-banner__inner">
         <div class="grid-col-auto">
-          <img
-            class="usa-banner__header-flag"
-            src="../../../../../assets/images/content-art/us_flag_small.png"
-            alt="U.S. flag"
-          />
+          <img class="usa-banner__header-flag" src="../../../../../assets/images/content-art/us_flag_small.png"
+            alt="U.S. flag" />
         </div>
         <div class="grid-col-fill tablet:grid-col-auto">
           <p class="usa-banner__header-text">
@@ -17,11 +14,8 @@
             Here’s how you know
           </p>
         </div>
-        <button
-          class="usa-accordion__button usa-banner__button"
-          aria-expanded="false"
-          aria-controls="gov-banner-default" (click)="toggleBanner();"
-        >
+        <button class="usa-accordion__button usa-banner__button" aria-expanded="false"
+          aria-controls="gov-banner-default" (click)="toggleBanner();">
           <span class="usa-banner__button-text">Here’s how you know</span>
         </button>
       </div>
@@ -29,13 +23,8 @@
     <div class="usa-banner__content usa-accordion__content" id="gov-banner-default" *ngIf="showBanner">
       <div class="grid-row grid-gap-lg">
         <div class="usa-banner__guidance tablet:grid-col-6">
-          <img
-            class="usa-banner__icon usa-media-block__img"
-            src="../../../../../assets/images/content-art/icon-dot-gov.svg"
-            role="img"
-            alt=""
-            aria-hidden="true"
-          />
+          <img class="usa-banner__icon usa-media-block__img"
+            src="../../../../../assets/images/content-art/icon-dot-gov.svg" role="img" alt="" aria-hidden="true" />
           <div class="usa-media-block__body">
             <p>
               <strong> Official websites use .gov </strong>
@@ -46,37 +35,21 @@
           </div>
         </div>
         <div class="usa-banner__guidance tablet:grid-col-6">
-          <img
-            class="usa-banner__icon usa-media-block__img"
-            src="../../../../../assets/images/content-art/icon-https.svg"
-            role="img"
-            alt=""
-            aria-hidden="true"
-          />
+          <img class="usa-banner__icon usa-media-block__img"
+            src="../../../../../assets/images/content-art/icon-https.svg" role="img" alt="" aria-hidden="true" />
           <div class="usa-media-block__body">
             <p>
               <strong> Secure .gov websites use HTTPS </strong>
               <br />
               A <strong>lock</strong> (
-              <span class="icon-lock"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="52"
-                  height="64"
-                  viewBox="0 0 52 64"
-                  class="usa-banner__lock-image"
-                  role="img"
-                  aria-labelledby="banner-lock-title-default banner-lock-description-default"
-                  focusable="false"
-                >
+              <span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64"
+                  class="usa-banner__lock-image" role="img"
+                  aria-labelledby="banner-lock-title-default banner-lock-description-default" focusable="false">
                   <title id="banner-lock-title-default">Lock</title>
                   <desc id="banner-lock-description-default">A locked padlock</desc>
-                  <path
-                    fill="#000000"
-                    fill-rule="evenodd"
-                    d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"
-                  /></svg
-              ></span>
+                  <path fill="#000000" fill-rule="evenodd"
+                    d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" />
+                </svg></span>
               ) or <strong>https://</strong> means you’ve safely connected to
               the .gov website. Share sensitive information only on official,
               secure websites.
@@ -89,127 +62,163 @@
 </section>
 
 
-<usa-header [title]="headerTitle" [extended]="true" class="sticky-top" [ngClass]="{ 'loggedIn' : isLoggedIn }" style="top: 0px !important">
-  <ng-template #headerTitle>
-    <img alt="GSA eOffer/eMod" [routerLink]="['/home']" class="img-responsive d-inline-block" src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;"> 
-      &nbsp; 
-      <div style=" display: inline-block; vertical-align: bottom;" [routerLink]="['/home']">
-        <span class="gsa-red h4">Vendor Portal</span>
-      </div>
-  </ng-template>
 
-  <!-- Define custom template for primary links-->
- <!-- Primary navigation links can also be passed through template for more control over html -->
- <ul usaHeaderPrimaryLinks *ngIf="!isLoggedIn">
 
-  <li class="usa-nav__primary-item">
-    <!-- Define megamenu through isMegamenu input-->
-    <button usaHeaderSubmenu [content]="sellingMenu" [isMegamenu]="true">Selling</button>
-    <ng-template #sellingMenu>
-      <div class="grid-row">
-        <div class="grid-col-4">
-          <ul class="usa-list usa-list--unstyled">
-            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Information and Training</a></li>
-            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Contractor Assistance and Training</a></li>
-            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Contractor Notifications</a></li>
-          </ul>
-        </div>
-      </div>
-    </ng-template>
-  </li>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light px-5">
 
-  <!-- Define simple link-->
-  <li class="usa-nav__primary-item"><a href="javascript:void(0)">Buying</a></li>
+  <!-- BRANDING -->
+  <div class="navbar-brand mr-5 font-weight-light "><img alt="GSA eOffer/eMod" class="img-responsive d-inline-block"
+      src="../../../../../assets/images/gsa-logo.jpg" style="max-height: 60px;">
+    &nbsp;
+    <div style="
+      display: inline-block;
+      vertical-align: bottom;">
+      <h4 class="gsa-dark-grey">Vendor Portal</h4>
+    </div>
+  </div>
+  <!-- eof BRANDING -->
+  <!-- MOBILE MENU BUTTON -->
 
-  <li class="usa-nav__primary-item">
-    <!-- Define megamenu through isMegamenu input-->
-    <button usaHeaderSubmenu [content]="aboutMenu" [isMegamenu]="true">About</button>
-    <ng-template #aboutMenu>
-      <div class="grid-row">
-        <div class="grid-col-4">
-          <ul class="usa-list usa-list--unstyled">
-            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">About Us</a></li>
-            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Contact Us</a></li>
-            <li class="usa-nav__submenu-item"><a href="javascript:void(0)">Item 3</a></li>
-          </ul>
-        </div>
-      </div>
-    </ng-template>
-  </li>
-</ul>
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="isCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <!-- Define custom template for secondary links-->
-  <ul usaHeaderSecondaryLinks>
-    
-    <ng-container *ngIf="!isLoggedIn; else loggedInMenu">
-      <ng-container [ngTemplateOutlet]="defaultMenu"></ng-container>
-    </ng-container>
-  </ul>
-  <!-- Add extra content after the secondary links -->
-  <usa-search usaHeaderSecondaryExtra [size]="'small'" [placeholder]="'I\'m looking for...'" [buttonText]="''"  *ngIf="!isLoggedIn">
-  </usa-search>
+  <!-- eof MOBILE MENU BUTTON -->
+  <!-- MENU ITEMS -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="!isCollapsed" [isAnimated]="true">
+<div class="flex  flex-row">
   
-</usa-header>
+    <ul class="navbar-nav">
 
-
-
-
-
-<!-- Menu Templates -->
-<ng-template #defaultMenu>
-  <li class="usa-nav__secondary-item">
-    <a href="https://www.sam.gov">Sign Up</a>
-  </li>
-  <li class="usa-nav__secondary-item">
-    <a [routerLink]="['/login']">Sign In</a>
-  </li>
-</ng-template>
-
-
-<ng-template #loggedInMenu>
-  <!-- <li class="usa-nav__secondary-item">
-    <a href="#">My Account</a>
-  </li>
-  <li class="usa-nav__secondary-item">
-    <a [routerLink]="['/home']">Sign Out</a>
-  </li> -->
-
-
-  <li class="nav-item active">
-    <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-      <span class="fal fa-bell mr-1"></span> 
-      <span class="nav-link-label">Alerts</span>
-      <span class="badge badge-pill badge-danger ml-1">5</span>
-    </button>
-  </li>
-  <li class="nav-item active">
-    <button href="#" routerLinkActive="active" id="button-home"  type="button" class="btn nav-link" style="white-space: nowrap;" >
-      <span class="fal fa-question-circle mr-1"></span> 
-      <span class="nav-link-label">Help</span>
-    </button>
-  </li>
-  <li class="nav-item btn-group" dropdown>
-    <button id="button-basic" dropdownToggle type="button" class="btn nav-link dropdown-toggle" aria-controls="dropdown-basic">
-      <span class="fas fa-user mr-1"></span> <span class="nav-link-label">Account</span> <span class="caret"></span>
-    </button>
-    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
-      <li role="menuitem">
-        <a class="dropdown-item" href="#" routerLinkActive="active">            
-          <span class="fas fa-user mr-1"></span> 
-          Profile
-        </a>
+      <li class="nav-item active">
+        <button href="https://www.sam.gov" routerLinkActive="active" id="button-home" type="button" class="btn nav-link"
+          style="white-space: nowrap;">
+          <span class="fal fa-clipboard-list-check mr-2"></span>
+          <span class="nav-link-label">Register</span>
+        </button>
       </li>
-      <li role="menuitem">
-        <a class="dropdown-item" (click)="signOut()" routerLinkActive="active">            
-          <span class="fal fa-sign-out mr-1"></span> 
-          Logout
-        </a>
+
+      <li class="nav-item active">
+        <button [routerLink]="['/login']" routerLinkActive="active" id="button-home" type="button" class="btn nav-link"
+          style="white-space: nowrap;">
+          <span class="fal fa-sign-in mr-2"></span>
+          <span class="nav-link-label">Sign In</span>
+        </button>
       </li>
+
+      <li class="nav-item btn-group" dropdown>
+        
+
+        <button id="access-point" dropdownToggle type="button" class="btn nav-link dropdown-toggle"
+          aria-controls="access-point-dropdown">
+          <span class="fas fa-th mr-2"></span>
+          <span class="nav-link-label">Vendor Tools</span>
+          <span class="caret"></span>
+        </button>
+
+
+        <ul id="access-point-dropdown" *dropdownMenu
+          class="dropdown-menu dropdown-menu-right p-2 d-flex justify-content-start flex-wrap shadow" role="menu"
+          aria-labelledby="access-point" style="max-width: 500px; min-width: 500px;">
+
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a [routerLink]="['/access-point']" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                  <div class="p-0 d-flex justify-content-center">
+                    <span class="fad fa-chart-network  gsa-medium-blue mt-2 mb-1"
+                      style="width: 40px; height: 40px; font-size: 36px; text-decoration: none !important;"></span>
+                  </div>
+                  <span class=" flex p-0 text-center pb-1">
+                    <b class="gsa-red">Vendor Portal</b>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a [routerLink]="['/offer-portal/org-selection']" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                  <div class="p-0 d-flex justify-content-center">
+                    <span class="fad fa-file-invoice color-green mt-2 mb-1"
+                      style="width: 40px; height: 40px; font-size: 36px; text-decoration: none !important;"></span>
+                  </div>
+                  <span class=" flex p-0 text-center pb-1">
+                    <b class="gsa-red">Offers/Mods</b>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                  <div class="p-0 d-flex justify-content-center">
+                    <span class="fad fa-file-edit color-orange mt-2 mb-1"
+                      style="width: 40px; height: 40px; font-size: 36px; text-decoration: none !important;"></span>
+                  </div>
+                  <span class=" flex p-0 text-center pb-1">
+                    <b class="gsa-red">Mass Mods</b>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                  <div class="p-0 d-flex justify-content-center">
+                    <span class="fad fa-file-invoice-dollar color-purple mt-2 mb-1"
+                      style="width: 40px; height: 40px; font-size: 36px; text-decoration: none !important;"></span>
+                  </div>
+                  <span class=" flex p-0 text-center pb-1">
+                    <b class="gsa-red">P.O.'s</b>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li role="menuitem" class="col-4 p-2 m-0">
+            <a href="#" routerLinkActive="active">
+              <div class="card btn btn-default m-0">
+                <div class="card-body p-0 d-flex flex-column">
+                  <div class="p-0 d-flex justify-content-center">
+                    <span class="fad fa-file-chart-line color-teal mt-2 mb-1"
+                      style="width: 40px; height: 40px; font-size: 36px; text-decoration: none !important;"></span>
+                  </div>
+                  <span class=" flex p-0 text-center pb-1">
+                    <b class="gsa-red">Sales Reports</b>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </li>
+
     </ul>
-  </li>
-
-</ng-template>
 
 
 
-      
+    
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="I'm looking for..." aria-label="I'm looking for..."
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+          <span class="fal fa-search mr-1"></span>
+          <span class="sr-only">Search</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+  </div>
+    
+</nav>

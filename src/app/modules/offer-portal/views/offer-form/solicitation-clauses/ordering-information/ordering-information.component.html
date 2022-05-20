@@ -10,7 +10,7 @@
                 title: remittanceAddressSection.title, 
                 sectionStatus: remittanceAddressSection.sectionStatus, 
                 parentOfferStatus: remittanceAddressSection.offerStatus, 
-                isStickyTop: true, 
+                isStickyTop: false, 
                 showSection: remittanceAddressSection.showSection
             }"  
         >
@@ -175,8 +175,8 @@
 <ng-template #orderingReceiptInfo>
     
 
-    <div class="usa-alert usa-alert-info mb-4">
-        <div class="usa-alert-body">
+    <div class="usa-alert usa-alert--info mb-4">
+        <div class="usa-alert__body">
             <p>
                 In accordance with the Placement of Orders clause of this solicitation, how would you like to receive orders placed by GSA's Federal Supply Service (FSS)
             </p>
@@ -333,8 +333,8 @@
 <ng-template #editRemittanceAddress>
     <form id="remittanceAddress">
 
-        <div class="usa-alert usa-alert-warning mb-4">
-            <div class="usa-alert-body">
+        <div class="usa-alert usa-alert--warning mb-4">
+            <div class="usa-alert__body">
                 <p>
                     The offeror is requested to include the postal mailing address(es) for the Remittance Address where paper form orders should be mailed.
                 </p>
@@ -412,8 +412,8 @@
 <ng-template #editOrderingReceiptEdi>
     <form id="electronicDataInterchange">
 
-        <div class="usa-alert usa-alert-warning mb-4">
-            <div class="usa-alert-body">
+        <div class="usa-alert usa-alert--warning mb-4">
+            <div class="usa-alert__body">
                 <p>
                     The offeror is requested to indicate the name, address and telephone number of the representative to be contacted regarding establishment of an EDI interface.
                 </p>
@@ -491,8 +491,8 @@
 <ng-template #editOrderingReceiptFax>
     <form id="faxInformation">
 
-        <div class="usa-alert usa-alert-warning mb-4">
-            <div class="usa-alert-body">
+        <div class="usa-alert usa-alert--warning mb-4">
+            <div class="usa-alert__body">
                 <p>
                     The offeror is requested to indicate the telephone number for the facsimile transimission equipment where orders should be forwarded.
                 </p>

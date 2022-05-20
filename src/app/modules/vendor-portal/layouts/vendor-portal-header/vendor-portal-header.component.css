@@ -7,3 +7,7 @@
     flex-direction: row;
 }
 
+
+li:not(.open.show) > .d-flex {
+    display: none !important;
+}
