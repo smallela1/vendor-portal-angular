@@ -24,3 +24,6 @@
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
 }
+.app-icon {
+    font-size: 3rem;
+}
