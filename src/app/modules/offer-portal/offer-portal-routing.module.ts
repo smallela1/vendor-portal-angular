@@ -38,14 +38,14 @@ import { TechnicalProposalComponent } from './views/offer-form/solicitation-prov
   import { RelevantProjectExperienceComponent } from './views/offer-form/solicitation-provisions/technical-proposal/relevant-project-experience/relevant-project-experience.component';
   import { TradeAgreementsActComplianceComponent } from './views/offer-form/solicitation-provisions/technical-proposal/trade-agreements-act-compliance/trade-agreements-act-compliance.component';
 import { ServicesContractActLaborMatrixComponent } from './views/offer-form/solicitation-provisions/services-contract-act-labor-matrix/services-contract-act-labor-matrix.component';
+import { OktaAuthGuard } from '@okta/okta-angular';
 
 const routes: Routes = [
  //{ path: 'offer-portal', redirectTo: '/offer-portal/org-selection', pathMatch: 'full'},
 
-  { path: 'offer-portal', component: OfferPortalComponent, children: [
+  { path: 'offer-portal', component: OfferPortalComponent, canActivate: [ OktaAuthGuard ], children: [
     { path: 'org-selection', component: OrgSelectionComponent },
     { path: 'home', component: OfferPortalHomeComponent },
-
     { path: 'offer', component: OfferFormComponent },
   ]}
 ];

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/modules/core/services/core-services.module';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +7,9 @@ import { LoginService } from 'src/app/modules/core/services/core-services.module
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private loginSvc: LoginService) { }
+  constructor() { }
 
   ngOnInit(): void {
-
-    this.loginSvc.signOut();
-
   }
 
 

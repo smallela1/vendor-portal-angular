@@ -102,11 +102,16 @@
       </li>
 
       <li class="nav-item active">
-        <button [routerLink]="['/login']" routerLinkActive="active" id="button-home" type="button" class="btn nav-link"
+        <button (click)="signIn()" id="button-home" type="button" class="btn nav-link"
           style="white-space: nowrap;">
           <span class="fal fa-sign-in mr-2"></span>
           <span class="nav-link-label">Sign In</span>
         </button>
+        <!-- <button [routerLink]="['/login']" routerLinkActive="active" id="button-home" type="button" class="btn nav-link"
+          style="white-space: nowrap;">
+          <span class="fal fa-sign-in mr-2"></span>
+          <span class="nav-link-label">Sign In</span>
+        </button> -->
       </li>
 
       <li class="nav-item btn-group" dropdown>

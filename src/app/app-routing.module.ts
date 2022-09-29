@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { OktaCallbackComponent } from '@okta/okta-angular';
 
 
 
 const routes: Routes = [
-{ path: '',   redirectTo: '/home', pathMatch: 'full' }
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login/callback', component: OktaCallbackComponent }
 ];
 
 @NgModule({
